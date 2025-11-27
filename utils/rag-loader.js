@@ -2,12 +2,32 @@ const fs = require('fs');
 const path = require('path');
 
 /**
+ * Determine how many chapters of context are needed based on the user's question
+ * @param {string} message - User's question
+ * @returns {number} - Number of previous chapters to include
+ */
+function determineContextNeeded(message) {
+  const recapKeywords = [
+    'recap', 'remind', 'forgot', 'forget', 'remember', 'refresh',
+    'what happened', 'catch up', 'summary', 'summarize',
+    'previously', 'earlier', 'before', 'back in'
+  ];
+
+  const messageLower = message.toLowerCase();
+  const needsExtendedContext = recapKeywords.some(keyword => messageLower.includes(keyword));
+
+  // If asking for recap/summary, load more context; otherwise just current chapter
+  return needsExtendedContext ? 3 : 1;
+}
+
+/**
  * Load chapter notes for RAG context
  * @param {string} bookTitle - The book title (normalized)
  * @param {number} currentChapter - The chapter the reader is on
+ * @param {number} contextWindow - How many previous chapters to include (default: 1)
  * @returns {string} - Combined context from relevant chapters
  */
-function loadChapterContext(bookTitle, currentChapter) {
+function loadChapterContext(bookTitle, currentChapter, contextWindow = 1) {
   const bookSlug = normalizeBookTitle(bookTitle);
   const bookPath = path.join(__dirname, '..', 'rag', 'books', bookSlug);
 
@@ -18,7 +38,6 @@ function loadChapterContext(bookTitle, currentChapter) {
 
   // Load the current chapter and a few previous chapters for context
   const chaptersToLoad = [];
-  const contextWindow = 3; // How many previous chapters to include
 
   for (let i = Math.max(1, currentChapter - contextWindow); i <= currentChapter; i++) {
     chaptersToLoad.push(i);
@@ -75,6 +94,7 @@ function getAvailableBooks() {
 
 module.exports = {
   loadChapterContext,
+  determineContextNeeded,
   normalizeBookTitle,
   getAvailableBooks
 };

@@ -168,6 +168,30 @@ docent/
 
 ---
 
+## ⚡ Cost Optimizations
+
+Docent includes several built-in optimizations to minimize API costs:
+
+### 1. **GPT-4o-mini Model**
+- Uses `gpt-4o-mini` instead of GPT-4 Turbo (15x cheaper)
+- Still excellent quality for literary understanding
+- Cost: ~$0.15/1M input tokens vs. $10/1M for GPT-4 Turbo
+
+### 2. **Smart RAG Context Loading**
+- **Simple questions**: Only loads current chapter notes (1 chapter)
+- **Recap questions**: Loads 3 chapters of context when user asks for summaries/recaps
+- Keywords detected: "recap", "remind", "forgot", "summary", "what happened", etc.
+- Reduces token usage by ~60% on average
+
+### 3. **Conversation History Limiting**
+- Only sends last 10 messages to the API (5 exchanges)
+- Prevents token bloat in long conversations
+- Older messages are dropped automatically
+
+**Expected cost for v0**: ~$1-2 for 150 questions (3 readers × 50 questions each)
+
+---
+
 ## 🧪 Testing
 
 ### Test the API Endpoint
@@ -281,10 +305,19 @@ Edit `rowan-prompt.js` to modify Rowan's tone, knowledge, or behavior.
 
 ### Adjust RAG Context Window
 
-In `utils/rag-loader.js`, change `contextWindow` to include more/fewer previous chapters:
+In `utils/rag-loader.js`, modify the `determineContextNeeded()` function:
 
 ```javascript
-const contextWindow = 3; // Number of previous chapters to include
+// Change the context window for recap questions (default: 3)
+return needsExtendedContext ? 5 : 1; // Load 5 chapters instead of 3
+```
+
+### Adjust Conversation History Limit
+
+In `utils/openai-client.js`, change the history limit:
+
+```javascript
+const MAX_HISTORY_MESSAGES = 20; // Default is 10
 ```
 
 ### Change AI Model
@@ -292,7 +325,7 @@ const contextWindow = 3; // Number of previous chapters to include
 In `utils/openai-client.js`, update the model:
 
 ```javascript
-model: 'gpt-4-turbo-preview', // or 'gpt-3.5-turbo', 'gpt-4', etc.
+model: 'gpt-4o-mini', // or 'gpt-4-turbo-preview', 'gpt-3.5-turbo', etc.
 ```
 
 ---

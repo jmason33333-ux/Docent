@@ -1,10 +1,13 @@
 const OpenAI = require('openai');
 const { ROWAN_SYSTEM_PROMPT } = require('../rowan-prompt');
-const { loadChapterContext } = require('./rag-loader');
+const { loadChapterContext, determineContextNeeded } = require('./rag-loader');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
+
+// Cost optimization: Limit conversation history to prevent token bloat
+const MAX_HISTORY_MESSAGES = 10; // Last 5 exchanges (user + assistant)
 
 /**
  * Chat with Rowan
@@ -17,8 +20,11 @@ const openai = new OpenAI({
  */
 async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
   try {
-    // Load relevant chapter notes from RAG
-    const chapterContext = loadChapterContext(bookTitle, chapter);
+    // Smart context detection: Only load multiple chapters when needed
+    const contextWindow = determineContextNeeded(message);
+    const chapterContext = loadChapterContext(bookTitle, chapter, contextWindow);
+
+    console.log(`[RAG] Loading ${contextWindow} chapter(s) of context`);
 
     // Build the system message with context
     const systemMessage = {
@@ -38,17 +44,20 @@ ${chapterContext || 'No detailed notes available yet - use your general knowledg
 `
     };
 
+    // Limit conversation history to reduce token usage
+    const recentHistory = history.slice(-MAX_HISTORY_MESSAGES);
+
     // Build conversation history
     const messages = [
       systemMessage,
       contextMessage,
-      ...history,
+      ...recentHistory,
       { role: 'user', content: message }
     ];
 
-    // Call OpenAI
+    // Call OpenAI with cost-optimized model
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4-turbo-preview', // Use GPT-4 for better literary understanding
+      model: 'gpt-4o-mini', // 15x cheaper than GPT-4 Turbo, still excellent for this use case
       messages: messages,
       temperature: 0.7,
       max_tokens: 800 // Keep responses concise
