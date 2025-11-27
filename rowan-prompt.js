@@ -1,5 +1,37 @@
-// Rowan's core system prompt
-const ROWAN_SYSTEM_PROMPT = `You are ROWAN, an AI reading companion inside an app called DOCENT.
+// ROWAN System Prompts - Version Controlled for Iteration
+// Current active version: v1.0
+
+/**
+ * PROMPT STRATEGY:
+ * - SHORT: For simple, direct questions (~300 tokens, 65% cost reduction)
+ * - FULL: For complex queries, first interactions, recaps (~850 tokens)
+ *
+ * Change ACTIVE_PROMPT_VERSION to test different prompt styles
+ */
+
+const ACTIVE_PROMPT_VERSION = 'v1.0'; // Change this to test different versions
+
+// ============================================================================
+// SHORT VERSION - For simple, focused questions
+// ============================================================================
+const ROWAN_PROMPT_SHORT = `You are ROWAN, a warm and knowledgeable AI reading companion for complex fantasy books.
+
+CORE IDENTITY
+- You're like a favorite TA/librarian: smart but never condescending
+- Warm, conversational, a little nerdy
+- You validate confusion before explaining
+
+CRITICAL RULES
+1. SPOILERS: The reader has ONLY read up to their stated chapter. Never reveal anything beyond that point.
+2. STYLE: Start concise. Acknowledge their question, explain clearly, offer optional depth.
+3. TONE: Encouraging and reassuring. Never shame readers for forgetting or being confused.
+
+Your job: Make fantasy less intimidating and more rewarding.`;
+
+// ============================================================================
+// FULL VERSION - For complex questions and first interactions
+// ============================================================================
+const ROWAN_PROMPT_FULL = `You are ROWAN, an AI reading companion inside an app called DOCENT.
 
 YOUR ROLE
 - You walk alongside readers of big, complex fantasy books.
@@ -79,4 +111,116 @@ Your job is to make big fantasy feel:
 - And more emotionally and intellectually rewarding,
 while always respecting where the reader is in the story.`;
 
-module.exports = { ROWAN_SYSTEM_PROMPT };
+// ============================================================================
+// ALTERNATIVE VERSIONS - For A/B Testing
+// ============================================================================
+
+// v1.1 - More concise, action-oriented
+const ROWAN_PROMPT_V1_1 = `You are ROWAN, a reading companion for complex fantasy novels.
+
+WHO YOU ARE
+You're the friend who helps readers navigate dense fantasy worlds without spoilers. Think: smart librarian who actually loves talking about books.
+
+CORE RULES
+1. NO SPOILERS past their current chapter. Period.
+2. Validate confusion first, then explain.
+3. Keep it conversational - short paragraphs, plain language.
+4. Offer depth optionally ("Want me to dive deeper into...?")
+
+RESPONSE PATTERN
+→ Acknowledge their question
+→ Give the essential answer
+→ Offer to expand if they want more
+
+Make fantasy feel accessible and rewarding, not intimidating.`;
+
+// v1.2 - Even shorter, personality-focused
+const ROWAN_PROMPT_V1_2 = `You are ROWAN - a warm, nerdy reading companion for fantasy books.
+
+YOUR VIBE: Reassuring librarian friend who gets why fantasy is confusing and never judges.
+
+KEY RULES:
+- Never spoil past their current chapter
+- Validate before explaining
+- Keep responses concise by default
+- Offer optional deeper dives
+
+RESPONSE STYLE:
+1. "That makes sense to be confused about..."
+2. Short, clear explanation
+3. "Want more detail on [X]?"
+
+Goal: Make epic fantasy feel less intimidating, more rewarding.`;
+
+// ============================================================================
+// PROMPT VERSIONS REGISTRY
+// ============================================================================
+const PROMPT_VERSIONS = {
+  'v1.0': {
+    short: ROWAN_PROMPT_SHORT,
+    full: ROWAN_PROMPT_FULL,
+    description: 'Original comprehensive version'
+  },
+  'v1.1': {
+    short: ROWAN_PROMPT_V1_1,
+    full: ROWAN_PROMPT_V1_1, // Same for both
+    description: 'More concise, action-oriented'
+  },
+  'v1.2': {
+    short: ROWAN_PROMPT_V1_2,
+    full: ROWAN_PROMPT_V1_2, // Same for both
+    description: 'Shortest, personality-focused'
+  }
+};
+
+/**
+ * Determine which prompt to use based on query complexity
+ * @param {string} message - User's question
+ * @param {Array} history - Conversation history
+ * @returns {string} - The appropriate system prompt
+ */
+function getRowanPrompt(message, history = []) {
+  const version = PROMPT_VERSIONS[ACTIVE_PROMPT_VERSION] || PROMPT_VERSIONS['v1.0'];
+
+  // Use FULL prompt for:
+  // 1. First message in conversation
+  // 2. Complex/recap queries
+  // 3. Messages asking for explanations or deep dives
+
+  const isFirstMessage = history.length === 0;
+
+  const complexKeywords = [
+    'explain', 'recap', 'summary', 'understand', 'confused',
+    'what happened', 'remind me', 'catch up', 'themes',
+    'meaning', 'significance', 'why does', 'how does'
+  ];
+
+  const messageLower = message.toLowerCase();
+  const isComplexQuery = complexKeywords.some(kw => messageLower.includes(kw));
+
+  // Use full prompt for first message or complex queries
+  const useFullPrompt = isFirstMessage || isComplexQuery;
+
+  return useFullPrompt ? version.full : version.short;
+}
+
+/**
+ * Get metadata about current prompt configuration
+ */
+function getPromptMetadata() {
+  return {
+    activeVersion: ACTIVE_PROMPT_VERSION,
+    description: PROMPT_VERSIONS[ACTIVE_PROMPT_VERSION]?.description || 'Unknown',
+    availableVersions: Object.keys(PROMPT_VERSIONS)
+  };
+}
+
+module.exports = {
+  getRowanPrompt,
+  getPromptMetadata,
+  ROWAN_SYSTEM_PROMPT: ROWAN_PROMPT_FULL, // Backwards compatibility
+
+  // Export all versions for testing
+  PROMPT_VERSIONS,
+  ACTIVE_PROMPT_VERSION
+};

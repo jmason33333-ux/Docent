@@ -1,5 +1,5 @@
 const OpenAI = require('openai');
-const { ROWAN_SYSTEM_PROMPT } = require('../rowan-prompt');
+const { getRowanPrompt, getPromptMetadata } = require('../rowan-prompt');
 const { loadChapterContext, determineContextNeeded } = require('./rag-loader');
 
 const openai = new OpenAI({
@@ -16,7 +16,7 @@ const MAX_HISTORY_MESSAGES = 10; // Last 5 exchanges (user + assistant)
  * @param {number} params.chapter - Current chapter
  * @param {string} params.message - User's question
  * @param {Array} params.history - Previous conversation history
- * @returns {Promise<string>} - Rowan's response
+ * @returns {Promise<{response: string, metadata: object}>} - Rowan's response and metadata
  */
 async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
   try {
@@ -24,12 +24,17 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     const contextWindow = determineContextNeeded(message);
     const chapterContext = loadChapterContext(bookTitle, chapter, contextWindow);
 
+    // Smart prompt selection: Use short or full version based on query complexity
+    const rowanPrompt = getRowanPrompt(message, history);
+    const promptMetadata = getPromptMetadata();
+
     console.log(`[RAG] Loading ${contextWindow} chapter(s) of context`);
+    console.log(`[PROMPT] Using ${rowanPrompt.length < 500 ? 'SHORT' : 'FULL'} prompt (v${promptMetadata.activeVersion})`);
 
     // Build the system message with context
     const systemMessage = {
       role: 'system',
-      content: ROWAN_SYSTEM_PROMPT
+      content: rowanPrompt
     };
 
     // Add book/chapter context as a system message
@@ -63,7 +68,18 @@ ${chapterContext || 'No detailed notes available yet - use your general knowledg
       max_tokens: 800 // Keep responses concise
     });
 
-    return completion.choices[0].message.content;
+    const response = completion.choices[0].message.content;
+
+    // Return response with metadata for logging
+    return {
+      response,
+      metadata: {
+        promptVersion: promptMetadata.activeVersion,
+        promptType: rowanPrompt.length < 500 ? 'short' : 'full',
+        contextWindow: contextWindow,
+        tokensUsed: completion.usage?.total_tokens || 0
+      }
+    };
 
   } catch (error) {
     console.error('OpenAI API Error:', error);

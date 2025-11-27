@@ -121,10 +121,13 @@ Docent can log all conversations to Google Sheets for analysis.
 ### 2. Create a Google Sheet
 
 1. Create a new Google Sheet
-2. Name the first tab `Conversations`
-3. Add headers in row 1:
+2. **Create the "Conversations" tab** with headers in row 1:
    ```
-   Timestamp | User ID | Book | Chapter | Question | Answer
+   Timestamp | User ID | Book | Chapter | Question | Answer | Prompt Version | Prompt Type | Context Window | Tokens Used | Feedback Rating
+   ```
+3. **Create the "Feedback" tab** with headers in row 1:
+   ```
+   Timestamp | User ID | Book | Chapter | Rating | Feedback | Prompt Version | Message ID | Question | Answer
    ```
 4. Share the sheet with your service account email:
    - Click **Share**
@@ -188,7 +191,39 @@ Docent includes several built-in optimizations to minimize API costs:
 - Prevents token bloat in long conversations
 - Older messages are dropped automatically
 
-**Expected cost for v0**: ~$1-2 for 150 questions (3 readers × 50 questions each)
+### 4. **Tiered Prompts (NEW!)**
+- **SHORT prompt** (~300 tokens): Used for simple questions (65% cost reduction)
+- **FULL prompt** (~850 tokens): Used for complex queries and first messages
+- Automatic selection based on query complexity
+- Reduces system prompt costs by ~50% on average
+
+**Expected cost for v0**: ~$0.05-0.10 for 150 questions (3 readers × 50 questions each)
+
+---
+
+## 🎨 ROWAN Prompt Optimization
+
+Docent includes a sophisticated prompt iteration system for testing and improving Rowan's personality:
+
+### Quick Start
+- **Current version**: v1.0 (comprehensive, well-tested)
+- **Change versions**: Edit line 12 in `rowan-prompt.js`
+- **Available versions**: v1.0, v1.1 (concise), v1.2 (shortest)
+
+### Features
+✅ **A/B Testing**: Test different prompt styles with real users
+✅ **Feedback Collection**: `/api/feedback` endpoint for user ratings
+✅ **Version Tracking**: All logs include prompt version and metadata
+✅ **Cost Analysis**: Track token usage per prompt version
+
+### Iterate on Rowan
+See **`PROMPT-ITERATION-GUIDE.md`** for:
+- How to create and test new prompt versions
+- Collecting and analyzing user feedback
+- A/B testing workflow
+- Best practices for prompt engineering
+
+**This is critical for v0**: Rowan's voice is your core differentiator. Use the feedback from your 3 test readers to refine it quickly.
 
 ---
 

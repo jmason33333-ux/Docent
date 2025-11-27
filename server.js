@@ -3,8 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const { chatWithRowan } = require('./utils/openai-client');
-const { logConversation, initializeSheets } = require('./utils/logger');
+const { logConversation, logFeedback, initializeSheets } = require('./utils/logger');
 const { getAvailableBooks } = require('./utils/rag-loader');
+const { getPromptMetadata } = require('./rowan-prompt');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -28,6 +29,12 @@ app.get('/api/books', (req, res) => {
   res.json({ books });
 });
 
+// Get current prompt metadata
+app.get('/api/prompt-info', (req, res) => {
+  const metadata = getPromptMetadata();
+  res.json(metadata);
+});
+
 // Main chat endpoint
 app.post('/api/rowan', async (req, res) => {
   try {
@@ -48,28 +55,30 @@ app.post('/api/rowan', async (req, res) => {
 
     console.log(`[${new Date().toISOString()}] ${userId} asked about ${bookTitle} Ch${chapter}`);
 
-    // Get Rowan's response
-    const answer = await chatWithRowan({
+    // Get Rowan's response (now returns object with response + metadata)
+    const result = await chatWithRowan({
       bookTitle,
       chapter,
       message,
       history
     });
 
-    // Log the conversation (async, non-blocking)
+    // Log the conversation with metadata (async, non-blocking)
     logConversation({
       userId,
       book: bookTitle,
       chapter,
       question: message,
-      answer
+      answer: result.response,
+      metadata: result.metadata
     }).catch(err => console.error('Logging error:', err));
 
     // Return response
     res.json({
-      message: answer,
+      message: result.response,
       book: bookTitle,
-      chapter
+      chapter,
+      metadata: result.metadata // Include metadata for client-side analytics if needed
     });
 
   } catch (error) {
@@ -77,6 +86,46 @@ app.post('/api/rowan', async (req, res) => {
     res.status(500).json({
       error: 'Failed to get response from Rowan',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Feedback endpoint - for collecting user feedback on Rowan's responses
+app.post('/api/feedback', async (req, res) => {
+  try {
+    const {
+      userId = 'anonymous',
+      bookTitle,
+      chapter,
+      question,
+      answer,
+      rating,
+      feedback,
+      promptVersion,
+      messageId
+    } = req.body;
+
+    console.log(`[FEEDBACK] User ${userId} gave ${rating}/5 for response`);
+
+    // Log feedback (async, non-blocking)
+    logFeedback({
+      userId,
+      bookTitle,
+      chapter,
+      question,
+      answer,
+      rating,
+      feedback,
+      promptVersion,
+      messageId
+    }).catch(err => console.error('Feedback logging error:', err));
+
+    res.json({ success: true, message: 'Feedback received' });
+
+  } catch (error) {
+    console.error('Error in /api/feedback:', error);
+    res.status(500).json({
+      error: 'Failed to submit feedback'
     });
   }
 });
