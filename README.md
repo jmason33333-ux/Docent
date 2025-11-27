@@ -97,44 +97,58 @@ Your app will be live at `https://your-project.vercel.app`!
 
 ---
 
-## 🔧 Google Sheets Logging Setup (Optional)
+## 🔧 Google Sheets Logging Setup (Optional but Recommended!)
 
-Docent can log all conversations to Google Sheets for analysis.
+Docent logs all conversations and feedback to Google Sheets for analysis and iteration.
 
-### 1. Create a Google Cloud Service Account
+**Why set this up:**
+- Track which questions users ask most
+- Collect feedback ratings on Rowan's responses
+- Analyze prompt version performance (A/B testing)
+- Monitor token costs per query
+- Identify areas to improve Rowan
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project (or use existing)
-3. Enable the **Google Sheets API**
-4. Go to **IAM & Admin > Service Accounts**
-5. Click **Create Service Account**:
-   - Name: `docent-logger`
-   - Click **Create and Continue**
-   - Grant role: **Editor** (or just Sheets access)
-   - Click **Done**
-6. Click on the service account you just created
-7. Go to **Keys** tab
-8. Click **Add Key > Create New Key**
-9. Choose **JSON** format
-10. Download the key file
+**Quick start:** See **`GOOGLE-SHEETS-SETUP.md`** for complete step-by-step instructions.
 
-### 2. Create a Google Sheet
+**What gets logged:**
+- Every conversation (with prompt version, tokens, context)
+- User feedback (ratings + survey responses)
+- All data is anonymous (session-based user IDs)
 
-1. Create a new Google Sheet
-2. **Create the "Conversations" tab** with headers in row 1:
+### TL;DR Setup
+
+1. Create Google Cloud service account + download JSON key
+2. Create Google Sheet with "Conversations" and "Feedback" tabs
+3. Share sheet with service account email
+4. Add credentials to `.env`:
+   ```env
+   GOOGLE_SHEETS_CREDENTIALS={"type":"service_account",...}
+   GOOGLE_SHEET_ID=your-sheet-id-here
    ```
-   Timestamp | User ID | Book | Chapter | Question | Answer | Prompt Version | Prompt Type | Context Window | Tokens Used | Feedback Rating
-   ```
-3. **Create the "Feedback" tab** with headers in row 1:
-   ```
-   Timestamp | User ID | Book | Chapter | Rating | Feedback | Prompt Version | Message ID | Question | Answer
-   ```
-4. Share the sheet with your service account email:
-   - Click **Share**
-   - Paste the service account email (from the JSON file: `client_email`)
-   - Give **Editor** access
 
-### 3. Set Environment Variables
+**For complete instructions with screenshots and troubleshooting:** See `GOOGLE-SHEETS-SETUP.md`
+
+---
+
+## 💬 Feedback Collection
+
+Docent includes a **built-in feedback UI** on every Rowan response:
+
+### User Experience
+- **👍 Thumbs up** - Quick positive feedback (auto-sends rating=5)
+- **👎 Thumbs down** - Opens detailed feedback form with:
+  - Survey checkboxes (warmth, length, spoilers, clarity)
+  - Optional text area for additional comments
+- **Thank you message** - Confirms feedback was received
+
+### For Your Analysis
+All feedback is logged to the "Feedback" Google Sheet tab with:
+- Rating (1-5)
+- Survey responses (which issues they selected)
+- Free-form text feedback
+- Tied to specific prompt versions for A/B testing
+
+### 3. Environment Variables (continued)
 
 Copy the contents of the JSON key file and set it as `GOOGLE_SHEETS_CREDENTIALS`:
 
