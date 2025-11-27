@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docent - Your Fantasy Reading Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Docent</h1>
+      <p class="subtitle">Chat with Rowan, your reading companion</p>
+    </header>
+
+    <!-- Book Selection -->
+    <div class="reading-context">
+      <div class="form-group">
+        <label for="book-select">📖 What are you reading?</label>
+        <select id="book-select">
+          <option value="">Select a book...</option>
+          <option value="Words of Radiance">Words of Radiance</option>
+          <option value="Rhythm of War">Rhythm of War</option>
+          <option value="The Strength of the Few">The Strength of the Few</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="chapter-input">📍 What chapter are you on?</label>
+        <input type="number" id="chapter-input" min="1" placeholder="e.g., 17">
+      </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chat-container">
+      <div class="welcome-message">
+        <p>👋 Hi! I'm Rowan.</p>
+        <p>I'm here to help you understand and enjoy complex fantasy books without spoilers.</p>
+        <p>Select your book and chapter above, then ask me anything about what you've read so far!</p>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-container">
+      <textarea
+        id="message-input"
+        placeholder="Ask Rowan anything about what you've read so far..."
+        rows="3"
+      ></textarea>
+      <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
