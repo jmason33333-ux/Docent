@@ -3,41 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docent - Your Fantasy Reading Companion</title>
+  <title>Rowan by Docent</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
+    <!-- Header with Rowan branding -->
     <header class="header">
-      <h1>Docent</h1>
-      <p class="subtitle">Chat with Rowan, your reading companion</p>
+      <div class="brand-logo">
+        <svg class="rowan-tree" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <!-- Rowan tree symbol -->
+          <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+            <!-- Trunk -->
+            <path d="M30 50 L30 30"/>
+            <!-- Main branches -->
+            <path d="M30 30 L20 20"/>
+            <path d="M30 30 L40 20"/>
+            <path d="M30 35 L22 28"/>
+            <path d="M30 35 L38 28"/>
+            <!-- Small branches -->
+            <path d="M20 20 L15 15"/>
+            <path d="M20 20 L18 25"/>
+            <path d="M40 20 L45 15"/>
+            <path d="M40 20 L42 25"/>
+            <!-- Roots -->
+            <path d="M30 50 L25 55"/>
+            <path d="M30 50 L35 55"/>
+          </g>
+          <!-- Berries (Rowan trees are known for red berries) -->
+          <circle cx="15" cy="15" r="1.5" fill="currentColor" opacity="0.8"/>
+          <circle cx="18" cy="25" r="1.5" fill="currentColor" opacity="0.8"/>
+          <circle cx="45" cy="15" r="1.5" fill="currentColor" opacity="0.8"/>
+          <circle cx="42" cy="25" r="1.5" fill="currentColor" opacity="0.8"/>
+        </svg>
+      </div>
+      <h1 class="brand-name">Rowan</h1>
+      <p class="brand-tagline">by Docent</p>
     </header>
 
-    <!-- Book Selection -->
+    <!-- Table of Contents Style Book Selection -->
     <div class="reading-context">
-      <div class="form-group">
-        <label for="book-select">📖 What are you reading?</label>
-        <select id="book-select">
-          <option value="">Select a book...</option>
+      <div class="toc-header">Your Reading Journey</div>
+
+      <div class="toc-section">
+        <div class="toc-label">Book</div>
+        <select id="book-select" class="toc-select">
+          <option value="">Choose your book...</option>
           <option value="Words of Radiance">Words of Radiance</option>
           <option value="Rhythm of War">Rhythm of War</option>
           <option value="The Strength of the Few">The Strength of the Few</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="chapter-input">📍 What chapter are you on?</label>
-        <input type="number" id="chapter-input" min="1" placeholder="e.g., 17">
+      <div class="toc-section">
+        <div class="toc-label">Chapter</div>
+        <input type="number" id="chapter-input" class="toc-input" min="1" placeholder="e.g., 17">
       </div>
     </div>
 
     <!-- Chat Container -->
     <div class="chat-container" id="chat-container">
       <div class="welcome-message">
-        <p>👋 Hi! I'm Rowan.</p>
-        <p>I'm here to help you understand and enjoy complex fantasy books without spoilers.</p>
-        <p>Select your book and chapter above, then ask me anything about what you've read so far!</p>
+        <div class="welcome-icon">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round">
+              <path d="M20 30 L20 15"/>
+              <path d="M20 15 L13 10"/>
+              <path d="M20 15 L27 10"/>
+              <path d="M20 20 L15 16"/>
+              <path d="M20 20 L25 16"/>
+            </g>
+            <circle cx="13" cy="10" r="1" fill="currentColor"/>
+            <circle cx="27" cy="10" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2>Welcome to Rowan</h2>
+        <p>I'm your companion for navigating complex fantasy worlds.</p>
+        <p>Choose your book and current chapter above, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
       </div>
     </div>
 
@@ -45,10 +90,13 @@
     <div class="input-container">
       <textarea
         id="message-input"
-        placeholder="Ask Rowan anything about what you've read so far..."
-        rows="3"
+        placeholder="Ask Rowan anything..."
+        rows="2"
       ></textarea>
-      <button id="send-button" onclick="sendMessage()">Send</button>
+      <button id="send-button" onclick="sendMessage()">
+        <span class="btn-text">Send</span>
+        <span class="btn-icon">→</span>
+      </button>
     </div>
   </div>
 
