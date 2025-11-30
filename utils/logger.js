@@ -55,7 +55,12 @@ async function logConversation({ userId, book, chapter, question, answer, metada
       answer: answer.substring(0, 100) + '...',
       promptVersion: metadata.promptVersion,
       promptType: metadata.promptType,
-      tokensUsed: metadata.tokensUsed
+      tokensUsed: metadata.tokensUsed,
+      queryCategory: metadata.queryCategory || 'unknown',
+      querySubcategory: metadata.querySubcategory || 'none',
+      notesAvailable: metadata.notesAvailable ? 'YES' : 'NO',
+      notesLikelyUsed: metadata.notesLikelyUsed ? 'YES' : 'NO',
+      notesRelevance: metadata.notesRelevance || 'unknown'
     }, null, 2));
     return;
   }
@@ -68,9 +73,52 @@ async function logConversation({ userId, book, chapter, question, answer, metada
       return;
     }
 
+    // Prepare query categorization values
+    const queryCategoryValues = [
+      metadata.queryCategory || 'unknown',
+      metadata.querySubcategory || 'none',
+      metadata.queryKeyTerms || ''
+    ];
+
+    // Prepare RAG tracking values
+    const ragTrackingValues = [
+      metadata.notesAvailable !== undefined ? (metadata.notesAvailable ? 'YES' : 'NO') : 'UNKNOWN',
+      metadata.notesProvided !== undefined ? (metadata.notesProvided ? 'YES' : 'NO') : 'UNKNOWN',
+      metadata.notesLikelyUsed !== undefined ? (metadata.notesLikelyUsed ? 'YES' : 'NO') : 'UNKNOWN',
+      metadata.notesRelevance || 'unknown',
+      metadata.chaptersFound || '',
+      metadata.chaptersMissing || ''
+    ];
+
+    // Prepare snapshot tracking values
+    const snapshotTrackingValues = [
+      metadata.contextSource || 'unknown',
+      metadata.snapshotUsed !== undefined ? (metadata.snapshotUsed ? 'YES' : 'NO') : 'NO',
+      metadata.snapshotChapter || ''
+    ];
+
+    console.log('[LOGGING] Query category:', {
+      category: queryCategoryValues[0],
+      subcategory: queryCategoryValues[1],
+      keyTerms: queryCategoryValues[2]
+    });
+    console.log('[LOGGING] RAG tracking:', {
+      notesAvailable: ragTrackingValues[0],
+      notesProvided: ragTrackingValues[1],
+      notesLikelyUsed: ragTrackingValues[2],
+      notesRelevance: ragTrackingValues[3],
+      chaptersFound: ragTrackingValues[4],
+      chaptersMissing: ragTrackingValues[5]
+    });
+    console.log('[LOGGING] Snapshot tracking:', {
+      contextSource: snapshotTrackingValues[0],
+      snapshotUsed: snapshotTrackingValues[1],
+      snapshotChapter: snapshotTrackingValues[2]
+    });
+
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Conversations!A:K', // Extended to include metadata
+      range: 'Conversations!A:X', // Extended to include snapshot tracking
       valueInputOption: 'RAW',
       resource: {
         values: [[
@@ -84,12 +132,18 @@ async function logConversation({ userId, book, chapter, question, answer, metada
           metadata.promptType || 'unknown',
           metadata.contextWindow || 1,
           metadata.tokensUsed || 0,
-          '' // Reserved for feedback rating (if added later)
+          '', // Reserved for feedback rating
+          // Query categorization columns
+          ...queryCategoryValues,
+          // RAG tracking columns
+          ...ragTrackingValues,
+          // Snapshot tracking columns
+          ...snapshotTrackingValues
         ]]
       }
     });
 
-    console.log('Logged conversation to Google Sheets');
+    console.log('✅ Logged conversation to Google Sheets with RAG tracking');
 
   } catch (error) {
     console.error('Failed to log to Google Sheets:', error.message);

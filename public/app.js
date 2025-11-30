@@ -3,6 +3,593 @@ let conversationHistory = [];
 let userId = generateUserId();
 let messageCounter = 0;
 
+// Configure markdown renderer (marked.js)
+if (typeof marked !== 'undefined') {
+  marked.setOptions({
+    breaks: true, // Convert line breaks to <br>
+    gfm: true, // GitHub Flavored Markdown
+    headerIds: false, // Disable header IDs for security
+    mangle: false // Don't mangle email addresses
+  });
+}
+
+// Current selection state
+let selectedSeries = null;
+let selectedBook = null;
+let selectedPart = null;
+let selectedChapter = null;
+
+// Load available series on page load
+async function loadSeries() {
+  try {
+    const response = await fetch('/api/series');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const seriesList = document.getElementById('toc-series-list');
+    
+    if (!seriesList) {
+      console.error('Series list element not found');
+      return;
+    }
+    
+    seriesList.innerHTML = '';
+    
+    // Check if data has series array
+    if (!data || !data.series || !Array.isArray(data.series)) {
+      console.error('Invalid response format:', data);
+      seriesList.innerHTML = '<li class="toc-loading">No series found</li>';
+      return;
+    }
+    
+    // Add series to TOC
+    if (data.series.length === 0) {
+      seriesList.innerHTML = '<li class="toc-loading">No series available</li>';
+      return;
+    }
+    
+    data.series.forEach(series => {
+      const li = document.createElement('li');
+      li.className = 'toc-series-item';
+      
+      const link = document.createElement('a');
+      link.href = '#';
+      link.className = 'toc-series-link';
+      link.textContent = series.name;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        selectSeries(series.name, series.books);
+      });
+      
+      li.appendChild(link);
+      seriesList.appendChild(li);
+    });
+  } catch (error) {
+    console.error('Failed to load series:', error);
+    const seriesList = document.getElementById('toc-series-list');
+    if (seriesList) {
+      seriesList.innerHTML = `<li class="toc-loading">Failed to load series: ${error.message}</li>`;
+    }
+  }
+}
+
+// Select a series and show its books
+function selectSeries(seriesName, books) {
+  selectedSeries = seriesName;
+  selectedBook = null;
+  selectedPart = null;
+  selectedChapter = null;
+  conversationHistory = [];
+  
+  // Update active state
+  document.querySelectorAll('.toc-series-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.textContent === seriesName) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Show book section
+  const seriesSection = document.getElementById('toc-series-section');
+  const bookSection = document.getElementById('toc-book-section');
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  seriesSection.style.display = 'none';
+  bookSection.style.display = 'block';
+  partSection.style.display = 'none';
+  chapterSection.style.display = 'none';
+  
+  // Update breadcrumb
+  const breadcrumb = document.getElementById('toc-breadcrumb');
+  breadcrumb.textContent = seriesName;
+  
+  // Populate books
+  const bookList = document.getElementById('toc-book-list');
+  bookList.innerHTML = '';
+  
+  books.forEach(book => {
+    const li = document.createElement('li');
+    li.className = 'toc-book-item';
+    
+    const link = document.createElement('a');
+    link.href = '#';
+    link.className = 'toc-book-link';
+    link.textContent = book.title;
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      selectBook(seriesName, book.slug, book.title);
+    });
+    
+    li.appendChild(link);
+    bookList.appendChild(li);
+  });
+  
+  // Close TOC on mobile after selection
+  if (window.innerWidth < 1024) {
+    closeTOC();
+  }
+}
+
+// Select a book and load its parts
+async function selectBook(seriesName, bookSlug, bookTitle) {
+  selectedBook = bookTitle;
+  selectedPart = null;
+  selectedChapter = null;
+  conversationHistory = [];
+  
+  // Update active state
+  document.querySelectorAll('.toc-book-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.textContent === bookTitle) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Show part section
+  const bookSection = document.getElementById('toc-book-section');
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  partSection.style.display = 'block';
+  chapterSection.style.display = 'none';
+  
+  // Update breadcrumb
+  const breadcrumb = document.getElementById('toc-breadcrumb-part');
+  breadcrumb.textContent = `${seriesName} > ${bookTitle}`;
+  
+  // Load parts
+  const partList = document.getElementById('toc-part-list');
+  partList.innerHTML = '<li class="toc-loading">Loading parts...</li>';
+  
+  try {
+    const encodedSeries = encodeURIComponent(seriesName);
+    const encodedBook = encodeURIComponent(bookSlug);
+    const response = await fetch(`/api/series/${encodedSeries}/books/${encodedBook}/parts`);
+    const data = await response.json();
+    
+    partList.innerHTML = '';
+    
+    if (data.parts && data.parts.length > 0) {
+      data.parts.forEach(part => {
+        const li = document.createElement('li');
+        li.className = 'toc-part-item';
+        
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'toc-part-link';
+        link.textContent = part.name;
+        link.dataset.partType = part.type || 'part';
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectPart(seriesName, bookSlug, bookTitle, part.slug, part.name, part.type);
+        });
+        
+        li.appendChild(link);
+        partList.appendChild(li);
+      });
+    } else {
+      partList.innerHTML = '<li class="toc-loading">No parts found</li>';
+    }
+  } catch (error) {
+    console.error('Failed to load parts:', error);
+    partList.innerHTML = '<li class="toc-loading">Failed to load parts</li>';
+  }
+  
+  // Close TOC on mobile after selection
+  if (window.innerWidth < 1024) {
+    closeTOC();
+  }
+}
+
+// Select a part and load its chapters
+async function selectPart(seriesName, bookSlug, bookTitle, partSlug, partName, partType) {
+  selectedPart = partName;
+  selectedChapter = null;
+  conversationHistory = [];
+  
+  // Update active state
+  document.querySelectorAll('.toc-part-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.textContent === partName) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Show chapter section
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  chapterSection.style.display = 'block';
+  
+  // Update breadcrumb
+  const breadcrumb = document.getElementById('toc-breadcrumb-chapter');
+  breadcrumb.textContent = `${seriesName} > ${bookTitle} > ${partName}`;
+  
+  // Load chapters
+  const chapterList = document.getElementById('toc-chapter-list');
+  chapterList.innerHTML = '<li class="toc-loading">Loading chapters...</li>';
+  
+  try {
+    const encodedSeries = encodeURIComponent(seriesName);
+    const encodedBook = encodeURIComponent(bookSlug);
+    const encodedPart = encodeURIComponent(partSlug);
+    const response = await fetch(`/api/series/${encodedSeries}/books/${encodedBook}/parts/${encodedPart}/chapters`);
+    const data = await response.json();
+    
+    chapterList.innerHTML = '';
+    
+    // Add standalone chapters (Prologue, Interludes, Epilogue)
+    if (data.standalone && data.standalone.length > 0) {
+      data.standalone.forEach(ch => {
+        const li = document.createElement('li');
+        li.className = 'toc-chapter-item';
+        
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'toc-chapter-link';
+        link.textContent = ch.label;
+        link.dataset.chapterNumber = ch.number;
+        link.dataset.chapterType = ch.type;
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectChapter(ch.number);
+        });
+        
+        li.appendChild(link);
+        chapterList.appendChild(li);
+      });
+    }
+    
+    // Add chapter groups (grouped by 10s)
+    if (data.chapterGroups && data.chapterGroups.length > 0) {
+      data.chapterGroups.forEach(group => {
+        const groupLi = createChapterGroup(group);
+        chapterList.appendChild(groupLi);
+      });
+    }
+    
+    if (chapterList.children.length === 0) {
+      chapterList.innerHTML = '<li class="toc-loading">No chapters found</li>';
+    }
+  } catch (error) {
+    console.error('Failed to load chapters:', error);
+    chapterList.innerHTML = '<li class="toc-loading">Failed to load chapters</li>';
+  }
+  
+  // Close TOC on mobile after selection
+  if (window.innerWidth < 1024) {
+    closeTOC();
+  }
+}
+
+// Legacy function - kept for backwards compatibility but redirects to new structure
+async function selectBookLegacy(bookTitle) {
+  selectedBook = bookTitle;
+  selectedChapter = null;
+  conversationHistory = [];
+  
+  // Update active state
+  document.querySelectorAll('.toc-book-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.textContent === bookTitle) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Show chapter section
+  const chapterSection = document.getElementById('toc-chapter-section');
+  const currentBook = document.getElementById('toc-current-book');
+  const chapterList = document.getElementById('toc-chapter-list');
+  
+  chapterSection.style.display = 'block';
+  chapterList.innerHTML = '<li class="toc-loading">Loading chapters...</li>';
+  
+  // Load chapters
+  try {
+    const encodedTitle = encodeURIComponent(bookTitle);
+    const response = await fetch(`/api/books/${encodedTitle}/chapters`);
+    const data = await response.json();
+    
+    // Build breadcrumb: Series > Book (or just Book if no series)
+    let breadcrumbText = bookTitle;
+    if (data.series) {
+      breadcrumbText = `${data.series} > ${bookTitle}`;
+    }
+    currentBook.textContent = breadcrumbText;
+    
+    chapterList.innerHTML = '';
+    
+    // Add standalone chapters (Prologue, Interludes, Epilogue)
+    if (data.standalone && data.standalone.length > 0) {
+      data.standalone.forEach(ch => {
+        const li = document.createElement('li');
+        li.className = 'toc-chapter-item';
+        
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'toc-chapter-link';
+        link.textContent = ch.label;
+        link.dataset.chapterNumber = ch.number;
+        link.dataset.chapterType = ch.type;
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectChapter(ch.number);
+        });
+        
+        li.appendChild(link);
+        chapterList.appendChild(li);
+      });
+    }
+    
+    // Add parts with their chapter groups (new format)
+    if (data.parts && data.parts.length > 0) {
+      data.parts.forEach(partData => {
+        // Create part container
+        const partLi = document.createElement('li');
+        partLi.className = 'toc-part-group';
+        
+        // Part header (clickable to expand/collapse) - only show if part exists
+        if (partData.part) {
+          const partHeader = document.createElement('div');
+          partHeader.className = 'toc-part-header';
+          partHeader.innerHTML = `
+            <span class="toc-part-toggle">▼</span>
+            <span class="toc-part-label">${partData.part}</span>
+          `;
+          
+          // Part content (chapter groups)
+          const partContent = document.createElement('ul');
+          partContent.className = 'toc-part-chapters';
+          partContent.style.display = 'none';
+          
+          // Add chapter groups within this part
+          if (partData.chapterGroups && partData.chapterGroups.length > 0) {
+            partData.chapterGroups.forEach(group => {
+              const groupLi = createChapterGroup(group);
+              partContent.appendChild(groupLi);
+            });
+          }
+          
+          // Toggle expand/collapse
+          partHeader.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isExpanded = partContent.style.display !== 'none';
+            partContent.style.display = isExpanded ? 'none' : 'block';
+            const toggle = partHeader.querySelector('.toc-part-toggle');
+            toggle.textContent = isExpanded ? '▼' : '▲';
+            partHeader.classList.toggle('expanded', !isExpanded);
+          });
+          
+          partLi.appendChild(partHeader);
+          partLi.appendChild(partContent);
+        } else {
+          // No part - add chapter groups directly
+          if (partData.chapterGroups && partData.chapterGroups.length > 0) {
+            partData.chapterGroups.forEach(group => {
+              const groupLi = createChapterGroup(group);
+              partLi.appendChild(groupLi);
+            });
+          }
+        }
+        
+        chapterList.appendChild(partLi);
+      });
+    }
+    // Fallback: handle old format with chapterGroups at root level
+    else if (data.chapterGroups && data.chapterGroups.length > 0) {
+      data.chapterGroups.forEach(group => {
+        const groupLi = createChapterGroup(group);
+        chapterList.appendChild(groupLi);
+      });
+    }
+    
+    if (chapterList.children.length === 0) {
+      chapterList.innerHTML = '<li class="toc-loading">No chapters found</li>';
+    }
+  } catch (error) {
+    console.error('Failed to load chapters:', error);
+    chapterList.innerHTML = '<li class="toc-loading">Failed to load chapters</li>';
+  }
+  
+  // Close TOC on mobile after selection
+  if (window.innerWidth < 1024) {
+    closeTOC();
+  }
+}
+
+// Helper function to create a chapter group
+function createChapterGroup(group) {
+  const groupLi = document.createElement('li');
+  groupLi.className = 'toc-chapter-group';
+  
+  // Group header (clickable to expand/collapse)
+  const groupHeader = document.createElement('div');
+  groupHeader.className = 'toc-group-header';
+  groupHeader.innerHTML = `
+    <span class="toc-group-label">${group.label}</span>
+    <span class="toc-group-toggle">▼</span>
+  `;
+  
+  // Group content (collapsed by default)
+  const groupContent = document.createElement('ul');
+  groupContent.className = 'toc-group-chapters';
+  groupContent.style.display = 'none';
+  
+  // Add individual chapters to group
+  group.chapters.forEach(ch => {
+    const chLi = document.createElement('li');
+    chLi.className = 'toc-chapter-item';
+    
+    const link = document.createElement('a');
+    link.href = '#';
+    link.className = 'toc-chapter-link';
+    link.textContent = ch.label;
+    link.dataset.chapterNumber = ch.number;
+    link.dataset.chapterType = 'chapter';
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      selectChapter(ch.number);
+    });
+    
+    chLi.appendChild(link);
+    groupContent.appendChild(chLi);
+  });
+  
+  // Toggle expand/collapse
+  groupHeader.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isExpanded = groupContent.style.display !== 'none';
+    groupContent.style.display = isExpanded ? 'none' : 'block';
+    const toggle = groupHeader.querySelector('.toc-group-toggle');
+    toggle.textContent = isExpanded ? '▼' : '▲';
+    groupHeader.classList.toggle('expanded', !isExpanded);
+  });
+  
+  groupLi.appendChild(groupHeader);
+  groupLi.appendChild(groupContent);
+  return groupLi;
+}
+
+// Select a chapter
+function selectChapter(chapterNumber) {
+  selectedChapter = chapterNumber;
+  
+  // Load existing chat history for this chapter
+  if (selectedBook) {
+    loadChatHistory(selectedBook, chapterNumber);
+  } else {
+    conversationHistory = [];
+  }
+  
+  // Update active state for all chapter links
+  document.querySelectorAll('.toc-chapter-link').forEach(link => {
+    link.classList.remove('active');
+    if (parseInt(link.dataset.chapterNumber) === chapterNumber) {
+      link.classList.add('active');
+      
+      // If this chapter is in a collapsed group, expand the group
+      const groupContent = link.closest('.toc-group-chapters');
+      if (groupContent && groupContent.style.display === 'none') {
+        const groupHeader = groupContent.previousElementSibling;
+        if (groupHeader && groupHeader.classList.contains('toc-group-header')) {
+          groupContent.style.display = 'block';
+          const toggle = groupHeader.querySelector('.toc-group-toggle');
+          if (toggle) toggle.textContent = '▲';
+          groupHeader.classList.add('expanded');
+        }
+      }
+      
+      // If this chapter is in a collapsed part, expand the part
+      const partContent = link.closest('.toc-part-chapters');
+      if (partContent && partContent.style.display === 'none') {
+        const partHeader = partContent.previousElementSibling;
+        if (partHeader && partHeader.classList.contains('toc-part-header')) {
+          partContent.style.display = 'block';
+          const toggle = partHeader.querySelector('.toc-part-toggle');
+          if (toggle) toggle.textContent = '▲';
+          partHeader.classList.add('expanded');
+        }
+      }
+    }
+  });
+  
+  // Close TOC on mobile after selection
+  if (window.innerWidth < 1024) {
+    closeTOC();
+  }
+}
+
+// TOC Toggle Functions
+function toggleTOC() {
+  const sidebar = document.getElementById('toc-sidebar');
+  const overlay = document.getElementById('toc-overlay');
+  
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('active');
+}
+
+function closeTOC() {
+  const sidebar = document.getElementById('toc-sidebar');
+  const overlay = document.getElementById('toc-overlay');
+  
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+// Initialize TOC toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toc-toggle');
+  const closeBtn = document.getElementById('toc-close');
+  const overlay = document.getElementById('toc-overlay');
+  
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', toggleTOC);
+  }
+  
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeTOC);
+  }
+  
+  if (overlay) {
+    overlay.addEventListener('click', closeTOC);
+  }
+  
+  // Load books
+  loadSeries();
+  
+  // Initialize voice recognition
+  initializeVoiceRecognition();
+  
+  // Initialize history UI
+  updateHistoryUI();
+  
+  // History sidebar controls
+  const historyToggle = document.getElementById('history-toggle');
+  const historyClose = document.getElementById('history-close');
+  const historyOverlay = document.getElementById('history-overlay');
+  
+  if (historyToggle) {
+    historyToggle.addEventListener('click', toggleHistory);
+  }
+  
+  if (historyClose) {
+    historyClose.addEventListener('click', closeHistory);
+  }
+  
+  if (historyOverlay) {
+    historyOverlay.addEventListener('click', closeHistory);
+  }
+  
+  // Desktop: Auto-open sidebar on load
+  if (window.innerWidth >= 1024) {
+    // Sidebar is visible by default on desktop
+  }
+});
+
 // Generate a simple user ID for session tracking
 function generateUserId() {
   const stored = localStorage.getItem('docent_user_id');
@@ -11,6 +598,332 @@ function generateUserId() {
   const newId = 'user_' + Math.random().toString(36).substring(2, 15);
   localStorage.setItem('docent_user_id', newId);
   return newId;
+}
+
+// Voice functionality
+let recognition = null;
+let isListening = false;
+let synthesis = window.speechSynthesis;
+let isSpeaking = false;
+let currentUtterance = null;
+
+// Chat history storage
+const CHAT_HISTORY_KEY = 'rowan_chat_history';
+
+// Initialize voice recognition
+function initializeVoiceRecognition() {
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    console.warn('Speech recognition not supported in this browser');
+    const voiceButton = document.getElementById('voice-input-button');
+    if (voiceButton) {
+      voiceButton.style.display = 'none';
+    }
+    return;
+  }
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.lang = 'en-US';
+
+  recognition.onstart = () => {
+    isListening = true;
+    updateVoiceButton(true);
+    showVoiceStatus('Listening...');
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    const messageInput = document.getElementById('message-input');
+    if (messageInput) {
+      messageInput.value = transcript;
+    }
+  };
+
+  recognition.onerror = (event) => {
+    console.error('Speech recognition error:', event.error);
+    if (event.error === 'no-speech') {
+      showVoiceStatus('No speech detected. Try again.');
+    } else if (event.error === 'not-allowed') {
+      showVoiceStatus('Microphone permission denied.');
+    } else {
+      showVoiceStatus('Error: ' + event.error);
+    }
+    setTimeout(() => hideVoiceStatus(), 3000);
+  };
+
+  recognition.onend = () => {
+    isListening = false;
+    updateVoiceButton(false);
+    hideVoiceStatus();
+  };
+}
+
+// Toggle voice input (must be global for onclick)
+window.toggleVoiceInput = function() {
+  if (!recognition) {
+    alert('Voice input is not supported in your browser.');
+    return;
+  }
+
+  if (isListening) {
+    recognition.stop();
+  } else {
+    recognition.start();
+  }
+};
+
+// Update voice button appearance
+function updateVoiceButton(listening) {
+  const voiceButton = document.getElementById('voice-input-button');
+  if (voiceButton) {
+    if (listening) {
+      voiceButton.classList.add('listening');
+    } else {
+      voiceButton.classList.remove('listening');
+    }
+  }
+}
+
+// Show voice status
+function showVoiceStatus(text) {
+  const statusDiv = document.getElementById('voice-status');
+  const statusText = document.getElementById('voice-status-text');
+  if (statusDiv && statusText) {
+    statusText.textContent = text;
+    statusDiv.style.display = 'flex';
+  }
+}
+
+// Hide voice status
+function hideVoiceStatus() {
+  const statusDiv = document.getElementById('voice-status');
+  if (statusDiv) {
+    statusDiv.style.display = 'none';
+  }
+}
+
+// Speak text using Web Speech API
+function speakText(text) {
+  if (!synthesis) {
+    console.warn('Speech synthesis not supported');
+    return;
+  }
+
+  // Stop any current speech
+  if (isSpeaking && currentUtterance) {
+    synthesis.cancel();
+  }
+
+  // Remove markdown formatting for cleaner speech
+  const cleanText = text
+    .replace(/#{1,6}\s+/g, '') // Remove headers
+    .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
+    .replace(/\*(.*?)\*/g, '$1') // Remove italic
+    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links
+    .replace(/`(.*?)`/g, '$1') // Remove code
+    .replace(/\n+/g, '. ') // Replace newlines with periods
+    .trim();
+
+  const utterance = new SpeechSynthesisUtterance(cleanText);
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+  utterance.volume = 1;
+  utterance.lang = 'en-US';
+
+  utterance.onstart = () => {
+    isSpeaking = true;
+    updateSpeakButton(true);
+  };
+
+  utterance.onend = () => {
+    isSpeaking = false;
+    updateSpeakButton(false);
+  };
+
+  utterance.onerror = (event) => {
+    console.error('Speech synthesis error:', event);
+    isSpeaking = false;
+    updateSpeakButton(false);
+  };
+
+  currentUtterance = utterance;
+  synthesis.speak(utterance);
+}
+
+// Stop speaking
+function stopSpeaking() {
+  if (synthesis && isSpeaking) {
+    synthesis.cancel();
+    isSpeaking = false;
+    updateSpeakButton(false);
+  }
+}
+
+// Update speak button (add to message UI)
+function updateSpeakButton(speaking) {
+  // This will be called when we add speak buttons to messages
+}
+
+// Chat History Functions
+function saveChatHistory() {
+  if (!selectedBook || selectedChapter === null) return;
+  
+  const historyKey = `${CHAT_HISTORY_KEY}_${selectedBook}_${selectedChapter}`;
+  const historyData = {
+    book: selectedBook,
+    chapter: selectedChapter,
+    series: selectedSeries,
+    part: selectedPart,
+    messages: conversationHistory,
+    lastUpdated: new Date().toISOString()
+  };
+  
+  localStorage.setItem(historyKey, JSON.stringify(historyData));
+  
+  // Also save to a master list for easy retrieval
+  const masterKey = `${CHAT_HISTORY_KEY}_master`;
+  let masterList = JSON.parse(localStorage.getItem(masterKey) || '[]');
+  
+  // Remove existing entry for this book/chapter
+  masterList = masterList.filter(item => 
+    !(item.book === selectedBook && item.chapter === selectedChapter)
+  );
+  
+  // Add new entry
+  masterList.push({
+    book: selectedBook,
+    chapter: selectedChapter,
+    series: selectedSeries,
+    part: selectedPart,
+    lastUpdated: new Date().toISOString()
+  });
+  
+  // Sort by last updated (newest first)
+  masterList.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+  
+  localStorage.setItem(masterKey, JSON.stringify(masterList));
+  updateHistoryUI();
+}
+
+function loadChatHistory(book, chapter) {
+  const historyKey = `${CHAT_HISTORY_KEY}_${book}_${chapter}`;
+  const stored = localStorage.getItem(historyKey);
+  
+  if (stored) {
+    const historyData = JSON.parse(stored);
+    conversationHistory = historyData.messages || [];
+    
+    // Restore chat UI
+    const chatContainer = document.getElementById('chat-container');
+    if (chatContainer) {
+      // Clear existing messages
+      chatContainer.innerHTML = '';
+      
+      // Remove welcome message
+      const welcome = chatContainer.querySelector('.welcome-message');
+      if (welcome) welcome.remove();
+      
+      // Restore messages
+      conversationHistory.forEach(msg => {
+        if (msg.role === 'user') {
+          addMessage('user', msg.content);
+        } else if (msg.role === 'assistant') {
+          addMessage('rowan', msg.content, msg.metadata || null);
+        }
+      });
+    }
+  } else {
+    conversationHistory = [];
+  }
+}
+
+function updateHistoryUI() {
+  const historyContent = document.getElementById('history-content');
+  if (!historyContent) return;
+  
+  const masterKey = `${CHAT_HISTORY_KEY}_master`;
+  const masterList = JSON.parse(localStorage.getItem(masterKey) || '[]');
+  
+  if (masterList.length === 0) {
+    historyContent.innerHTML = '<div class="history-empty">No chat history yet. Start a conversation!</div>';
+    return;
+  }
+  
+  // Group by book
+  const byBook = {};
+  masterList.forEach(item => {
+    if (!byBook[item.book]) {
+      byBook[item.book] = [];
+    }
+    byBook[item.book].push(item);
+  });
+  
+  let html = '';
+  Object.keys(byBook).sort().forEach(book => {
+    const items = byBook[book];
+    html += `<div class="history-book-group">
+      <h3 class="history-book-title">${book}</h3>
+      <ul class="history-chapter-list">`;
+    
+    items.forEach(item => {
+      const date = new Date(item.lastUpdated);
+      const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      html += `<li class="history-chapter-item">
+        <button class="history-chapter-link" onclick="loadHistoryConversation('${item.book.replace(/'/g, "\\'")}', ${item.chapter})">
+          <span class="history-chapter-label">Chapter ${item.chapter}</span>
+          <span class="history-chapter-date">${dateStr}</span>
+        </button>
+      </li>`;
+    });
+    
+    html += `</ul></div>`;
+  });
+  
+  historyContent.innerHTML = html;
+}
+
+// Make loadHistoryConversation global for onclick handlers
+window.loadHistoryConversation = function(book, chapter) {
+  // Update selections
+  selectedBook = book;
+  selectedChapter = chapter;
+  
+  // Load the history
+  loadChatHistory(book, chapter);
+  
+  // Close history sidebar
+  closeHistory();
+  
+  // Update active chapter in TOC if visible
+  document.querySelectorAll('.toc-chapter-link').forEach(link => {
+    link.classList.remove('active');
+    if (parseInt(link.dataset.chapterNumber) === chapter) {
+      link.classList.add('active');
+    }
+  });
+};
+
+// History sidebar toggle functions
+function toggleHistory() {
+  const sidebar = document.getElementById('history-sidebar');
+  const overlay = document.getElementById('history-overlay');
+  
+  if (sidebar && overlay) {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+}
+
+function closeHistory() {
+  const sidebar = document.getElementById('history-sidebar');
+  const overlay = document.getElementById('history-overlay');
+  
+  if (sidebar && overlay) {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  }
 }
 
 // Add message to chat UI
@@ -42,15 +955,37 @@ function addMessage(sender, content, metadata = null) {
 
   const messageContent = document.createElement('div');
   messageContent.className = 'message-content';
-  messageContent.textContent = content;
+  
+  // Render markdown for Rowan's messages, plain text for user messages
+  if (sender === 'rowan' && typeof marked !== 'undefined') {
+    // Use marked.js to render markdown to HTML
+    messageContent.innerHTML = marked.parse(content);
+  } else {
+    // For user messages, use plain text for security
+    messageContent.textContent = content;
+  }
 
   messageDiv.appendChild(header);
   messageDiv.appendChild(messageContent);
 
-  // Add feedback UI for Rowan messages
+  // Add feedback UI and speak button for Rowan messages
   if (sender === 'rowan' && messageId) {
     const feedbackDiv = createFeedbackUI(messageId);
     messageDiv.appendChild(feedbackDiv);
+    
+    // Add speak button
+    const speakButton = document.createElement('button');
+    speakButton.className = 'speak-button';
+    speakButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    speakButton.title = 'Speak response';
+    speakButton.onclick = () => {
+      if (isSpeaking) {
+        stopSpeaking();
+      } else {
+        speakText(content);
+      }
+    };
+    messageDiv.appendChild(speakButton);
   }
 
   chatContainer.appendChild(messageDiv);
@@ -137,23 +1072,21 @@ function removeLoading() {
 
 // Send message to Rowan
 async function sendMessage() {
-  const bookSelect = document.getElementById('book-select');
-  const chapterInput = document.getElementById('chapter-input');
   const messageInput = document.getElementById('message-input');
   const sendButton = document.getElementById('send-button');
 
-  const bookTitle = bookSelect.value;
-  const chapter = parseInt(chapterInput.value);
   const message = messageInput.value.trim();
 
   // Validation
-  if (!bookTitle) {
-    alert('Please select a book first!');
+  if (!selectedSeries || !selectedBook || !selectedPart) {
+    alert('Please select a series, book, and part from the table of contents first!');
+    toggleTOC(); // Open TOC on mobile
     return;
   }
 
-  if (!chapter || chapter < 1) {
-    alert('Please enter a valid chapter number!');
+  if (selectedChapter === null || selectedChapter === undefined) {
+    alert('Please select a chapter from the table of contents first!');
+    toggleTOC(); // Open TOC on mobile
     return;
   }
 
@@ -178,8 +1111,8 @@ async function sendMessage() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        bookTitle,
-        chapter,
+        bookTitle: selectedBook,
+        chapter: selectedChapter,
         message,
         history: conversationHistory,
         userId
@@ -196,17 +1129,25 @@ async function sendMessage() {
     // Update conversation history
     conversationHistory.push(
       { role: 'user', content: message },
-      { role: 'assistant', content: data.message }
+      { role: 'assistant', content: data.message, metadata: data.metadata }
     );
+
+    // Save chat history
+    saveChatHistory();
 
     // Remove loading and add Rowan's response with metadata
     removeLoading();
     addMessage('rowan', data.message, data.metadata);
+    
+    // Auto-speak Rowan's response if voice is enabled
+    if (window.autoSpeakEnabled) {
+      speakText(data.message);
+    }
 
     // Store last question for feedback context
     window.lastQuestion = message;
-    window.lastBook = bookTitle;
-    window.lastChapter = chapter;
+    window.lastBook = selectedBook;
+    window.lastChapter = selectedChapter;
 
   } catch (error) {
     removeLoading();
@@ -220,10 +1161,15 @@ async function sendMessage() {
 }
 
 // Allow Enter to send (Shift+Enter for new line)
-document.getElementById('message-input').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
+document.addEventListener('DOMContentLoaded', () => {
+  const messageInput = document.getElementById('message-input');
+  if (messageInput) {
+    messageInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
   }
 });
 
@@ -327,12 +1273,3 @@ async function sendFeedback({ messageId, rating, feedback = '', answer, promptVe
     console.error('Failed to submit feedback:', error);
   }
 }
-
-// Clear history when book or chapter changes
-document.getElementById('book-select').addEventListener('change', () => {
-  conversationHistory = [];
-});
-
-document.getElementById('chapter-input').addEventListener('change', () => {
-  conversationHistory = [];
-});
