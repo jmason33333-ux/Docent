@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rowan by Docent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Rowan branding -->
+    <header class="header">
+      <div class="brand-logo">
+        <svg class="rowan-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <!-- Minimal Rowan tree - single trunk with three branches -->
+          <g stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trunk -->
+            <path d="M24 42 L24 20"/>
+            <!-- Three main branches in Y shape -->
+            <path d="M24 20 L16 12"/>
+            <path d="M24 20 L32 12"/>
+            <path d="M24 20 L24 12"/>
+          </g>
+          <!-- Three berries at branch tips -->
+          <circle cx="16" cy="12" r="2" fill="currentColor"/>
+          <circle cx="24" cy="12" r="2" fill="currentColor"/>
+          <circle cx="32" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <h1 class="brand-name">Rowan</h1>
+      <p class="brand-tagline">by Docent</p>
+    </header>
+
+    <!-- Table of Contents Style Book Selection -->
+    <div class="reading-context">
+      <div class="toc-header">Your Reading Journey</div>
+
+      <div class="toc-section">
+        <div class="toc-label">Book</div>
+        <select id="book-select" class="toc-select">
+          <option value="">Choose your book...</option>
+          <option value="Words of Radiance">Words of Radiance</option>
+          <option value="Rhythm of War">Rhythm of War</option>
+          <option value="The Strength of the Few">The Strength of the Few</option>
+        </select>
+      </div>
+
+      <div class="toc-section">
+        <div class="toc-label">Chapter</div>
+        <input type="number" id="chapter-input" class="toc-input" min="1" placeholder="e.g., 17">
+      </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chat-container">
+      <div class="welcome-message">
+        <div class="welcome-icon">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 38 L24 20"/>
+              <path d="M24 20 L16 12"/>
+              <path d="M24 20 L32 12"/>
+              <path d="M24 20 L24 12"/>
+            </g>
+            <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="24" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="32" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2>Welcome to Rowan</h2>
+        <p>I'm your companion for navigating complex fantasy worlds.</p>
+        <p>Choose your book and current chapter above, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-container">
+      <textarea
+        id="message-input"
+        placeholder="Ask Rowan anything..."
+        rows="2"
+      ></textarea>
+      <button id="send-button" onclick="sendMessage()">
+        <span class="btn-text">Send</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
