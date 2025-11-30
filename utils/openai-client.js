@@ -186,19 +186,19 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     } else if (contextSource === 'book_summary+snapshot') {
       contextType = 'Book Summary + Knowledge Snapshot';
       contextCoverage = `Book overview + snapshot covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
-      contextInstructions = 'You have both the spoiler-free book summary AND a Knowledge Snapshot. Use the summary for general context, and the snapshot for detailed character arcs, plot threads, world-building, relationships, and themes up to the current chapter.';
+      contextInstructions = 'You have both the spoiler-free book summary AND a Knowledge Snapshot.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from character arcs, plot threads, world-building, relationships, and themes.';
     } else if (contextSource === 'book_summary+chapters') {
       contextType = 'Book Summary + Chapter Notes';
       contextCoverage = `Book overview + notes for chapters ${ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ')}`;
-      contextInstructions = 'You have both the spoiler-free book summary AND detailed chapter notes. Use the summary for general context, and the chapter notes for specific details, plot beats, character appearances, and chapter-specific information.';
+      contextInstructions = 'You have both the spoiler-free book summary AND detailed chapter notes.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check the chapter notes for "Rowan\'s If Asked Notes" sections FIRST. If you find a pre-written Q&A that matches the reader\'s question, use it as your FOUNDATION and expand from there with context from Key Beats, Characters, Magic/Mechanics, and Themes sections. NEVER contradict the "If Asked" answers.';
     } else if (contextSource === 'snapshot') {
       contextType = 'Knowledge Snapshot';
       contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
-      contextInstructions = 'This is a Knowledge Snapshot - use it for comprehensive answers about characters, plot threads, world-building, relationships, and themes. It contains cumulative information perfect for recap questions and character/plot analysis.';
+      contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.';
     } else {
       contextType = 'Chapter Notes';
       contextCoverage = `for chapters ${ragMetadata.chaptersFound.length > 0 ? ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ') : chapter}`;
-      contextInstructions = 'These are detailed Chapter Notes - use them for specific chapter details, plot beats, character appearances, world-building reveals, and chapter-specific questions.';
+      contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
     }
     
     const contextMessage = {
