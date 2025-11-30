@@ -13,6 +13,11 @@
   <div class="container">
     <!-- Header with Rowan branding -->
     <header class="header">
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
       <div class="brand-logo">
         <svg class="rowan-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <!-- Minimal Rowan tree - single trunk with three branches -->
@@ -32,64 +37,148 @@
       </div>
       <h1 class="brand-name">Rowan</h1>
       <p class="brand-tagline">by Docent</p>
+      <div class="header-actions">
+        <button class="history-toggle" id="history-toggle" aria-label="Toggle chat history" title="Chat History">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <!-- Table of Contents Style Book Selection -->
-    <div class="reading-context">
-      <div class="toc-header">Your Reading Journey</div>
-
-      <div class="toc-section">
-        <div class="toc-label">Book</div>
-        <select id="book-select" class="toc-select">
-          <option value="">Choose your book...</option>
-          <option value="Words of Radiance">Words of Radiance</option>
-          <option value="Rhythm of War">Rhythm of War</option>
-          <option value="The Strength of the Few">The Strength of the Few</option>
-        </select>
-      </div>
-
-      <div class="toc-section">
-        <div class="toc-label">Chapter</div>
-        <input type="number" id="chapter-input" class="toc-input" min="1" placeholder="e.g., 17">
-      </div>
-    </div>
-
-    <!-- Chat Container -->
-    <div class="chat-container" id="chat-container">
-      <div class="welcome-message">
-        <div class="welcome-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M24 38 L24 20"/>
-              <path d="M24 20 L16 12"/>
-              <path d="M24 20 L32 12"/>
-              <path d="M24 20 L24 12"/>
-            </g>
-            <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
-            <circle cx="24" cy="12" r="1.5" fill="currentColor"/>
-            <circle cx="32" cy="12" r="1.5" fill="currentColor"/>
-          </svg>
+    <div class="main-layout">
+      <!-- Table of Contents Sidebar -->
+      <aside class="toc-sidebar" id="toc-sidebar">
+        <div class="toc-header-section">
+          <h2 class="toc-title">Table of Contents</h2>
+          <button class="toc-close" id="toc-close" aria-label="Close table of contents">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
-        <h2>Welcome to Rowan</h2>
-        <p>I'm your companion for navigating complex fantasy worlds.</p>
-        <p>Choose your book and current chapter above, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
-      </div>
-    </div>
 
-    <!-- Input Area -->
-    <div class="input-container">
-      <textarea
-        id="message-input"
-        placeholder="Ask Rowan anything..."
-        rows="2"
-      ></textarea>
-      <button id="send-button" onclick="sendMessage()">
-        <span class="btn-text">Send</span>
-        <span class="btn-icon">→</span>
-      </button>
+        <div class="toc-content">
+          <div class="toc-series-section" id="toc-series-section">
+            <h3 class="toc-section-title">Series</h3>
+            <ul class="toc-series-list" id="toc-series-list">
+              <li class="toc-loading">Loading series...</li>
+            </ul>
+          </div>
+
+          <div class="toc-book-section" id="toc-book-section" style="display: none;">
+            <h3 class="toc-section-title">Books</h3>
+            <div class="toc-breadcrumb" id="toc-breadcrumb"></div>
+            <ul class="toc-book-list" id="toc-book-list">
+              <!-- Books will be populated here -->
+            </ul>
+          </div>
+
+          <div class="toc-part-section" id="toc-part-section" style="display: none;">
+            <h3 class="toc-section-title">Parts</h3>
+            <div class="toc-breadcrumb" id="toc-breadcrumb-part"></div>
+            <ul class="toc-part-list" id="toc-part-list">
+              <!-- Parts will be populated here -->
+            </ul>
+          </div>
+
+          <div class="toc-chapter-section" id="toc-chapter-section" style="display: none;">
+            <h3 class="toc-section-title">Chapters</h3>
+            <div class="toc-breadcrumb" id="toc-breadcrumb-chapter"></div>
+            <ul class="toc-chapter-list" id="toc-chapter-list">
+              <!-- Chapters will be populated here -->
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Overlay for mobile -->
+      <div class="toc-overlay" id="toc-overlay"></div>
+      
+      <!-- Chat History Sidebar -->
+      <aside class="history-sidebar" id="history-sidebar">
+        <div class="history-header-section">
+          <h2 class="history-title">Chat History</h2>
+          <button class="history-close" id="history-close" aria-label="Close chat history">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="history-content" id="history-content">
+          <div class="history-empty">No chat history yet. Start a conversation!</div>
+        </div>
+      </aside>
+      
+      <!-- History overlay for mobile -->
+      <div class="history-overlay" id="history-overlay"></div>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <!-- Chat Container -->
+        <div class="chat-container" id="chat-container">
+          <div class="welcome-message">
+            <div class="welcome-icon">
+              <svg class="rowan-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <!-- Minimal Rowan tree - single trunk with three branches -->
+                <g stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Trunk -->
+                  <path d="M24 42 L24 20"/>
+                  <!-- Three main branches in Y shape -->
+                  <path d="M24 20 L16 12"/>
+                  <path d="M24 20 L32 12"/>
+                  <path d="M24 20 L24 12"/>
+                </g>
+                <!-- Three berries at branch tips -->
+                <circle cx="16" cy="12" r="2" fill="currentColor"/>
+                <circle cx="24" cy="12" r="2" fill="currentColor"/>
+                <circle cx="32" cy="12" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h2>Welcome to Rowan</h2>
+            <p>I'm your companion for navigating complex fantasy worlds.</p>
+            <p>Select your book and chapter from the table of contents, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+          <div class="input-controls">
+            <button 
+              id="voice-input-button" 
+              class="voice-button" 
+              onclick="toggleVoiceInput()"
+              aria-label="Voice input"
+              title="Voice input (click to start/stop recording)"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </button>
+            <textarea
+              id="message-input"
+              placeholder="Ask Rowan anything... (or use voice input)"
+              rows="2"
+            ></textarea>
+            <button id="send-button" onclick="sendMessage()">
+              <span class="btn-text">Send</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <div class="voice-status" id="voice-status" style="display: none;">
+            <span class="voice-indicator"></span>
+            <span id="voice-status-text">Listening...</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Markdown rendering library -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
