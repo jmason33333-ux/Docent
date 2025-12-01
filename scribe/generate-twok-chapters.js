@@ -474,10 +474,126 @@ Kal (his nickname as a boy) helps his father, Lirin, treat a young woman, Sani. 
 When they finish amputating Sani's middle finger, Lirin asks Kaladin why he was late to arrive, and Kaladin replies that he was with a boy named Jam learning to use a quarterstaff. This sparks a debate between Kaladin and Lirin about the relative merits of being a soldier or a surgeon. Lirin meets Kaladin's claim that it's possible to save lives by killing others with the assertion that doing so is like "trying to stop a storm by blowing harder." Eventually, Kaladin simply stops arguing and goes back to cleaning up the room.
 
 Lirin quizzes him on various things a surgeon should know, then tells him that he plans to send him to Kharbranth to train under the surgeons there if he can find a way to do so. Lirin also tells him that he's incredibly gifted when it comes to surgery, and he shouldn't waste himself on soldiering.`
+  },
+  11: {
+    title: 'Droplets',
+    pov: 'Kaladin',
+    text: `Chapter 11: Droplets
+
+Characters
+
+Kaladin (point of view)
+
+Gaz
+
+Sylphrena
+
+Teft
+
+Lirin (mentioned only)
+
+Tien (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Plot Summary
+
+Kaladin is outside just after a highstorm, going to the Honor Chasm to commit suicide. Gaz stops him, accusing him of trying to steal spheres left out in the Highstorm from others, but Kaladin simply ignores him and goes.
+
+Just as Kaladin is about to step into the chasm, Syl reappears, carrying a single blackbane leaf which she had brought hoping to make Kaladin happy. When Kaladin expresses his frustrations at his previous failures to protect people, Syl convinces him to try again, arguing that the bridgemen are going to die anyway, so his efforts cannot hurt.
+
+Kaladin returns to the camp and attacks Gaz, throwing him to the ground. He demands that Gaz make him bridgeleader of Bridge Four, and that he give Kaladin full control of it. In return, Gaz receives one fifth of Kaladin's wages.
+
+Kaladin then goes inside the barracks and begins asking the other bridgemen's names, noticing for the first time how pathetic they all are.`
   }
 };
 
-async function generateChapterNotes(chapterType, chapterNumber = null) {
+// Interlude data
+const INTERLUDE_DATA = {
+  1: {
+    title: 'Ishikk',
+    pov: 'Ishikk',
+    text: `Interlude I-1: Ishikk
+
+Characters
+
+Ishikk (point of view)
+
+Thaspic
+
+Maib
+
+Blunt
+
+Grump
+
+Thinker
+
+Hoid (mentioned only)
+
+Plot summary
+
+Ishikk, a fisherman in the Purelake, is just returning home after a long day of fishing. After pausing to talk to Thaspic he meets with Maib, a local woman who has been attempting to get him to marry her for years by trying to keep him in her debt, mostly by giving him food. Ishikk tries to counterbalance her efforts by bringing her fish that cure her aches in her joints.
+
+Following a brief conversation with Maib, Ishikk goes to meet with a group of foreigners. They ask him about whether he has any new information for them, and Ishikk tells them that he has been to many villages in the area and none of them know anything about the man the foreigners are looking for, revealed to be Hoid. The foreigners (all worldhoppers, namely Demoux from Scadrial, Galladon from Sel and Baon from Taldain) argue amongst themselves for a while, then leave Ishikk to his thoughts.`
+  },
+  2: {
+    title: 'Nan Balat',
+    pov: 'Balat Davar',
+    text: `Interlude I-2: Nan Balat
+
+Characters
+
+Balat Davar (point of view)
+
+Scrak
+
+Wikim Davar
+
+Eylita (mentioned only)
+
+Shallan Davar (mentioned only)
+
+Lin Davar (mentioned only)
+
+Helaran Davar (mentioned only)
+
+Jushu Davar (mentioned only)
+
+Plot summary
+
+Balat Davar, Shallan's brother, is torturing various small animals in the gardens of their family's estate. He reflects on how Shallan is doing most of the work to save their family and tries to convince himself that he isn't a coward for remaining at home to manage the estate. He admits to some resentment of Shallan because of all of their siblings, she was the only one their father never truly got angry at, but is shortly interrupted in his thoughts by Wikim, another brother, coming to find him with the announcement that they have a big problem.`
+  },
+  3: {
+    title: 'The Glory of Ignorance',
+    pov: 'Szeth',
+    text: `Interlude I-3: The Glory of Ignorance
+
+Characters
+
+Szeth (point of view)
+
+Took
+
+Ton
+
+Amark
+
+Avado (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Plot summary
+
+Szeth is now serving a man named Took, who uses him to gain the admiration of mine workers (and free drinks) in the small towns they pass through. As a demonstration of Szeth's total obedience, he has him do various things, such as jump up and down and cut his own arm. When he orders Szeth to kill himself, Szeth informs him that he cannot be ordered to kill himself, and returns to his own thoughts. The others are shocked at how refined his speech is and are slightly discomfited, associating him with the lighteyes. Szeth reflects that his speech and mannerisms may well be part of the reason that his masters never keep him for long, since his masters know that he is capable of so much more than they are using him for, and that in many ways, he is much more refined and intelligent than they are. Szeth revels in his common labor, though, as it means that he is not being used to spill more blood.
+
+As the night passes on and it becomes apparent that the townsfolk are no longer really listening to Took's stories, Took and Szeth leave. However, on the way out of town, Took is killed by a group of thugs, who consider selling Szeth to the slavers. Then one of them picks up Szeth's Oathstone, and he informs them of his obligation to serve them as long as they hold it. When asked for clarification, Szeth tells him that he must obey any order except to kill himself, and thinks to himself that he can't be asked to give up his Shardblade either, but the man need not know that. The man muses for a moment on the possibilities he has with such a servant.`
+  }
+};
+
+async function generateChapterNotes(chapterType, chapterNumber = null, interludeNumber = null) {
   const bookTitle = 'The Way of Kings';
   const bookSlug = normalizeBookTitle(bookTitle);
   
@@ -503,6 +619,13 @@ async function generateChapterNotes(chapterType, chapterNumber = null) {
     } else if (chapterType === 'chapter') {
       // Part 1 folder structure
       chaptersDir = path.join(seriesBookPath, 'chapters', 'Part 1');
+      if (!fs.existsSync(chaptersDir)) {
+        fs.mkdirSync(chaptersDir, { recursive: true });
+      }
+    } else if (chapterType === 'interlude') {
+      // Interlude structure: interlude-1/interlude-i-1.md (same as Rhythm of War)
+      const interludeDirName = `interlude-${interludeNumber}`;
+      chaptersDir = path.join(seriesBookPath, 'chapters', interludeDirName);
       if (!fs.existsSync(chaptersDir)) {
         fs.mkdirSync(chaptersDir, { recursive: true });
       }
@@ -536,6 +659,15 @@ async function generateChapterNotes(chapterType, chapterNumber = null) {
     }
     chapterIdentifier = chapterNumber;
     outputFile = path.join(chaptersDir, `chapter-${String(chapterNumber).padStart(2, '0')}.md`);
+  } else if (chapterType === 'interlude' && interludeNumber && chapterNumber) {
+    // Interlude structure: interlude-i-1.md
+    chapterData = INTERLUDE_DATA[chapterNumber];
+    if (!chapterData) {
+      console.error(`❌ No data found for Interlude I-${chapterNumber}`);
+      process.exit(1);
+    }
+    chapterIdentifier = `Interlude I-${chapterNumber}`;
+    outputFile = path.join(chaptersDir, `interlude-i-${chapterNumber}.md`);
   } else {
     console.error('❌ Invalid chapter type or number');
     process.exit(1);
@@ -596,25 +728,32 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   
   if (args.length < 1) {
-    console.error('Usage: node generate-twok-chapters.js <prologue|chapter> [chapterNumber]');
+    console.error('Usage: node generate-twok-chapters.js <prologue|chapter|interlude> [chapterNumber] [interludeGroup]');
     console.error('Example: node generate-twok-chapters.js prologue');
     console.error('Example: node generate-twok-chapters.js chapter 1');
+    console.error('Example: node generate-twok-chapters.js interlude 1 1  (for Interlude I-1, in interlude-1 folder)');
     process.exit(1);
   }
 
   const chapterType = args[0];
   const chapterNumber = args[1] ? parseInt(args[1], 10) : null;
+  const interludeGroup = args[2] ? parseInt(args[2], 10) : null;
 
-  if (chapterType === 'chapter' && (!chapterNumber || isNaN(chapterNumber) || chapterNumber < 1)) {
-    console.error('❌ Chapter number must be a positive integer');
+  if ((chapterType === 'chapter' || chapterType === 'interlude') && (!chapterNumber || isNaN(chapterNumber) || chapterNumber < 1)) {
+    console.error('❌ Chapter/Interlude number must be a positive integer');
     process.exit(1);
   }
 
-  generateChapterNotes(chapterType, chapterNumber).catch(error => {
+  if (chapterType === 'interlude' && (!interludeGroup || isNaN(interludeGroup) || interludeGroup < 1)) {
+    console.error('❌ Interlude group number must be a positive integer');
+    process.exit(1);
+  }
+
+  generateChapterNotes(chapterType, chapterNumber, interludeGroup).catch(error => {
     console.error('❌ Error:', error);
     process.exit(1);
   });
 }
 
-module.exports = { generateChapterNotes, CHAPTER_DATA };
+module.exports = { generateChapterNotes, CHAPTER_DATA, INTERLUDE_DATA };
 
