@@ -2,6 +2,160 @@ const fs = require('fs');
 const path = require('path');
 
 /**
+ * Extract "Rowan's If Asked" section from chapter content
+ * @param {string} content - Full chapter note content
+ * @returns {string} - The "If Asked" section, or empty string if not found
+ */
+function extractIfAskedSection(content) {
+  // Look for the "Rowan's If Asked" section (case-insensitive, flexible formatting)
+  const patterns = [
+    /##\s*Rowan['"]?s?\s*["']?If\s+Asked["']?\s*Notes?[\s\S]*?(?=##|$)/i,
+    /##\s*Rowan['"]?s?\s*["']?If\s+Asked[\s\S]*?(?=##|$)/i,
+    /###\s*Rowan['"]?s?\s*["']?If\s+Asked["']?\s*Notes?[\s\S]*?(?=##|$)/i
+  ];
+  
+  for (const pattern of patterns) {
+    const match = content.match(pattern);
+    if (match) {
+      return match[0].trim();
+    }
+  }
+  
+  return '';
+}
+
+/**
+ * Remove "Rowan's If Asked" section from chapter content
+ * @param {string} content - Full chapter note content
+ * @returns {string} - Content without the "If Asked" section
+ */
+function removeIfAskedSection(content) {
+  // Remove the "If Asked" section using the same patterns
+  const patterns = [
+    /##\s*Rowan['"]?s?\s*["']?If\s+Asked["']?\s*Notes?[\s\S]*?(?=##|$)/i,
+    /##\s*Rowan['"]?s?\s*["']?If\s+Asked[\s\S]*?(?=##|$)/i,
+    /###\s*Rowan['"]?s?\s*["']?If\s+Asked["']?\s*Notes?[\s\S]*?(?=##|$)/i
+  ];
+  
+  let result = content;
+  for (const pattern of patterns) {
+    result = result.replace(pattern, '').trim();
+  }
+  
+  return result;
+}
+
+/**
+ * Reorder context to prioritize "If Asked" sections at the top
+ * @param {string} context - Full context string with chapter notes
+ * @returns {string} - Reordered context with "If Asked" sections first
+ */
+function prioritizeIfAskedSections(context) {
+  if (!context || context.trim().length === 0) {
+    return context;
+  }
+  
+  // Check if context has "If Asked" sections at all
+  const hasIfAsked = /##\s*Rowan['"]?s?\s*["']?If\s+Asked/i.test(context);
+  if (!hasIfAsked) {
+    // No "If Asked" sections, return original context
+    return context;
+  }
+  
+  // Split context by chapter/section boundaries
+  // Match: --- LABEL --- followed by content until next --- or end
+  const sectionRegex = /---\s*([^-]+?)\s+---\s*([\s\S]*?)(?=---\s*[^-]+?\s+---|$)/gi;
+  const sections = [];
+  let lastIndex = 0;
+  let match;
+  
+  while ((match = sectionRegex.exec(context)) !== null) {
+    // Capture any content before this section
+    if (match.index > lastIndex) {
+      const prefixContent = context.substring(lastIndex, match.index).trim();
+      if (prefixContent) {
+        sections.push({ type: 'prefix', label: '', content: prefixContent });
+      }
+    }
+    
+    sections.push({
+      type: 'section',
+      label: match[1].trim(),
+      content: match[2].trim()
+    });
+    
+    lastIndex = match.index + match[0].length;
+  }
+  
+  // Capture any remaining content after last section
+  if (lastIndex < context.length) {
+    const suffixContent = context.substring(lastIndex).trim();
+    if (suffixContent) {
+      sections.push({ type: 'suffix', label: '', content: suffixContent });
+    }
+  }
+  
+  // If no sections found (no --- boundaries), treat entire context as one section
+  if (sections.length === 0) {
+    sections.push({ type: 'section', label: '', content: context });
+  }
+  
+  // Extract "If Asked" sections and separate other content
+  const ifAskedSections = [];
+  const otherSections = [];
+  const prefixContent = [];
+  
+  for (const section of sections) {
+    if (section.type === 'prefix') {
+      prefixContent.push(section.content);
+      continue;
+    }
+    
+    const ifAsked = extractIfAskedSection(section.content);
+    const restOfContent = removeIfAskedSection(section.content);
+    
+    if (ifAsked) {
+      const label = section.label ? `${section.label} - ` : '';
+      ifAskedSections.push(`--- ${label}"IF ASKED" NOTES (HIGHEST PRIORITY) ---\n${ifAsked}`);
+    }
+    
+    if (restOfContent.trim()) {
+      if (section.label) {
+        otherSections.push(`--- ${section.label} ---\n${restOfContent.trim()}`);
+      } else {
+        otherSections.push(restOfContent.trim());
+      }
+    }
+  }
+  
+  // If we have prefix content (like book summaries), keep it at the very top
+  // Then "If Asked" sections, then other sections
+  const reorderedParts = [];
+  
+  if (prefixContent.length > 0) {
+    reorderedParts.push(...prefixContent);
+    reorderedParts.push('');
+  }
+  
+  if (ifAskedSections.length > 0) {
+    reorderedParts.push('⚠️ CRITICAL: Check the "IF ASKED" sections below FIRST - these contain pre-written Q&As that should form the foundation of your answer.');
+    reorderedParts.push('');
+    reorderedParts.push(...ifAskedSections);
+    reorderedParts.push('');
+  }
+  
+  if (otherSections.length > 0) {
+    if (ifAskedSections.length > 0) {
+      reorderedParts.push('--- REMAINING CHAPTER NOTES (for additional context) ---');
+      reorderedParts.push('');
+    }
+    reorderedParts.push(...otherSections);
+  }
+  
+  return reorderedParts.join('\n\n');
+}
+
+/**
  * Determine how many chapters of context are needed based on the user's question
  * @param {string} message - User's question
  * @returns {number} - Number of previous chapters to include
@@ -186,6 +340,9 @@ function loadChapterContext(bookTitle, currentChapter, contextWindow = 1) {
   metadata.notesAvailable = context.length > 0;
   metadata.notesLength = context.length;
 
+  // Reorder context to prioritize "If Asked" sections at the top
+  context = prioritizeIfAskedSections(context);
+
   return { context, metadata };
 }
 
@@ -277,11 +434,14 @@ function loadKnowledgeSnapshot(bookTitle, currentChapter) {
 
     if (bestSnapshot) {
       const snapshotPath = path.join(snapshotsDir, bestSnapshot.file);
-      const snapshotContent = fs.readFileSync(snapshotPath, 'utf-8');
+      let snapshotContent = fs.readFileSync(snapshotPath, 'utf-8');
       
       metadata.snapshotAvailable = true;
       metadata.snapshotChapter = bestChapter;
       metadata.snapshotLength = snapshotContent.length;
+
+      // Reorder snapshot to prioritize "If Asked" sections at the top
+      snapshotContent = prioritizeIfAskedSections(snapshotContent);
 
       return {
         context: snapshotContent,
