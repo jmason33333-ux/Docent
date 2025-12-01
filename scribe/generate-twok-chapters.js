@@ -1448,6 +1448,65 @@ Plot summary
 Szeth is now serving a man named Took, who uses him to gain the admiration of mine workers (and free drinks) in the small towns they pass through. As a demonstration of Szeth's total obedience, he has him do various things, such as jump up and down and cut his own arm. When he orders Szeth to kill himself, Szeth informs him that he cannot be ordered to kill himself, and returns to his own thoughts. The others are shocked at how refined his speech is and are slightly discomfited, associating him with the lighteyes. Szeth reflects that his speech and mannerisms may well be part of the reason that his masters never keep him for long, since his masters know that he is capable of so much more than they are using him for, and that in many ways, he is much more refined and intelligent than they are. Szeth revels in his common labor, though, as it means that he is not being used to spill more blood.
 
 As the night passes on and it becomes apparent that the townsfolk are no longer really listening to Took's stories, Took and Szeth leave. However, on the way out of town, Took is killed by a group of thugs, who consider selling Szeth to the slavers. Then one of them picks up Szeth's Oathstone, and he informs them of his obligation to serve them as long as they hold it. When asked for clarification, Szeth tells him that he must obey any order except to kill himself, and thinks to himself that he can't be asked to give up his Shardblade either, but the man need not know that. The man muses for a moment on the possibilities he has with such a servant.`
+  },
+  4: {
+    title: 'Rysn',
+    pov: 'Rysn Ftori',
+    text: `Interlude I-4: Rysn
+
+Characters
+
+Rysn Ftori (point of view)
+
+Vstim
+
+Kylrm
+
+Thresh-son-Esan
+
+Szeth (mentioned only)
+
+Plot summary
+
+Rysn and her babsk Vstim visit Shinovar to trade with the Shin. She's annoyed at the strange grass that doesn't retract. Vstim has her set up a fabrial that warns when people are approaching. When the Shin arrive, she thinks the guards are servants because they are dressed plainly, and Vstim explains that Shin farmers are highest in the social order and warriors are the lowest. Vstim offers Thresh scraps of Soulcast metal in exchange for chickens and other valuable exotic goods. The metal is certified to be Soulcast from organic materials and not mined. Vstim asks if Thresh has another servant like the one he gave him seven years ago that was so obedient. Thresh says that he was a worthless Truthless (Szeth) and that he hoped there wouldn't be another one like him.`
+  },
+  5: {
+    title: 'Axies the Collector',
+    pov: 'Axies',
+    text: `Interlude I-5: Axies the Collector
+
+Characters
+
+Axies (point of view)
+
+Cusicesh
+
+Plot summary
+
+Axies the Collector wakes up in an alley in Kasitor lying in rotting garbage. He had gotten drunk the night before to see if he could spot Alespren, and he's been deposited here, naked. He manages to grab a ratty blanket from an insane beggar and walks out into the streets, drawing stares. He heads to the docks, where many people are waiting. Cusicesh the Protector appears in the water, leaving him feeling drained. A street urchin grabs his blanket, leaving him naked again. He's hauled off to jail, content at having seen two new spren. Perhaps he will finally see the elusive captivityspren.`
+  },
+  6: {
+    title: 'A Work of Art',
+    pov: 'Szeth',
+    text: `Interlude I-6: A Work of Art
+
+Characters
+
+Szeth (point of view)
+
+Makkek
+
+Gavashaw
+
+Took (mentioned only)
+
+Neturo (mentioned only)
+
+Hanavanar (mentioned only)
+
+Plot summary
+
+Szeth sits in a gambling den as his owner, Makkek, parades about with a woman on each arm. He has grown fat and rich since coming into possession of Szeth. He gives a signal to Szeth, and he heads out on his latest assassination assignment: Gavashaw, a new arrival in town who had hoped to challenge Makkek with his own gambling den. He sneaks into his house and hears nothing in his room, so he sends in a decoy -- a wooden knob "dressed" in a robe (curtain) -- by lashing it to the far wall. The decoy isn't attacked, so he slinks into the room, finding Gavashaw's severed head. A new master is there, who produces Makkek's head and Szeth's Oathstone. He is given a list of high ranking noble men to assassinate.`
   }
 };
 
@@ -1477,11 +1536,12 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
     } else if (chapterType === 'chapter') {
       // Determine which part based on chapter number
       // Part 1: chapters 1-11
-      // Part 2: chapters 12+
+      // Part 2: chapters 12-28
+      // Part 3: chapters 29+
       let partNumber = 1;
-      if (chapterNumber && chapterNumber >= 12 && chapterNumber <= 26) {
+      if (chapterNumber && chapterNumber >= 12 && chapterNumber <= 28) {
         partNumber = 2;
-      } else if (chapterNumber && chapterNumber >= 27 && chapterNumber <= 50) {
+      } else if (chapterNumber && chapterNumber >= 29 && chapterNumber <= 50) {
         partNumber = 3;
       } else if (chapterNumber && chapterNumber >= 51) {
         partNumber = 4; // Adjust as needed for later parts
