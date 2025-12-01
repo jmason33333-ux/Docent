@@ -385,60 +385,110 @@ The story takes place in [setting description]. Key locations include [places, w
  * @param {string} bookTitle - The book title
  * @param {number} chapterNumber - Chapter number
  * @param {string|null} chapterText - Optional: The actual chapter text for accuracy
+ * @param {string|null} coppermindSummary - Optional: Coppermind wiki summary
  */
 function getChapterNotesPrompt(bookTitle, chapterNumber, chapterText = null, coppermindSummary = null) {
+  // Handle string chapter identifiers (Prologue, Epilogue, etc.)
+  const chapterDisplay = typeof chapterNumber === 'number' 
+    ? (chapterNumber === 0 ? 'Prologue' : chapterNumber === 999 ? 'Epilogue' : `Chapter ${chapterNumber}`)
+    : chapterNumber;
+  
+  // Auto-detect Coppermind format if chapterText looks like a Coppermind summary
+  const isCoppermindFormat = chapterText && (
+    chapterText.includes('Characters\n') ||
+    chapterText.includes('Characters\n\n') ||
+    chapterText.includes('Plot summary') ||
+    chapterText.includes('Plot Summary') ||
+    chapterText.match(/^Chapter \d+:/) ||
+    chapterText.match(/^Interlude/)
+  );
+
+  // Use coppermindSummary parameter if provided, otherwise use chapterText if it's Coppermind format
+  const effectiveCoppermindSummary = coppermindSummary || (isCoppermindFormat ? chapterText : null);
+  const effectiveChapterText = (coppermindSummary || isCoppermindFormat) ? null : chapterText;
+
   let sourceNote = '';
-  if (chapterText) {
+  if (effectiveChapterText) {
     sourceNote = `\n\nCHAPTER TEXT (use this as your source material):
-${chapterText}
+${effectiveChapterText}
 
 IMPORTANT: Base your notes EXCLUSIVELY on the chapter text provided above.`;
-  } else if (coppermindSummary) {
+  } else if (effectiveCoppermindSummary) {
+    // Extract Part number from summary if present
+    const partMatch = effectiveCoppermindSummary.match(/Part\s+(\d+)[:\-]\s*([^\n]+)/i);
+    const partInfo = partMatch ? `Part ${partMatch[1]}: ${partMatch[2].trim()}` : null;
+    
     sourceNote = `\n\nCOPPERMIND SUMMARY (use this as your primary source):
-${coppermindSummary}
+${effectiveCoppermindSummary}
 
 IMPORTANT: 
-- Use the Coppermind summary as your primary source
+- Use the Coppermind summary as your PRIMARY source
 - Expand on it with your knowledge of the book, but stay accurate
 - Include ALL characters listed (even "mentioned only" ones)
-- Preserve the Part number if provided
+- Preserve the Part number if provided (${partInfo ? `Found: ${partInfo}` : 'Not found in summary'})
 - Include chapter epigraphs if present in the summary
-- Expand the plot summary into detailed beats`;
+- Expand the plot summary into detailed beats
+${partInfo ? `- Add Part information to Metadata: "${partInfo}"` : ''}`;
   } else {
     sourceNote = `\n\nNOTE: No chapter text provided. Use your training data knowledge of ${bookTitle}, but be aware you may not have perfect recall of all details.`;
   }
 
+  // Enhanced rules for Coppermind summaries
+  const enhancedRules = effectiveCoppermindSummary ? `
+5. Include ALL characters from the Coppermind "Characters" section:
+   - POV character(s) in "POV Character(s)" subsection
+   - Characters who appear in "Characters Who Appear" subsection
+   - Characters marked as "mentioned only" in "Characters Mentioned Only" subsection
+6. Preserve Part number if provided in the summary (add to Metadata section)
+7. Include chapter epigraphs if present (the quotes/inscriptions at the start)
+8. Mark callbacks to earlier chapters explicitly (e.g., "Callback to Chapter X")
+9. Flag potential confusion points that readers commonly struggle with
+10. Include "If Asked" notes for common questions about this section (aim for 8-10 detailed Q&A pairs)
+11. Add details about characters, locations, magic/mechanics, themes, and foreshadowing
+12. Provide detailed "Time Context" in Metadata (e.g., "Some hours after last chapter", "Concurrent with Chapter X")
+13. Track "Chapters Since Last [Character] POV" for each POV character in Metadata
+
+CHARACTER LISTING ENHANCEMENT:
+- The Coppermind summary includes a "Characters" section - use this as your source
+- Include EVERY character listed, even if marked "mentioned only"
+- "Mentioned only" characters help answer "who is X?" questions even if they don't appear
+- For each character, provide context about their role/relevance in THIS chapter` : `
+5. Include ALL characters from the source (POV, appears, and mentioned-only)
+6. Preserve Part numbers and chapter epigraphs if provided
+7. Mark callbacks to earlier chapters explicitly (e.g., "Callback to Chapter X")
+8. Flag potential confusion points that readers commonly struggle with
+9. Include "If Asked" notes for common questions (aim for 8-10 detailed Q&A pairs)`;
+
   return `You are creating detailed chapter notes for a fantasy reading companion app called Docent.
 
 CRITICAL RULES:
-1. Only include events and information from THIS CHAPTER (Chapter ${chapterNumber})
-2. Do NOT reference or hint at events from later chapters
-3. Mark any callbacks to earlier chapters explicitly (e.g., "Callback to Chapter 5")
-4. Flag potential confusion points that readers commonly struggle with
-5. Be accurate to the source material - no hallucinations
-6. Use the EXACT template structure provided below
-7. Include ALL characters from the source (POV, appears, and mentioned-only)
-8. Preserve Part numbers and chapter epigraphs if provided
+1. Only include events and information from THIS SECTION (${chapterDisplay})
+2. Do NOT reference or hint at events from later sections
+3. Be accurate to the source material - no hallucinations
+4. Use the EXACT template structure provided below${enhancedRules}
+
 ${sourceNote}
 
 BOOK: ${bookTitle}
-CHAPTER: ${chapterNumber}
+SECTION: ${chapterDisplay}
 
 Use this EXACT template:
 ${CHAPTER_NOTES_TEMPLATE}
 
-Now generate the chapter notes for Chapter ${chapterNumber} of ${bookTitle}.
+Now generate the chapter notes for ${chapterDisplay} of ${bookTitle}.
 
 Focus on:
 - Accurate plot summary (expand Coppermind summary into detailed beats)
 - Complete character list (include everyone, even mentioned-only)
-- Character development in THIS chapter only
-- World-building revealed in THIS chapter
+- Character development in THIS section only
+- World-building revealed in THIS section
 - Chapter epigraphs and their significance
 - Common confusion points
 - Helpful context for readers
+- Detailed metadata (Part, Time Context, Chapters Since Last POV)
+- 8-10 comprehensive "If Asked" Q&A pairs addressing common reader questions
 
-Remember: SPOILER SAFETY is paramount. Only use information up to this chapter.`;
+Remember: SPOILER SAFETY is paramount. Only use information up to this section.`;
 }
 
 /**

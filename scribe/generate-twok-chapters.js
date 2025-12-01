@@ -3720,12 +3720,22 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
     }
   }
 
-  console.log(`\n📚 Generating notes for ${bookTitle}, ${chapterType === 'prologue' ? 'Prologue' : `Chapter ${chapterNumber}`}...\n`);
-  console.log(`✅ Using provided text (${chapterData.text.length} characters)`);
+  console.log(`\n📚 Generating notes for ${bookTitle}, ${chapterType === 'prologue' ? 'Prologue' : chapterType === 'epilogue' ? 'Epilogue' : `Chapter ${chapterNumber}`}...\n`);
+  console.log(`✅ Using provided Coppermind summary (${chapterData.text.length} characters)`);
   console.log('\n🤖 Generating formatted notes with AI... (this may take 30-60 seconds)\n');
 
-  // Generate prompt with the chapter text
-  const prompt = getChapterNotesPrompt(bookTitle, chapterIdentifier, chapterData.text);
+  // Determine chapter number for the prompt (use actual number for chapters, 0 for prologue, 999 for epilogue)
+  let promptChapterNumber = chapterNumber;
+  if (chapterType === 'prologue') {
+    promptChapterNumber = 0;
+  } else if (chapterType === 'epilogue') {
+    promptChapterNumber = 999;
+  } else if (chapterType === 'interlude') {
+    promptChapterNumber = chapterNumber; // Interlude number
+  }
+
+  // Generate prompt - the function will auto-detect Coppermind format from the text
+  const prompt = getChapterNotesPrompt(bookTitle, promptChapterNumber, chapterData.text);
   
   // Generate formatted notes
   let formattedNotes;
