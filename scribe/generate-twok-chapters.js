@@ -1702,6 +1702,366 @@ Plot Summary
 Kal helps his mother with the cooking as Tien shows off another pretty stone he has found. Kal immediately leaves when he sees a carriage from Roshone come to pick up his father. He insists on coming along. Lirin is surprised because Kal shouldn't have known about it but lets him join. This meeting is about the spheres that Lirin got from the former citylord Wistiow. Lirin and Kal sit down to eat with Roshone, but Lirin refuses to eat. He and Roshone argue about the spheres, Roshone offering a settlement: he takes nine-tenths, leaving the rest to Lirin. Kaladin is indignant and is dismissed from the table by his father. Kal goes to the kitchen and meets Laral and Roshone's son Rillir. He treats Kal like a servant and Laral plays along initially. When Kaladin refuses to serve him, he continues to taunt him. Laral pleads with him to stop, and they leave. His experience with the haughty lighteyes has changed his mind again: he wants to be a surgeon, not a soldier.
 
 While on the way home Lirin tells Kal that he made Roshone believe that he probably will bend on the topic of these spheres. Kaladin realizes that it's a tactic designed to make him focus on a deal rather than proving the truth -- that the spheres really were stolen. Kaladin is shocked to belong to a family of thieves. Lirin justifies it by saying that Wistiow would have given him the spheres anyway. Kal makes another decision that night: he starts going with his full name "Kaladin," for it is a man's name.`
+  },
+  38: {
+    title: 'Envisager',
+    pov: 'Kaladin, Teft',
+    text: `Chapter 38: Envisager
+
+Characters
+
+Kaladin (point of view)
+
+Teft (point of view)
+
+Syl
+
+Skar
+
+Gashash-son-Navammis (mentioned only)
+
+Lirin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Tien (mentioned only)
+
+Goshel (mentioned only)
+
+Dallet (mentioned only)
+
+Lamaril (mentioned only)
+
+Leyten (mentioned only)
+
+Stormfather (mentioned only)
+
+Gaz (mentioned only)
+
+Plot Summary
+
+Kaladin lies in Bridge Four's barrack, suffering fever from the wounds he got being strung up in the highstorm. Most of the time he's unconscious. In his rare lucid moments he sees deathspren, and Syl, a small figure of pure white light holding a sword made of light. She fights the deathspren with her sword and wards them off. Kaladin just wants to relax and die, but he fights to survive because he doesn't want to fail Bridge Four like he did Tien, Dallet, and others. He notices more deathspren each time he is lucid enough to see them.
+
+Skar watches over Kaladin. They keep a guard on him at all times to keep away prying eyes and possible assassination attempts. Teft comes to relieve him to test a theory, a belief he once rejected as a child of Envisagers. He puts three diamond spheres into Kaladin's hand, then waits. When he nearly thinks that he wasn't right, Kaladin gasps, breathing in Stormlight. Teft sees Stormlight rising from Kaladin's body, knitting some of the wounds. The Stormlight is depleted quickly, but Kaladin seems more relaxed than before with more color to his skin. Teft curses Kaladin for revealing the truth to him now, in this place. He knows that Kaladin can heal, but he has to do it carefully, a little at a time, to conceal what is happening.`
+  },
+  39: {
+    title: 'Burned Into Her',
+    pov: 'Shallan Davar',
+    text: `Chapter 39: Burned Into Her
+
+Characters
+
+Shallan Davar (point of view)
+
+Balat Davar
+
+Eylita Tavinar
+
+Alezarv (mentioned only)
+
+Calinam (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Taravangian (mentioned only)
+
+Sur Kamar (mentioned only)
+
+Kabsal (mentioned only)
+
+Plot summary
+
+Shallan is sitting in her room restlessly drawing the deaths of the four robbers from three nights ago, even though she didn't deliberately take the memories. As she draws, she thinks about different concepts of logic and philosophy, considering Jasnah's actions and reasons in the context of the different schools of thought. She also worries about her own actions in stealing the Soulcaster in the same way. Her mind wanders for a while and she looks at what she's been drawing. She's shocked to see a completely different scene being sketched -- one of a richly-dressed man lying in a pool of blood. Panicked, she hurries from the room and runs into a servant who informs her that one of her spanreeds is flashing and hands it over to her. Going into the main room, she is glad to find her brother Balat talking to her. She tells him that she has managed to steal the Soulcaster but hasn't left yet so as not to draw suspicion onto herself. Balat informs her that the "friends" of their father visited again. Shallan frets even more about the theft and when a chambermaid comes to their quarters, she starts worrying about the Soulcaster's safety. She decides to put it into her safe-pouch and leaves the room with a basket full of bread and Bluebar jam left by Kabsal.
+
+Two hours later sitting in the palace gardens, Shallan has calmed down and is drawing some snails and plants. She notes the symbiotic relationship between a snail she is drawing and the shalebark it is on, writing it down next to her drawing. After making sure she is alone, she gets the Soulcaster out to try to puzzle out how to use it since Luesh can no longer show them how. She has no luck and tries to think of other ways to get it to work or save her family.`
+  },
+  40: {
+    title: 'Eyes of Red and Blue',
+    pov: 'Kaladin',
+    text: `Chapter 40: Eyes of Red and Blue
+
+Characters
+
+Kaladin (point of view)
+
+Lopen
+
+Rock
+
+Moash
+
+Torfin
+
+Hobber
+
+Peet
+
+Teft
+
+Dabbid
+
+Natam
+
+Sigzil
+
+Syl
+
+Maps
+
+Dunny
+
+Skar
+
+Bisig
+
+Stormfather (mentioned only)
+
+Idolir (mentioned only)
+
+Treff (mentioned only)
+
+Gaz (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+Kaladin leaves the barrack for the first time after his judgment in the highstorm. He is fairly weak, but his wounds are mostly gone. The members of Bridge Four, doing daily bridge training, nearly stumble over one another when they see him. Moash tells him that it's only been ten days and Rock says Kaladin must have bones like granite. When the horns blow for a bridge run and Bridge Four -- on duty -- gathers, Kaladin joins them, helping Lopen and Dabbid with the water. Later he watches the battle, thinking about what he did with the side carry and comes to understand what's the purpose of bridgemen: to be bait for the Parshendi because bridgemen are cheaper than soldiers and don't need training and equipment.
+
+Later that evening, Bridge Four gives Rock a razor as a gift for his making the stew every evening. With tears in his eyes, he runs into the barrack, leaving the others wondering if the gift was a good idea. Dunny starts to serve the stew to the others. Only Sigzil doesn't join in, so Kaladin seeks him out for a conversation. He tells Kaladin about Marabethia and their method of execution. Eventually Rock comes back, shaved, happy and grateful and tells Bridge Four that he will shave everybody who wants it. Kaladin despairs that the old wretch is coming back because he knows the bridgemen really have no chance to survive.`
+  },
+  41: {
+    title: 'Of Alds and Milp',
+    pov: 'Kaladin',
+    timeContext: 'Five and a half years ago',
+    text: `Chapter 41: Of Alds and Milp
+
+Characters
+
+Kaladin (point of view)
+
+Laral Roshone
+
+Lirin
+
+Rillir Roshone
+
+Toralin Roshone
+
+Hesina
+
+Tien
+
+Wistiow (mentioned only)
+
+Alds (mentioned only)
+
+Milp (mentioned only)
+
+Plot Summary
+
+Brightlord Roshone and his son Rillir were attacked by whitespine while on a hunt. Rillir is mortally wounded. Lirin tries to save him, but realizes it is hopeless, so he turns his attention to Roshone, who demands that he go back to helping his son. Lirin refuses, explaining the guidelines of a surgeon with two patients: if the wounds are equal, treat the youngest first; if the wounds are not equally threatening, treat the worst wound first. The third guideline supersedes the first two: a surgeon must know when someone is beyond their ability to help. While stitching up part of Roshone's wound, Lirin's knife is dangerously close to a major artery. He hesitates and his hand shakes, but he continues and saves Roshone's life.
+
+Kaladin asks Lirin later why he didn't cut the artery and let Roshone die, as it would've solved all of their problems. Lirin says it would have been murder, and he is not a killer. Even if the lighteyes don't care about life, somebody has to start caring. Kaladin realizes that, given the option, he would have let Roshone die. He decides that just as some body parts are beyond repair in a surgery, some people need to be removed.`
+  },
+  42: {
+    title: 'Beggars and Barmaids',
+    pov: 'Shallan Davar',
+    text: `Chapter 42: Beggars and Barmaids
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Kabsal
+
+Masly (mentioned only)
+
+Coldwin (mentioned only)
+
+Hasavah (mentioned only)
+
+Cormshen (mentioned only)
+
+Innia (mentioned only)
+
+Talatin (mentioned only)
+
+Guvlow (mentioned only)
+
+Elhokar Kholin (mentioned only)
+
+Tozbek (mentioned only)
+
+Ashlv (mentioned only)
+
+Plot Summary
+
+Shallan tells Jasnah that she thinks she was technically right to kill the footpads, but she acted immorally and unethically. Jasnah is satisfied that Shallan has learned a good deal from the lesson and dismisses her for the rest of the day. It's been two weeks since the Soulcaster was stolen, and Shallan is puzzled that Jasnah hasn't seemed to react at all. Back in her chambers, she attempts to use the Soulcaster while humming for half an hour. She wonders if Jasnah might have duped her with a fake. She takes a break and starts sketching, and she suddenly hears a voice asking "What are you?" A maid cracks open the door, and Shallan convinces herself that she must have interpreted the random sounds of cleaning nearby as words. She scolds the maid for going into Jasnah's room, then sends her off to tell Jasnah so she can enter herself. She hurries in hoping to find notes on soulcasting. She instead finds a notebook focused on Natanatan, the Unclaimed Hills, and the Shattered Plains. The two others contain notes on Urithiru and the Voidbringers. Shallan wonders why a nonbeliever like Jasnah would concern herself with what she herself considers fables. A knock on the door reveals Kabsal, who having heard that she has free time, brought some bread and jam for a picnic.
+
+Kabsal explains the stories behind the Truthberry jam. Shallan laments that she isn't much of a scholar since she prefers the outdoors. Kabsal starts flirting, and although Shallan thinks that it wouldn't work out for them, she encourages him. He implies that he might leave the ardentia for her. Shallan steers the conversation to Jasnah. He reveals that his initial plan was to get Shallan to help him steal her soulcaster, but his superiors disapproved. They were afraid that Elhokar might start a war with Kharbranth. Shallan probes for some hints on how to use it. He says you only have to tap a gem and touch the object you wish to change, but Jasnah doesn't do that. Kabsal leaves and Shallan returns inside, finding a note from Captain Tozbek informing her that he will arrive in one week. She wants to study as much as possible before leaving, so she goes back to Jasnah to read.`
+  },
+  43: {
+    title: 'The Wretch',
+    pov: 'Kaladin',
+    text: `Chapter 43: The Wretch
+
+Characters
+
+Kaladin (point of view)
+
+Hobber
+
+Syl
+
+Hashal
+
+Avarak Matal
+
+Rock
+
+Gaz
+
+Dunny
+
+Moash
+
+Peet
+
+Teft
+
+Sigzil
+
+Skar
+
+Leyten
+
+Jaks
+
+Lamaril (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Durk (mentioned only)
+
+Tvlakv (mentioned only)
+
+Goshel (mentioned only)
+
+Tien (mentioned only)
+
+Tukks (mentioned only)
+
+Dallet (mentioned only)
+
+Plot Summary
+
+Kaladin wakes up feeling dread and despair, as he realizes that all of the Bridgemen are simply bait, destined to die. He finds the rest of the men lined up and waiting for him to lead them in practice. Before he can tell them how useless it is, he sees Lamaril's replacement: Brightlord Matal and his wife Hashal. Hashal speaks for her husband and tells Kaladin that the Almighty has simply given Kaladin another chance to prove himself as a bridgeman, nothing more. She claims that her husband is a well respected and honored associate of Sadeas, and Kaladin wonders out loud how he ended up in this position. Hashal directs one of her men to beat him, but Kaladin catches the spear aimed at him. In his mind he sees how to beat not only the soldier attacking him but his three companions as well, but decides against it, letting go of the spear and letting the next hit land. She informs them that they'll only be doing chasm duty from now on.
+
+Kaladin climbs down into the chasm. Syl wonders why he isn't happy from surviving the highstorm. Kaladin chafes from not fighting the soldiers, but it wouldn't have helped to protect the men. Syl vaguely remembers helping men kill, to Kaladin's shock. Sometimes it is right to kill. The rest of the men climb down and Kaladin starts walking. Rock asks what they are going to do next in order to fight, and Kaladin insists that the fight is over. They find a pile of bodies and get to work. Teft stops by and also asks what's next, and Kaladin angrily replies that there is no hope, leading some of the men to grumble. Teft argues that it's not about surviving, quoting part of the Radiant oath "journey before destination." Syl likes the saying and encourages Kaladin to not give up. Kaladin thinks for a while and finally decides to try again, announcing to the men that the only chance is to try to escape. He offers to train them as spearmen, hoping it will increase their poor odds of escaping. All but Rock eagerly agree. Fighting is beneath Rock; he will cook instead.`
+  },
+  44: {
+    title: 'The Weeping',
+    pov: 'Kaladin',
+    timeContext: 'Five years ago',
+    text: `Chapter 44: The Weeping
+
+Characters
+
+Kaladin (point of view)
+
+Tien
+
+Hesina
+
+Lirin
+
+Jost
+
+Naget
+
+Waber
+
+Toralin Roshone
+
+Meridas Amaram
+
+Laral Roshone
+
+Natir
+
+Alaxia
+
+Callins
+
+Abry
+
+Harl
+
+Rillir Roshone (mentioned only)
+
+Ral (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Agil (mentioned only)
+
+Marf (mentioned only)
+
+Caull (mentioned only)
+
+Taleb (mentioned only)
+
+Habrin (mentioned only)
+
+Arafik (mentioned only)
+
+Jorna (mentioned only)
+
+Loats (mentioned only)
+
+Plot Summary
+
+Kaladin lays on the roof after making a temporary repair. Tien joins him and gives him a beautifully carved wooden horse. Kaladin worries because his father had to spend another sphere. Their mother comes out and joins them, trying to assuage his concerns. The only reason he spent one was to try to bluff Roshone into thinking they were growing desperate. They discuss his future prospects, including the possibility of pursuing other professions, but Kaladin is set on becoming a surgeon like his father. Lirin comes out and tells them there is a gathering in the square. When they arrive, they notice that Laral is engaged, apparently to Roshone himself. Kaladin is appalled and starts forward to "stop it," but Lirin tells him to stand down. Roshone announces that Amaram is here to recruit, and several young men volunteer. The quota is not met, however, so Amaram tells Roshone to read the list of conscripts. The last name read is Tien. Amaram is familiar with the situation and asks Roshone to provide a different name, but Roshone insists. Kaladin tries to volunteer to take his place, but again Roshone insists that Tien be conscripted. So Kaladin instead volunteers in order to protect him. He is relieved, but their parents walk away devastated and crying. Kaladin swears an oath that he'll bring back Tien in four years.`
+  },
+  45: {
+    title: 'Shadesmar',
+    pov: 'Shallan Davar',
+    text: `Chapter 45: Shadesmar
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Kabsal
+
+Yelig-nar (mentioned only)
+
+Traxil (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Matain (mentioned only)
+
+Klade (mentioned only)
+
+Navani Kholin (mentioned only)
+
+Tifandor (mentioned only)
+
+the Almighty (mentioned only)
+
+Lin Davar (mentioned only)
+
+Plot Summary
+
+Shallan continues her study of Gavilar's meetings with the Parshendi before his death. She notices a discrepancy about Gavilar's uncharacteristic scholarly interest in the Parshendi. She plans to leave for Jah Keved the next day to take the stolen Soulcaster to her family. Under the pretense of looking for another book, she researches a little of her own about the Voidbringers, knowing that it's Jasnah's true research interest. After studying for a couple of hours, Kabsal finds her. After a theological discussion about the Voidbringers, she tells him of her plans to leave. He requests a likeness of him from her, and after paying her for it, asks for another one with himself and her in the picture. She draws two creatures in the background, with symbols for a head. Frightened, she runs to her room while being pursued by the creatures, which continue to show up in her sketches as she runs through the halls. Trapped in her room, she begins to summon her Shardblade and one of the creatures asks her what she is. While touching a glass goblet filled with diamond spheres, her response of "I'm terrified" transports her to Shadesmar where she Soulcasts the goblet to blood. Back in her room, Jasnah calls to her from outside her door. Terrified that she will discover her soulcasting, she cuts herself to explain the presence of the blood.`
   }
 };
 
