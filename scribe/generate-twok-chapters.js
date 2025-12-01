@@ -2062,6 +2062,286 @@ Lin Davar (mentioned only)
 Plot Summary
 
 Shallan continues her study of Gavilar's meetings with the Parshendi before his death. She notices a discrepancy about Gavilar's uncharacteristic scholarly interest in the Parshendi. She plans to leave for Jah Keved the next day to take the stolen Soulcaster to her family. Under the pretense of looking for another book, she researches a little of her own about the Voidbringers, knowing that it's Jasnah's true research interest. After studying for a couple of hours, Kabsal finds her. After a theological discussion about the Voidbringers, she tells him of her plans to leave. He requests a likeness of him from her, and after paying her for it, asks for another one with himself and her in the picture. She draws two creatures in the background, with symbols for a head. Frightened, she runs to her room while being pursued by the creatures, which continue to show up in her sketches as she runs through the halls. Trapped in her room, she begins to summon her Shardblade and one of the creatures asks her what she is. While touching a glass goblet filled with diamond spheres, her response of "I'm terrified" transports her to Shadesmar where she Soulcasts the goblet to blood. Back in her room, Jasnah calls to her from outside her door. Terrified that she will discover her soulcasting, she cuts herself to explain the presence of the blood.`
+  },
+  46: {
+    title: 'Child of Tanavast',
+    pov: 'Kaladin',
+    text: `Chapter 46: Child of Tanavast
+
+Characters
+
+Kaladin (point of view)
+
+Szeth
+
+the Stormfather
+
+Teft
+
+Rock
+
+Sigzil
+
+Moash
+
+Bisig
+
+Dunny
+
+Syl
+
+Lopen
+
+Dabbid
+
+Gaz
+
+Shen
+
+Skar
+
+Adolin Kholin
+
+Tivbet (mentioned only)
+
+Terxim (mentioned only)
+
+Honor (mentioned only)
+
+Odium (mentioned only)
+
+Hoid (mentioned only)
+
+Yake (mentioned only)
+
+Delp (mentioned only)
+
+Hashal (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Lirin (mentioned only)
+
+Durk (mentioned only)
+
+Tien (mentioned only)
+
+Hesina (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Reral Makoram (mentioned only)
+
+Plot Summary
+
+Kaladin rides the highstorm as he sweeps across Roshar. In the dream Kaladin views many places and people, a large portion of which he had never seen or heard of before. Blowing southwest and then westward, Kaladin sees flashes of lights, almost appearing to be physical things he could touch. Approaching them he sees that they came from a building amidst a city built of a triangular pattern. He bursts in there and sees a man with large Shin eyes, a Shardblade, wearing white (Szeth - the Assassin in White), just after he has committed an assassination. It feels to Kaladin as though the assassin could see him. Nearing the western ocean, Kaladin separates from the storm after hearing a booming voice that shakes the stormwall. This voice calls Kaladin a child of Tanavast and of Honor and warns him that Odium comes. Kaladin asks why there is so much war, and the voice responds, "Odium reigns." Kaladin then awakes inside his barracks, held down by dark figures. He instinctively starts to fight them off before realizing they are his bridge mates. They had to hold him down to stop him from running out into the highstorm while dreaming. They all go out to bathe in the riddens, and Kaladin decides to accept a shave from Rock. Rock reveals that Sigzil is a Worldsinger. Bridge Four is assigned a new crew member, a Parshman who can't bother to give them his name, so they call him Shen.
+
+Kaladin walks around camp to think. He asks Syl about Odium, and she hisses and zips off without a word. Kaladin sees an officer beating a whore in the street and starts to intervene, but he sees a high-ranking officer in blue (Adolin) come onto the scene. The officer backs down and Adolin offers to escort the lady out of the camp. He flips an emerald chip at Kaladin and tells him to pass along a message for him. Kaladin takes the chip but doesn't pass along the message.`
+  },
+  47: {
+    title: 'Stormblessings',
+    pov: 'Kaladin',
+    timeContext: 'One year ago',
+    text: `Chapter 47: Stormblessings
+
+Characters
+
+Kaladin (point of view)
+
+Gare
+
+Nalem
+
+Korabet
+
+Ven
+
+Dallet
+
+Cenn
+
+Larn
+
+Cyn
+
+Korater
+
+Toorim
+
+Veden Shardbearer
+
+Lyndel
+
+Meridas Amaram
+
+Acis
+
+Hamel
+
+Raksha
+
+Navar
+
+Hab
+
+Reesh
+
+Alabet
+
+Coreb
+
+Hallaw (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Galan (mentioned only)
+
+Toralin Roshone (mentioned only)
+
+Tien (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Norby (mentioned only)
+
+Plot Summary
+
+Kaladin's enlistment is almost up, but he has already decided to re-up because he can't face his parents for his failure to protect Tien. Kaladin bribes another squadleader to transfer a new recruit (Cenn) to his squad. Kaladin wonders why the Alethi fight amongst themselves so much when they also join together to fight against real foreign invaders. He walks by the surgeons to hand over another bribe so his men will receive quick aid on the battlefield. A windspren makes the pouch stick to his belt, making him stumble. He tosses it to Ven, the chief surgeon. When he gets to his squad, Cenn is already there. He looks so much like Tien, Kaladin has to look away. After scanning the battleground and conferring with Dallet, Kaladin's squad charges forward at the horn call.
+
+Kaladin is looking for Cenn in the battle and spots him in the middle of the enemy. He rushes to the boy's aid and quickly dispatches six opponents. Other members of the squad arrive and surround them while Kaladin bandages Cenn's wounded leg. Kaladin decides to attack a lighteyed officer on a horse, hoping to bring him down and earn a spot on the Shattered Plains. The officer underestimates his spearmen and is quickly dispatched. Toorim spots a Shardbearer in golden Shardplate with a majestic Shardblade. The Shardbearer tramples Cenn and kills others of the squad on his way to Amaram. Cenn utters his death rattle and dies. Kaladin and the remaining twenty men of his squad charge after the Shardbearer while everyone else is running away. They fight ferociously but with little effect. The Shardbearer effortlessly cuts them down with sweeps of his blade, killing all but four of the squad. Just as he approaches Amaram, Kaladin attacks again, aiming for the head. His spear is severed by the Shardblade, but he catches the spearhead in mid-air and slams it into the eye slit of the armor, killing the Shardbearer. He refuses to take the blade because that would make him one of "them," a corrupt lighteyes. He tells Coreb that it's his.`
+  },
+  48: {
+    title: 'Strawberry',
+    pov: 'Shallan Davar',
+    text: `Chapter 48: Strawberry
+
+Characters
+
+Shallan Davar (point of view)
+
+Taravangian
+
+Jasnah Kholin
+
+Kabsal
+
+Cormshen (mentioned only)
+
+Plot Summary
+
+Shallan is sketching while in a hospital and on suicide watch. She is growing accustomed to the creatures with the symbolheads who have been lurking in her drawings. She has her safepouch buttoned in her hospital robe. She notes how similar her current situation is to her time back home on her father's estate, having every need seen to but being unable to leave. The suicide attempt will make for an easy excuse to go home, so she can use the trip home to learn how to use the Soulcaster. She finishes her picture of the place she went to when she soulcast and figures that the Symbolheads must have something to do with Soulcasting. King Taravangian comes to visit and agrees to let Shallan have visitors. Jasnah enters and tries to apologize but doesn't do very well because of little practice. Jasnah then gifts Shallan with the "Book of Endless Pages" and explains the metaphor behind it. Kabsal enters with a basket of bread and strawberry jam. Jasnah seems curious about the jam and smells it, but does not eat any. She does eat bread with the others. Kabsal insists that Shallan try some of the jam, but to Shallan it smells awful, like it's gone bad. Even so, Kabsal scoops out a big glob and shoves it into his mouth, claiming it tastes good. He suddenly gets up and starts running from the room, but he collapses to the floor. Shallan rushes to his side, but she also starts feeling dizzy. Jasnah shouts that Shallan has been poisoned and that she needs a garnet. Thinking that Jasnah can't save her with the broken Soulcaster, Shallan upends her safepouch revealing the stolen one. She feels a flash of heat through her insides before all goes black.`
+  },
+  49: {
+    title: 'To Care',
+    pov: 'Kaladin',
+    text: `Chapter 49: To Care
+
+Characters
+
+Kaladin (point of view)
+
+Syl
+
+Teft
+
+Dunny
+
+Leyten
+
+Dabbid
+
+Rock
+
+Shen
+
+Moash
+
+Drehy
+
+Skar
+
+Lopen
+
+Allahn (mentioned only)
+
+Hesina (mentioned only)
+
+Extes (mentioned only)
+
+Durk (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Tukks (mentioned only)
+
+Varth (mentioned only)
+
+Gaz (mentioned only)
+
+Avarak Matal (mentioned only)
+
+Hashal (mentioned only)
+
+Plot Summary
+
+Kaladin and the rest of Bridge four are walking through the chasms. Kaladin thinks about where the water goes and if it might be possible to escape to the east if his dreams were real. He is pulled out of his thoughts by Teft who questions him about his health, whether he feels surges of strength or perhaps light. Thinking about it, Kaladin notes how fast he healed and wonders if he might be cursed like someone who sought out the old Magic. He considers if maybe Syl is not the only spren following him, but maybe an evil one as well. They find themselves at a crossroads and Kaladin decides to use this spot for their training. He tells the Bridgemen that normally in military training, the sergeant will attempt to humble the soldiers at first. But they don't need that because they don't dream of glory; they just want to escape and survive. His first lesson is that a soldier should care, not be cold and emotionless. He drops the spear and tells them that the second lesson is to learn to stand before holding a spear. He tells Skar to push him over, and he can't do it, even when others come in to help. He tells Teft to pair them off to practice and to oversee the training, and Teft responds like a soldier, revealing his past military experience. When he looks at Kaladin he can see that Kaladin also noticed it. Kaladin goes a little apart with Rock, who explains why he can't fight. Kaladin sends him along with Lopen, Dabbid, and Shen to collect salvage. When Rock notes that they can't do the work of a whole Bridge crew, Kaladin has Syl make herself visible to the rest so that she can help them search more quickly. Kaladin assures Lopen that he will still receive training but that it is more important now to bring up the quota of salvage so as not to be discovered. He rejoins the crew and helps Teft. The men learn in hours what should have taken them days to learn. Kaladin realizes that the Bridgemen have been prepared for training by the physical intensity of their bridge duty.`
+  },
+  50: {
+    title: 'Backbreaker Powder',
+    pov: 'Shallan Davar',
+    text: `Chapter 50: Backbreaker Powder
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Kabsal (mentioned only)
+
+Plot Summary
+
+Shallan wakes up in a private hospital room, feeling oddly healthy. A woman sees her awake and rushes out. Shallan has some trouble remembering what happened, so when she sees a guard looking in on her she asks what happened to her. Though he doesn't answer, she suddenly remembers being poisoned, and also Kabsal. Asking if he is alright, the guard only turns back, but when she tries to get up he glares at her, causing her to stay in bed. She remembers that she returned the stolen Soulcaster to Jasnah. Half an hour later Jasnah comes in and demands to know who ordered her to steal the Soulcaster. Shallan tells her that she stole it of her own volition to try to save her family from financial ruin. Jasnah tells her that Kabsal was trying to poison her all along with the bread. The jam contained the antidote so Shallan would survive. Jasnah tells Shallan how disappointed she is in her, and that she now understands that it was the guilt of the theft that drove Shallan to attempt suicide. No one will take her in as a ward now; she has thrown away a promising career. Jasnah leaves, leaving Shallan alone.`
+  },
+  51: {
+    title: 'Sas Nahn',
+    pov: 'Kaladin',
+    timeContext: 'One year ago',
+    text: `Chapter 51: Sas Nahn
+
+Characters
+
+Kaladin (point of view)
+
+Meridas Amaram
+
+Hab
+
+Reesh
+
+Alabet
+
+Coreb
+
+Lanacin (mentioned only)
+
+Evod Markmaker (mentioned only)
+
+Toralin Roshone (mentioned only)
+
+Tien (mentioned only)
+
+Thaidakar (mentioned only)
+
+Veden Shardbearer (mentioned only)
+
+Restares (mentioned only)
+
+Plot Summary
+
+Kaladin is waiting in one of Amaram's waiting rooms. Only four of his twenty-six men survived -- he had actually begun to believe those who called him lucky. Numb, he thinks how he can now be considered among those who have killed a Shardbearer like Lanacin the Surefooted, or Evod Markmaker, but he just doesn't care. Refusing the Shards was probably the stupidest thing anyone has ever done, but the thought of taking them revolts him. Amaram enters the room along with a Stormwarden. They are discussing the identity and motives of the shardbearer. The rest of the squad enters along with some lighteyed officers. Amaram asks Kaladin why he charged the Shardbearer and why he rejected the Shards. Kaladin doesn't want to reveal his disdain of lighteyes, and becoming one of them, so he replies that he doesn't know why. Amaram makes a signal, then his soldiers slaughter the four spearmen while Kaladin is held back by guards, shrieking in anger and agony at seeing his men murdered. Amaram looks guilty, but he justifies his actions by saying that he is trained in the sword and that Kaladin would demand the Shards back in a few days anyway. Since Kaladin saved his life, he will spare his. He will promulgate the story that he (Amaram) killed the Shardbearer and that Kaladin fled the scene, the rest of the squad killed by the Shardbearer. The Stormwarden brands Kaladin a slave.`
   }
 };
 
@@ -2206,6 +2486,59 @@ Hanavanar (mentioned only)
 Plot summary
 
 Szeth sits in a gambling den as his owner, Makkek, parades about with a woman on each arm. He has grown fat and rich since coming into possession of Szeth. He gives a signal to Szeth, and he heads out on his latest assassination assignment: Gavashaw, a new arrival in town who had hoped to challenge Makkek with his own gambling den. He sneaks into his house and hears nothing in his room, so he sends in a decoy -- a wooden knob "dressed" in a robe (curtain) -- by lashing it to the far wall. The decoy isn't attacked, so he slinks into the room, finding Gavashaw's severed head. A new master is there, who produces Makkek's head and Szeth's Oathstone. He is given a list of high ranking noble men to assassinate.`
+  },
+  7: {
+    title: 'Baxil',
+    pov: 'Baxil',
+    text: `Interlude I-7: Baxil
+
+Characters
+
+Baxil (point of view)
+
+Av
+
+the mistress
+
+the Prime Kadasix (mentioned only)
+
+Ashno (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Plot Summary
+
+Baxil and his cousin Av walk down a corridor of the palace of Ashno of Sages. Their mistress walks ahead and stops at an intersection. She asks for his bag of tools, and she proceeds into the Hallowed Hall where she begins to destroy works of art--slashing paintings with a knife and pounding on sculptures with a mallet. As she works, Baxil and Av talk about going to the Nightwatcher. Baxil claims he can avoid the curse by phrasing his request just right, but Av says it doesn't matter what your boon is, you get a curse no matter what. Baxil wishes he could get some courage using the Old Magic.`
+  },
+  8: {
+    title: 'Geranid',
+    pov: 'Geranid',
+    text: `Interlude I-8: Geranid
+
+Characters
+
+Geranid (point of view)
+
+Ashir
+
+Plot Summary
+
+Geranid and Ashir are two ardents in the twilight of life devoted to each other and their research. Geranid studies spren; Ashir uses cooking to experiment with chemistry. He wonders if he should change his Calling because food may not be needed in the Cognitive and Spiritual Realms. Geranid measures a flamespren and notes that it stays locked in its current state once it is measured. Ashir tells Geranid to go into the other room. He will call out three numbers, one the true measurement, and she is to only write down one. When he calls out the actual measurement, the spren locks in place. It seems to know when it is being measured.`
+  },
+  9: {
+    title: 'Death Wears White',
+    pov: 'Szeth',
+    text: `Interlude I-9: Death Wears White
+
+Characters
+
+Szeth (point of view)
+
+Hanavanar
+
+Plot Summary
+
+Szeth kills two guards and crashes through a door, entering the king's banquet, and starts to kill. King Hanavanar of Jah Keved yells for help. Szeth slaughters many of the people trying to flee and makes his way over to the king. Two Shardbearers come out from hiding and another squad wearing half-shards enter the room to attack. Szeth drops his sword and uses his Windrunner abilities to fling the attackers about the room. He infuses a stone multiple times and lashes it toward one of the Shardbearers, crushing him to death. He kills the rest of the honor guard easily and slams himself down on the king, pinning him to the floor. He puts his Shardblade to the king's throat.`
   }
 };
 
