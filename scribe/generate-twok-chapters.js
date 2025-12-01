@@ -3218,6 +3218,181 @@ Dalinar rides at the head of his remaining force. Seething with anger, he contem
 Kaladin watches the conference between Dalinar and Sadeas with the members of Bridge Four. The private conversation ends, and Sadeas states aloud that their alliance was "unfeasible." Dalinar claims the bridgemen, but Sadeas refuses to let them go. He offers sixty emerald broams for each member. But Sadeas is unwilling to sell, stating that he would not sell them for 1,000 broams and tells Dalinar to leave his camp. Kaladin turns away, thinking Dalinar would not be able to fulfill his promise when there are gasps of surprise. Kaladin turns to see that Dalinar had summoned his Shardblade. Dalinar offers his Shardblade for all of Sadeas's bridgemen. Sadeas accepts and mocks him for giving up his Shardblade for worthless slaves. Unable to believe what has just happened, Kaladin asks Dalinar why. Dalinar explains that Kaladin saved him and two thousand of his men. All of whose lives are priceless. In his opinion, one priceless sword is a small price to pay for two thousand lives, especially to keep his honor.
 
 Dalinar finds Elhokar in the sitting room of the palace wearing his Shardplate. Dalinar initiates a quick brawl in which he kicks Elhokar several times, cracking his Shardplate and repeatedly keeping him from summoning his blade. Dalinar ends the "fight" by breaking Elhokar's breastplate, subduing him. He then demands to know if Elhokar himself cut the girth on his own saddle to get Dalinar to take him more seriously. Reluctantly, Elhokar admits to cutting the girth. An exasperated Dalinar then explains the consequences of this -- including Sadeas's betrayal. Additionally, Dalinar demonstrates how easily he could kill Elhokar, stating that he could have done it a hundred times over and that he is not Elhokar's enemy. Releasing his nephew, he tells Elhokar that tomorrow he will appoint Dalinar as Highprince of War. Determined to finally see the war won and Alethkar united, he decides to stop trying to be Nohadon the peacemaker and return to being the Blackthorn, the warlord. Elhokar is reluctant, fearing rebellion from the various highprinces, but Dalinar turns to leave, confident that he will make the appointment and content knowing the challenges that are before him. Just before exiting, he also informs Elhokar about the courtship between himself and Navani.`
+  },
+  70: {
+    title: 'Sea of Glass',
+    pov: 'Shallan Davar',
+    text: `Chapter 70: Sea of Glass
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+the Spren
+
+Kabsal (mentioned only)
+
+Lin Davar (mentioned only)
+
+Plot Summary
+
+Shallan lay in her hospital bed lamenting her actions and, to her surprise, Kabsal's death. But as she recalls the events leading up to her poisoning, things do not completely add up. She wonders why the antidote did not work for Kabsal and why Jasnah was not poisoned since she too had eaten the poisoned bread. She finds her sketchpad and draws an imperfect drawing of Jasnah examining the strawberry jam, remembering that she was not repulsed by the smell. Then she draws Jasnah eating the bread. In her drawing, it looks like it is melting. Realizing something, she leaves the hospital and walks in the darkness to the Conclave wearing only her hospital robe. She tells Jasnah that she knows that Jasnah uses a fake Soulcaster. Showing her the picture Shallan had drawn of Shadesmar to a shocked Jasnah, she concludes that Jasnah never had a working Soulcaster. Jasnah disregards Shallan's statements as fatigue induced delusions. To prove her statements Shallan attempts to return to Shadesmar. Holding her partially dun garnet sphere, she speaks with the twisted symbol-headed spren. They request a truth, preferably a secret truth, to form a bond. To form the bond, Shallan admits to killing her father. She falls into the sea of beads. She begins to drown but is rescued by Jasnah who reprimands her for going to Shadesmar with only a single dim sphere. Shallan asks to be part of Jasnah's work in truth and be trained in Soulcasting. At first Jasnah objects, but Shallan apologizes and explains that she could be someone that can share Jasnah's secrets. Jasnah relents and makes Shallan promise never to lie or steal again and gives Shallan her notes on the Voidbringers.`
+  },
+  71: {
+    title: 'Recorded In Blood',
+    pov: 'Szeth',
+    text: `Chapter 71: Recorded In Blood
+
+Characters
+
+Szeth (point of view)
+
+Taravangian
+
+Gavilar Kholin (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Plot Summary
+
+Szeth, working as a porter, walks the streets of Kharbranth towards the King's palace. Having assassinated the other names on the list given him by his unseen master, he is in Kharbranth to finish his work and kill King Taravangian. Using his Shardblade, he cuts a hole in the servants privy to access the king's portion of the palace. Szeth easily subdues Taravangian's guards and enters the king's study. Following his instructions, Szeth informs the king that he has killed the others and is there to finish the job. But the king reveals himself to be Szeth's unknown master. He put his name on the list to deflect suspicion should Szeth fail. The king claims the assassinations are necessary to build a stronger Roshar for the coming years. Szeth accuses the king of using him to do his dirty work and, as a response, the king takes him to his secret hospital. The hospital is filled with dying people who are having their blood slowly drained. Here the king shows Szeth that his hands are not clean, having drained the blood of many. He explains that the dying see something important as they die, and here they record their words. He believes their words may contain the key to everyone's salvation. He then adds a name to Szeth's list that he had hoped to avoid but recent events had made necessary: Dalinar Kholin.`
+  },
+  72: {
+    title: 'Veristitalian',
+    pov: 'Shallan Davar',
+    text: `Chapter 72: Veristitalian
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+the Spren (mentioned only)
+
+Plot Summary
+
+Before reading Jasnah's notes on the Voidbringers, Shallan asks Jasnah how she soulcasted her blood multiple times if she was so unskilled in organic material. Jasnah replies that blood is one of the Essences and is therefore easy to soulcast, unlike the strawberry jam which she had never seen before. Shallan has a great many additional questions about soulcasting, but Jasnah returns the conversation back to the Voidbringers. Shallan asks how Jasnah could believe in these myths when so many trusted scholars considered the Voidbringers a fabrication. Jasnah replies that she in general seeks to find natural meanings to supernatural events. She believes that something real caused the legends of the Voidbringers. Reading from her notes, Jasnah helps Shallan see that the humans on Roshar did not destroy or banish the Voidbringers. They instead enslaved them as the Parshmen.`
+  },
+  73: {
+    title: 'Trust',
+    pov: 'Kaladin',
+    text: `Chapter 73: Trust
+
+Characters
+
+Kaladin (point of view)
+
+Syl
+
+Dalinar Kholin
+
+Rock
+
+Teft
+
+Shen
+
+Moash
+
+Lopen
+
+Skar
+
+Drehy
+
+Sigzil
+
+Peet
+
+Parshendi Shardbearer (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Elhokar Kholin (mentioned only)
+
+Malop (mentioned only)
+
+Jaks (mentioned only)
+
+Narm (mentioned only)
+
+Plot Summary
+
+Kaladin waits at Dalinar's warcamp's staging ground as requested by Dalinar himself. As he waits he wonders with Syl whether he can trust Dalinar. Syl seems to feel that Dalinar is indeed honorable. Kaladin feels conflicted about his actions that day. He wonders again whether he could truly protect by killing and whether the three lives lost from his bridge crew were worth the thousands of soldiers and lighteyes that they saved.
+
+As the middle moon finishes rising, Dalinar joins Kaladin on the staging ground. They discuss the condition of the bridge crews and how many Kaladin thinks will stay in the army. Dalinar wants Kaladin and Bridge Four to replace his honor guard who had been nearly wiped out earlier that day. He wants the rest of the bridgemen to be trained as a company of spearmen. Kaladin agrees on condition that the men agree and Dalinar makes him a captain. Dalinar also gives Kaladin his cloak that he wore in battle that day as a token of appreciation.
+
+Kaladin returns to Bridge Four's barrack to find his men engaged in their nightly tradition of eating Rock's stew. They talk to him about his extraordinary abilities and they want him to teach them how to do it too. Kaladin is unsure if it's teachable but agrees to try. They decide to create experiments to test his abilities, and Kaladin demands an oath of silence about his abilities. He then relaxes knowing that he has finally succeeded in saving someone.`
+  },
+  74: {
+    title: 'Ghostblood',
+    pov: 'Shallan Davar',
+    text: `Chapter 74: Ghostblood
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Gavilar Kholin (mentioned only)
+
+Kabsal (mentioned only)
+
+Balat Davar (mentioned only)
+
+Luesh (mentioned only)
+
+Lin Davar (mentioned only)
+
+Plot Summary
+
+Shallan finishes reading Jasnah's notes concerning the Voidbringers and comes to the same conclusion as Jasnah, that the parshmen are the Voidbringers. They discuss the frightening ramifications of this conclusion, and they make plans to travel to the Shattered Plains to continue investigating King Gavilar's death and the Parshendi transformation into warriors. They also discuss the Ghostbloods, a secret organization seeking answers about the Voidbringers. Jasnah names Kabsal a member of the Ghostbloods and after seeing their secret symbol, Shallan realizes that her father was also likely a member.`
+  },
+  75: {
+    title: 'In the Top Room',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 75: In the Top Room
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Navani Kholin
+
+The Almighty
+
+Elhokar Kholin (mentioned only)
+
+Nohadon (mentioned only)
+
+Odium (mentioned only)
+
+Cultivation (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+During the next highstorm after Sadeas's betrayal, in one of Dalinar's visions, he finds himself in a white rocky landscape with smokey figures rising around him. The voice again tells Dalinar to "... unite them." Dalinar then demands to know why the voice lied to him with regards to trusting Sadeas. But instead of answering, the voice appears in human form and continues exhorting Dalinar to prepare for the Everstorm, showing him a wall of darkness approaching a ruined Kholinar. Dalinar continues to ask questions and demand answers but soon realizes that the voice cannot hear him and never could. The voice continues telling Dalinar that this vision is a glimpse into the future born of his fears. Dalinar then sees that the wall of darkness is a wall of dust and as it passes by, the ground falls away leaving the land and where Kholinar was an empty void. Only the space where Dalinar stands remains. The voice tells Dalinar that someone must lead, unite and protect the people. He then commands Dalinar to rebuild the Knights Radiant, explaining that unity will be key in facing The True Desolation.     The voice then ends by proclaiming that he was God (the Almighty) and that he is now dead after being killed by Odium.`
+  },
+  epilogue: {
+    title: 'Of Most Worth',
+    pov: 'Wit',
+    text: `Epilogue: Of Most Worth
+
+Characters
+
+Wit (point of view)
+
+Talenel
+
+Plot Summary
+
+Wit has a conversation with some guardsmen in Kholinar. He asks them "What is the talent that men value most?" One of the guardsmen suggests art, to which Wit replies in the negative. At this point, Taln stumbles into the main courtyard, bearing a prophecy about the Everstorm, before collapsing on the ground, his Honorblade beside him. Hoid finishes by saying it is timeliness that men value most, and that Taln has arrived 'too late'.`
   }
 };
 
@@ -3439,28 +3614,32 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
     const seriesName = seriesMap[bookSlug];
     const seriesBookPath = path.join(seriesPath, seriesName, 'books', bookSlug);
     
-    if (chapterType === 'prologue') {
+    if (chapterType === 'prologue' || chapterType === 'epilogue') {
       chaptersDir = path.join(seriesBookPath, 'chapters');
     } else if (chapterType === 'chapter') {
       // Determine which part based on chapter number
       // Part 1: chapters 1-11
       // Part 2: chapters 12-28
       // Part 3: chapters 29-51
-      // Part 4: chapters 52+
+      // Part 4: chapters 52-69
+      // Part 5: chapters 70+
       let partNumber = 1;
       if (chapterNumber && chapterNumber >= 12 && chapterNumber <= 28) {
         partNumber = 2;
       } else if (chapterNumber && chapterNumber >= 29 && chapterNumber <= 51) {
         partNumber = 3;
-      } else if (chapterNumber && chapterNumber >= 52) {
+      } else if (chapterNumber && chapterNumber >= 52 && chapterNumber <= 69) {
         partNumber = 4;
+      } else if (chapterNumber && chapterNumber >= 70) {
+        partNumber = 5;
       }
       
       const partNames = {
         1: 'Part 1',
         2: 'Part 2',
         3: 'Part 3',
-        4: 'Part 4'
+        4: 'Part 4',
+        5: 'Part 5'
       };
       
       chaptersDir = path.join(seriesBookPath, 'chapters', partNames[partNumber] || 'Part 1');
@@ -3496,6 +3675,10 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
     chapterData = CHAPTER_DATA.prologue;
     chapterIdentifier = 'Prologue';
     outputFile = path.join(chaptersDir, 'prologue.md');
+  } else if (chapterType === 'epilogue') {
+    chapterData = CHAPTER_DATA.epilogue;
+    chapterIdentifier = 'Epilogue';
+    outputFile = path.join(chaptersDir, 'epilogue.md');
   } else if (chapterType === 'chapter' && chapterNumber) {
     chapterData = CHAPTER_DATA[chapterNumber];
     if (!chapterData) {
@@ -3573,8 +3756,9 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   
   if (args.length < 1) {
-    console.error('Usage: node generate-twok-chapters.js <prologue|chapter|interlude> [chapterNumber] [interludeGroup]');
+    console.error('Usage: node generate-twok-chapters.js <prologue|epilogue|chapter|interlude> [chapterNumber] [interludeGroup]');
     console.error('Example: node generate-twok-chapters.js prologue');
+    console.error('Example: node generate-twok-chapters.js epilogue');
     console.error('Example: node generate-twok-chapters.js chapter 1');
     console.error('Example: node generate-twok-chapters.js interlude 1 1  (for Interlude I-1, in interlude-1 folder)');
     process.exit(1);
