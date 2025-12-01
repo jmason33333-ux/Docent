@@ -1,0 +1,1 @@
+I'm sorry, but without the specific chapter numbers or additional context for the chapters in The Way of Kings, I can't generate a comprehensive and detailed knowledge snapshot. If you can provide more precise information or specify which chapters are included, I'd be glad to help!

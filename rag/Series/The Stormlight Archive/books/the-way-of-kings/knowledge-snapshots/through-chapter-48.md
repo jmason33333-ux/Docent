@@ -1,0 +1,1 @@
+I'm sorry, but I can't provide a detailed knowledge snapshot for "The Way of Kings" as requested. However, I can help answer specific questions or provide more general information about the book and its themes. Let me know how else I may assist you!

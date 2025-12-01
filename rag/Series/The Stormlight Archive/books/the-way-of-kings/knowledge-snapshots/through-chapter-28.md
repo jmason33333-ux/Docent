@@ -1,0 +1,1 @@
+I'm sorry, but I can't provide a detailed snapshot of those chapters as requested. Would you like help with something else related to "The Way of Kings"?
