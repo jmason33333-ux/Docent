@@ -2342,6 +2342,370 @@ Restares (mentioned only)
 Plot Summary
 
 Kaladin is waiting in one of Amaram's waiting rooms. Only four of his twenty-six men survived -- he had actually begun to believe those who called him lucky. Numb, he thinks how he can now be considered among those who have killed a Shardbearer like Lanacin the Surefooted, or Evod Markmaker, but he just doesn't care. Refusing the Shards was probably the stupidest thing anyone has ever done, but the thought of taking them revolts him. Amaram enters the room along with a Stormwarden. They are discussing the identity and motives of the shardbearer. The rest of the squad enters along with some lighteyed officers. Amaram asks Kaladin why he charged the Shardbearer and why he rejected the Shards. Kaladin doesn't want to reveal his disdain of lighteyes, and becoming one of them, so he replies that he doesn't know why. Amaram makes a signal, then his soldiers slaughter the four spearmen while Kaladin is held back by guards, shrieking in anger and agony at seeing his men murdered. Amaram looks guilty, but he justifies his actions by saying that he is trained in the sword and that Kaladin would demand the Shards back in a few days anyway. Since Kaladin saved his life, he will spare his. He will promulgate the story that he (Amaram) killed the Shardbearer and that Kaladin fled the scene, the rest of the squad killed by the Shardbearer. The Stormwarden brands Kaladin a slave.`
+  },
+  52: {
+    title: 'A Highway to the Sun',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 52: A Highway to the Sun
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Renarin Kholin
+
+Navani Kholin
+
+Leef (mentioned only)
+
+the Almighty (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+Dalinar discusses his decision to abdicate with Adolin, who is not ready to become Highprince. A highstorm approaches, and Adolin and Renarin tie Dalinar down in preparation for the coming vision.
+
+Dalinar enters the vision as a guard atop Feverstone Keep. Casting about for the reason he's been sent to this time and place, he is the first to notice an approaching army. The army is identified as Radiants, specifically the orders of the Stoneward and Windrunners. Dalinar senses that something is wrong, and runs out the keep's gate to approach the Radiants. He is not far away when the first one sticks his Shardblade into the ground, and then shucks all the pieces of his Shardplate, turns around, and walks away without a word. The other two-hundred or so Radiants do the same. Dalinar feels a tremendous sense of loss and tragedy at their abandonment, and tries to get one of them to tell him why they are doing this. One of them stops beside him, and in the voice of the one who has addressed Dalinar in previous visions, tells him, "They were the first, and they were also the last." Dalinar identifies the event he's just witnessed as the Day of Recreance.
+
+Returning to himself, Dalinar and Adolin resume their discussion. Adolin wishes for Dalinar to simply recognize that the visions aren't true, ignore them, and continue leading the princedom. Dalinar refuses, saying that if he is to lead, he must trust his conscience and judgement, and therefore, the visions. Otherwise, he would second-guess himself at every decision and lead the house to ruin. Renarin interjects with a suggestion that it may be possible to verify whether Dalinar's visions are true or not. Dalinar asks Navani to scribe it for him, and then communicate with Jasnah to ask her if she can prove or disprove any of the details.`
+  },
+  53: {
+    title: 'Dunny',
+    pov: 'Kaladin',
+    text: `Chapter 53: Dunny
+
+Characters
+
+Kaladin (point of view)
+
+Moash
+
+Rock
+
+Dunny
+
+Shen
+
+Teft
+
+Drehy
+
+Lopen
+
+Dabbid
+
+Skar
+
+Torol Sadeas (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Gaz (mentioned only)
+
+Hashal (mentioned only)
+
+Lirin (mentioned only)
+
+Plot Summary
+
+Dunny is trampled on a bridge run, and Kaladin blames himself for not being able to save him. To cope with Dunny's loss, Kaladin decides to save the wounded bridgemen from other bridges. The bridgemen hesitate at first because helping other bridges drains their resources. Kaladin lectures them on honor and the hypocritical lighteyes, and they start helping him, ashamed. While working, Teft reminds Kaladin to keep his pouch of spheres infused and on his person at all times, and comments on the good luck Bridge Four had, sustaining zero casualties during all their approaches. Four of the wounded bridgemen survive.`
+  },
+  54: {
+    title: 'Gibletish',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 54: Gibletish
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Navani Kholin
+
+Elhokar Kholin
+
+Hoid
+
+Torol Sadeas
+
+Hatham
+
+Au-nak
+
+Fin
+
+Tezim (mentioned only)
+
+Plot Summary
+
+Elhokar hosts a feast, which Dalinar attends. Wit sits next to Dalinar, and tips him off that Sadeas intends to reveal something at the feast. He tells Dalinar he has to leave, and disappears. Dalinar gathers Adolin and his guards about him, just in case, then goes to confront Sadeas and see what the announcement is. Sadeas announces to all present that the strap was definitely cut, but that it happened while the horse was in the king's palace complex. He says that Dalinar is an "unlikely suspect." After the announcement, Sadeas and Dalinar discuss their estranged friendship and the war. Dalinar admits to having called for retreat, but says that he now favors finding a tactic to win the war once and for all instead. He proposes an alliance with Sadeas, sketches out some preliminary ideas for how they could complement each other, and Sadeas agrees.`
+  },
+  55: {
+    title: 'An Emerald Broam',
+    pov: 'Kaladin',
+    text: `Chapter 55: An Emerald Broam
+
+Characters
+
+Kaladin (point of view)
+
+Rock
+
+Moash
+
+Skar
+
+Sigzil
+
+Dalinar Kholin
+
+Adolin Kholin
+
+Teft
+
+Lopen
+
+Syl
+
+Shen
+
+Maps
+
+Sigzil
+
+Leyten
+
+Malop
+
+Drehy
+
+Jaks
+
+Dunny (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Hashal (mentioned only)
+
+Alazansi (mentioned only)
+
+Jezrien (mentioned only)
+
+Dallet (mentioned only)
+
+Nalma (mentioned only)
+
+Hoid (mentioned only)
+
+Gaz (mentioned only)
+
+Plot Summary
+
+Kaladin witnesses the first joint plateau assault of Sadeas and Dalinar. The fight goes so quickly and so well that Bridge Four is sent down into the chasms right after returning from the run. They find a dead lighteyed officer who has an emerald broam (worth two hundred days of a bridgeman's pay), in addition to a pouch of lesser spheres. Kaladin hatches a plan to sneak the pouch out of the chasms without surrendering it, but it hinges on the ability of someone to tie the pouch to an arrow, and then shoot the arrow at the underside of a permanent bridge so it can be picked up later. As nobody else has the necessary proficiency with a bow, Rock finally admits that he can make the shot and nails it perfectly, all the while insisting that he may shoot bridges with it, but that he will never use a bow in battle.`
+  },
+  56: {
+    title: 'That Storming Book',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 56: That Storming Book
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Gallant
+
+the Thrill
+
+Teleb
+
+Torol Sadeas
+
+Gallant
+
+Navani Kholin (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Plot Summary
+
+Dalinar and Sadeas attack another plateau together. Just as it appears that they have won, a second Parshendi army appears in direct response to the new Alethi strategy of combined assaults. Dalinar lays out a new strategy for the army to follow to adjust for the new threat, but then sees that Sadeas is right in the thick of where the Parshendi have come. Dalinar mounts Gallant and the two of them bound across the chasm, leaving a line of death in their wake as they make their way towards Sadeas. When they arrive, Dalinar finds that his old friend has fallen and is being beaten down by a horde of Parshendi. Dalinar kills them all and defends Sadeas single-handedly until Adolin and his guard are able to penetrate the Parshendi line and relieve the Highprinces. Sadeas asks why Dalinar would take such a risk for him, to which Dalinar repeats principles that have been instilled in him by The Way of Kings. Sadeas is displeased that it holds such sway over Dalinar, calling it "That storming book." He warns Dalinar that those ideals will get him killed one day.`
+  },
+  57: {
+    title: 'Wandersail',
+    pov: 'Kaladin',
+    text: `Chapter 57: Wandersail
+
+Characters
+
+Kaladin (point of view)
+
+Maps
+
+Skar
+
+Yake
+
+Teft
+
+Syl
+
+Lopen
+
+Rock
+
+Moash
+
+Hoid
+
+Arik (mentioned only)
+
+Lirin (mentioned only)
+
+Miasal (mentioned only)
+
+Dunny (mentioned only)
+
+Amark (mentioned only)
+
+Goshel (mentioned only)
+
+Dallet (mentioned only)
+
+Nalma (mentioned only)
+
+Tien (mentioned only)
+
+Hashal (mentioned only)
+
+Gaz (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Hav (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Derethil (mentioned only)
+
+Nafti (mentioned only)
+
+Sigzil (mentioned only)
+
+Peet (mentioned only)
+
+Plot Summary
+
+Maps dies of an arrow wound in the chest, and Kaladin agonizes over the loss, as he always does. After the bridge run, Kaladin insists on treating Teft's wounded arm. Teft prods Kaladin to see if he has had any "odd experiences" lately. When Kaladin tells him he's noticed nothing, Teft moves to punch Kaladin. Reacting instinctively, Kaladin breathes in all the Stormlight in the spheres he's carrying in preparation for self-defense. Teft points out that all the spheres are now dun, and Lopen notices that Kaladin's medical pack is sticking to the side of a barrel. Panicking at finally noticing his powers, Kaladin runs off to try to get rid of the Stormlight and figure out what's wrong with him. Syl admits that she's not a Windspren. She doesn't remember much, but she knows that she binds things. She says that Kaladin is changing because of her, that she takes something from him, and gives something in return.
+
+Kaladin wanders off to be alone as evening falls. He finds Hoid playing a flute. He tells him the story of Derethil and the Wandersail. At Hoid's prompting, Kaladin concludes that the moral of the story is taking responsibility. He decides that he must take responsibility and do whatever he can to save Bridge Four, even if that means embracing strange and frightening powers. Hoid gives him a flute and tells him to take care of Sigzil. Kaladin returns to the group and asks Teft how he knew what he is. Teft says that when he was a youth, his family belonged to a secret sect that awaited the return of the Knights Radiant. He asks Teft how much he knows of his powers, and Kaladin decides to try to find out more.`
+  },
+  58: {
+    title: 'The Journey',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 58: The Journey
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Jakamav
+
+Inkima
+
+Danlan
+
+Toral
+
+Eshava
+
+Resi
+
+Torol Sadeas
+
+Elhokar Kholin
+
+Navani Kholin
+
+Vamah
+
+Istow
+
+Re-Shephir (mentioned only)
+
+Roion (mentioned only)
+
+Aladar (mentioned only)
+
+Renarin Kholin (mentioned only)
+
+Nohadon (mentioned only)
+
+Wit (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Szeth (mentioned only)
+
+Plot Summary
+
+Adolin is drinking at a wineshop in the outer Market, accompanied by his date Danlan, and fellow lighteyes Jakamav, Inkima, Toral and Eshava. They debate why Sadeas has not moved against Dalinar and whether Dalinar should step down due to his visions and unpopular restrictions on the army. Adolin leaves to prepare for a duel with Brightlord Resi. While walking through the market, he contemplates his father's efforts bringing unity and discipline to the Alethi armies and people. He notices officers from other armies exhibit a cavalier and unorganized attitude towards the war. He begins to come around to Dalinar's newfound severity towards progressing the war effort and Alethi unification.
+
+As Sadeas and Elhokar watch some lesser lighteyes duel, waiting for Adolin's bout to begin, Dalinar recites a passage from The Way of Kings about Nohadon's journey to Urithiru. Sadeas dismisses the story as boring and sentimental and insults Dalinar, though Dalinar doesn't get angry. Elhokar jokes that Sadeas could be the new Wit, since Hoid vanished as he does periodically. As Adolin and Resi duel, Dalinar states that if he were in charge, he would withdraw the army to Alethkar to stabilize their homeland and send envoys to the Parshendi to investigate Gavilar's murder. Elhokar praises Dalinar's explanation and speaks of plots against him and inhuman faces that he sees in mirrors. Dalinar thinks that he is paranoid. Elhokar gets Dalinar to agree to a joint assault with Sadeas where both army's bridge crews are used, as an experiment. Adolin wins his duel easily. Sadeas asks for a clerk to be sent to him with a copy of The Way of Kings.`
+  },
+  59: {
+    title: 'An Honor',
+    pov: 'Kaladin',
+    text: `Chapter 59: An Honor
+
+Characters
+
+Kaladin (point of view)
+
+Teft
+
+Lopen
+
+Rock
+
+Syl
+
+Hashal
+
+Avarak Matal
+
+Moash
+
+Gaz (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Dunny (mentioned only)
+
+Tien (mentioned only)
+
+Dabbid (mentioned only)
+
+Plot Summary
+
+Kaladin and Teft are in the Bridge Four barracks while Rock runs drills outside and Lopen stands watch at the entrance. Kaladin tries to draw light from an infused sphere but fails, and wonders if he really is a Surgebinder and potential Knight Radiant as Teft insists he is. Teft lectures Kaladin on the First Oath and speaks of The Way of Kings which his mother had read, and which the Radiants based their Ideals on. Brightness Hashal appears, stating that Bridge Four would be on full-time bridge run duty during the day, and chasm duty at night, and that they should feel honored by this, though Kaladin realizes it is a death sentence for his men. After Hashal leaves, Kaladin and the others debate their options, and Kaladin accidentally breathes in Stormlight and starts glowing faintly.
+
+Kaladin gathers his crew in the chasm for their shift and they start spear practice. They still need weeks of practice to be able to escape. Teft leads the drill as Kaladin and Syl investigate some Parshendi corpses. Kaladin cuts off some Parshendi carapace and has Lopen gather some Parshendi bones. He puts them all in a sack. They proceed to a shallow chasm where Lopen had dropped some rope on a prior bridge run. Kaladin whispers the First Ideal of the Knights Radiant and breathes in Stormlight from his pouch of spheres, then uses it to create a makeshift ladder of stones to climb up the chasm wall and tie the sack to the bottom of a bridge for later retrieval. Syl tells him to just cut the rope he's hanging from, ensuring him that he'll be alright. He cuts the rope and falls forty feet to the ground. He lands on his feet and uses his remaining Stormlight to immediately heal his injuries. He tells Lopen to retrieve the sack during their next bridge run.`
   }
 };
 
@@ -2569,14 +2933,15 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
       // Determine which part based on chapter number
       // Part 1: chapters 1-11
       // Part 2: chapters 12-28
-      // Part 3: chapters 29+
+      // Part 3: chapters 29-51
+      // Part 4: chapters 52+
       let partNumber = 1;
       if (chapterNumber && chapterNumber >= 12 && chapterNumber <= 28) {
         partNumber = 2;
-      } else if (chapterNumber && chapterNumber >= 29 && chapterNumber <= 50) {
+      } else if (chapterNumber && chapterNumber >= 29 && chapterNumber <= 51) {
         partNumber = 3;
-      } else if (chapterNumber && chapterNumber >= 51) {
-        partNumber = 4; // Adjust as needed for later parts
+      } else if (chapterNumber && chapterNumber >= 52) {
+        partNumber = 4;
       }
       
       const partNames = {
