@@ -2706,6 +2706,518 @@ Plot Summary
 Kaladin and Teft are in the Bridge Four barracks while Rock runs drills outside and Lopen stands watch at the entrance. Kaladin tries to draw light from an infused sphere but fails, and wonders if he really is a Surgebinder and potential Knight Radiant as Teft insists he is. Teft lectures Kaladin on the First Oath and speaks of The Way of Kings which his mother had read, and which the Radiants based their Ideals on. Brightness Hashal appears, stating that Bridge Four would be on full-time bridge run duty during the day, and chasm duty at night, and that they should feel honored by this, though Kaladin realizes it is a death sentence for his men. After Hashal leaves, Kaladin and the others debate their options, and Kaladin accidentally breathes in Stormlight and starts glowing faintly.
 
 Kaladin gathers his crew in the chasm for their shift and they start spear practice. They still need weeks of practice to be able to escape. Teft leads the drill as Kaladin and Syl investigate some Parshendi corpses. Kaladin cuts off some Parshendi carapace and has Lopen gather some Parshendi bones. He puts them all in a sack. They proceed to a shallow chasm where Lopen had dropped some rope on a prior bridge run. Kaladin whispers the First Ideal of the Knights Radiant and breathes in Stormlight from his pouch of spheres, then uses it to create a makeshift ladder of stones to climb up the chasm wall and tie the sack to the bottom of a bridge for later retrieval. Syl tells him to just cut the rope he's hanging from, ensuring him that he'll be alright. He cuts the rope and falls forty feet to the ground. He lands on his feet and uses his remaining Stormlight to immediately heal his injuries. He tells Lopen to retrieve the sack during their next bridge run.`
+  },
+  60: {
+    title: 'That Which We Cannot Have',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 60: That Which We Cannot Have
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Adolin Kholin (point of view)
+
+Renarin Kholin
+
+Navani Kholin
+
+Nohadon
+
+Torol Sadeas (mentioned only)
+
+Elthebar (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Longshadow (mentioned only)
+
+Karm (mentioned only)
+
+Alakavish (mentioned only)
+
+Plot Summary
+
+Dalinar has decided not to abdicate to Adolin. The two wait for the coming highstorm in Dalinar's chambers with Renarin and Navani. Navani has a new fabrial, an early model of a painrial, which she shows the three by using it on an ache in Adolin's hand. Despite all the discoveries the engineers have made with fabrials, they are no closer to making new Shardblades and Shardplate. Dalinar speculates that they were provided by the Heralds themselves, then the highstorm hits, and he enters another vision.
+
+He talks with a man with a regal bearing, who Dalinar later realizes must be a younger Nohadon, writer of The Way of Kings. A Desolation has just ended, and 90% of the people Nohadon ruled are dead. Some of those still alive try to cast blame on the Surgebinder Alakavish, who began a war just before the Desolation started. Nohadon contemplates giving up his throne if he cannot actually do any good with his leadership. Dalinar, who Nohadon believes is his advisor Karm, tells him to write a book about his philosophy on leadership and how people should live. Nohadon scoffs at the idea and says that action and the sword are what is needed. He would like peace, but "to be human is to want that which we cannot have." He walks off. Just before the end of the vision, Dalinar repeats Nohadon's statement.
+
+He comes back to the present time and believes he did little about discovering any facts about proving his visions true or false. Navani cuts him off, asking him to repeat the last thing he said. She then tells him she believes he has been speaking in the Dawnchant, a dead language, and the phrase he just gave her may be the key needed to translate the language. She tells Dalinar and his sons that this is the proof they were looking for and that the visions are real.`
+  },
+  61: {
+    title: 'Right for Wrong',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 61: Right for Wrong
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Navani Kholin
+
+Renarin Kholin
+
+Nohadon (mentioned only)
+
+Adolin Kholin (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Parasaphi (mentioned only)
+
+Nadris (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Hanavanar (mentioned only)
+
+Szeth (mentioned only)
+
+Plot Summary
+
+Some hours after his last vision, Dalinar sits with Navani and Renarin. Adolin has gone for the highstorm damage report, appearing shaken that the visions are real. Navani asks Dalinar why he thinks the man in his vision was Nohadon. Dalinar can't give evidence but he's sure that it was him. Prodded on her knowledge about the Desolations, Navani tells what she knows but insists that Jasnah is the historian. They continue to debate, thinking about the Old Magic but discard that option. Dalinar is also disturbed that the visions are real, and he asks to be alone. Renarin leaves immediately, but Navani lingers. She tells Dalinar why she really came back to the Shattered Plains. She felt useless, expected to fade to the background and not be involved. She closes the door and they kiss passionately. Afterwards she tells him that something is wrong on Roshar, something bigger than the War of Reckoning they are fighting. She shares her knowledge about the assassination of the King of Jah Keved by a Shin Shardbearer wearing white.`
+  },
+  62: {
+    title: 'Three Glyphs',
+    pov: 'Kaladin',
+    text: `Chapter 62: Three Glyphs
+
+Characters
+
+Kaladin (point of view)
+
+Moash
+
+Drehy
+
+Skar
+
+Sigzil
+
+Teft
+
+Torol Sadeas
+
+Lopen
+
+Dabbid
+
+Shen
+
+Rock
+
+Syl
+
+Avarak Matal
+
+Dalinar Kholin
+
+Leyten
+
+Narm
+
+Jezrien (mentioned only)
+
+Hesina (mentioned only)
+
+Hashal (mentioned only)
+
+Tukks (mentioned only)
+
+Dallet (mentioned only)
+
+Tien (mentioned only)
+
+Tarah (mentioned only)
+
+Lirin (mentioned only)
+
+Plot Summary
+
+Kaladin and Bridge Four are on another bridgerun. He's nervous because this time he wants to try distracting the Parshendi archers with his self-made Parshendi armor and shield. On the way to the battlefield a soldier who doesn't want to wait for the army's water crews tries to force his way to Bridge Four's water skin. Because Kaladin's armor is hidden with the water Bridge Four persuades the soldier to back down. On the final approach Kaladin manages to draw the full attention of the Parshendi archers by wearing Parshendi armor and shield. He uses Stormlight to improve his speed, heal his wounds, and draw arrows to his shield. Sadeas rides up and is forced to promote Matal because "his" idea of distracting the Parshendi worked. Kaladin himself suffers from shock after using so much Stormlight. As always, the members of Bridge Four look for wounded from other bridge crews and care for them. Suddenly Lopen calls out, as he spots a group of Parshendi archers coming back to the chasm and aiming at Bridge Four. While the men try to escape out of range they are surprised to see Dalinar dashing into the Parshendi force and striking them down. When done, Dalinar raises his blade in a salute at Bridge Four.`
+  },
+  63: {
+    title: 'Fear',
+    pov: 'Kaladin',
+    text: `Chapter 63: Fear
+
+Characters
+
+Kaladin (point of view)
+
+Leyten
+
+Shen
+
+Lopen
+
+Rock
+
+Dabbid
+
+Syl
+
+Teft
+
+Hobber
+
+Skar
+
+Moash
+
+Sigzil
+
+Avarak Matal (mentioned only)
+
+Hashal (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Tien (mentioned only)
+
+Tarah (mentioned only)
+
+Yake (mentioned only)
+
+Hoid (mentioned only)
+
+Plot summary
+
+Kaladin tells Leyten to make carapace armor for every member of Bridge Four except for Shen. Kaladin observes spear practice and notices that Moash is very skilled. He asks about his purpose, and Moash replies that he wants vengeance, but declines to say on whom. Kaladin and Rock discuss their plans to escape. Teft asks Kaladin to teach the bridgemen but he declines, saying that he would become too eager and impatient, and Kaladin admits that he failed in the past and that it got to him.`
+  },
+  64: {
+    title: 'A Man of Extremes',
+    pov: 'Dalinar Kholin, Kaladin, Adolin Kholin',
+    text: `Chapter 64: A Man of Extremes
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Kaladin (point of view)
+
+Adolin Kholin (point of view)
+
+Navani Kholin
+
+Avarak Matal
+
+Teft
+
+Teleb
+
+Ilamar
+
+Torol Sadeas
+
+Gavilar Kholin (mentioned only)
+
+Dalinar's Wife (mentioned only)
+
+Hashal (mentioned only)
+
+Leyten (mentioned only)
+
+Jaks (mentioned only)
+
+Plot Summary
+
+Dalinar and Navani continue to see each other in secret. Dalinar tells Navani that he was interested in courting her, but he instead deferred to Gavilar when his brother also showed interest in her. That was the nature of the siblings' relationship. Navani thought that Dalinar hated her because he was cold towards her for the last two decades, out of trying to conceal his true feelings. Navani says that Dalinar and his wife were a perfect match in temperament. Dalinar also reveals that he keeps a tight rein on himself to avoid reverting to his past tyrannical self. Their conversation is interrupted as alarms sound indicating a chasmfiend is located at the Tower plateau, where Dalinar wants to run a dual assault with Sadeas.
+
+Bridge Four lines up for the assault. They all wear carapace armor, expertly crafted and ornamented by Leyten. Every man also has a shield crafted from Parshendi bones, some ornamented with smaller bones to create a rattling sound. The other bridgemen look on in astonishment and admiration and cheer Bridge Four as they raise their bridge to shoulders.
+
+Adolin was shocked to learn he was wrong about his father, but he's glad that he was. Now he could trust him fully. Dalinar, Adolin, and Sadeas confer at the staging area, and decide to bring fifteen thousand troops, as many as they can muster, to try to finish off the Parshendi army in one fell swoop.`
+  },
+  65: {
+    title: 'The Tower',
+    pov: 'Dalinar Kholin, Kaladin',
+    text: `Chapter 65: The Tower
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Kaladin (point of view)
+
+Torol Sadeas
+
+Adolin Kholin
+
+Skar
+
+Moash
+
+Teft
+
+Lopen
+
+Drehy
+
+Rock
+
+Navani Kholin (mentioned only)
+
+Elhokar Kholin (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+the Nightwatcher (mentioned only)
+
+Plot Summary
+
+Dalinar and Sadeas watch as the Parshendi army of roughly ten thousand lines up, while they still try to remove the gemheart. Sadeas suggests they attack together, but Dalinar knows that many of the bridgemen will be killed. He holds to the Code and won't order what he himself wouldn't do. Dalinar will follow Sadeas's army once a bridgehead is cleared.
+
+Kaladin leads four other decoys in drawing Parshendi arrows away from the bridge crews, though he draws the most missiles by far, until all the surviving bridges are in place and the army rushes across. Kaladin then goes to help Teft and Skar, who were hit by arrows, and starts operating on Teft, as there are enough soldiers in the area to protect them.
+
+Dalinar orders a crew to set a bridge for his army to cross, and he leads his men into battle along with Adolin. Some Parshendi target him with large rocks, but he goes after them and takes care of them easily. After some time in the battle, Dalinar feels the Thrill, but loses it as he faces down a youthful Parshendi. He starts having doubts about fighting, and thinks about the Codes and Gavilar's murder and the visions, trying to decide what is the right course of action. Adolin interrupts his reverie to point out that another group of Parshendi have arrived. Dalinar wonders why Sadeas's scouts didn't give them warning. He climbs to the top of the rock formation to see that Sadeas, with his army and bridge crews, have fled from the Tower plateau, leaving his own army surrounded and cut off from retreat.`
+  },
+  66: {
+    title: 'Codes',
+    pov: 'Kaladin, Dalinar Kholin',
+    text: `Chapter 66: Codes
+
+Characters
+
+Kaladin (point of view)
+
+Dalinar Kholin (point of view)
+
+Skar
+
+Teft
+
+Lopen
+
+Torol Sadeas
+
+Drehy
+
+Leyten
+
+Rock
+
+Peet
+
+Moash
+
+Avarak Matal
+
+Adolin Kholin
+
+Meridas Amaram (mentioned only)
+
+Elhokar Kholin (mentioned only)
+
+Renarin Kholin (mentioned only)
+
+Plot Summary
+
+Kaladin finishes working on Skar, saying that he will be able to walk normally once he heals up. Kaladin then notices that Sadeas is retreating even though the battle seems to be going well, and realizes that the Highprince is betraying Dalinar. Kaladin sees that Sadeas is unharmed, and hears him say that Dalinar's honor would someday get him killed.
+
+Adolin yells at Dalinar that he knew that Sadeas's betrayal was inevitable, as they fight off waves of Parshendi, and Dalinar agrees in resignation. Adolin refuses to blame his father though, saying that his honor would not make him behave differently, which surprises Dalinar. Dalinar tries to motivate his soldiers with a speech, saying that they will all die with glory and honor intact. Dalinar silently regrets that he will leave Renarin alone to inherit, surrounded by enemies, and says good bye.`
+  },
+  67: {
+    title: 'Words',
+    pov: 'Kaladin, Dalinar Kholin, Teft',
+    text: `Chapter 67: Words
+
+Characters
+
+Kaladin (point of view)
+
+Dalinar Kholin (point of view)
+
+Teft (point of view)
+
+Syl
+
+Skar
+
+Avarak Matal
+
+Moash
+
+Drehy
+
+Rock
+
+Sigzil
+
+Adolin Kholin
+
+Lopen
+
+Dabbid
+
+Dalar
+
+Mesh
+
+Varth
+
+Tien
+
+the Stormfather
+
+Torol Sadeas (mentioned only)
+
+Shen (mentioned only)
+
+Toralin Roshone (mentioned only)
+
+Dallet (mentioned only)
+
+Lirin (mentioned only)
+
+Navani Kholin (mentioned only)
+
+Dunny (mentioned only)
+
+Maps (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Tukks (mentioned only)
+
+Nalma (mentioned only)
+
+Goshel (mentioned only)
+
+Cenn (mentioned only)
+
+Tashlin (mentioned only)
+
+Sheler (mentioned only)
+
+Plot Summary
+
+As Sadeas's forces withdraw, Bridge Four lags behind. Having wounded and already being low in number, they are unable to move ahead of the army and help with the crossing of the staging plateau. Instead of crossing with the army, Kaladin tells Matal that they will rest, use their bridge to follow and catch up later. Kaladin gives the pretense that he doesn't want to slow the rest of the army. The army continues westward without Bridge Four. Kaladin explains to the men that now they can simply escape without fighting. Everything is perfect except the wounded back at camp. Kaladin insists that he stay with the wounded and escape later. Kaladin feels unsettled, and not just because of the men he would have to leave behind. He sees Syl next to him as a regular-sized woman. She stands looking back at the battle with an expression of horror. Kaladin also looks back at the battle. He sees the thousands of dark eyed soldiers hopelessly surrounded. Syl says that she now remembers what kind of spren she is. She is an honorspren. The spirit of oaths, promises, and nobility. Kaladin thinks that trying to save Kholin's army would be suicide and that he and his men owe Dalinar nothing. He is determined not to be fooled again like the time he saved Amaram. Finally he remembers his father's words: "The lighteyes don't care about life, so I must. So we must." With the Ideals of the Radiants forming in his mind he tells the members of Bridge Four that they must go back. They agree and lift their bridge, heading back to the Tower.
+
+Dalinar's Shardplate grows weak. It is losing Stormlight from many small cracks, lending Dalinar less strength. Dalinar continues to fight, with Adolin at the front line of his army, when he sees a lone bridge crew moving towards the chasm. Unsure of their purpose he shows Adolin who thinks it must be some kind of trap. Still unsure, they grab onto this small hope and prepare their men to push towards the bridge crew.
+
+The Parshendi have seen the approach of Bridge Four and prepare to loose arrows. Dalinar has seen too and is trying to make his way there in order to escape. Kaladin barely dodges the arrows, then Syl points to a new contingent of archers, aiming at the unprotected bridgemen. Kaladin yells the command for side carry right and expends a huge amount of Stormlight, attracting all the arrows to his shield. The Parshendi say "Neshua Kadal!" and flee at the display of power. Kaladin is completely drained from the excessive use of Stormlight. The men set down the bridge and prepare to fight another group of Parshendi who heavily outnumber the bridgemen. Kaladin can only lay on the ground in despair, having failed to protect again, just like the day that Tien died.
+
+Kaladin's squad is all dead, and he is commanded to go back to the reserves for reassignment. He tries to find Tien's squad and gets caught up in the chaos of battle. After a brief exchange with an enemy soldier, he is conscripted into a new squad. Kaladin sees three messenger boys placed in the front of the battle as a distraction. He rushes over to help defend Tien but is too late.
+
+Syl prods Kaladin to say the Words. He forces himself to his feet and grabs a spear. He runs into the battle and notices that the bearded Parshendi have infused gems woven into their beads. He breathes in Stormlight and regains his strength and heals his wounds. A voice in his head urges again: "the Words." Although he never learned them, he knows them, and whispers "I will protect those who cannot protect themselves."
+
+Kaladin explodes with energy and light. The bridgemen watch in wonder as Kaladin furiously fights.`
+  },
+  68: {
+    title: 'Eshonai',
+    pov: 'Adolin Kholin, Teft, Dalinar Kholin, Kaladin',
+    text: `Chapter 68: Eshonai
+
+Characters
+
+Adolin Kholin (point of view)
+
+Teft (point of view)
+
+Dalinar Kholin (point of view)
+
+Kaladin (point of view)
+
+Drehy
+
+Skar
+
+Sigzil
+
+Peet
+
+Rock
+
+Lopen
+
+Parshendi Shardbearer
+
+Moash
+
+Syl
+
+Havar
+
+Nacomb Gaval
+
+Malan
+
+Malop (mentioned only)
+
+Jaks (mentioned only)
+
+Narm (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Plot Summary
+
+Adolin cuts through the Parshendi lines leading the remaining Kholin forces down the slope of the 'Tower' towards the bridge at the western side of the plateau. The maneuver is reckless but his troops are well trained and they make their mad dash for freedom.
+
+Meanwhile, Teft, along with the other members of Bridge Four, are transfixed watching Kaladin engage the Parshendi. He moves with inhuman speed and precision. He also moves with a glow that Teft knows is Stormlight. Members of the crew momentarily gawk at Kaladin's unnatural skill. But Teft quickly commands them into a defensive formation intended to support Kaladin and to hold the bridge's position on the plateau.
+
+Dalinar fights, making his way to the bridgemen he had seen return to the plateau. Now unable to see them, he thinks that they have certainly died by now. But he thanks them for giving him and his men purpose as they fight to their doom. But as he approaches the chasm he finds that the bridgemen are indeed holding their ground. He orders Adolin forward to support the bridgemen and he turns his attention towards maintaining the corridor that is allowing his men to escape. However, a seven-foot-tall Parshendi in Shardplate steps forward. Dalinar is surprised by the Shardbearer's late arrival but concludes that he is there to prevent Dalinar's retreat which was now possible. Dalinar quickly finds himself at a disadvantage due to the damage to his Shardplate already sustained but is able to lure the Shardbearer up on a rock formation where he cuts the rock out from under his attacker. This topples the Shardbearer onto the ground. He cuts free another piece of rock onto the Shardbearer, but the damage to his own Shardplate slows Dalinar too much to take advantage of Shardbearer's position. Unable to flee, Dalinar continues to fight.
+
+Kaladin and Bridge Four fight to hold their bridgehead for what seems like hours to Kaladin. During this time Kaladin finds himself gaining respect for the Parshendi's battlefield ethics. He seems to find in the Parshendi what he had hoped to find in the warcamps of Alethi. The Kholin army finally breaks through the Parshendi lines and takes control of the bridge, defending both sides of the chasm. Kaladin stops to take a report from his men only to find that Malop, Earless Jaks, and Narm are dead. He orders his men back across the bridge to the staging chasm. With Moash, Kaladin looks to the lead of the retreat. Unable to find a suitable officer, Kaladin promotes a very young lighteyed soldier and gets him to organize the retreat. He then finds an officer of the Cobalt Guard and asks why they aren't crossing; they are sworn to protect Adolin, so they refuse to go. So Kaladin finds Adolin and commands him to cross the bridge. He doesn't want to abandon his father, so Kaladin promises to help him while they retreat. The Cobalt Guard follows Kaladin but can't keep up.
+
+Dalinar takes multiple hits to his helm, which finally explodes, leaving him dazed and confused. His Parshendi enemy doesn't finish him off, though, instead leaning down to him and saying, "It is you. I have found you at last." There is a disturbance in the Parshendi ranks, and Dalinar sees a glowing Spearman approaching.
+
+Kaladin finds a hole in the armor of the Parshendi looming over Dalinar and strikes, using Stormlight-enhanced strength. The surrounding Parshendi start chanting "Neshua Kadal" and fearfully back away, not attacking. He finds Gallant and brings him over to Dalinar.
+
+Dalinar gets up and wants to finish off the Shardbearer, but Kaladin calls upon his honor to retreat immediately since no one will leave without him. He agrees and calls the retreat, galloping toward the bridge with Kaladin and the Cobalt Guard following. They go across and the Parshendi do not give chase. The Parshendi Shardbearer salutes Dalinar. He finds Kaladin and vows to protect him from Sadeas if he will join his army. Kaladin agrees since they can't very well escape now with so many wounded and little supplies.`
+  },
+  69: {
+    title: 'Justice',
+    pov: 'Navani Kholin, Dalinar Kholin, Kaladin',
+    text: `Chapter 69: Justice
+
+Characters
+
+Navani Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Kaladin (point of view)
+
+Torol Sadeas
+
+Renarin Kholin
+
+Makal
+
+Adolin Kholin
+
+Rust Elthal
+
+Moash
+
+Teft
+
+Avarak Matal
+
+Elhokar Kholin
+
+Teleb (mentioned only)
+
+Nohadon (mentioned only)
+
+Lamaril (mentioned only)
+
+Syl (mentioned only)
+
+Plot Summary
+
+At Sadeas's staging area Navani forces her way through the crowd after hearing rumors that Sadeas came back from battle without Dalinar. Renarin follows her. Sadeas tells Navani that the Parshendi overwhelmed Dalinar's forces, forcing him to retreat to save his own men. He claims to have witnessed Dalinar fall to Parshendi hammers. Unwilling to believe Sadeas's account, Navani creates an enormous Thath glyph across the staging area stone ground in burn ink. Navani releases her prayer for Justice by lighting glyph, which leaves a scorch mark on the stone. Shortly after the flames die, one of Sadeas's message runner approaches with news of Dalinar's survival.
+
+Dalinar rides at the head of his remaining force. Seething with anger, he contemplates his confrontation with Sadeas. He knows he must first protect Alethkar despite his desire for revenge. As his force approaches the warcamp, Dalinar dismisses his wounded to his camp and offers to send Kaladin's bridgemen with them, but they are determined to see his promise to buy their freedom through. Unwilling to force them to go, Dalinar allows them to accompany him into Sadeas's warcamp. He unexpectedly finds Renarin and Navani in Sadeas's warcamp. He embraces his son and later Navani. He tells Navani that he sees the world differently now and is now unwilling to let 'lying men' control his life. Releasing Navani, he confronts Sadeas. Publicly they feign civility. Sadeas apologizes for overestimating the threat against Dalinar's forces and retreating too soon. But, standing close so as not to be overheard, Dalinar privately asks Sadeas why. Sadeas responds referring to his oath to protect Elhokar, saying that Dalinar is going insane and becoming weak. He feels that these ideas are infecting Elhokar. And, in the end, he just wanted Dalinar gone. In this admission of guilt, Dalinar realizes that acting honorably would never win Sadeas's loyalty.
+
+Kaladin watches the conference between Dalinar and Sadeas with the members of Bridge Four. The private conversation ends, and Sadeas states aloud that their alliance was "unfeasible." Dalinar claims the bridgemen, but Sadeas refuses to let them go. He offers sixty emerald broams for each member. But Sadeas is unwilling to sell, stating that he would not sell them for 1,000 broams and tells Dalinar to leave his camp. Kaladin turns away, thinking Dalinar would not be able to fulfill his promise when there are gasps of surprise. Kaladin turns to see that Dalinar had summoned his Shardblade. Dalinar offers his Shardblade for all of Sadeas's bridgemen. Sadeas accepts and mocks him for giving up his Shardblade for worthless slaves. Unable to believe what has just happened, Kaladin asks Dalinar why. Dalinar explains that Kaladin saved him and two thousand of his men. All of whose lives are priceless. In his opinion, one priceless sword is a small price to pay for two thousand lives, especially to keep his honor.
+
+Dalinar finds Elhokar in the sitting room of the palace wearing his Shardplate. Dalinar initiates a quick brawl in which he kicks Elhokar several times, cracking his Shardplate and repeatedly keeping him from summoning his blade. Dalinar ends the "fight" by breaking Elhokar's breastplate, subduing him. He then demands to know if Elhokar himself cut the girth on his own saddle to get Dalinar to take him more seriously. Reluctantly, Elhokar admits to cutting the girth. An exasperated Dalinar then explains the consequences of this -- including Sadeas's betrayal. Additionally, Dalinar demonstrates how easily he could kill Elhokar, stating that he could have done it a hundred times over and that he is not Elhokar's enemy. Releasing his nephew, he tells Elhokar that tomorrow he will appoint Dalinar as Highprince of War. Determined to finally see the war won and Alethkar united, he decides to stop trying to be Nohadon the peacemaker and return to being the Blackthorn, the warlord. Elhokar is reluctant, fearing rebellion from the various highprinces, but Dalinar turns to leave, confident that he will make the appointment and content knowing the challenges that are before him. Just before exiting, he also informs Elhokar about the courtship between himself and Navani.`
   }
 };
 
