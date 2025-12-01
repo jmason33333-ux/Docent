@@ -927,6 +927,126 @@ function closeHistory() {
 }
 
 // Add message to chat UI
+/**
+ * Start a new chat - clears conversation history and shows welcome message
+ */
+function startNewChat() {
+  // Clear conversation history
+  conversationHistory = [];
+  
+  // Clear chat container
+  const chatContainer = document.getElementById('chat-container');
+  if (chatContainer) {
+    chatContainer.innerHTML = '';
+    
+    // Restore welcome message
+    const welcomeMessage = document.createElement('div');
+    welcomeMessage.className = 'welcome-message';
+    welcomeMessage.innerHTML = `
+      <div class="welcome-icon">
+        <svg class="rowan-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <!-- Minimal Rowan tree - single trunk with three branches -->
+          <g stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trunk -->
+            <path d="M24 42 L24 20"/>
+            <!-- Three main branches in Y shape -->
+            <path d="M24 20 L16 12"/>
+            <path d="M24 20 L32 12"/>
+            <path d="M24 20 L24 12"/>
+          </g>
+          <!-- Three berries at branch tips -->
+          <circle cx="16" cy="12" r="2" fill="currentColor"/>
+          <circle cx="24" cy="12" r="2" fill="currentColor"/>
+          <circle cx="32" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <h2>Welcome to Rowan</h2>
+      <p>I'm your companion for navigating complex fantasy worlds.</p>
+      <p>Select your book and chapter from the table of contents, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
+    `;
+    chatContainer.appendChild(welcomeMessage);
+  }
+  
+  // Stop any ongoing voice recognition or speech
+  if (window.recognition && window.recognition.state === 'listening') {
+    stopListening();
+  }
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    stopSpeaking();
+  }
+  
+  // Clear message input
+  const messageInput = document.getElementById('message-input');
+  if (messageInput) {
+    messageInput.value = '';
+  }
+  
+  console.log('Started new chat');
+}
+
+// Make function globally accessible for onclick handler
+window.startNewChat = startNewChat;
+
+/**
+ * Start a new chat - clears conversation history and shows welcome message
+ */
+function startNewChat() {
+  // Clear conversation history
+  conversationHistory = [];
+  
+  // Clear chat container
+  const chatContainer = document.getElementById('chat-container');
+  if (chatContainer) {
+    chatContainer.innerHTML = '';
+    
+    // Restore welcome message
+    const welcomeMessage = document.createElement('div');
+    welcomeMessage.className = 'welcome-message';
+    welcomeMessage.innerHTML = `
+      <div class="welcome-icon">
+        <svg class="rowan-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <!-- Minimal Rowan tree - single trunk with three branches -->
+          <g stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trunk -->
+            <path d="M24 42 L24 20"/>
+            <!-- Three main branches in Y shape -->
+            <path d="M24 20 L16 12"/>
+            <path d="M24 20 L32 12"/>
+            <path d="M24 20 L24 12"/>
+          </g>
+          <!-- Three berries at branch tips -->
+          <circle cx="16" cy="12" r="2" fill="currentColor"/>
+          <circle cx="24" cy="12" r="2" fill="currentColor"/>
+          <circle cx="32" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <h2>Welcome to Rowan</h2>
+      <p>I'm your companion for navigating complex fantasy worlds.</p>
+      <p>Select your book and chapter from the table of contents, then ask me anything about what you've read so far. I'll help you understand the story without spoiling what's ahead.</p>
+    `;
+    chatContainer.appendChild(welcomeMessage);
+  }
+  
+  // Stop any ongoing voice recognition or speech
+  if (window.recognition && window.recognition.state === 'listening') {
+    stopListening();
+  }
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    stopSpeaking();
+  }
+  
+  // Clear message input
+  const messageInput = document.getElementById('message-input');
+  if (messageInput) {
+    messageInput.value = '';
+  }
+  
+  console.log('Started new chat');
+}
+
+// Make function globally accessible for onclick handler
+window.startNewChat = startNewChat;
+
 function addMessage(sender, content, metadata = null) {
   const chatContainer = document.getElementById('chat-container');
 

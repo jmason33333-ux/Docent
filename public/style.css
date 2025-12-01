@@ -207,6 +207,7 @@ body {
   margin-left: auto;
 }
 
+.new-chat-button,
 .history-toggle {
   padding: 6px;
   background: rgba(255, 255, 255, 0.15);
@@ -223,6 +224,7 @@ body {
 }
 
 @media (min-width: 768px) {
+  .new-chat-button,
   .history-toggle {
     padding: 8px;
     min-width: 36px;
@@ -230,11 +232,13 @@ body {
   }
 }
 
+.new-chat-button:hover,
 .history-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.new-chat-button svg,
 .history-toggle svg {
   width: 18px;
   height: 18px;
