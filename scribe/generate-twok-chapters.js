@@ -266,6 +266,214 @@ They arrive at the entrance to a room which has been blocked off by a large, fal
 Jasnah Soulcasts the stone, transforming it into smoke. The king retrieves his granddaughter and, when asked, agrees to take Jasnah to the Palanaeum.
 
 Jasnah rejects Shallan as her ward because of her lack of education in history and philosophy. Shallan is frustrated, but decides to persevere. It is then that Shallan reveals that she wishes to become Jasnah's ward not out of scholarly pursuit, but in order to steal her Soulcaster to help her family's finances recover.`
+  },
+  6: {
+    title: 'Bridge Four',
+    pov: 'Kaladin',
+    text: `Chapter 6: Bridge Four
+
+Characters
+
+Kaladin (point of view)
+
+Tvlakv
+
+Bluth
+
+Tag
+
+Hashal
+
+Gaz
+
+Sylphrena
+
+Gavilar Kholin (mentioned only)
+
+Laral (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Lamaril (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Plot summary
+
+Kaladin and the rest of the slave caravan have arrived at the Shattered Plains, specifically at the warcamp of Highprince Sadeas. They are taken to a woman who is to decide whether she can use any of the slaves or not. When Kaladin tries to convince her to let him fight, Tvlakv tells her that Kaladin is a deserter, dashing his hopes.
+
+The woman decides that Kaladin and his companions are to be made members of the bridge crews. Kaladin and his new immediate superior, Gaz, take an instant dislike to each other, and as a result, Kaladin is placed in one of the worst locations on the bridge when they are called on a bridge run, without the benefit of shoes or vest for protection.
+
+After several hours of agony carrying the bridge, they arrive at the chasm where the enemy Parshendi are waiting on the other side. They take volleys of arrows while placing their bridge. Kaladin is the only survivor in the front row.
+
+He wakes up hours later when the windspren who's been following him shocks him with some sort of energy. Kaladin realizes that if he doesn't hurry, he will be left behind. The spren tells him that her name is Sylphrena, or Syl.
+
+Though he is exhausted, Kaladin takes a spot on the bridge and begins the long way back to camp.`
+  },
+  7: {
+    title: 'Anything Reasonable',
+    pov: 'Shallan Davar',
+    text: `Chapter 7: Anything Reasonable
+
+Characters
+
+Shallan Davar (point of view)
+
+Kabsal
+
+Jasnah Kholin
+
+Lin Davar (mentioned only)
+
+Luesh (mentioned only)
+
+Balat Davar (mentioned only)
+
+Yalb (mentioned only)
+
+Taravangian (mentioned only)
+
+the Almighty (mentioned only)
+
+Lhanin (mentioned only)
+
+Dandos Heraldin (mentioned only)
+
+Plot summary
+
+Shallan is en route to the Palanaeum, hoping to convince Jasnah that she is worthy to be her ward. She believes that it is critical that she find a way to do so, as without her father, her family can no longer Soulcast its way into wealth or manipulate others into doing as they want.
+
+She is allowed to wait for Jasnah in her reading alcove, though she is denied access to the Palanaeum itself. While she waits, she sketches several Memories from the past few hours, then writes a letter to Jasnah containing arguments for her reconsideration. She is interrupted by an ardent introducing himself as Kabsal. He asks to wait for Jasnah with Shallan and praises her sketches highly.
+
+Kabsal tells Shallan that he is trying to convert Jasnah, an avowed atheist, to Vorinism. He leaves, asking her to let Jasnah know that he had come by to speak with her. She agrees, and begins to lacquer her drawings. She realizes that she's been there for quite a while and begins to gather her things, leaving the letter for Jasnah. Before she can leave, however, Jasnah appears in the doorway, looking displeased.`
+  },
+  8: {
+    title: 'Nearer the Flame',
+    pov: 'Shallan Davar',
+    text: `Chapter 8: Nearer the Flame
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Yalb
+
+Artmyrn
+
+Kabsal (mentioned only)
+
+Lin Davar (mentioned only)
+
+Balat Davar (mentioned only)
+
+Wikim Davar (mentioned only)
+
+Jushu Davar (mentioned only)
+
+Helaran Davar (mentioned only)
+
+Tozbek (mentioned only)
+
+Placini (mentioned only)
+
+Gabrathin (mentioned only)
+
+Yustara (mentioned only)
+
+Manaline (mentioned only)
+
+Shauka-daughter-Hasweth (mentioned only)
+
+Rencalt (mentioned only)
+
+Szeth (mentioned only)
+
+Barmest (mentioned only)
+
+Plot summary
+
+Jasnah scolds Shallan, telling her that she had already made her decision. Shallan is embarrassed that she disturbed Jasnah again and leaves. After only a few moments, however, Jasnah calls her back and apologizes to her and gives her Shallan's money pouch that she had left behind.
+
+Shallan asks Jasnah to read the letter she had written for her earlier. Jasnah is impressed that she is self-taught and agrees to accept Shallan as her ward once she has adequately learned philosophy and history. Shallan is pleased by this, but worries that she cannot learn fast enough to save her house.
+
+Shallan leaves the Conclave and meets up with Yalb, who has been gambling with some guards. Yalb insists that she is talented enough to be accepted if she would just be more persistent, so she decides to buy a bunch of books on history and philosophy and return to start studying right away, planning to impress Jasnah with her rapid learning just before Jasnah leaves Kharbranth. Before long, however, she is interrupted by Jasnah, who had paid the servants to tell her if Shallan returned to the Palanaeum.
+
+Jasnah asks to see Shallan's satchel. When she comes across Shallan's sketches with notes on biology, she asks why she made them, to which Shallan replies that she wanted to. It is ultimately the fact that Shallan pursues scholarship in her free time, along with her persistence, that convince Jasnah to accept her as her ward.
+
+Shallan reflects that now she's completed the first phase of her plan, but now needs to discover how to accomplish the rest of it without being caught.`
+  },
+  9: {
+    title: 'Damnation',
+    pov: 'Kaladin',
+    text: `Chapter 9: Damnation
+
+Characters
+
+Kaladin (point of view)
+
+Sylphrena
+
+Gaz
+
+Laresh
+
+Torol Sadeas (mentioned only)
+
+Lirin (mentioned only)
+
+Tien (mentioned only)
+
+Cenn (mentioned only)
+
+Plot Summary
+
+Kaladin has now been a member of the bridge crews for somewhere between two to four weeks. Of the twenty five who survived his first bridge run, only one other man is still alive.
+
+A few new arrivals are brought in, and Kaladin sees a young boy who reminds him of his younger brother Tien. In general, Kaladin is handling the transition to life as a bridge crew member poorly, snapping at Syl and becoming despondent. Syl leaves, unable to continue watching him in his current state.
+
+The bridge crews are called on another run, and the boy who reminded him of Tien is killed, as well as the only remaining man from Kaladin's first bridge run. Kaladin thinks to himself that he is dead inside, then proceeds to cry.`
+  },
+  10: {
+    title: 'Stories of Surgeons',
+    pov: 'Kaladin',
+    timeContext: 'Nine Years Ago',
+    text: `Chapter 10: Stories of Surgeons
+
+Characters
+
+Kaladin (point of view)
+
+Lirin
+
+Sani
+
+Hesina (mentioned only)
+
+Hammie (mentioned only)
+
+Tien (mentioned only)
+
+Jam (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Wistiow (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Vathe (mentioned only)
+
+Plot Summary
+
+Kal (his nickname as a boy) helps his father, Lirin, treat a young woman, Sani. He reflects over the course of the surgery on how his family is treated so differently because of his father's career.
+
+When they finish amputating Sani's middle finger, Lirin asks Kaladin why he was late to arrive, and Kaladin replies that he was with a boy named Jam learning to use a quarterstaff. This sparks a debate between Kaladin and Lirin about the relative merits of being a soldier or a surgeon. Lirin meets Kaladin's claim that it's possible to save lives by killing others with the assertion that doing so is like "trying to stop a storm by blowing harder." Eventually, Kaladin simply stops arguing and goes back to cleaning up the room.
+
+Lirin quizzes him on various things a surgeon should know, then tells him that he plans to send him to Kharbranth to train under the surgeons there if he can find a way to do so. Lirin also tells him that he's incredibly gifted when it comes to surgery, and he shouldn't waste himself on soldiering.`
   }
 };
 
