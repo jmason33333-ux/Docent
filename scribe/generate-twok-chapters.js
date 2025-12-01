@@ -505,6 +505,188 @@ Just as Kaladin is about to step into the chasm, Syl reappears, carrying a singl
 Kaladin returns to the camp and attacks Gaz, throwing him to the ground. He demands that Gaz make him bridgeleader of Bridge Four, and that he give Kaladin full control of it. In return, Gaz receives one fifth of Kaladin's wages.
 
 Kaladin then goes inside the barracks and begins asking the other bridgemen's names, noticing for the first time how pathetic they all are.`
+  },
+  12: {
+    title: 'Unity',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 12: Unity
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Elhokar Kholin
+
+Torol Sadeas
+
+Vamah
+
+Renarin Kholin
+
+Gallant
+
+Vengeance
+
+the Thrill
+
+Tarilar
+
+Vartian
+
+Lomard
+
+Wit
+
+Bashin
+
+Gavilar Kholin (mentioned only)
+
+Janala Lustow (mentioned only)
+
+Honor (mentioned only)
+
+Rilla (mentioned only)
+
+Deeli (mentioned only)
+
+Navani Kholin (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Plot summary
+
+Adolin is on a chasmfiend hunt with Dalinar, Renarin, Elhokar, and Sadeas. He is troubled by Dalinar's increasingly strange behavior, especially his fits during the highstorms, and worries that his father is going mad. Sadeas also continually taunts Dalinar over his lack of recent success in capturing gemhearts, which frustrates Adolin.
+
+Meanwhile, Dalinar, riding up by Elhokar and Sadeas, tells Elhokar that if they had a proper vantage point, they could observe the progress of the soldiers crossing the chasms. Elhokar charges off to a nearby rock formation, betting Dalinar five broams that he can beat him there. Dalinar races after him, at first thinking only of Elhokar's safety, but eventually getting into the thrill of the contest. Just as Dalinar is about to win, he remembers the strange voice in his dreams, who he presumes to be the Almighty, telling him to "unite them." He hesitates, and Elhokar beats him to the top. When he sees how thrilled Elhokar is to have beaten him, Dalinar is glad to have waited. They watch the soldiers cross for a few minutes, then begin to return to the others. Adolin watches their return, all the while giving orders for his men to circle around to various plateaus, securing the area.
+
+Dalinar and Elhokar return, and Adolin gives his report to them. Elhokar reluctantly agrees to wait for the rest of the soldiers to cross, setting up a small awning to wait under, and conversing with his courtiers. Adolin questions Dalinar about the purpose and the wisdom of their hunting expedition, particularly where it leaves Elhokar open to a potential Parshendi ambush. Dalinar replies that a victory such as a successful hunt, in a controlled, safe environment, will bolster the king's reputation and increase his self-confidence as well. Just as Adolin begins agreeing with him however, he voices a thought about how the Alethi should be in Alethkar, not on the Shattered Plains. This shocks and upsets Adolin.
+
+After a brief conversation with the King's Wit, in which Wit tells Dalinar that Renarin is not as fragile as he thinks, Dalinar and Adolin meet again with Elhokar and Sadeas, making final preparations for the hunt. After only a few minutes conversing with Bashin, the hunt master, however, Dalinar and Adolin realize that something is wrong. At this point, the chasmfiend they have been hunting appears, climbing onto the platform with all of the courtiers and scribes, rather than the smaller plateau the hunt was supposed to take place on.`
+  },
+  13: {
+    title: 'Ten Heartbeats',
+    pov: 'Dalinar Kholin, Adolin Kholin',
+    text: `Chapter 13: Ten Heartbeats
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Adolin Kholin (point of view)
+
+Elhokar Kholin
+
+Sureblood
+
+Gallant
+
+Vengeance
+
+Torol Sadeas
+
+Renarin Kholin
+
+Gavilar Kholin (mentioned only)
+
+Plot summary
+
+Dalinar, Adolin, and Elhokar all immediately begin to race for the chasmfiend, hoping to kill it before it can harm any bystanders. Sadeas uses his grandbow, weakening it from a distance while Dalinar and Adolin go for its many legs and Elhokar distracts it. While doing so, however, the strap on Elhokar's saddle breaks, causing him to be thrown to the ground. Just as he is about to be crushed by the chasmfiend, Dalinar hurls himself beneath the descending claw and, with Shardplate-enhanced strength, catches it, giving Elhokar time to escape.
+
+Adolin continues to cut off its legs, and the chasmfiend is eventually unable to support its own weight. Elhokar summons his Shardblade once again and uses it to kill the felled chasmfiend, then harvest its gemheart.`
+  },
+  14: {
+    title: 'Payday',
+    pov: 'Kaladin',
+    text: `Chapter 14: Payday
+
+Characters
+
+Kaladin (point of view)
+
+Sylphrena
+
+Moash
+
+Dunny
+
+Narm
+
+Sigzil
+
+Leyten
+
+Rock
+
+Gaz
+
+Teft
+
+Meridas Amaram (mentioned only)
+
+Tien (mentioned only)
+
+Plot summary
+
+Kaladin gets up before any of the other bridgemen, resolved that he will fight for a better existence, even in his terrible circumstances. He attempts to rouse the rest of Bridge Four, but none come. After Kaladin physically carries Moash out of the barrack, however, the rest of the bridgemen reluctantly get up. Kaladin then informs the men of bridge four that instead of sleeping in each morning, they will be training, and that he intends to do everything he can to ensure that Bridge Four never loses another man.
+
+The other bridgemen all refuse to participate in Kaladin's training once Gaz informs them that they don't have to. Kaladin goes to Gaz and gets his pay for the week, returning one of his five spheres as a bribe. Gaz tells Kaladin that he has no authority and will be unable to sway the bridgemen, then leaves. Kaladin, worried that Gaz may decide Kaladin is more trouble than he's worth and kill him, asks Syl to watch over him at night and wake him if Gaz tries anything.
+
+Kaladin then proceeds to spend his morning training, jogging back and forth across the lumberyard with an unfinished board of a bridge. He does this for several hours before meeting several of the men from Bridge Four to dismiss them for lunch. Syl informs Kaladin that she is changing, becoming better at remembering things and understanding new concepts and abstract ideas. Kaladin realizes that she feels much the way about her new understanding of life as he does about his current position –- afraid to continue, but sure that he can't go back.`
+  },
+  15: {
+    title: 'The Decoy',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 15: The Decoy
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Torol Sadeas
+
+Elhokar Kholin
+
+Renarin Kholin
+
+Wit
+
+Vamah
+
+Gallant
+
+Dalinar's wife (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+The Almighty (mentioned only)
+
+Roion (mentioned only)
+
+Talata (mentioned only)
+
+Bethab (mentioned only)
+
+Navani Kholin (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Nohadon (mentioned only)
+
+Plot summary
+
+Adolin is overseeing the cleanup four hours after the chasmfiend attack while the group waits for a bridge crew to come, replacing the bridge the chasmfiend had destroyed in its rampage. He reflects that many of the other lighteyes are treating Dalinar slightly more respectfully and carefully after his earlier rescue of Elhokar, and thinks to himself that it can't last. Having finished his rounds, he approaches Elhokar's pavilion to give his final casualty report.
+
+In the pavilion, Elhokar chides Dalinar for not making serious efforts to win gemhearts, comparing him to Sadeas. Eventually, the conversation deteriorates to taunting, until Adolin calls Sadeas a coward. Sadeas in turn calls Renarin useless, nearly sparking a duel and possibly a war then and there, until he retracts his statement. Wit appears and taunts Sadeas for a while before actually praising Renarin's intelligence.
+
+Adolin and Dalinar then go to examine the strap of Elhokar's saddle to see if it could have been cut. Adolin wonders why they're bothering until he realizes that Elhokar believes that the strap was cut as an assassination attempt, at which point he remarks on Elhokar's increasing paranoia. Dalinar tells Adolin to take the strap to a leatherworker to examine, to talk to the grooms about the saddle, and to double the king's guard. Adolin wonders whether Sadeas is behind the cut strap. Dalinar then approaches Highprince Vamah, manipulating him into making greater use of Elhokar's Soulcasters, ensuring continued income for Elhokar.
+
+Sadeas approaches Dalinar to tell him of the success of their manipulation of Vamah, and Adolin realizes that the two of them had planned the entire thing between them. After a brief argument, Adolin and Dalinar leave. Dalinar then tells Adolin that though he hates Sadeas, he's certain that he wouldn't hurt Elhokar. Dalinar reveals that Sadeas was the decoy the night of Gavilar's assassination, attempting to lead Szeth away so Gavilar could escape. He then tells Adolin that Sadeas has sworn to protect Elhokar at any cost, then further discusses Gavilar's assassination and his final words. Elhokar approaches, asking if they've learned anything about the saddle. He and Dalinar then begin arguing, Elhokar insisting that someone is trying to kill him and Dalinar insisting that Elhokar is simply overreacting.
+
+Elhokar leaves, and Dalinar sends Adolin to prepare the soldiers to move. As he begins to make his way back to camp, Dalinar reflects on his failure to determine the meaning of Gavilar's last words and his desire to protect Elhokar.`
   }
 };
 
@@ -617,8 +799,26 @@ async function generateChapterNotes(chapterType, chapterNumber = null, interlude
     if (chapterType === 'prologue') {
       chaptersDir = path.join(seriesBookPath, 'chapters');
     } else if (chapterType === 'chapter') {
-      // Part 1 folder structure
-      chaptersDir = path.join(seriesBookPath, 'chapters', 'Part 1');
+      // Determine which part based on chapter number
+      // Part 1: chapters 1-11
+      // Part 2: chapters 12+
+      let partNumber = 1;
+      if (chapterNumber && chapterNumber >= 12 && chapterNumber <= 26) {
+        partNumber = 2;
+      } else if (chapterNumber && chapterNumber >= 27 && chapterNumber <= 50) {
+        partNumber = 3;
+      } else if (chapterNumber && chapterNumber >= 51) {
+        partNumber = 4; // Adjust as needed for later parts
+      }
+      
+      const partNames = {
+        1: 'Part 1',
+        2: 'Part 2',
+        3: 'Part 3',
+        4: 'Part 4'
+      };
+      
+      chaptersDir = path.join(seriesBookPath, 'chapters', partNames[partNumber] || 'Part 1');
       if (!fs.existsSync(chaptersDir)) {
         fs.mkdirSync(chaptersDir, { recursive: true });
       }
