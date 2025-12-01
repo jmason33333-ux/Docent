@@ -97,6 +97,19 @@ async function logConversation({ userId, book, chapter, question, answer, metada
       metadata.snapshotChapter || ''
     ];
 
+    // Prepare context summary (parse JSON if it's a string, otherwise use as-is)
+    let contextSummaryText = '';
+    if (metadata.contextSummary) {
+      try {
+        const contextSummary = typeof metadata.contextSummary === 'string' 
+          ? JSON.parse(metadata.contextSummary) 
+          : metadata.contextSummary;
+        contextSummaryText = `Source: ${contextSummary.source || 'unknown'}\nType: ${contextSummary.type || 'unknown'}\nCoverage: ${contextSummary.coverage || 'unknown'}\nNotes Length: ${contextSummary.notesLength || 0} chars\nChapters Found: ${contextSummary.chaptersFound || 'none'}\nChapters Missing: ${contextSummary.chaptersMissing || 'none'}\n\nPreview (first 1000 chars):\n${contextSummary.preview || 'no preview'}`;
+      } catch (e) {
+        contextSummaryText = String(metadata.contextSummary);
+      }
+    }
+
     console.log('[LOGGING] Query category:', {
       category: queryCategoryValues[0],
       subcategory: queryCategoryValues[1],
@@ -115,10 +128,11 @@ async function logConversation({ userId, book, chapter, question, answer, metada
       snapshotUsed: snapshotTrackingValues[1],
       snapshotChapter: snapshotTrackingValues[2]
     });
+    console.log('[LOGGING] Context summary length:', contextSummaryText.length, 'chars');
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Conversations!A:X', // Extended to include snapshot tracking
+      range: 'Conversations!A:Y', // Extended to include context summary (Y = column 25)
       valueInputOption: 'RAW',
       resource: {
         values: [[
@@ -138,7 +152,9 @@ async function logConversation({ userId, book, chapter, question, answer, metada
           // RAG tracking columns
           ...ragTrackingValues,
           // Snapshot tracking columns
-          ...snapshotTrackingValues
+          ...snapshotTrackingValues,
+          // Context summary column (new)
+          contextSummaryText
         ]]
       }
     });

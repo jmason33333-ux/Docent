@@ -227,6 +227,57 @@ ${notesContext}
       { role: 'user', content: message }
     ];
 
+    // Create context summary for logging (truncated for Google Sheets)
+    const contextSummary = {
+      source: contextSource,
+      type: contextType,
+      coverage: contextCoverage,
+      notesLength: ragMetadata.notesLength,
+      chaptersFound: ragMetadata.chaptersFound.join(', ') || 'none',
+      chaptersMissing: ragMetadata.chaptersMissing.join(', ') || 'none',
+      preview: context ? context.substring(0, 1000) + (context.length > 1000 ? '...' : '') : 'no context'
+    };
+
+    // Log full context being sent to LLM
+    console.log('\n========================================');
+    console.log('[CONTEXT] Full context being sent to LLM:');
+    console.log('========================================');
+    console.log('\n[SYSTEM PROMPT] (length: ' + rowanPrompt.length + ' chars)');
+    console.log('Type:', rowanPrompt.length < 500 ? 'SHORT' : 'FULL');
+    console.log('Version:', promptMetadata.activeVersion);
+    
+    console.log('\n[CONTEXT MESSAGE] (length: ' + contextMessage.content.length + ' chars)');
+    console.log('Context Source:', contextSource);
+    console.log('Context Type:', contextType);
+    console.log('Context Coverage:', contextCoverage);
+    console.log('Notes Length:', ragMetadata.notesLength, 'chars');
+    console.log('Chapters Found:', ragMetadata.chaptersFound.join(', ') || 'none');
+    console.log('Chapters Missing:', ragMetadata.chaptersMissing.join(', ') || 'none');
+    
+    // Show preview of actual context content (first 500 chars and last 200 chars)
+    if (context && context.length > 0) {
+      const contextPreview = context.length > 700 
+        ? context.substring(0, 500) + '\n\n[... ' + (context.length - 700) + ' chars truncated ...]\n\n' + context.substring(context.length - 200)
+        : context;
+      console.log('\n[CONTEXT CONTENT PREVIEW]');
+      console.log('---');
+      console.log(contextPreview);
+      console.log('---');
+    }
+    
+    console.log('\n[CONVERSATION HISTORY]');
+    console.log('History messages:', recentHistory.length);
+    if (recentHistory.length > 0) {
+      recentHistory.forEach((msg, idx) => {
+        console.log(`  [${idx + 1}] ${msg.role}: ${msg.content.substring(0, 100)}${msg.content.length > 100 ? '...' : ''}`);
+      });
+    }
+    
+    console.log('\n[USER MESSAGE]');
+    console.log(message);
+    console.log('\n[ALL MESSAGES COUNT]', messages.length);
+    console.log('========================================\n');
+
     // Call OpenAI with cost-optimized model
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // 15x cheaper than GPT-4 Turbo, still excellent for this use case
@@ -268,7 +319,9 @@ ${notesContext}
         // Snapshot tracking
         contextSource: contextSource || 'none',
         snapshotUsed: Boolean(contextSource && (contextSource.includes('snapshot'))),
-        snapshotChapter: snapshotMetadata.snapshotChapter ? String(snapshotMetadata.snapshotChapter) : ''
+        snapshotChapter: snapshotMetadata.snapshotChapter ? String(snapshotMetadata.snapshotChapter) : '',
+        // Context summary for logging
+        contextSummary: JSON.stringify(contextSummary)
       }
     };
 
