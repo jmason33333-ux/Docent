@@ -1048,6 +1048,321 @@ Dalinar goes with his sons to the king's feast. Adolin reports that according to
 Dalinar chafes at the sloppy popular fashion sense of the other nobles and the fact that their drunkenness is in violation of the Alethi War Codes. The king's Wit sits on a stool at the entrance to the island and insults everyone as they go to the feast. He warns Dalinar that the rumor has spread of his suggestion to the king that they retreat and abandon the Vengeance Pact. Lady Navani, Gavilar's widow, unexpectedly shows up to the feast, having just arrived to the Shattered Plains. Dalinar tries to hide his attraction to her with the utmost propriety, addressing her as a sister.
 
 King Elhokar then announces that in light of the recent attempt on his life with the cut girth strap, he is appointing Sadeas to Highprince of Information to investigate. This is to snub Dalinar, who he believes is not giving the investigation serious attention. Dalinar realizes that this is Sadeas's way of outmaneuvering his Highprince of War idea.`
+  },
+  23: {
+    title: 'Many Uses',
+    pov: 'Kaladin',
+    text: `Chapter 23: Many Uses
+
+Characters
+
+Kaladin (point of view)
+
+Rock
+
+Teft
+
+Syl
+
+Dunny
+
+Jaks
+
+Natam
+
+Skar
+
+Leyten (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Gaz (mentioned only)
+
+Wistiow (mentioned only)
+
+Toralin Roshone (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Rayse (mentioned only)
+
+Bavadin (mentioned only)
+
+Plot Summary
+
+Bridge Four is on rock duty, finding stones to Soulcast into food. Kaladin has Rock and Teft searching for knobweed to extract the antiseptic sap from. Rock, who can inexplicably see Syl, finds knobweed quickly guided by her. Kaladin ties bundles of the reed to the bottom of the cart to conceal them. Syl comes to him excitedly, telling him that she led Rock to a pile of dung as a joke. He makes small talk with the bridgecrew, trying to soften their attitude towards him, with little success. Kaladin realizes that even though he has saved lives in Bridge 4, no one will follow his leadership unless he finds a way to make their lives worth living.
+
+Later, Kaladin, Rock, and Teft sneak into the wagonyard to retrieve the knobweed. Relieved that it's still there and not too dried out, they head to where Syl found the chipped, discarded liquor bottles to use for the knobweed sap. They then head to the Honor Chasm to squeeze the sap into the bottles.
+
+While working, they talk. Teft asks Kaladin why he tries to lead the bridgecrew. Kaladin says that the responsibilities of the bridgeleader are his to decide. Kaladin asks Rock how he came to be a bridgeman. Rock tells him that his leader, or nuatoma, dueled Highprince Sadeas to try to win his Shardplate. When he lost, Rock, his cousin and servant, was bound to Sadeas. He was a cook, until he snuck chull dung into Sadeas's food, which caused his fall to bridgeman status. Teft asks Kaladin for his story explaining why he is a bridgeman. Kaladin says that he killed a man, though it wasn't murder and he was thanked by someone important. He cryptically says that he is a bridgeman because a lighteyes did not take it well when he turned down a gift.`
+  },
+  24: {
+    title: 'The Gallery of Maps',
+    pov: 'Dalinar Kholin, Adolin Kholin',
+    text: `Chapter 24: The Gallery of Maps
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Adolin Kholin (point of view)
+
+Roion
+
+Torol Sadeas (mentioned only)
+
+Sunmaker (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Nohadon (mentioned only)
+
+Janala (mentioned only)
+
+Seveks (mentioned only)
+
+Malasha (mentioned only)
+
+Elhokar (mentioned only)
+
+Renarin (mentioned only)
+
+Plot Summary
+
+Dalinar stands in the king's Gallery of Maps, waiting for Highprince Roion to come and meet him. Dalinar's ultimate goal is to follow his visions by uniting the highprinces, and he thinks he can start by working with another prince on a joint plateau assault. Since Roion has won the fewest gemhearts of all the princes, Dalinar tries to convince him that working together would be more effective. Roion is suspicious of this because he is afraid Dalinar will take any gemhearts and shards for himself. Dalinar compromises, saying that they will split gemhearts and that the first set of plate can go to Roion. Roion rebuffs this offer, instead insinuating that Dalinar is growing weak and deluded by his lapses from sanity during highstorms. Roion says he'll think about a joint assault and leaves.
+
+A few minutes later, as Dalinar is thinking about how to discover what Gavilar's last words really meant, Adolin meets Dalinar. He asks him how the meeting went and when Dalinar tells him that it went poorly, Adolin tells him that Sadeas is asking for permission to enter their warcamp to investigate the threat to the king. Adolin is worried that he may create false evidence framing Dalinar, but Dalinar tells Adolin to allow him to because his vision said to trust Sadeas. At this, Adolin becomes irate, telling Dalinar that to stake the future of their house on hallucinations is folly. Adolin shouts at Dalinar that his visions are just figments of his imagination. Dalinar tells Adolin to leave.`
+  },
+  25: {
+    title: 'The Butcher',
+    pov: 'Kaladin',
+    timeContext: 'Seven years ago',
+    text: `Chapter 25: The Butcher
+
+Characters
+
+Kaladin (point of view)
+
+Terith
+
+Relina
+
+Hesina
+
+Lirin
+
+Tien
+
+Roshone
+
+Wistiow (mentioned only)
+
+Laral (mentioned only)
+
+Miliv (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+Kal overhears some villagers speaking poorly of his father's work, accusing him of stealing the spheres and suspicious of how Lirin can write. Kal meets with his mother, Hesina, who tells him not to hate the villagers for repeating what they have heard. They respect Lirin but are intimidated by his status as second nahn. Kal realizes his parents had hoped to marry him off to Laral. He can't decide if he wants to be a soldier or a surgeon.
+
+The new citylord, Brightlord Roshone, arrives. He is less than pleased to be in a backwater city. He blames Lirin for his predicament because Lirin let Wistiow die. Lirin and Hesina don't know if things are better or worse for them with this new citylord.`
+  },
+  26: {
+    title: 'Stillness',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 26: Stillness
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Renarin Kholin
+
+Teleb
+
+Kalami
+
+The Thrill
+
+Perethom
+
+Havarah
+
+Adolin Kholin
+
+Malasha
+
+Ilamar
+
+Moratel
+
+Torol Sadeas
+
+Gallant
+
+Sureblood
+
+Litima (mentioned only)
+
+Nohadon (mentioned only)
+
+Isasik Shulin (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Aladar (mentioned only)
+
+Roion (mentioned only)
+
+Ashelem (mentioned only)
+
+Plot summary
+
+Brightness Litima reads the The Way of Kings to Dalinar. Renarin is with him. Listening usually comforts Dalinar, but not this time. It reminds him of Adolin's arguments. Dalinar is disturbed by the nature of his visions. Dalinar tells Renarin that Highprince Aladar refused his offer of an alliance, just as Roion did. Horns sounds outside. Dalinar enters the war room and gives Teleb an order to march. Teleb presses Dalinar on the idea of using faster bridges carried by men, and he finally relents and gives Teleb permission to recruit and train one crew. Sadeas comes to interview Dalinar's soldiers. He is insistent that the investigation continue despite the imminent battle, so he follows Dalinar and his army. Dalinar and Sadeas talk about the Thrill. Usually men don't speak about it.
+
+Dalinar summons Oathbringer and together with Adolin they attack the Parshendi. The Thrill gives him strength, focus, and power until he feels a sudden stab of powerful revulsion to the scene of death around him. He forces himself to continue to fight but feels sick. Dalinar hears a voice saying "Life before death," but nobody is near enough. He starts to fight for his men.
+
+Dalinar wins the battle and Adolin takes the gemheart. Dalinar is looking eastward, toward the Origin, when he notices a group of Parshendi on a nearby plateau. Among them is a large Parshendi wearing Shardplate. Dalinar wonders why the Shardbearer hadn't participated in the battle. The group flees toward their base at the center of the Plains.`
+  },
+  27: {
+    title: 'Chasm Duty',
+    pov: 'Kaladin',
+    text: `Chapter 27: Chasm Duty
+
+Characters
+
+Kaladin (point of view)
+
+Teft
+
+Rock
+
+Gaz
+
+Syl
+
+Dunny
+
+Skar
+
+Moash
+
+Sigzil
+
+Peet
+
+Yake
+
+Maps
+
+Narm
+
+Drehy
+
+Jaks
+
+Torfin
+
+Hobber
+
+Leyten (mentioned only)
+
+Dabbid (mentioned only)
+
+Lirin (mentioned only)
+
+Tien (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Tukks (mentioned only)
+
+Hesina (mentioned only)
+
+Jezrien (mentioned only)
+
+Nale (mentioned only)
+
+Plot Summary
+
+Kaladin visits the apothecary again to sell his knobweed sap. The apothecary pretends that "wild" knobweed isn't as effective and tries to swindle Kaladin. With the help of Syl, he sees through the ruse and gets a better price. He considers escaping, but he can't bring himself to leave the bridgemen. Gaz has changed Bridge Four's work duty to chasm duty because the other bridges resent them for getting away with breaking rules by bringing back wounded.
+
+Down in the chasms they have to look for corpses to get their equipment and whatever else can be found. Kaladin, Teft and Rock walk ahead talking. They find Dunny listening, try to make him participate, and it works. As the tension eases, they discover that Dunny can sing. The other crew members still remain aloof.
+
+Eventually they find a lot of corpses and begin their morbid work. Kaladin picks up a spear and gets overwhelmed by his memories. At first, most of the others jeer him for pretending to be their leader, but after he finishes his kata, they stare in amazement. Remembering that they have work to do or they'll get in trouble, he drops the spear and tells them to get to work. Teft is clearly impressed, but Kaladin down plays the issue.
+
+Later, Syl looks with Rock and Dunny for more corpses and they find Parshendi. They discover that the Parshendi's armor is grown from their bodies.
+
+The crew finishes their chasm duty and goes back to the ladders. Kaladin muses how to get the crew together and comes up with an idea. Back at the barracks he and Rock buy a cauldron and supplies and Rock cooks an evening stew for all the men of Bridge Four. One by one they all eventually come out of the barrack and sit around the fire, eating Rock's stew.
+
+The next morning, many more members of Kaladin's crew get up early to work out.`
+  },
+  28: {
+    title: 'Decision',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 28: Decision
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Teleb
+
+Ladent
+
+Havrom
+
+Tadet
+
+Niter
+
+Navani Kholin
+
+Danlan Morakotha
+
+Jasnah Kholin
+
+Kalana (mentioned only)
+
+The Thrill (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Elhokar (mentioned only)
+
+Thanadal (mentioned only)
+
+Hatham (mentioned only)
+
+Bethab (mentioned only)
+
+Brightlord Morakotha (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Lalai (mentioned only)
+
+Shallan Davar (mentioned only)
+
+Plot summary
+
+While on an inspection Adolin studies his father and worries about what he sees. Teleb demonstrates a prototype of a new portable bridge which fails. Adolin encourages him to continue working on the design. As they move off to start inspections, Dalinar wonders why there are no Shards for ordinary people and asks Adolin if he feels the Thrill. On their way to the fifth Battalion, Adolin praises his father's decision to allow the soldiers to bring their families to the Shattered Plains. Dalinar muses about the political and economic impact of the continual harvesting of gemstones and de facto colonization of the Shattered Plains. He tells Adolin that soon he will have to consider this.
+
+After inspecting the 5th Battalion, Havrom leads them to the ten soldiers that were questioned by Sadeas. Dalinar pointedly delegates the interrogation to Adolin. It becomes clear that the grooms' loyalty to Dalinar probably made the situation worse -- they only offered blanket denials to Sadeas. Dalinar asks Tadet to interview the men separately and find out specifics.
+
+Adolin then questions why Dalinar keeps giving him the lead. Dalinar tells him that he has a decision to make, but before he can elaborate, he notices a messenger in Thanadal's colors. The messenger informs Dalinar that Thanadal has to cancel their meeting. Dalinar presses the messenger, and he says he is instructed to say that Thanadal does not wish to do a joint plateau assault with him. All eight highprinces have refused his offer, leaving only Sadeas. He tells Adolin to continue the inspection without him, making a vague excuse about something that needs to be done.
+
+Dalinar is confident that his son will do well as highprince as he tries to decide whether he should abdicate. He orders Niter to bring him his war hammer, then orders some workers out of the new latrine pit. He uses the hammer to work on the latrine himself so he can think through his decision. He worries about how he is losing his thirst for battle and how the book, the Codes, and the Visions have changed him and how the others are regarding him and by extension his sons. As he gets to the end of his work, he feels that he is close to a decision. He is interrupted by Navani. She reminds him that he had an appointment with her. He continues to work, and she eventually gets him to apologize. She tells him that Jasnah's Spanreed is flashing. He quits work on the latrine and they go to take the "call."
+
+As they walk to the viewing room, she hints at starting a relationship, but Dalinar refuses, holding to the tradition that a widowed sister-in-law is a sister in truth. Dalinar is surprised to find Adolin, along with his clerks and their attendants, also already in his sitting chamber. Adolin introduces his new love interest and clerk Danlan Morakotha. He and Jasnah have a short exchange about their family, then Jasnah asks him to repeat his first encounter with the Parshendi, seven years ago.
+
+She also wants to know when he first saw Shardblades in their possession. He replies that he only saw them after Gavilar's death. She then has her new ward (Shallan) draw what is referred to in a book as a Voidbringer, although she doesn't believe it to be one. Dalinar and Adolin identify it as a chasmfiend. Dalinar urges Jasnah to come back to the Shattered Plains as soon as possible. The conversation ends, and he finds himself alone with Navani. He reveals that he is going to abdicate. She believes that to be a big mistake.`
   }
 };
 
