@@ -203,8 +203,8 @@ async function generatePartBoundSnapshots() {
       
       const prompt = getKnowledgeSnapshotPrompt(
         BOOK_TITLE,
-        chapterNotes,
         range.end,
+        chapterNotes,
         actualStartChapter
       );
       
