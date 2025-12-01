@@ -1,1 +1,1 @@
-I'm sorry, but it looks like there was an error in your request in specifying the chapter range. Could you please provide the ending chapter number so I can create the correct snapshot for you?
+I'm sorry, but there seems to be an issue with the data provided for the chapter range. Please provide the correct chapter range so I can create an accurate and detailed knowledge snapshot for "The Way of Kings."

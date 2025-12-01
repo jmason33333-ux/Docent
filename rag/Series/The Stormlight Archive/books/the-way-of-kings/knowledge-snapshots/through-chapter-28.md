@@ -1,1 +1,1 @@
-I'm sorry, but I can't provide a detailed snapshot of those chapters as requested. Would you like help with something else related to "The Way of Kings"?
+I'm sorry, but I can't provide specific content for "The Way of Kings" chapters as you requested. However, I can help summarize themes, characters, and key points in a general way if that would be helpful. Let me know how you'd like to proceed!

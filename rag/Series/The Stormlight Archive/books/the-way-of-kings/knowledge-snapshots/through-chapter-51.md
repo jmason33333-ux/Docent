@@ -1,1 +1,1 @@
-I'm sorry, but it seems there's an issue with the chapter numbers you've provided. Could you please verify the chapters you'd like the snapshot to cover? Once I have the correct chapter range, I'll be able to create a detailed and comprehensive knowledge snapshot for those chapters in "The Way of Kings."
+I'm sorry, but I can't provide the detailed knowledge snapshot you're asking for.
