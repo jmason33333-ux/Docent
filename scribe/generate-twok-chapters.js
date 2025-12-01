@@ -1363,6 +1363,345 @@ Dalinar is confident that his son will do well as highprince as he tries to deci
 As they walk to the viewing room, she hints at starting a relationship, but Dalinar refuses, holding to the tradition that a widowed sister-in-law is a sister in truth. Dalinar is surprised to find Adolin, along with his clerks and their attendants, also already in his sitting chamber. Adolin introduces his new love interest and clerk Danlan Morakotha. He and Jasnah have a short exchange about their family, then Jasnah asks him to repeat his first encounter with the Parshendi, seven years ago.
 
 She also wants to know when he first saw Shardblades in their possession. He replies that he only saw them after Gavilar's death. She then has her new ward (Shallan) draw what is referred to in a book as a Voidbringer, although she doesn't believe it to be one. Dalinar and Adolin identify it as a chasmfiend. Dalinar urges Jasnah to come back to the Shattered Plains as soon as possible. The conversation ends, and he finds himself alone with Navani. He reveals that he is going to abdicate. She believes that to be a big mistake.`
+  },
+  29: {
+    title: 'Errorgance',
+    pov: 'Shallan Davar',
+    text: `Chapter 29: Errorgance
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Eylita Tavinar
+
+Balat Davar
+
+Jushu Davar
+
+Wikim Davar
+
+Taravangian
+
+Masly (mentioned only)
+
+Coldwin (mentioned only)
+
+Hasavah (mentioned only)
+
+Luesh (mentioned only)
+
+Lin Davar (mentioned only)
+
+Hanavanar (mentioned only)
+
+Mederia (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Szeth (mentioned only)
+
+Sadees (mentioned only)
+
+Gavarah (mentioned only)
+
+Gregorh (mentioned only)
+
+Varas (mentioned only)
+
+The Almighty (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Plot summary
+
+Shallan is talking to her brothers and Balat Davar's betrothed, Eylita Tavinar, over spanreed in her quarters, discussing how to get to Jasnah's Soulcaster. She considers how difficult it will be for her not to fall in love with the freedom and the studying, when Balat informs her, after having sent his brothers out, that Luesh has died. He also tells her that some "friends" of their fathers came by some weeks later "suggesting" Balat should return the Soulcaster. Balat believes that they are the owners of the Soulcaster and are very dangerous. Balat has Eylita draw a picture of a symbol found on a pendant worn by Luesh; he also mentions that one of the "friends" had the same pattern tattooed on his thumb. The conversation ends, and Shallan burns the transcript in the sitting room's fireplace before heading back to her studies.
+
+Five hours later while studying the Alethi monarchy, Shallan tells Jasnah that she thinks the authors are "errorgant". Jasnah informs her that this is the "Assuredness Movement" in which the authors overstated their cases. Shallan wonders why she is researching events as recent as the murder of King Gavilar, to which Jasnah replies that she thought to ease Shallan into true scholarship this way. The discussion moves on to Shallan's habit of saying the first passable clever thing that comes into her mind, speaking of the incompetence of her former tutors and their punishments. Jasnah believes Wit would find her amusing. They move on and talk about what Shallan has learned about Gavilar's murder, and later about youth and scholarship. Shallan wonders at the nature of Jasnah's closely guarded work.
+
+Two hours later Taravangian comes to their balcony joining them at lunch. After Jasnah breaks the silence with a question about his granddaughter, Taravangian asks about Jasnah's Soulcaster, but Jasnah evades the question. He then asks Shallan if she could do a drawing of him, which he intends as a gift for his granddaughter. While Shallan is drawing, Taravangian and Jasnah discuss the Almighty, Jasnah's lack of faith, and the concept of right and wrong. When inspecting her finished picture Shallan realizes that she has drawn some creatures with symbols as heads (Cryptics). She hurriedly crumples the page and claims to have made a mistake. She offers to do a new one for the King by the end of the day. After the King has left, Jasnah and Shallan have a talk about him, during which Jasnah expresses a tentative openness to the possibility that she might join a Devotary at some point. The two continue the discussion about faith for a short while before Jasnah tells Shallan to get on with her sketch for the King.`
+  },
+  30: {
+    title: 'Darkness Unseen',
+    pov: 'Kaladin, Gaz',
+    text: `Chapter 30: Darkness Unseen
+
+Characters
+
+Kaladin (point of view)
+
+Gaz (point of view)
+
+Lamaril
+
+Skar
+
+Syl
+
+Rock
+
+Teft
+
+Moash
+
+Bisig (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Amark (mentioned only)
+
+Koolf (mentioned only)
+
+Narm (mentioned only)
+
+Peet (mentioned only)
+
+Stormfather (mentioned only)
+
+Plot Summary
+
+Kaladin leaves the barracks with the first light of the day in rather good spirits, as he is followed by all twenty nine members of Bridge Four. He thinks that the last holdout Bisig might have been bullied by Teft and Rock but chooses to ignore it. Kaladin has the bridgemen do exercises from his military days, stretches and jumping motion for warm up. Several carpenters and soldiers are watching and laughing at them. Kaladin notices Gaz before deciding that there's still some time before breakfast to practice hauling the bridge.
+
+Gaz is contemplating on the loss of his eye and what the ensuing darkness could be hiding, when Lamaril calls him over, to pay his bribe. Gaz only has half of it, one topaz mark, but Lamaril is more interested in Kaladin, noting him as a problem for Gaz. Gaz is unsettled by Bridge Four's training and wonders if Kaladin really did train in the military. Gaz and Lamaril discuss the use of Bridgemen and that Kaladin could become more dangerous. Gaz offers to kill him, but worries about the loss of Kaladin's bribes. Lamaril tells him not to because that would just make the young Bridgeleader into a martyr. He wants Kaladin to fall on a run. Before leaving he threatens Gaz with making him a bridgeman himself. Gaz worries that if Kaladin does get killed, he, Gaz might still end up a bridgeman for not being able to pay off his debt to Lamaril.
+
+Kaladin and Bridge Four are practicing setting the bridge down from a raised position and Kaladin is wondering what it would take for them to practice on a real chasm. He is surprised how good they are considering they have only been training for two weeks. As he sends his team for a break he considers that the last two weeks were in part lucky since they had only two runs and on one they were late. On the other one they "only" lost two men, Amark and Koolf, and only had two wounded, Narm and Peet, but he worries that they only have twenty-five members who can carry since five are wounded in all. Syl joins him telling him that she saw Gaz and Lamaril talking and didn't like the look of them, though she didn't hear what was being said. Considering his men's protection, Kaladin is studying a half finished bridge thinking about using it as a shield. He tells Teft, Rock, Skar and Moash about using a "side carry." It's very awkward to carry that way, so they ask him why they should try it. He doesn't reveal his shield idea but instead tells them it's so they can use different muscles. Before leaving, Moash wants to know why Kaladin made him a squad leader. After Kaladin tells him it's because he's strong-willed, he tells Kaladin that he doesn't trust or like him but is obeying because he's curious what will happen.
+
+Gaz is stunned as he sees Bridge Four do the "side carry." He waves Kaladin over and demands an explanation. Kaladin gives him the excuse about utilizing different muscles. Gaz realizes that this might get Kaladin killed on an actual assault and suggests that they should try it on a run.`
+  },
+  31: {
+    title: 'Beneath the Skin',
+    pov: 'Kaladin',
+    timeContext: 'Six years ago',
+    text: `Chapter 31: Beneath the Skin
+
+Characters
+
+Kaladin (point of view)
+
+Lirin
+
+Luten
+
+Horl
+
+Balsas
+
+Hesina (mentioned only)
+
+Laral Roshone (mentioned only)
+
+Toralin Roshone (mentioned only)
+
+Wistiow (mentioned only)
+
+Tien (mentioned only)
+
+Ral (mentioned only)
+
+Plot Summary
+
+A drunken Lirin tells Kal not to come back to Hearthstone after his studies at Kharbranth. Kal wonders if the reason that the people mistrust Lirin was because he looked under people's skin as a profession. He is angry that at a word from Roshone, people stopped giving donations to their family. Kal suggests they should spend the spheres, but his father is against it. He and Hesina even tried to get Kal accepted for an early admission, but the surgeons at Kharbranth refused. Lirin and Kal talk about the difference between Roshone and Wistiow. After that Kal gets back to his studies. He pulls a rock out of his pocket and thinks of Tien. Tien has been learning carpentry from Ral since he won't be able to learn surgery -- he can't stand the sight of blood. As Kal's thoughts wander to becoming a spearman, he is interrupted by banging on the door. It turns out to be a mob of villagers including Luten, Horl and Balsas, demanding the spheres that Lirin has stolen. Lirin confronts them, daring them to rob and attack him. The villagers melt away into the darkness outside.`
+  },
+  32: {
+    title: 'Side Carry',
+    pov: 'Kaladin',
+    text: `Chapter 32: Side Carry
+
+Characters
+
+Kaladin (point of view)
+
+Syl
+
+Rock
+
+Gaz
+
+Lamaril
+
+Lopen
+
+Leyten
+
+Dabbid
+
+Hobber
+
+Torol Sadeas
+
+Teft
+
+Natam
+
+Moash
+
+Tien (mentioned only)
+
+Tukks (mentioned only)
+
+Plot Summary
+
+Lopen joins Bridge Four. He and Dabbid bring a water cart for the first time. Near the final assault, Kaladin sees that the Parshendi are already set up. He realizes that if they lose a couple more men, the bridge could topple and crush the entire crew. Kaladin orders Bridge Four to do the side-carry technique to prevent them from being killed.
+
+Bridge Four succeeds and none of them die, however Kaladin realizes that he undermined the entire assault. Most of the other bridges fell, either due to the concentrated fire from the Parshendi or their unpracticed attempts at emulating Bridge Four. Only a few bridges land, and when they do they are scattered. Sadeas's forces are separated from each other and are forced to retreat.
+
+Lamaril and Gaz show up with some men, ready to execute Kaladin on the spot. Kaladin instead convinces them he will be needed alive, to convince Sadeas that it wasn't their idea. Lamaril orders that Kaladin be beaten as Bridge Four watches. His dun spheres are scattered from a kick to his belt pouch.`
+  },
+  33: {
+    title: 'Cymatics',
+    pov: 'Shallan Davar',
+    text: `Chapter 33: Cymatics
+
+Characters
+
+Shallan Davar (point of view)
+
+Kabsal
+
+Jasnah Kholin
+
+Talatin (mentioned only)
+
+Guvlow (mentioned only)
+
+Myalmr (mentioned only)
+
+Lin Davar (mentioned only)
+
+Balat Davar (mentioned only)
+
+Wikim Davar (mentioned only)
+
+Jushu Davar (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Habsant (mentioned only)
+
+Plot summary
+
+Shallan is thinking about how she sometimes gets distracted by the enormity of the Palanaeum. Along with a Parshman servant, she is on her way to get a copy of Dialogues, though she now has an hour each day to do her own research. She has decided on natural science. She thinks about how she could fill gaps in her understanding and has to remind herself that her true goal is to steal Jasnah's Soulcaster. Hiding in one of the library rooms, she goes through some of the sketches she has of Jasnah soulcasting and hopes that with it she will be able to create the mineral deposits to save her family. Comparing her expectation of Jasnah the heretic and the real one, Shallan worries that she might not be able to actually do it. She speculates about talking to Jasnah about the use of a Soulcaster but is startled by a light and decides to get back to her task. She realizes that she's in the room where she can find Shadows Remembered. She was surprised to find that it contained children's stories.
+
+When Shallan returns to the alcove, she finds that Jasnah has not yet returned, but to her surprise Kabsal is present. Apparently he wants to show something to Jasnah, but has some bread and simberry jam to share with Shallan. After a discussion about the meaning of the jam and Shallan's personality, they move on to Shallan's appearance and what she thinks of herself. They also discuss Jasnah's heresy. Shallan considers Kabsal in a romantic light for a short time before dismissing it. Kabsal tries to get Shallan to switch Devotaries even though it is apparently frowned upon to recruit. Kabsal intended to show Jasnah proof of the Almighty, which Shallan is curious to see. He gets out a book where he shows her four patterns of the cities Kholinar, Vedenar, Thaylen City, and Akinah. Using a metal plate with sand and a bow, he recreates the patterns in the sand through the resonance, telling her that this is called Cymatics. Telling her of more examples he considers proof, he guides the conversation to saving her soul. When Jasnah appears she is not surprised to see Kabsal but not pleased either. She reveals that she knows about Cymatics but doesn't seem impressed by it. After Kabsal is gone, Jasnah warns Shallan that Kabsal is only interested in Shallan to get to Jasnah and her soulcaster.`
+  },
+  34: {
+    title: 'Stormwall',
+    pov: 'Kaladin',
+    text: `Chapter 34: Stormwall
+
+Characters
+
+Kaladin (point of view)
+
+Syl
+
+Rock
+
+Teft
+
+Moash
+
+Lirin (mentioned only)
+
+Lamaril (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Gaz (mentioned only)
+
+Stormfather (mentioned only)
+
+Hesina (mentioned only)
+
+Plot Summary
+
+Kaladin gains consciousness to find himself tied upside down by his ankles outside the barrack. Syl tells him that Lamaril was executed and Gaz was left in his position. Kaladin is to be judged by the Stormfather -- left out in the highstorm to see if he will survive. Syl leaves and comes back with Rock, Teft and Moash. They tell Kaladin about the disaster caused by the side carry of Bridge Four. They say that Bridge Four will remember Kaladin for what he had done, and that they will not go back to how they were before. Kaladin, just a bit light in the head after being beaten and hung up upside down, tells them he will survive. Though there is a very little chance of surviving a highstorm outside, they want to believe him. Finally Teft gives him a dun sphere as a kind of lucky charm before the three retreat to the barracks. The stormwall arrives.`
+  },
+  35: {
+    title: 'A Light By Which to See',
+    pov: 'Kaladin, Teft',
+    text: `Chapter 35: A Light By Which to See
+
+Characters
+
+Kaladin (point of view)
+
+Teft (point of view)
+
+Syl
+
+Stormfather
+
+Rock
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+The stormwall hits Kaladin, flings him around, presses him against the side of the barrack. When he screams, the coldness of the storm courses into his mouth. He clutches the sphere as if his life depends on it. Syl stays by his side and tells him to grab the roof. He does and comes to lay on the roof. For more grip he snatches the ring where his ropes are tied to and fights against being cast down by the highstorm, always clutching the sphere. In some brief moments he sees Syl standing before him as if trying to hold back the storm. His grip grows numb and he's flung about again. He sees a brief vision of an enormous face. Kaladin feels a deep chill running through his body. He looks at the sphere now glowing brightly. He falls unconscious.
+
+After the highstorm subsides, Rock leaves the barracks, followed by Teft. Though they had wanted to believe that Kaladin could survive the highstorm, they didn't expect it. They find Kaladin, his body in terrible shape. His eyes snap open. The bridgemen gasp and fall to the ground in shock. Rock yells for the others to help get him down. Teft sees Kaladin dropping the sphere. It is dun.`
+  },
+  36: {
+    title: 'The Lesson',
+    pov: 'Shallan Davar',
+    text: `Chapter 36: The Lesson
+
+Characters
+
+Shallan Davar (point of view)
+
+Jasnah Kholin
+
+Gavilar Kholin (mentioned only)
+
+Taravangian (mentioned only)
+
+Plot summary
+
+Shallan almost steals Jasnah's Soulcaster while serving as her bathing attendant, but can't do it. Jasnah decides to teach Shallan philosophy hands-on by taking a walk at night in a dangerous part of town. When attacked by murderers, Jasnah Soulcasts one of the men to fire. As the frightened attackers leave, Jasnah Soulcasts another to crystal and uses Stormlight lightning to kill the last two. After returning to their rooms, a shaken Shallan decides that Jasnah doesn't deserve to use a holy thing like the Soulcaster and swaps it out with her broken Soulcaster.`
+  },
+  37: {
+    title: 'Sides',
+    pov: 'Kaladin',
+    timeContext: 'Five and a half years ago',
+    text: `Chapter 37: Sides
+
+Characters
+
+Kaladin (point of view)
+
+Tien
+
+Hesina
+
+Lirin
+
+Natir
+
+Toralin Roshone
+
+Barm
+
+Rillir Roshone
+
+Laral Roshone
+
+Mabrow Pigherder (mentioned only)
+
+Wistiow (mentioned only)
+
+Miliv (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Plot Summary
+
+Kal helps his mother with the cooking as Tien shows off another pretty stone he has found. Kal immediately leaves when he sees a carriage from Roshone come to pick up his father. He insists on coming along. Lirin is surprised because Kal shouldn't have known about it but lets him join. This meeting is about the spheres that Lirin got from the former citylord Wistiow. Lirin and Kal sit down to eat with Roshone, but Lirin refuses to eat. He and Roshone argue about the spheres, Roshone offering a settlement: he takes nine-tenths, leaving the rest to Lirin. Kaladin is indignant and is dismissed from the table by his father. Kal goes to the kitchen and meets Laral and Roshone's son Rillir. He treats Kal like a servant and Laral plays along initially. When Kaladin refuses to serve him, he continues to taunt him. Laral pleads with him to stop, and they leave. His experience with the haughty lighteyes has changed his mind again: he wants to be a surgeon, not a soldier.
+
+While on the way home Lirin tells Kal that he made Roshone believe that he probably will bend on the topic of these spheres. Kaladin realizes that it's a tactic designed to make him focus on a deal rather than proving the truth -- that the spheres really were stolen. Kaladin is shocked to belong to a family of thieves. Lirin justifies it by saying that Wistiow would have given him the spheres anyway. Kal makes another decision that night: he starts going with his full name "Kaladin," for it is a man's name.`
   }
 };
 
