@@ -687,6 +687,367 @@ Adolin and Dalinar then go to examine the strap of Elhokar's saddle to see if it
 Sadeas approaches Dalinar to tell him of the success of their manipulation of Vamah, and Adolin realizes that the two of them had planned the entire thing between them. After a brief argument, Adolin and Dalinar leave. Dalinar then tells Adolin that though he hates Sadeas, he's certain that he wouldn't hurt Elhokar. Dalinar reveals that Sadeas was the decoy the night of Gavilar's assassination, attempting to lead Szeth away so Gavilar could escape. He then tells Adolin that Sadeas has sworn to protect Elhokar at any cost, then further discusses Gavilar's assassination and his final words. Elhokar approaches, asking if they've learned anything about the saddle. He and Dalinar then begin arguing, Elhokar insisting that someone is trying to kill him and Dalinar insisting that Elhokar is simply overreacting.
 
 Elhokar leaves, and Dalinar sends Adolin to prepare the soldiers to move. As he begins to make his way back to camp, Dalinar reflects on his failure to determine the meaning of Gavilar's last words and his desire to protect Elhokar.`
+  },
+  16: {
+    title: 'Cocoons',
+    pov: 'Kaladin',
+    timeContext: 'Seven and a half years ago',
+    text: `Chapter 16: Cocoons
+
+Characters
+
+Kaladin (point of view)
+
+Laral
+
+Tien
+
+Jost
+
+Jest
+
+Mord
+
+Tift
+
+Naget
+
+Khav
+
+Lirin
+
+Torol Sadeas (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Gavilar Kholin (mentioned only)
+
+Hesina (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Wistiow (mentioned only)
+
+Plot summary
+
+Kaladin is talking to his friend Laral about his father's plans for him to be a surgeon. Laral encourages him to become a soldier and win a Shardplate and blade for himself. Tien interrupts their conversation and gives Kaladin a rock, intended to make him feel better. Tien and Kaladin then go hunting for lurgs, a type of small, slimy creature.
+
+Kaladin and Laral go to talk to some of the other boys, questioning why they aren't working in the fields like usual. Jost, another boy, claims that his father was cheated out of a Shardblade, but Kaladin insists that the area where his father fought wouldn't have had any Shardbearers, and Jost's father must be remembering wrong. Jost gets angry and challenges Kaladin to fight him.
+
+Kaladin gets in a few good hits, and is surprised by how good the quarterstaff feels in his hands, but he is outmatched by Jost. Tien helps him up, and they return home. There, Kaladin is informed that Brightlord Wistiow, the Citylord and Laral's father, is dead. He left Kaladin a large number of spheres for him to go to Kharbranth, be trained as a surgeon, then return to Hearthstone to serve the people there with his new knowledge.`
+  },
+  17: {
+    title: 'A Bloody Red Sunset',
+    pov: 'Kaladin',
+    text: `Chapter 17: A Bloody Red Sunset
+
+Characters
+
+Kaladin (point of view)
+
+Syl
+
+Yake
+
+Dunny
+
+Malop
+
+Gaz
+
+Moash
+
+Torol Sadeas
+
+Rock
+
+Drehy
+
+Teft
+
+Leyten
+
+Murk
+
+Adis
+
+Corl
+
+Hobber
+
+Koorm
+
+Gadol
+
+Dabbid
+
+Narm
+
+Hesina (mentioned only)
+
+Lirin (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Tien (mentioned only)
+
+Lamaril (mentioned only)
+
+Plot Summary
+
+Kaladin visits an apothecary, hoping to get some antiseptic. He is charging considerably more than Kaladin can afford, so he only gets some bandages and sewing materials.
+
+He has only been back in camp for moments when a horn sounds, calling the bridgemen for a bridge run. Though he is exhausted, each time the bridge stops, Kaladin remains standing rather than collapsing to the ground as most bridgemen do. When they reach the final chasm, Kaladin takes Rock's position at the front of the bridge instead of taking his privileged position as bridgeleader toward the back.
+
+All four of the other men in the front row, the deathline, are hit with arrows almost immediately, but Kaladin takes only minor injuries as arrows zip by him. As soon as the bridge is placed, he begins finding bridgemen who were wounded in the approach and treating their wounds. He then has his men carry the wounded back to camp on top of their bridge, removing them when they get to a chasm so the soldiers can cross. Gaz objects to the idea, but Kaladin gives him an extra bribe, a dun sphere that was infused just before the battle.`
+  },
+  18: {
+    title: 'Highprince of War',
+    pov: 'Adolin Kholin, Dalinar Kholin',
+    text: `Chapter 18: Highprince of War
+
+Characters
+
+Adolin Kholin (point of view)
+
+Dalinar Kholin (point of view)
+
+Yis
+
+Avaran
+
+Janala
+
+Tibon
+
+Marks
+
+Falksi
+
+Teshav Khal
+
+Renarin Kholin
+
+Kadash
+
+Ruthar
+
+Elhokar Kholin
+
+Gavilar Kholin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Dalinar's wife (mentioned only)
+
+Aladar (mentioned only)
+
+Thanadal (mentioned only)
+
+Hatham (mentioned only)
+
+Vamah (mentioned only)
+
+Plot summary
+
+Adolin is out walking with Janala, the woman he has been courting. He visits the leatherworkers who were inspecting the strap from Elhokar's saddle, and they tell him that the strap was almost certainly cut, but it's possible it was a buckle from the saddle itself that sliced it. A horn is sounded, signalling that a chasmfiend has been spotted close enough for Dalinar's men to attempt to reach it first. Adolin is disappointed when Dalinar elects not to seek it.
+
+Dalinar, meanwhile, is working with several of his scribes in attempting to manipulate the other highprinces into following Elhokar in truth. Teshav, the wife of one of his officers, questions the number of troops Dalinar has set patrolling, and Dalinar instructs her to set more patrolling anyway to combat the increased banditry in the area. Renarin comes to talk to Dalinar, and Dalinar promises him that if he captures a new suit of Shardplate and a Shardblade, they will go to Renarin, to help compensate for his blood weakness and allow him to fight like any other man.
+
+Adolin seeks out Kadash, an ardent, to ask his opinion on Dalinar's dreams during highstorms. Janala leaves him, growing frustrated with his lack of attention. Kadash expresses the opinion that Dalinar is either going insane, or the visions are just particularly vivid products of his own mind.
+
+Dalinar visits Elhokar, making his reports for the day. While there, he asks Elhokar how long he intends to continue the war, and suggests that he consider withdrawing. Elhokar is shocked that Dalinar would even consider an end to the Vengeance Pact. Dalinar eventually backs down, instead saying they need a new approach, a way to win the war instead of simply trying to outlast the Parshendi. Dalinar suggests that Elhokar appoint him Highprince of War, and Elhokar tells him he'll consider it.
+
+Dalinar meets up with Renarin, intending to ride back to their camp. However, before they can get there, they are forced to take shelter in one of their own barracks to avoid a highstorm. They barely make it inside before the storm hits.`
+  },
+  19: {
+    title: 'Starfalls',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 19: Starfalls
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Taffa
+
+Seeli
+
+the Thrill
+
+Midnight Essence
+
+Honor
+
+Renarin Kholin
+
+Rayse (mentioned only)
+
+Heb (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Elhokar Kholin (mentioned only)
+
+Harkaylain (mentioned only)
+
+Adolin Kholin (mentioned only)
+
+Plot summary
+
+The moment the storm hits, Dalinar finds that he is no longer in the barracks, but in an unfamiliar barn in the middle of a clear, cool night with only a small girl for company. The girl is terrified of something, and thinks that Dalinar is her father. After a few moments of hushed conversation, a strange creature bursts through one of the walls of the barn and attacks. Dalinar is able to avoid the creature long enough to grab the girl and escape to a nearby house where a woman who thinks he is her husband is waiting for him.
+
+Once in the house, Dalinar has the woman bar the door. Shortly thereafter, however, two more of the strange creatures force their way in, and Dalinar is forced to fight them off using an iron poker from the hearth. When he kills them, he notices that rather than bleeding, their wounds seem to release smoke of some sort.
+
+Dalinar takes the woman, Taffa, and the girl, Seeli, to try to escape the creatures by moving along the course of a river. He deflects all of the woman's questions about why he doesn't remember them or their surroundings at all by saying that he hit his head in the fight. Before they can arrive at the river, however, the group is attacked by more of the strange creatures. Just as Dalinar is about to be killed, two Knights Radiant appear and help him to kill the creatures. They tell him that the creatures aren't Voidbringers, but rather Midnight Essence. They invite Dalinar to Urithiru to train as a Radiant, then leave to help others.
+
+Taffa begins to speak to Dalinar, but it isn't her voice. Dalinar recognizes her voice as the same voice he's heard in his previous visions, the one he suspects belongs to The Almighty. The voice tells him to "Unite them," and offers cryptic advice, telling Dalinar that it can't be of much help. Dalinar asks the voice if he should continue to trust Sadeas, and is told yes.
+
+Dalinar continues to question the voice, but before he can receive answers, he wakes up back in the barrack on the shattered plains, surrounded by soldiers who have been holding him down, keeping him from acting out his visions. He tells them that his mind is clear and they can release him, then takes Renarin and leaves.`
+  },
+  20: {
+    title: 'Scarlet',
+    pov: 'Kaladin',
+    timeContext: 'Seven years Ago',
+    text: `Chapter 20: Scarlet
+
+Characters
+
+Kaladin (point of view)
+
+Miasal
+
+Harl
+
+Valama
+
+Lirin
+
+Wistiow (mentioned only)
+
+Laral Roshone (mentioned only)
+
+Alim (mentioned only)
+
+Plot Summary
+
+Kaladin is performing an unexpected surgery on a girl from his village. He had fortunately been nearby when the girl was injured. He begins working to stop her bleeding. After a short time, he succeeds in stopping the bleeding, but realizes that his success was not due to his treatment but rather because the girl has died.
+
+He leaves her father to grieve over her, trying to cope with the fact that he was unable to save her. His father finds him and tells him that his work had all been good, and her death wasn't Kaladin's fault. He leaves Kaladin, telling him that he'll have to learn when to care and when to let go.`
+  },
+  21: {
+    title: 'Why Men Lie',
+    pov: 'Kaladin',
+    text: `Chapter 21: Why Men Lie
+
+Characters
+
+Kaladin (point of view)
+
+Leyten
+
+Hobber
+
+Dabbid
+
+Syl
+
+Rock
+
+Teft
+
+Gaz
+
+Sigzil
+
+Peet
+
+Koolf
+
+Moash
+
+Bussik
+
+Gaz (mentioned only)
+
+Hav (mentioned only)
+
+Lirin (mentioned only)
+
+Torol Sadeas (mentioned only)
+
+Dalinar Kholin (mentioned only)
+
+Meridas Amaram (mentioned only)
+
+Lamaril (mentioned only)
+
+Plot Summary
+
+Kaladin lies in bed, debating whether or not to get up. Eventually, he forces himself up and realizes that the other bridgemen had all been watching to see if he would get up and continue his training routine from the previous day. Kaladin goes to check on the wounded from the previous day's bridge run. Two of them are, for the most part fine, but one of them badly needs antiseptic.
+
+Kaladin washes the man's wounds with water, then goes out to perform his morning training routine. While jogging with his plank, he talks to Syl. She tells him that some of his men think he's gone mad, and asks him why men lie. Kaladin is unable to give her an answer. Syl claims that the king's uncle doesn't lie, but Kaladin cynically remarks that if someone has lighteyes, they lie.
+
+Gaz approaches and tells Kaladin that Sadeas has ordered that his wounded men not receive food or pay for the duration of the time they can't run bridges. Kaladin is furious, as this means that he'll have to find another way to care for them.
+
+Kaladin goes to the men of Bridge Four and asks them to split their food with the wounded and to contribute their pay for medical supplies. Most laugh at him and leave, but Rock agrees to share some of his food with Hobber, the man who he feels has the best chance of recovering, because he feels he owes Kaladin for running the deathline in his place the previous day. Rock also says that he can see Syl, though she hasn't specifically revealed herself to him.
+
+Kaladin then goes to Gaz and gets his bridge crew assigned to stone-gathering duty for the day. He convinces Rock and Teft to help him gather knobweed reeds over the course of the afternoon.`
+  },
+  22: {
+    title: 'Eyes, Hands, or Spheres',
+    pov: 'Dalinar Kholin',
+    text: `Chapter 22: Eyes, Hands, or Spheres
+
+Characters
+
+Dalinar Kholin (point of view)
+
+Adolin Kholin
+
+Elhokar Kholin
+
+Renarin Kholin
+
+Wit
+
+Marakal
+
+Cadilar
+
+Taselin
+
+Habatab
+
+Tumul
+
+Yonatan
+
+Meirav
+
+Navani Kholin
+
+Roion
+
+Torol Sadeas
+
+Aona (mentioned only)
+
+Skai (mentioned only)
+
+Rayse (mentioned only)
+
+Jasnah Kholin (mentioned only)
+
+Plot summary
+
+Dalinar goes with his sons to the king's feast. Adolin reports that according to the leatherworkers he consulted, the strap was cut, though it could've been an accident. They discuss the king's paranoia and Dalinar refuses to talk about his episode in the highstorm, saying that perhaps it was good for the men in the barracks to witness it, as the rumors about his condition were perhaps worse than the truth.
+
+Dalinar chafes at the sloppy popular fashion sense of the other nobles and the fact that their drunkenness is in violation of the Alethi War Codes. The king's Wit sits on a stool at the entrance to the island and insults everyone as they go to the feast. He warns Dalinar that the rumor has spread of his suggestion to the king that they retreat and abandon the Vengeance Pact. Lady Navani, Gavilar's widow, unexpectedly shows up to the feast, having just arrived to the Shattered Plains. Dalinar tries to hide his attraction to her with the utmost propriety, addressing her as a sister.
+
+King Elhokar then announces that in light of the recent attempt on his life with the cut girth strap, he is appointing Sadeas to Highprince of Information to investigate. This is to snub Dalinar, who he believes is not giving the investigation serious attention. Dalinar realizes that this is Sadeas's way of outmaneuvering his Highprince of War idea.`
   }
 };
 
