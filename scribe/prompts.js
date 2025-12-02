@@ -23,17 +23,17 @@ const CHAPTER_NOTES_TEMPLATE = `# Chapter [X]: [Chapter Title, if applicable]
 ---
 
 ## Quick Summary (2-3 sentences)
-[What happened, beat by beat. No interpretation yet—just events.]
+[Dense narrative summary covering the main story arc. Include key character actions, plot developments, and outcomes. Make it comprehensive but concise.]
 
 ---
 
-## Key Beats (Chronological, ~5-8 points)
-[Granular plot moments. These feed "what happened?" queries.]
+## Key Beats (Chronological, 5-8 points)
+[MAJOR plot points only - the key story beats that drive the narrative forward. DO NOT list every tiny detail or action. Focus on significant moments, decisions, revelations, and turning points.]
 
-- [Beat 1]
-- [Beat 2]
-- [Beat 3]
-- ...
+- [Major beat 1 - a significant plot point]
+- [Major beat 2 - another important development]
+- [Major beat 3 - key turning point or revelation]
+- [Continue with 2-5 more MAJOR beats only]
 
 ---
 
@@ -131,16 +131,33 @@ Legend:
 ---
 
 ## Rowan's "If Asked" Notes
-[Anticipate common questions—pre-written answers Rowan can pull]
+[Anticipate common questions readers will ask about this chapter. Create 8-10 comprehensive Q&A pairs with DETAILED answers. These are pre-written responses that Rowan can use directly, so make them thorough and helpful.]
 
-**Q: [Common question about this chapter]**
-A: [Concise answer using only info up to this chapter]
+**Q: [Common question about this chapter - world-building, plot, character, or magic]**
+A: [Detailed, comprehensive answer using only info up to this chapter. 2-4 sentences explaining thoroughly.]
 
-**Q: [Another common question]**
-A: [Answer]
+**Q: [Another common question - different topic area]**
+A: [Detailed answer with context and explanation]
 
 **Q: [Third question]**
-A: [Answer]`;
+A: [Detailed answer]
+
+**Q: [Fourth question]**
+A: [Detailed answer]
+
+**Q: [Fifth question]**
+A: [Detailed answer]
+
+**Q: [Sixth question]**
+A: [Detailed answer]
+
+**Q: [Seventh question]**
+A: [Detailed answer]
+
+**Q: [Eighth question]**
+A: [Detailed answer]
+
+[Include 8-10 total Q&A pairs covering: world-building concepts, plot events, character actions/motivations, magic mechanics, confusing moments, and common misunderstandings]`;
 
 const KNOWLEDGE_SNAPSHOT_TEMPLATE = `# Knowledge Snapshot: Through Chapter [X]
 
@@ -487,7 +504,8 @@ ${CHAPTER_NOTES_TEMPLATE}
 Now generate the chapter notes for ${chapterDisplay} of ${bookTitle}.
 
 Focus on:
-- Accurate plot summary (expand Coppermind summary into detailed beats)
+- **Quick Summary:** Dense 2-3 sentences covering the full narrative arc of this chapter
+- **Key Beats:** 5-8 MAJOR plot points only (NOT every tiny detail - focus on significant story beats, decisions, revelations, and turning points)
 - Complete character list (include everyone, even mentioned-only)
 - Character development in THIS section only
 - World-building revealed in THIS section
@@ -495,7 +513,15 @@ Focus on:
 - Common confusion points
 - Helpful context for readers
 - Detailed metadata (Part, Time Context, Chapters Since Last POV)
-- 8-10 comprehensive "If Asked" Q&A pairs addressing common reader questions
+- **"If Asked" Notes:** 8-10 comprehensive Q&A pairs with detailed answers addressing common reader questions
+
+CRITICAL INSTRUCTIONS FOR KEY BEATS:
+- List only 5-8 MAJOR story beats
+- Each beat should be a significant plot point, not a minor action
+- Think: "What are the 5-8 most important things that happen?"
+- DO NOT create a beat for every sentence or paragraph
+- Example GOOD beats: "Kaladin is assigned to bridge crew", "Sylphrena revives Kaladin"
+- Example BAD beats: "Kaladin walks", "Kaladin thinks about his past", "Kaladin feels pain"
 
 Remember: SPOILER SAFETY is paramount. Only use information up to this section.`;
 }
