@@ -9,7 +9,8 @@ const CHAPTER_NOTES_TEMPLATE = `# Chapter [X]: [Chapter Title, if applicable]
 - **POV Character(s):** [Name(s)]
 - **Location(s):** [Where this takes place]
 - **Time Context:** [How long after last chapter, or "concurrent with Ch. X"]
-- **Chapters Since Last [Character/Plot Thread]:** [e.g., "First Kaladin POV since Ch. 12"]
+- **Chapters Since Last [POV Character 1] POV:** [e.g., "Since Chapter 57: Chapter Title" or "First [Character] POV since Chapter 12"]
+- **Chapters Since Last [POV Character 2] POV:** [If multiple POVs, include separate entry for each]
 
 ---
 
@@ -400,7 +401,8 @@ function getChapterNotesPrompt(bookTitle, chapterNumber, chapterText = null, cop
     chapterText.includes('Plot summary') ||
     chapterText.includes('Plot Summary') ||
     chapterText.match(/^Chapter \d+:/) ||
-    chapterText.match(/^Interlude/)
+    chapterText.match(/^Interlude/) ||
+    chapterText.includes('Chapter Epigraph')
   );
 
   // Use coppermindSummary parameter if provided, otherwise use chapterText if it's Coppermind format
@@ -440,13 +442,20 @@ ${partInfo ? `- Add Part information to Metadata: "${partInfo}"` : ''}`;
    - Characters who appear in "Characters Who Appear" subsection
    - Characters marked as "mentioned only" in "Characters Mentioned Only" subsection
 6. Preserve Part number if provided in the summary (add to Metadata section)
-7. Include chapter epigraphs if present (the quotes/inscriptions at the start)
+7. Include chapter epigraphs if present:
+   - Look for "Chapter Epigraph" section in the summary
+   - Extract the exact epigraph text and format it as: > "[epigraph text]"
+   - Include source attribution if provided (e.g., "— [Source]")
+   - If no epigraph is mentioned in the summary, state "*No epigraph is present for this chapter.*"
 8. Mark callbacks to earlier chapters explicitly (e.g., "Callback to Chapter X")
 9. Flag potential confusion points that readers commonly struggle with
 10. Include "If Asked" notes for common questions about this section (aim for 8-10 detailed Q&A pairs)
 11. Add details about characters, locations, magic/mechanics, themes, and foreshadowing
 12. Provide detailed "Time Context" in Metadata (e.g., "Some hours after last chapter", "Concurrent with Chapter X")
-13. Track "Chapters Since Last [Character] POV" for each POV character in Metadata
+13. Track "Chapters Since Last [Character] POV" for each POV character in Metadata:
+    - Format as: "Since Chapter [X]: [Chapter Title]" (e.g., "Since Chapter 57: Chapter Title")
+    - If there are multiple POV characters, create a separate entry for each: "Chapters Since Last [POV1] POV", "Chapters Since Last [POV2] POV"
+    - Include the chapter name/title for easier reference, not just the number
 
 CHARACTER LISTING ENHANCEMENT:
 - The Coppermind summary includes a "Characters" section - use this as your source

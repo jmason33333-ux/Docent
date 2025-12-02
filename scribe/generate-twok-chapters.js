@@ -2747,7 +2747,12 @@ He comes back to the present time and believes he did little about discovering a
   61: {
     title: 'Right for Wrong',
     pov: 'Dalinar Kholin',
-    text: `Chapter 61: Right for Wrong
+    text: `Part 4: Storm's Illumination
+
+Chapter 61: Right for Wrong
+
+Chapter Epigraph
+In the storm I awaken, falling, spinning, grieving.
 
 Characters
 

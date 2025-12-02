@@ -2,70 +2,74 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** [Not specified]
+- **Part:** Part 4: Storm's Illumination
 - **POV Character(s):** Dalinar Kholin
-- **Location(s):** Kholin warcamp, Shattered Plains
-- **Time Context:** Some hours after Dalinar's last vision
-- **Chapters Since Last Dalinar POV:** [Not specified]
+- **Location(s):** Dalinar's quarters on the Shattered Plains
+- **Time Context:** Some hours after his last vision
+- **Chapters Since Last Dalinar POV:** Since Chapter 54: Gibletish
 
 ---
 
 ## Chapter Epigraph
-> [No epigraph provided in the chapter text]
+
+> "In the storm I awaken, falling, spinning, grieving."
+> — Unknown Source
 
 ---
 
 ## Quick Summary
-Dalinar Kholin, Navani Kholin, and Renarin Kholin discuss Dalinar's recent vision. Dalinar insists the man from his vision was Nohadon, though he lacks evidence. Navani shares her insights on the Desolations, acknowledging Jasnah as the expert historian. Dalinar grapples with the reality of his visions while Navani reveals her feelings for him, resulting in a passionate kiss. Navani also discloses troubling news about a Shin Shardbearer assassinating the King of Jah Keved.
+Dalinar Kholin meets with Navani and Renarin in his quarters to discuss the implications of his recent visions, specifically the identity of a figure he believes to be Nohadon. The conversation touches on historical knowledge and the Old Magic. After Renarin leaves, Navani and Dalinar share a personal moment, revealing Navani's deeper motivations for returning to the Shattered Plains and sharing her suspicions about troubling events on Roshar.
 
 ---
 
 ## Key Beats
-- Dalinar reflects on his vision and discusses it with Navani and Renarin.
-- Dalinar expresses certainty that the man in his vision was Nohadon.
-- Navani shares her knowledge about the Desolations; Jasnah is noted as the historian.
-- The possibility of the Old Magic is considered and then discarded.
-- Renarin leaves Dalinar alone, while Navani lingers to confess her feelings.
-- Navani and Dalinar share a passionate kiss.
-- Navani warns Dalinar about a larger problem on Roshar, mentioning the assassination of the King of Jah Keved by a Shin Shardbearer.
+- Dalinar contemplates his recent vision, sitting with Navani and Renarin.
+- Navani questions Dalinar's belief that the man in his vision was Nohadon.
+- The group discusses the Desolations, with Navani deferring to Jasnah's expertise.
+- They dismiss the Old Magic as an explanation for the visions.
+- Dalinar, disturbed by the reality of the visions, asks to be alone.
+- Renarin promptly leaves, while Navani stays behind.
+- Navani reveals her feelings of uselessness and her reasons for returning.
+- Dalinar and Navani share a passionate kiss.
+- Navani expresses concern about larger threats on Roshar, mentioning a Shin Shardbearer involved in a king's assassination.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Dalinar Kholin** (POV) — Struggles with the reality of his visions and his feelings for Navani.
+- **Dalinar Kholin** (POV) — A highprince grappling with the implications of his prophetic visions and their impact on his leadership.
 
 ### Characters Who Appear
-- **Navani Kholin** — Engages in a deep conversation with Dalinar about the visions and reveals her affection for him.
-- **Renarin Kholin** — Present during the discussion, leaves to give Dalinar space.
+- **Navani Kholin** — Dalinar's sister-in-law, who provides insight into historical events and expresses personal feelings for Dalinar.
+- **Renarin Kholin** — Dalinar's son, present during the discussion about the visions but leaves to give Dalinar privacy.
 
 ### Characters Mentioned Only
-- **Nohadon** (mentioned) — Dalinar believes he was the man in his vision.
-- **Adolin Kholin** (mentioned) — Out gathering a highstorm damage report, affected by the reality of the visions.
-- **Jasnah Kholin** (mentioned) — Acknowledged as the historian knowledgeable about the Desolations.
-- **The Nightwatcher** (mentioned) — Considered regarding the Old Magic and then dismissed.
-- **Parasaphi** (mentioned) — [Context not provided in the chapter text]
-- **Nadris** (mentioned) — [Context not provided in the chapter text]
-- **Gavilar Kholin** (mentioned) — [Context not provided in the chapter text]
-- **Hanavanar** (mentioned) — [Context not provided in the chapter text]
-- **Szeth** (mentioned) — Described as the Shin Shardbearer involved in the assassination.
+- **Nohadon** (mentioned) — An ancient king whom Dalinar believes he saw in his vision.
+- **Adolin Kholin** (mentioned) — Dalinar's son, off assessing storm damage, who is shocked by the reality of Dalinar's visions.
+- **Jasnah Kholin** (mentioned) — Navani's daughter, noted for her historical knowledge.
+- **the Nightwatcher** (mentioned) — Referenced in the context of the Old Magic discussions.
+- **Parasaphi** (mentioned) — A historical figure mentioned during discussions of ancient events.
+- **Nadris** (mentioned) — Another historical figure referenced in the conversation.
+- **Gavilar Kholin** (mentioned) — Dalinar's deceased brother, implicitly part of Navani's motivations.
+- **Hanavanar** (mentioned) — A historical reference in the context of Desolations.
+- **Szeth** (mentioned) — The Shin Shardbearer involved in the assassination Navani describes.
 
 ---
 
 ## Factions / Groups
-- **Kholin Family** — Central to the political and familial dynamics discussed.
+- **Alethi Nobility** — Contextual backdrop for Dalinar's leadership and Navani's place within the court.
 
 ---
 
 ## Locations
-- **Kholin warcamp** — Site of discussion and reflection for Dalinar and Navani.
+- **Dalinar's Quarters** — The private setting for Dalinar's introspection and the discussions with Navani and Renarin.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 61
-- **Do NOT reveal:** Events or plot points from Chapter 62 onward.
+- **Do NOT reveal:** Future plot developments, outcomes of Dalinar's visions, or Navani's deeper involvement in future events.
 
 ---
 
@@ -76,48 +80,62 @@ Dalinar Kholin, Navani Kholin, and Renarin Kholin discuss Dalinar's recent visio
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Dalinar's certainty about Nohadon:** Readers may wonder why Dalinar is so sure about the identity without evidence.
-- 🔴 **Navani's information about the assassination:** The significance and implications of a Shin Shardbearer assassinating a king may not be immediately clear.
+- 🟡 **Dalinar's Vision:** Readers might be confused about why Dalinar is certain about Nohadon's identity without concrete evidence.
+- 🔴 **Navani's Motivation:** Navani's feelings of uselessness and her sudden confession can seem abrupt without background context.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **Visions of Nohadon** — See earlier chapters where Dalinar experiences visions.
-- **Discussion of the Old Magic** — Mirrors previous considerations of mystical elements in the story.
+- **Dalinar's Visions** — Recurrent theme since earlier chapters, especially Chapter 54.
+- **Navani's Return** — Reflects her earlier interactions and subtle hints at deeper involvement.
 
 ---
 
 ## Foreshadowing / Setup
-- **Navani's warning about Roshar:** Hints at larger conflicts beyond the current war.
-- **Assassination of the King of Jah Keved:** Sets the stage for political upheaval.
+- **Navani's Concerns** — Her mention of larger threats suggests future conflicts.
+- **Shin Shardbearer** — Hints at Szeth's ongoing role in political turmoil.
 
 ---
 
 ## Themes / Subtext
-- **Reality vs. Perception:** Dalinar grapples with the truth of his visions.
-- **Love and Duty:** Navani and Dalinar's relationship highlights personal versus political responsibilities.
+- **Identity and Belief:** Dalinar's certainty about Nohadon highlights the theme of faith versus evidence.
+- **Love and Duty:** Navani's personal revelation ties into the broader theme of personal connections amidst political responsibilities.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **Visions:** Dalinar confirms they are connections to the past, raising questions about their source and purpose.
+- **Old Magic:** Briefly discussed and dismissed, highlighting its mysterious nature and the Nightwatcher's influence.
 
 ---
 
 ## Quotes / Memorable Lines
-> "She tells Dalinar why she really came back to the Shattered Plains."  
-> — Navani's confession shifts the dynamics between her and Dalinar.
+> "Something is wrong on Roshar, something bigger than the War of Reckoning."
+> — Navani Kholin, expressing her broader concerns.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: Why does Dalinar think the man was Nohadon?**
-A: Dalinar is convinced based on his interpretation of the vision, although he admits he lacks concrete evidence.
+**Q: Why does Dalinar believe the man in his vision was Nohadon?**
+A: Dalinar feels a deep certainty based on the vision's context, though he lacks concrete evidence.
 
-**Q: What does Navani reveal to Dalinar?**
-A: Navani confesses her feelings for Dalinar and warns of a larger issue on Roshar, including the assassination of the King of Jah Keved.
+**Q: What does Navani mean by something bigger than the War of Reckoning?**
+A: Navani suspects a larger, more sinister force at play on Roshar, beyond the current conflict.
 
-**Q: Who is the Shin Shardbearer mentioned?**
-A: Szeth is referenced as the Shin Shardbearer involved in the assassination plot.
+**Q: Why is the Old Magic dismissed so quickly?**
+A: The characters consider it but find it implausible due to its unpredictable nature and lack of direct connection to Dalinar's visions.
 
+**Q: How does Renarin react to the discussion?**
+A: Renarin is present but leaves quietly when Dalinar asks for privacy, showing respect for his father's request.
+
+**Q: What is the significance of the Shin Shardbearer?**
+A: The mention of a Shin Shardbearer foreshadows potential future conflicts involving Szeth.
+
+**Q: Why is Navani's confession important?**
+A: It reveals her personal motivations and feelings, deepening her character and her relationship with Dalinar.
+
+**Q: Does Navani have historical knowledge?**
+A: Yes, but she defers to Jasnah for detailed historical expertise.
+
+**Q: How does Dalinar feel about the reality of his visions?**
+A: He is disturbed and seeks solitude to process the implications, indicating his internal conflict.
