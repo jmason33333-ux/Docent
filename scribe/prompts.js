@@ -22,7 +22,7 @@ const CHAPTER_NOTES_TEMPLATE = `# Chapter [X]: [Chapter Title, if applicable]
 
 ---
 
-## Quick Summary (2-3 sentences)
+## Quick Summary (3-6 sentences)
 [Dense narrative summary covering the main story arc. Include key character actions, plot developments, and outcomes. Make it comprehensive but concise.]
 
 ---
