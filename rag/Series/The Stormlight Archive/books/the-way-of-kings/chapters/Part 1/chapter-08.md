@@ -2,77 +2,76 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** [Not specified in the provided text]
+- **Part:** Part One: Above Silence
 - **POV Character(s):** Shallan Davar
-- **Location(s):** The Conclave, Kharbranth
-- **Time Context:** Concurrent with previous events
-- **Chapters Since Last [Character/Plot Thread]:** [Not specified in the provided text]
+- **Location(s):** Conclave in Kharbranth
+- **Time Context:** Some time after Shallan's previous meeting with Jasnah
+- **Chapters Since Last Shallan POV:** Since Chapter 6: Bridge Four
 
 ---
 
 ## Chapter Epigraph
-[No epigraph provided in the chapter text.]
+> "Victory! We stand atop the mount! We scatter them before us! Their homes become our dens, their lands are now our farms! And they shall burn, as we once did, in a place that is hollow and forlorn." 
 
 ---
 
 ## Quick Summary
-Shallan confronts Jasnah, who initially rebukes her but then has a change of heart and apologizes. Jasnah agrees to accept Shallan as her ward, impressed by Shallan's self-taught knowledge and dedication to scholarship. Shallan plans to study rigorously to impress Jasnah and further her own secretive goals.
+Shallan Davar makes another attempt to convince Jasnah Kholin to accept her as a ward. Initially scolded, Shallan is later called back by Jasnah, who apologizes and returns Shallan's forgotten money pouch. After examining Shallan's sketches and notes on biology, Jasnah, impressed by her persistence and self-taught skills, finally agrees to take her on, provided she learns more about philosophy and history.
 
 ---
 
 ## Key Beats
-- Jasnah initially scolds Shallan for disturbing her decision.
-- Jasnah apologizes and returns Shallan's money pouch.
-- Shallan impresses Jasnah with a letter she wrote, showcasing her self-taught skills.
-- Jasnah agrees to take Shallan as her ward, contingent on her progress in philosophy and history.
-- Shallan buys books to study and plans to impress Jasnah before she leaves Kharbranth.
-- Jasnah is convinced to take Shallan as her ward after seeing her sketches and notes.
-- Shallan reflects on completing the first phase of her plan.
+- Shallan approaches Jasnah, seeking acceptance as her ward.
+- Jasnah initially rebukes Shallan for her persistence but then calls her back to return her money pouch.
+- Jasnah agrees to read a letter Shallan wrote and is impressed by her self-teaching.
+- Shallan is tasked with learning philosophy and history to become Jasnah's ward.
+- Shallan purchases books with the intention of impressing Jasnah with her rapid learning.
+- Jasnah discovers Shallan's sketches and notes, which demonstrate her scholarly interest.
+- Jasnah accepts Shallan as her ward, recognizing her dedication and potential.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Shallan Davar** (POV) — Struggles to impress Jasnah and secure a position as her ward to aid her family's situation.
+- **Shallan Davar** (POV) — Desperate to become Jasnah's ward to save her family, she shows determination and intelligence that impress Jasnah.
 
 ### Characters Who Appear
-- **Jasnah Kholin** — Initially firm with Shallan, but eventually agrees to take her on as a ward, recognizing her potential.
-- **Yalb** — Encourages Shallan to be persistent and believes in her capabilities.
-- **Artmyrn** — Present during Shallan's interactions, though his role is minor.
+- **Jasnah Kholin** — Initially dismissive, she ultimately recognizes Shallan's potential and agrees to mentor her.
+- **Yalb** — Encourages Shallan to remain persistent and confident after gambling with guards.
+- **Artmyrn** — A minor character who interacts with Yalb.
 
 ### Characters Mentioned Only
-- **Kabsal** (mentioned) — Discussed in the context of Shallan's studies.
-- **Lin Davar** (mentioned) — Shallan's father, mentioned in the context of her family's troubles.
-- **Balat Davar** (mentioned) — Shallan's brother, part of her motivation.
-- **Wikim Davar** (mentioned) — Another of Shallan's brothers, relevant to her goals.
-- **Jushu Davar** (mentioned) — Shallan's brother, also mentioned regarding her family's issues.
-- **Helaran Davar** (mentioned) — Shallan's eldest brother, referenced in family context.
-- **Tozbek** (mentioned) — Ship captain, briefly referenced.
-- **Placini** (mentioned) — Mentioned in passing.
-- **Gabrathin** (mentioned) — Mentioned in passing.
-- **Yustara** (mentioned) — Mentioned in passing.
-- **Manaline** (mentioned) — Mentioned in passing.
-- **Shauka-daughter-Hasweth** (mentioned) — Mentioned in passing.
-- **Rencalt** (mentioned) — Mentioned in passing.
-- **Szeth** (mentioned) — Mentioned in passing.
-- **Barmest** (mentioned) — Mentioned in passing.
+- **Kabsal** (mentioned) — Referenced in the context of Shallan's environment.
+- **Lin Davar** (mentioned) — Shallan's father, mentioned as part of her motivation.
+- **Balat Davar** (mentioned) — Shallan's brother, mentioned in family context.
+- **Wikim Davar** (mentioned) — Another brother of Shallan, mentioned similarly.
+- **Jushu Davar** (mentioned) — Shallan's brother, mentioned in familial context.
+- **Helaran Davar** (mentioned) — Shallan's eldest brother, mentioned in passing.
+- **Tozbek** (mentioned) — Captain of the ship Shallan traveled on, mentioned in context.
+- **Placini** (mentioned) — Mentioned as part of Shallan's background.
+- **Gabrathin** (mentioned) — Mentioned in Shallan's context.
+- **Yustara** (mentioned) — Mentioned in Shallan's context.
+- **Manaline** (mentioned) — Mentioned in Shallan's context.
+- **Shauka-daughter-Hasweth** (mentioned) — Mentioned in Shallan's context.
+- **Rencalt** (mentioned) — Mentioned in Shallan's context.
+- **Szeth** (mentioned) — Mentioned in passing, possibly as part of a broader conversation.
 
 ---
 
 ## Factions / Groups
-- **[No specific group is highlighted in the chapter.]**
+- **House Davar** — Shallan's family, whose financial troubles drive her actions.
 
 ---
 
 ## Locations
-- **The Conclave, Kharbranth** — A place where Shallan and Jasnah have their interactions, and Shallan makes her plans.
+- **Conclave** — The location where Shallan meets and converses with Jasnah.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 8
-- **Do NOT reveal:** Plot points or character developments from later chapters.
+- **Do NOT reveal:** Any plot developments from Chapter 9 and beyond
 
 ---
 
@@ -83,44 +82,62 @@ Shallan confronts Jasnah, who initially rebukes her but then has a change of hea
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Why does Jasnah change her mind about Shallan?**: Readers might wonder why Jasnah quickly shifts from a refusal to acceptance. It is Shallan's persistence and genuine interest in scholarship that sway Jasnah.
+- 🟡 **Jasnah's Change of Heart:** Readers may wonder why Jasnah suddenly accepts Shallan after initially dismissing her. It's crucial to note Jasnah's appreciation for Shallan's genuine scholarly interest.
+- 🔴 **Shallan's Plan:** Shallan's underlying motive to save her family might be unclear; it's a driving force behind her actions.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **Shallan's desperation** — References Shallan's earlier motivations to secure her family's future (Callback to Chapter 5).
+- **Persistence Theme** — Reflects Shallan's consistent efforts seen in Chapter 6.
+- **Scholarly Pursuit** — Aligns with Shallan’s earlier interest in learning and drawing from Chapter 3.
 
 ---
 
 ## Foreshadowing / Setup
-- **Shallan's sketches and notes** — Reveal her dedication and potential, suggesting she might have more success with Jasnah than initially expected.
+- **Shallan's Sketches:** These hint at her potential to contribute uniquely to Jasnah's work.
+- **Jasnah's Mentorship:** Sets up a significant character dynamic and learning curve for Shallan.
 
 ---
 
 ## Themes / Subtext
-- **Persistence and determination**: Shallan's efforts to win over Jasnah highlight her resolve to achieve her goals.
-- **Mentorship and learning**: Jasnah's acceptance of Shallan as a ward sets up a dynamic of mentorship and growth.
+- **Perseverance:** Shallan's determination is a key theme, exemplified by her repeated attempts to secure Jasnah's mentorship.
+- **Knowledge and Power:** The chapter explores the value of knowledge as a means to personal and familial salvation.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **[No new magic or mechanics are introduced in this chapter.]**
+*No new magic or mechanics are introduced in this chapter.*
 
 ---
 
 ## Quotes / Memorable Lines
-> "It is ultimately the fact that Shallan pursues scholarship in her free time, along with her persistence, that convince Jasnah to accept her as her ward."
-> — Narration, highlighting Shallan's determination
+> "I am impressed by your persistence, Shallan. It is something I value."  
+> — Jasnah Kholin, when recognizing Shallan's determination.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: Why did Jasnah initially refuse Shallan?**
-A: Jasnah had already made her decision based on previous interactions and was not inclined to change it until further evidence of Shallan's dedication was presented.
+**Q: Why does Jasnah initially dismiss Shallan but then change her mind?**  
+A: Jasnah values genuine scholarly interest and persistence, which Shallan demonstrates through her sketches and self-teaching.
 
-**Q: What convinced Jasnah to take Shallan as her ward?**
-A: Shallan's self-taught skills, her sketches and notes, and her persistence in pursuing scholarship impressed Jasnah.
+**Q: What motivates Shallan to persist in seeking Jasnah's mentorship?**  
+A: Shallan is driven by the need to secure a future for her family, which is in financial peril.
 
-**Q: How does Shallan plan to impress Jasnah?**
-A: Shallan intends to quickly study history and philosophy to show rapid improvement before Jasnah leaves Kharbranth.
+**Q: How does Shallan plan to impress Jasnah?**  
+A: Shallan plans to quickly learn about philosophy and history to demonstrate her capability and dedication.
+
+**Q: What is the significance of Shallan's sketches?**  
+A: They reveal her natural curiosity and analytical skills, which appeal to Jasnah.
+
+**Q: Is Yalb a significant character in this chapter?**  
+A: While not central, Yalb's encouragement helps bolster Shallan's confidence.
+
+**Q: Why is Shallan's family mentioned?**  
+A: Their financial struggles are a key motivator for Shallan's actions.
+
+**Q: How does Jasnah's acceptance affect Shallan?**  
+A: It marks the beginning of her formal education and a step closer to her goal of saving her family.
+
+**Q: Does this chapter reveal new aspects of the world?**  
+A: It further explores the scholarly culture and the importance of mentorship in the setting.

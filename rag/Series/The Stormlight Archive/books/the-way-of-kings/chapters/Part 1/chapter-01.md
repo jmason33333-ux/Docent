@@ -2,71 +2,72 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** Not specified
+- **Part:** Part One: Above Silence
 - **POV Character(s):** Cenn
-- **Location(s):** Battlefield, location not explicitly named
-- **Time Context:** Not specified
-- **Chapters Since Last [Character/Plot Thread]:** First chapter
+- **Location(s):** Battlefield in Alethkar
+- **Time Context:** Five years after the assassination of King Gavilar (as noted in the prologue)
+- **Chapters Since Last Cenn POV:** First Cenn POV
 
 ---
 
 ## Chapter Epigraph
-There is no epigraph provided for this chapter.
+
+> "You've killed me. Bastards, you've killed me! While the sun is still hot, I die!"
 
 ---
 
 ## Quick Summary
-Cenn, a terrified new recruit in Brightlord Meridas Amaram's army, is thrust into his first battle with little understanding of what to expect. He is unexpectedly placed in Kaladin Stormblessed's squad, where Sergeant Dallet is tasked with looking after him. During the battle, Kaladin displays impressive combat skills, saving Cenn from certain death. The squad faces a formidable enemy Shardbearer, leading to Cenn losing consciousness from his injuries.
+Cenn, a new recruit in Brightlord Meridas Amaram's army, faces his first battle with fear and uncertainty. He is unexpectedly assigned to Kaladin Stormblessed's squad, known for its remarkable survival rate. As the battle unfolds, Kaladin's leadership and combat prowess become evident, particularly when he saves Cenn from certain death. The situation escalates with the arrival of an enemy Shardbearer, and Cenn loses consciousness due to blood loss.
 
 ---
 
 ## Key Beats
-- Cenn, nervous and inexperienced, is about to face his first battle.
-- He is unexpectedly assigned to Kaladin's squad moments before the fight.
-- Dallet reassures and guides Cenn, preparing him for the upcoming battle.
-- Kaladin instructs Dallet to ensure Cenn's safety due to his unfamiliarity with their signals.
-- The battle commences, and Kaladin's squad performs remarkably, not losing a single member.
-- Kaladin rescues Cenn by defeating six enemy spearmen singlehandedly.
-- An enemy Shardbearer enters the fray, posing a significant threat to the squad.
-- Cenn blacks out from blood loss as the scene closes.
+- Cenn, a frightened new recruit, is thrust into his first battle.
+- He is reassigned to Kaladin Stormblessed's squad at the last minute.
+- Dallet, a seasoned sergeant, reassures and instructs Cenn on battle signals.
+- The battle begins, and Kaladin demonstrates exceptional skill, notably saving Cenn by fighting off six enemy spearmen.
+- An enemy Brightlord appears, prompting Kaladin's squad to engage.
+- The arrival of a Veden Shardbearer turns the tide, creating chaos.
+- Cenn is injured and blacks out, ending his perspective on the battle.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Cenn** (POV) — A new recruit in Amaram’s army, experiencing his first battle and filled with fear and uncertainty.
+- **Cenn** (POV) — A young and inexperienced recruit in Brightlord Amaram's army, facing his first battle with fear and uncertainty.
 
 ### Characters Who Appear
 - **Dallet** — A sergeant in Kaladin's squad, responsible for guiding and protecting Cenn during the battle.
-- **Kaladin** — The leader of the squad, known for his skill and leadership, saves Cenn during the fight.
-- **Cyn** — Member of Kaladin's squad.
-- **Korater** — Member of Kaladin's squad.
-- **Veden Shardbearer** — An enemy combatant posing a significant threat to Kaladin's squad.
+- **Kaladin** — The leader of the squad, known for his exceptional combat skills and protective nature towards his men.
+- **Cyn** — A member of Kaladin's squad.
+- **Korater** — A member of Kaladin's squad.
+- **Veden Shardbearer** — An enemy combatant whose presence significantly impacts the battle.
 
 ### Characters Mentioned Only
-- **Meridas Amaram** (mentioned) — The Brightlord leading the army to which Cenn belongs.
-- **Gare** (mentioned) — Mentioned in the context of the squad.
-- **Torol Sadeas** (mentioned) — Mentioned in passing.
-- **Gavilar Kholin** (mentioned) — Mentioned in passing.
-- **Kusiri** (mentioned) — Mentioned in passing.
-- **Hallaw** (mentioned) — Mentioned in passing.
+- **Meridas Amaram** (mentioned) — The brightlord commanding Cenn's army.
+- **Gare** (mentioned) — Referenced in discussion among soldiers.
+- **Torol Sadeas** (mentioned) — Mentioned in the context of the war.
+- **Gavilar Kholin** (mentioned) — The assassinated king whose death set off the war.
+- **Kusiri** (mentioned) — Referenced during military discussions.
+- **Hallaw** (mentioned) — Another individual mentioned in the soldiers' conversations.
 
 ---
 
 ## Factions / Groups
-- **Amaram's Army** — The military force Cenn is a part of, led by Brightlord Meridas Amaram.
+- **Brightlord Meridas Amaram's Army** — The army in which Cenn serves, part of the Alethi forces.
+- **Kaladin's Squad** — A squad within Amaram's army, renowned for its low casualty rate thanks to Kaladin's leadership.
 
 ---
 
 ## Locations
-- **Battlefield** — The setting for the chapter's events, though not specifically named or detailed.
+- **Battlefield in Alethkar** — The setting of the chapter, where Cenn experiences his first battle.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 1
-- **Do NOT reveal:** Any events or character developments from future chapters.
+- **Do NOT reveal:** Outcomes of Kaladin's future battles or character arcs.
 
 ---
 
@@ -77,46 +78,64 @@ Cenn, a terrified new recruit in Brightlord Meridas Amaram's army, is thrust int
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Cenn's sudden assignment to Kaladin's squad:** Readers may wonder why Cenn was moved last-minute; this is not explained in this chapter.
-- 🔴 **Kaladin's nickname "Stormblessed":** The significance of this title is not yet explored, though it implies respect and perhaps supernatural prowess.
+- 🟡 **Kaladin's Reputation:** Readers might wonder why Kaladin is so respected. This chapter introduces his combat prowess but doesn't fully explain his backstory.
+- 🔴 **Shardbearer Impact:** The significance of a Shardbearer may be confusing; they are elite warriors with magical armor and weapons, making them formidable foes.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-N/A (This is the first chapter)
+- **Death of Gavilar Kholin** — Mentioned as the event that sparked the ongoing war, connecting back to the prologue.
 
 ---
 
 ## Foreshadowing / Setup
-- **Kaladin's Leadership and Skills** — His ability to protect and lead foreshadows his importance and capabilities in future conflicts.
-- **Introduction of Shardbearers** — Sets up the significance of these powerful warriors in the world.
+- **Kaladin's Leadership:** His ability to inspire and protect his men hints at his future role and significance.
+- **Shardbearer Encounter:** Sets up the importance of Shardbearers and how they affect battles.
 
 ---
 
 ## Themes / Subtext
-- **Courage vs. Fear:** Cenn's internal struggle with fear highlights the theme of bravery in the face of overwhelming danger.
-- **Leadership and Protection:** Kaladin's role as a protector and leader is emphasized through his actions.
+- **Fear and Courage:** Cenn's terror juxtaposed with Kaladin's calm leadership explores the theme of bravery under duress.
+- **Survival and Sacrifice:** The squad's cohesion and Kaladin's protective nature highlight themes of camaraderie and sacrifice.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **Shardbearers:** Introduced as formidable combatants, though the mechanics of their power are not detailed in this chapter.
+- **Shardbearers:** Introduced as powerful figures with enhanced capabilities due to their magical armor and weapons.
 
 ---
 
 ## Quotes / Memorable Lines
-> "Kaladin Stormblessed didn't lose men. Even new recruits like Cenn."  
-> — Reflects Kaladin's reputation and skill.
+> "You've killed me. Bastards, you've killed me! While the sun is still hot, I die!"
+> — Epigraph, setting a tone of death and urgency.
+
+> "Stay with Kaladin's squad, and you'll survive."
+> — Dallet, emphasizing Kaladin's reputation.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: Why was Cenn moved to Kaladin's squad?**  
-A: The reason isn't provided in this chapter; it appears to be a last-minute decision.
+**Q: Why is Cenn so scared at the beginning?**
+A: Cenn is a new recruit facing his first battle, and he is unsure of what to expect, which is a common fear for inexperienced soldiers.
 
-**Q: What makes Kaladin special compared to other soldiers?**  
-A: Kaladin is notably skilled and reputed for his protective leadership, evident in saving Cenn.
+**Q: Who is Kaladin Stormblessed?**
+A: Kaladin is the leader of the squad Cenn is assigned to, known for his exceptional skill and leadership on the battlefield.
 
-**Q: What is a Shardbearer?**  
-A: A Shardbearer is a powerful enemy combatant introduced in this chapter, posing a significant challenge to Kaladin's squad.
+**Q: What makes a Shardbearer so dangerous?**
+A: Shardbearers wield magical armor and weapons that provide them with significant combat advantages, making them nearly unstoppable in battle.
+
+**Q: Why is Cenn moved to Kaladin's squad?**
+A: The text does not specify, but it is implied that Kaladin's squad needed an additional recruit, and Cenn was available.
+
+**Q: How does Kaladin save Cenn?**
+A: Kaladin fights off six enemy spearmen to protect Cenn, showcasing his skill and bravery.
+
+**Q: What is the significance of the epigraph?**
+A: The epigraph sets a tone of death and urgency, reflecting the perilous nature of the battle.
+
+**Q: Why does Cenn black out?**
+A: Cenn is overwhelmed by blood loss and the chaos of battle, leading him to lose consciousness.
+
+**Q: Who is Brightlord Meridas Amaram?**
+A: Amaram is the commanding officer of the army Cenn is part of, mentioned in the context of the battle's leadership.

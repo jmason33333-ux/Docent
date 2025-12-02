@@ -1,126 +1,177 @@
 # Chapter 16: Cocoons
 
 ## Metadata
+- **Series:** The Stormlight Archive
 - **Book:** The Way of Kings
-- **Part:** Part 1: Above Silence
+- **Part:** Part 2: The Illuminating Storms
 - **POV Character(s):** Kaladin
-- **Location(s):** Hearthstone
-- **Time Context:** Concurrent with earlier chapters, flashback
-- **Chapters Since Last Kaladin POV:** 3
+- **Location(s):** Hearthstone (flashback, seven and a half years ago)
+- **Time Context:** Flashback to Kaladin's childhood
+- **Chapters Since Last Kaladin POV:** Since Chapter 14
 
 ---
 
 ## Chapter Epigraph
-> [No epigraph present in this chapter.]
+> (Kaladin's Chapters)
 
 ---
 
 ## Quick Summary
-Kaladin and Laral discuss his future, with Laral suggesting he join the army. Kaladin's brother Tien gives him a rock as a comfort. Kaladin and Laral chat with other boys, leading to a confrontation with Jost. After losing a scuffle with Jost, Kaladin learns of Brightlord Wistiow's death and the inheritance left for his education as a surgeon.
+Seven and a half years ago
+
+**Kaladin:** Kaladin is talking to his friend Laral about his father's plans for him to be a surgeon. Laral encourages him to become a soldier and win a Shardplate and blade for himself. Tien interrupts their conversation and gives Kaladin a rock, intended to make him feel better. Tien and Kaladin then go hunting for lurgs, a type of small, slimy creature.
+
+Kaladin and Laral go to talk to some of the other boys, questioning why they aren't working in the fields like usual. Jost, another boy, claims that his father was cheated out of a Shardblade, but Kaladin insists that the area where his father fought wouldn't have had any Shardbearers, and Jost's father must be remembering wrong. Jost gets angry and challenges Kaladin to fight him.
+
+Kaladin gets in a few good hits, and is surprised by how good the quarterstaff feels in his hands, but he is outmatched by Jost. Tien helps him up, and they return home. There, Kaladin is informed that Brightlord Wistiow, the Citylord and Laral's father, is dead. He left Kaladin a large number of spheres for him to go to Kharbranth, be trained as a surgeon, then return to Hearthstone to serve the people there with his new knowledge.
 
 ---
 
 ## Key Beats
-- Kaladin talks with Laral about his father's plans for him to become a surgeon.
-- Laral suggests Kaladin become a soldier instead to win a Shardplate.
-- Tien gives Kaladin a rock to cheer him up, and they go hunting for lurgs.
-- Kaladin questions why the other boys aren't working in the fields.
-- Jost claims his father was cheated out of a Shardblade, leading to a challenge.
-- Kaladin fights Jost but is outmatched.
-- Tien helps Kaladin after the fight.
-- Kaladin learns of Brightlord Wistiow's death and inheritance for his surgical training.
+- Seven and a half years ago
+- Kaladin talking to friend Laral
+- About father's plans for him to be surgeon
+- Laral encourages him to become soldier
+- Win Shardplate and blade for himself
+- Tien interrupts conversation
+- Gives Kaladin rock to make him feel better
+- Tien and Kaladin go hunting for lurgs
+- Small, slimy creatures
+- Kaladin and Laral talk to other boys
+- Question why they aren't working in fields
+- Jost claims father was cheated out of Shardblade
+- Kaladin insists area wouldn't have had Shardbearers
+- Jost's father must be remembering wrong
+- Jost gets angry, challenges Kaladin to fight
+- Kaladin gets in few good hits
+- Surprised how good quarterstaff feels
+- But outmatched by Jost
+- Tien helps him up
+- They return home
+- Kaladin informed Brightlord Wistiow is dead
+- Citylord and Laral's father
+- Left Kaladin large number of spheres
+- To go to Kharbranth
+- Be trained as surgeon
+- Then return to Hearthstone
+- To serve people with new knowledge
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Kaladin** (POV) — Struggles with career expectations and engages in a fight.
+- **Kaladin** (POV) — Young boy, talks with Laral, fights Jost, learns of opportunity
 
 ### Characters Who Appear
-- **Laral** — Discusses Kaladin's future and suggests a military path.
-- **Tien** — Kaladin's brother, offers emotional support with a rock.
-- **Jost** — Challenges Kaladin to a fight over a Shardblade story.
-- **Jest** — Present among the group of boys.
-- **Mord** — Part of the group of boys.
-- **Tift** — Part of the group of boys.
-- **Naget** — Part of the group of boys.
-- **Khav** — Part of the group of boys.
-- **Lirin** — Kaladin's father, indirectly mentioned through his plans for Kaladin.
+- **Laral** — Kaladin's friend, encourages him to be soldier, Wistiow's daughter
+- **Tien** — Kaladin's brother, gives him rock, helps him up
+- **Jost** — Another boy, challenges Kaladin to fight
+- **Jest** — Likely another boy
+- **Mord** — Likely another boy
+- **Tift** — Likely another boy
+- **Naget** — Likely another boy
+- **Khav** — Likely another boy
+- **Lirin** — Kaladin's father, plans for him to be surgeon
+- **Wistiow** — Citylord, Laral's father, dies, leaves spheres for Kaladin
 
 ### Characters Mentioned Only
-- **Torol Sadeas** (mentioned) — Mentioned in the context of Shardbearers.
-- **Meridas Amaram** (mentioned) — Mentioned in the context of Shardbearers.
-- **Gavilar Kholin** (mentioned) — Mentioned in the context of Shardbearers.
-- **Hesina** (mentioned) — Kaladin’s mother, referenced regarding family.
-- **Dalinar Kholin** (mentioned) — Mentioned in the context of Shardbearers.
-- **Wistiow** (mentioned) — Laral's deceased father, leaves inheritance for Kaladin.
+- **Torol Sadeas** (mentioned only)
+- **Meridas Amaram** (mentioned only)
+- **Gavilar Kholin** (mentioned only)
+- **Hesina** (mentioned only) — Kaladin's mother
+- **Dalinar Kholin** (mentioned only)
 
 ---
 
 ## Factions / Groups
-- **None in this chapter.**
+- **Hearthstone villagers** — Kaladin, Tien, Laral, other boys
+- **Citylord's family** — Wistiow, Laral
 
 ---
 
 ## Locations
-- **Hearthstone** — Kaladin's hometown, where the events of this chapter unfold.
+- **Hearthstone** — Kaladin's hometown
+- **Fields** — Where boys should be working
+- **Kharbranth** — Where Kaladin will train as surgeon
 
 ---
 
 ## Spoiler Boundary
-- **Safe to discuss through:** Chapter 16
-- **Do NOT reveal:** Outcomes of Kaladin's career path or future events with Laral.
+- **Safe to discuss through:** End of this chapter
+- **Do NOT reveal:** What happens to Tien, Kaladin's future, or later developments
 
 ---
 
 ## Reading Context
-- **Estimated reading time:** ~15-20 min
-- **Emotional intensity:** Medium
+- **Estimated reading time:** ~20-25 minutes
+- **Emotional intensity:** Medium — Childhood memories, loss, opportunity
 
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Kaladin's career path:** Readers may be confused about why Kaladin is considering being a soldier when his father wants him to be a surgeon.
-- 🔴 **Shardplate and Shardblade lore:** Understanding the significance of these items and why they are coveted can be unclear.
+- 🟡 **Lurgs:** What they are
+- 🟡 **The quarterstaff:** Why it feels good
+- 🟡 **Jost's father:** Whether he was cheated
+- 🔴 **Wistiow's death:** Why he left spheres for Kaladin
+- 🔴 **The opportunity:** What it means for Kaladin
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **Kaladin’s struggle with expectations** — See Chapter 8 where his responsibilities and internal conflicts are introduced.
+- **Chapter 14:** Continuation of Kaladin's story
+- **Part 1:** Previous flashbacks, Tien's importance
+- **Chapter 8:** Kaladin's past, his family
 
 ---
 
 ## Foreshadowing / Setup
-- **Kaladin's affinity for the quarterstaff** — His surprise at his skill could hint at future combat abilities.
-- **Inheritance for education** — Sets up Kaladin’s potential path toward becoming a surgeon.
+- **Kaladin's path:** Becoming a surgeon vs. soldier
+- **Tien's role:** His importance to Kaladin
+- **The quarterstaff:** Kaladin's natural talent
+- **Wistiow's gift:** The opportunity it provides
+- **Laral:** Her future role
 
 ---
 
 ## Themes / Subtext
-- **Destiny vs. Choice:** Kaladin grapples with his father's plans versus his own desires.
-- **Brotherhood and Support:** Tien’s gesture of giving Kaladin a rock showcases familial support.
+- **Choice and destiny:** Surgeon vs. soldier
+- **Family and duty:** Lirin's plans, Wistiow's gift
+- **Friendship and conflict:** Laral, Jost
+- **Brotherhood and protection:** Tien helping Kaladin
+- **Opportunity and responsibility:** The spheres, the training
 
 ---
 
-## Magic / Mechanics (if applicable)
-- **None explicitly mentioned in this chapter.**
+## Magic / Mechanics
+- **Shardblades:** Weapons that can be won
+- **Shardplate:** Armor that can be won
+- **Spheres:** Currency, can hold Stormlight
+- **Quarterstaff:** Weapon Kaladin feels natural with
 
 ---
 
 ## Quotes / Memorable Lines
-> "Do you want to spend your life cutting people open, Kaladin? Or do you want to be a hero?"  
-> — Laral, challenging Kaladin’s future.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: Why does Laral suggest Kaladin become a soldier?**
-A: Laral believes that winning a Shardplate and blade would be a heroic and respected path for Kaladin.
+**Q: What is "Cocoons"?**  
+A: The chapter title "Cocoons" likely refers to the lurgs that Kaladin and Tien hunt for, which are described as small, slimy creatures. It may also metaphorically refer to Kaladin being in a transitional state, about to leave his childhood behind.
 
-**Q: What is the significance of the rock Tien gives Kaladin?**
-A: The rock symbolizes Tien's understanding and support, offering comfort to Kaladin.
+**Q: What does Laral encourage Kaladin to do?**  
+A: Laral encourages Kaladin to become a soldier and win a Shardplate and blade for himself, rather than becoming a surgeon as his father plans. This represents a choice between two paths: the safe, honorable path of a surgeon, or the dangerous but potentially glorious path of a soldier.
 
-**Q: Why is the fight with Jost important?**
-A: The fight highlights Kaladin's unexpected proficiency with a quarterstaff and introduces conflict among the boys.
+**Q: Why does Kaladin fight Jost?**  
+A: Jost claims that his father was cheated out of a Shardblade, but Kaladin insists that the area where his father fought wouldn't have had any Shardbearers, and Jost's father must be remembering wrong. Jost gets angry and challenges Kaladin to fight him. Kaladin gets in a few good hits and is surprised by how good the quarterstaff feels in his hands, but he is outmatched by Jost.
+
+**Q: What is the significance of the quarterstaff?**  
+A: Kaladin is surprised by how good the quarterstaff feels in his hands during the fight with Jost. This suggests he has a natural talent for weapons and combat, which foreshadows his future as a soldier and warrior, despite his father's plans for him to be a surgeon.
+
+**Q: What does Wistiow leave for Kaladin?**  
+A: Brightlord Wistiow, the Citylord and Laral's father, dies and leaves Kaladin a large number of spheres. The gift is for Kaladin to go to Kharbranth, be trained as a surgeon, then return to Hearthstone to serve the people there with his new knowledge. This is a significant opportunity that changes Kaladin's path.
+
+**Q: Why is this chapter important?**  
+A: This chapter shows Kaladin's childhood and the choice between becoming a surgeon (his father's plan and Wistiow's gift) or a soldier (Laral's suggestion). It also shows his natural talent with weapons and Tien's supportive role. It sets up the path that will eventually lead Kaladin to where he is now as a bridgeman.
+

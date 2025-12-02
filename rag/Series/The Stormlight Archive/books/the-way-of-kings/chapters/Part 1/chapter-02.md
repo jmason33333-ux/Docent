@@ -2,68 +2,67 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** N/A
+- **Part:** Part One: Above Silence
 - **POV Character(s):** Kaladin
-- **Location(s):** Slave caravan
-- **Time Context:** Concurrent with Chapter 1
-- **Chapters Since Last [Character/Plot Thread]:** First Kaladin POV since Chapter 1
+- **Location(s):** Slave caravan in an unspecified location
+- **Time Context:** Eight months after previous chapter
+- **Chapters Since Last Kaladin POV:** First Kaladin POV in the book
 
 ---
 
 ## Chapter Epigraph
-> N/A
+> "Ten orders. We were loved, once. Why have you forsaken us, Almighty! Shard of my soul, where have you gone?"
 
 ---
 
 ## Quick Summary
-Kaladin, now a slave in a caravan, grapples with his new reality and the loss of hope. He interacts with fellow slaves, revealing that he once killed a man but became a slave due to the one he didn’t kill. Kaladin considers poisoning the slave trader, Tvlakv, with blackbane but instead witnesses the murder of a sick slave by Tvlakv’s orders, which fuels his frustration and sense of failure.
+Kaladin, now a slave, is on a caravan and struggling with his new life. As he converses with other slaves, he reflects on his past and the events leading to his current state. A windspren named Syl interacts with Kaladin, displaying unusual intelligence. Kaladin unsuccessfully attempts to save a sick slave, which results in his anger and loss of his blackbane leaf.
 
 ---
 
 ## Key Beats
-- Kaladin is in a slave caravan, contemplating his situation.
-- A slave suggests escaping, but Kaladin dismisses the idea as futile.
-- Another slave asks Kaladin about his past; Kaladin reveals he became a slave after killing a man.
-- Kaladin considers using blackbane to poison Tvlakv.
-- Syl, a windspren, converses with Kaladin, surprising him with her intelligence.
-- Kaladin advises Tvlakv to give a sick slave extra water, but Tvlakv orders Bluth to kill the slave instead.
-- In anger, Kaladin crushes the blackbane against the bars.
+- Kaladin is introduced as a slave, reflecting on his new reality.
+- Other slaves attempt to discuss escape, but Kaladin dismisses the idea as futile.
+- Kaladin's background is hinted at when he reveals he killed a man, but his enslavement was due to a man he didn't kill.
+- Syl, a windspren, interacts with Kaladin, showing unusual awareness and intelligence for a spren.
+- Kaladin advises Tvlakv on a sick slave's condition, but Tvlakv has the man killed instead.
+- In frustration, Kaladin crushes the blackbane leaf, losing the chance to use it against Tvlakv.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Kaladin** (POV) — A former soldier now enslaved, struggling with his current circumstances and contemplating escape or revenge.
+- **Kaladin** (POV) — A former soldier turned slave, grappling with his circumstances and the loss of his previous life.
 
 ### Characters Who Appear
-- **Tvlakv** — The slave trader in charge of the caravan, concerned with profit over human life.
-- **Bluth** — A brutal henchman of Tvlakv who follows orders to murder a sick slave.
-- **Syl** — A windspren intrigued by Kaladin, displaying unusual intelligence and curiosity.
-- **Taran** — A fellow slave who interacts with Kaladin, asking about his past.
+- **Tvlakv** — A slave trader overseeing the caravan, pragmatic and ruthless in his dealings.
+- **Bluth** — Tvlakv's brutish enforcer, who carries out the murder of the sick slave.
+- **Syl** — A windspren with a distinct personality and intelligence, who appears to take an interest in Kaladin.
+- **Taran** — Another slave, who interacts with Kaladin and shares his own story of enslavement.
 
 ### Characters Mentioned Only
-- **Lirin** (mentioned) — Kaladin's father, referenced in his backstory.
-- **Cenn** (mentioned) — A soldier from Kaladin’s past.
-- **Dallet** (mentioned) — Another soldier associated with Kaladin’s past.
-- **Tukks** (mentioned) — A figure from Kaladin’s military history.
-- **Tien** (mentioned) — Kaladin’s brother, alluded to in his reflections.
+- **Lirin** (mentioned) — Kaladin's father, referenced in Kaladin's thoughts.
+- **Cenn** (mentioned) — A soldier who previously served with Kaladin.
+- **Dallet** (mentioned) — Another soldier from Kaladin's past.
+- **Tukks** (mentioned) — A mentor figure from Kaladin's earlier life.
+- **Tien** (mentioned) — Kaladin's younger brother, whose memory affects Kaladin deeply.
 
 ---
 
 ## Factions / Groups
-- **Slave Caravan** — The group of slaves, including Kaladin, being transported for sale.
+- **Slaves** — The group of men, including Kaladin, who are being transported to be sold.
 
 ---
 
 ## Locations
-- **Slave Caravan** — The setting for this chapter, a mobile prison for Kaladin and other slaves.
+- **Slave Caravan** — The setting where Kaladin and other slaves are being transported, a harsh and dehumanizing environment.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 2
-- **Do NOT reveal:** Future events related to Kaladin's journey or character development.
+- **Do NOT reveal:** Future events regarding Kaladin's journey or Syl's nature
 
 ---
 
@@ -74,48 +73,61 @@ Kaladin, now a slave in a caravan, grapples with his new reality and the loss of
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Kaladin's past actions:** Readers may be confused about why Kaladin is a slave despite being a soldier; his hesitance to share details adds to the mystery.
-- 🔴 **Syl's intelligence:** Syl's behavior is unusual for a spren, raising questions about her nature and purpose.
+- 🟡 **Kaladin's Background:** Readers may be confused about how Kaladin ended up a slave; more details are revealed gradually.
+- 🔴 **Syl's Intelligence:** Syl's behavior is unusual for a spren, which might confuse readers familiar with how spren usually act.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **Kaladin's despondency** — Reflects the chaos and trauma seen in Chapter 1.
+- **Kaladin's Past as a Soldier** — Provides context from Chapter 1 about Kaladin's military background.
 
 ---
 
 ## Foreshadowing / Setup
-- **Kaladin's reluctance to escape** — Sets up his internal conflict and potential future decisions.
-- **Syl's curiosity and intelligence** — Hints at a deeper connection or significance to Kaladin’s journey.
+- **Syl's Unusual Nature** — Syl's intelligence hints at a deeper connection with Kaladin that may develop.
+- **Kaladin's Leadership Skills** — His attempt to save the sick slave hints at his inherent leadership and compassion.
 
 ---
 
 ## Themes / Subtext
-- **Despair vs. Hope:** Kaladin's struggle with hopelessness and the small sparks of potential change symbolize this theme.
-- **Honor and Failure:** Kaladin's reflections on his past actions and current status highlight the theme of personal honor and perceived failure.
+- **Despair and Hope:** Kaladin's struggle with his circumstances highlights his internal battle between despair and the glimmer of hope represented by Syl.
+- **Failure and Redemption:** Kaladin grappling with his perceived failures suggests a theme of seeking redemption.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **Spren Characteristics:** Syl's atypical behavior suggests variability in spren intelligence and autonomy.
+- **Spren Behavior:** Syl's unusual intelligence suggests variations in spren behavior, which may be significant.
 
 ---
 
 ## Quotes / Memorable Lines
-> "Honor is dead."  
-> — Kaladin, expressing his loss of faith in ideals he once held dear.
+> "Honor is dead. But I'll see what I can do."  
+> — Kaladin, reflecting on his loss and determination
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: Why doesn't Kaladin try to escape?**  
-A: Kaladin believes escape attempts are futile due to the risks and the tight control of the slave caravan.
+**Q: Why is Kaladin a slave?**  
+A: Kaladin is enslaved after an incident where he killed a man, but the one he didn't kill led to his enslavement.
 
-**Q: Who is Syl, and why is she different?**  
-A: Syl is a windspren, and her unusual intelligence and interaction with Kaladin suggest she may be more significant than typical spren.
+**Q: Who is Syl, and why is she important?**  
+A: Syl is a windspren who displays unusual intelligence, indicating a special connection with Kaladin.
 
-**Q: What is blackbane?**  
-A: Blackbane is a plant known for its poisonous properties, considered by Kaladin as a means to retaliate against Tvlakv.
+**Q: What is the significance of the blackbane leaf?**  
+A: Kaladin considers using it to poison Tvlakv but loses it in his frustration, symbolizing his inner turmoil.
 
----
+**Q: How does Kaladin feel about his situation?**  
+A: Kaladin is despondent but still retains a flicker of hope, as seen through his interactions with Syl.
+
+**Q: What is the epigraph about?**  
+A: The epigraph suggests a lament for lost orders and a plea to the Almighty, hinting at larger world-building elements.
+
+**Q: Is Syl a typical spren?**  
+A: No, Syl shows intelligence and awareness uncommon for spren, suggesting she plays a unique role.
+
+**Q: How does this chapter connect to Chapter 1?**  
+A: It provides background on Kaladin's past as a soldier, connecting to the military setting of Chapter 1.
+
+**Q: Why does Kaladin attempt to help the sick slave?**  
+A: It reflects his compassionate nature and former leadership qualities, despite his current circumstances.

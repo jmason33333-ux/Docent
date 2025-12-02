@@ -2,131 +2,143 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** Part 2: The Illuminating Storms
+- **Part:** Part Two: The Illuminating Storms
 - **POV Character(s):** Adolin Kholin, Dalinar Kholin
 - **Location(s):** The Shattered Plains
 - **Time Context:** Concurrent with Chapter 11
-- **Chapters Since Last [Character/Plot Thread]:** First Adolin and Dalinar POV since Chapter 9
+- **Chapters Since Last Adolin POV:** First Adolin POV in the book
+- **Chapters Since Last Dalinar POV:** First Dalinar POV in the book
 
 ---
 
 ## Chapter Epigraph
-> "[Epigraph text]"
-> — [Source, if known]
-
-(Note: The actual epigraph text is not provided in the chapter text above.)
+> "Old friend, I hope this missive finds you well. Though, as you are now essentially immortal, I would guess that wellness on your part is something of a given."
 
 ---
 
 ## Quick Summary
-Adolin joins Dalinar, Elhokar, and Sadeas on a chasmfiend hunt. Adolin is concerned about Dalinar's mental state, especially during highstorms. The hunt takes an unexpected turn when the chasmfiend appears on the main platform instead of the smaller plateau.
+Adolin, Dalinar, Elhokar, and Sadeas participate in a chasmfiend hunt on the Shattered Plains. Adolin is concerned about Dalinar's mental state and his strange behavior during highstorms. Dalinar reflects on a mysterious voice urging him to "unite them." A chasmfiend unexpectedly appears on the plateau, threatening the courtiers.
 
 ---
 
 ## Key Beats
-- Adolin worries about Dalinar's strange behavior and the taunts from Sadeas regarding gemheart captures.
-- Dalinar and Elhokar engage in a friendly race, with Dalinar recalling a voice urging him to "unite them."
-- Adolin manages the troops' positioning while contemplating the wisdom of the hunt.
-- Dalinar justifies the hunt as a confidence booster for Elhokar.
-- Wit converses with Dalinar about Renarin's perceived fragility.
-- The planned hunt goes awry as the chasmfiend appears on the platform with the courtiers.
+- Adolin is uneasy about Dalinar's strange behavior and his fits during highstorms, worrying about his mental health.
+- Dalinar races Elhokar to a vantage point, recalling a voice urging him to "unite them," and lets Elhokar win, seeing his joy.
+- Adolin questions the wisdom of the hunt, fearing a potential Parshendi ambush, but Dalinar believes it will boost Elhokar's confidence.
+- Wit discusses Renarin's strength with Dalinar, suggesting he is not as fragile as believed.
+- During the hunt, a chasmfiend unexpectedly appears on the main plateau, endangering the gathered courtiers and scribes.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Adolin Kholin** (POV) — Concerned about his father's mental state and manages troop movements.
-- **Dalinar Kholin** (POV) — Reflects on uniting Alethkar and experiences the thrill of a race with Elhokar.
+- **Adolin Kholin** (POV) — Participates in the chasmfiend hunt; troubled by his father's behavior.
+- **Dalinar Kholin** (POV) — Reflects on his visions and the voice urging unity; involved in the hunt.
 
 ### Characters Who Appear
-- **Elhokar Kholin** — Engages in a race with Dalinar and is involved in the hunt.
-- **Torol Sadeas** — Taunts Dalinar about his lack of success with gemhearts.
-- **Vamah** — Present during the hunt.
-- **Renarin Kholin** — Discussed by Wit and involved in the hunt.
-- **Gallant** — Dalinar's horse.
-- **Vengeance** — Adolin’s horse.
-- **the Thrill** — Experienced by Dalinar during the race.
-- **Tarilar, Vartian, Lomard** — Courtiers present during the hunt.
-- **Wit** — Converses with Dalinar about Renarin.
-- **Bashin** — Hunt master who realizes something is wrong.
+- **Elhokar Kholin** — The king, eager to prove himself, races with Dalinar.
+- **Torol Sadeas** — Participates in the hunt, taunts Dalinar about his failures.
+- **Vamah** — Present at the hunt with the others.
+- **Renarin Kholin** — Participates in the hunt; Wit speaks to Dalinar about him.
+- **Gallant** — Dalinar's Ryshadium horse.
+- **Vengeance** — Adolin's horse.
+- **the Thrill** — A sensation felt by Dalinar during the race.
+- **Tarilar** — Present at the hunt.
+- **Vartian** — Present at the hunt.
+- **Lomard** — Present at the hunt.
+- **Wit** — Speaks with Dalinar about Renarin.
+- **Bashin** — The hunt master, notes the unusual behavior of the chasmfiend.
 
 ### Characters Mentioned Only
-- **Gavilar Kholin** (mentioned) — Recalled by Dalinar.
-- **Janala Lustow** (mentioned) — Context not provided.
-- **Honor** (mentioned) — Referred to in Dalinar’s thoughts.
-- **Rilla** (mentioned) — Context not provided.
-- **Deeli** (mentioned) — Context not provided.
-- **Navani Kholin** (mentioned) — Context not provided.
-- **Jasnah Kholin** (mentioned) — Context not provided.
+- **Gavilar Kholin** (mentioned) — Recalled in context of the past.
+- **Janala Lustow** (mentioned) — Mentioned in passing.
+- **Honor** (mentioned) — Alluded to in Dalinar's reflections.
+- **Rilla** (mentioned) — Mentioned in passing.
+- **Deeli** (mentioned) — Mentioned in passing.
+- **Navani Kholin** (mentioned) — Mentioned in context of the family.
+- **Jasnah Kholin** (mentioned) — Mentioned in context of the family.
 
 ---
 
 ## Factions / Groups
-- **The Alethi Nobility** — Engaged in the hunt on the Shattered Plains.
+- **Alethi Army** — The royal army participating in the hunt.
 
 ---
 
 ## Locations
-- **The Shattered Plains** — A series of plateaus where the hunt takes place.
+- **The Shattered Plains** — The site of the chasmfiend hunt and the ongoing war.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 12
-- **Do NOT reveal:** Plot developments from later chapters.
+- **Do NOT reveal:** Outcomes of the hunt, Dalinar's future visions, or the full significance of the voice urging "unite them."
 
 ---
 
 ## Reading Context
-- **Estimated reading time:** ~15-20 min
+- **Estimated reading time:** ~15-20 minutes
 - **Emotional intensity:** Medium
 
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Dalinar's strange behavior:** Readers may be confused about why Dalinar is acting differently; his visions during highstorms are concerning to others.
-- 🔴 **Chasmfiend's unexpected appearance:** The change in location might confuse readers regarding the hunt's preparations and expectations.
+- 🟡 **Dalinar's visions:** Readers might be confused about the nature and source of Dalinar's visions and the voice he hears.
+- 🔴 **Chasmfiend's unexpected appearance:** It may not be clear why the chasmfiend appears on the wrong plateau, indicating something is amiss.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **Dalinar's visions** — See Chapters 9 and earlier for context on Dalinar's visions during highstorms.
+- **Dalinar's visions** — Previously mentioned in Chapter 9.
 
 ---
 
 ## Foreshadowing / Setup
-- **Dalinar's hesitation in the race:** May suggest future internal conflicts regarding leadership and unity.
-- **Chasmfiend's appearance:** Sets up potential immediate danger and action.
+- **Dalinar's hesitance in the race** — Suggests inner conflict about his role and the voice's message.
+- **The chasmfiend's appearance** — Sets up future tension and potential danger for the characters involved.
 
 ---
 
 ## Themes / Subtext
-- **Unity and Leadership:** Explored through Dalinar's internal struggle and the race with Elhokar.
-- **Courage and Confidence:** The hunt as a means to boost Elhokar’s standing and self-esteem.
+- **Leadership and Responsibility:** Dalinar grapples with his duty to Elhokar and the kingdom.
+- **Unity and Division:** The voice urging Dalinar to "unite them" highlights a central theme of bringing people together.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **The Thrill:** A form of battle excitement experienced by Alethi warriors.
+- **The Thrill:** Described as a battle sensation that overtakes warriors, influencing their actions and emotions.
 
 ---
 
 ## Quotes / Memorable Lines
-> "[Quote]"
-> — [Character], [context]
-
-(Note: Specific quotes are not provided in the chapter text above.)
+> "Unite them."
+> — Dalinar's recurring vision, indicating a mysterious directive.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
 **Q: Why is Adolin worried about Dalinar?**
-A: Adolin is concerned about Dalinar's increasingly strange behavior and his fits during highstorms, fearing that his father might be going mad.
+A: Adolin is concerned about Dalinar's strange behavior and fits during highstorms, fearing for his mental health.
 
-**Q: What is the significance of Dalinar's race with Elhokar?**
-A: The race symbolizes Dalinar's inner conflict between his duties and the thrill of competition, as well as his desire to see Elhokar succeed.
+**Q: What is the significance of Dalinar letting Elhokar win the race?**
+A: Dalinar chooses to let Elhokar win to boost the king's confidence and demonstrate support.
 
-**Q: Why did the chasmfiend appear unexpectedly?**
-A: The chasmfiend's appearance on the wrong platform suggests a miscalculation or unexpected event, adding immediate danger to the situation.
+**Q: Why does Dalinar hear a voice telling him to "unite them"?**
+A: This voice is part of his visions, urging him toward a yet-undefined purpose of unification.
+
+**Q: How does Wit view Renarin?**
+A: Wit tells Dalinar that Renarin is not as fragile as he appears, suggesting hidden strength.
+
+**Q: What is the purpose of the chasmfiend hunt?**
+A: The hunt is intended to bolster Elhokar's reputation and confidence as king.
+
+**Q: Why does the chasmfiend appear on the wrong plateau?**
+A: This unexpected event suggests something is amiss, heightening the tension of the hunt.
+
+**Q: What is the Thrill?**
+A: The Thrill is a battle sensation that overtakes warriors, enhancing their aggression and zeal.
+
+**Q: How does Dalinar's vision impact his actions?**
+A: The vision and the voice urging "unite them" cause Dalinar to hesitate and reflect on his leadership role.

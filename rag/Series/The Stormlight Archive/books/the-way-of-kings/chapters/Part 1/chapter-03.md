@@ -2,69 +2,63 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** [Not specified]
+- **Part:** Part One: Above Silence
 - **POV Character(s):** Shallan Davar
 - **Location(s):** Kharbranth, the City of Bells
-- **Time Context:** Concurrent with Shallan's arrival in the city
-- **Chapters Since Last [Character/Plot Thread]:** First Shallan POV since introduction
+- **Time Context:** Some time after arriving in Kharbranth
+- **Chapters Since Last Shallan POV:** First Shallan POV in the book
 
 ---
 
 ## Chapter Epigraph
-> "[Epigraph text]"
-> — [Source, if known]
-
-*Note: The specific epigraph text for this chapter is not included in the provided material.*
+> "A man stood on a cliffside and watched his homeland fall into dust. The waters surged beneath, so far beneath. And he heard a child crying. They were his own tears."
 
 ---
 
-## Quick Summary (2-3 sentences)
-Shallan Davar arrives in Kharbranth and is struck by the city's diversity and vibrancy. She speaks briefly with Captain Tozbek, confirming that Jasnah Kholin, whom she has been pursuing to become her ward, is still in the city. Nervously contemplating her family's dire financial situation, Shallan heads to the palace and finally catches sight of Jasnah.
+## Quick Summary
+Shallan Davar arrives in Kharbranth, the City of Bells, filled with a mix of awe and anxiety. She converses with Captain Tozbek and learns that Jasnah Kholin is still in the city. With the help of the sailor Yalb, she makes her way to the palace to meet Jasnah, whom she seeks to become a ward to. The chapter concludes with Shallan finally encountering Jasnah Kholin.
 
 ---
 
-## Key Beats (Chronological, ~5-8 points)
-- Shallan Davar arrives in Kharbranth aboard the Wind's Pleasure.
-- She is amazed by the city's bustling diversity and sounds.
-- Captain Tozbek confirms that Jasnah Kholin is still in Kharbranth.
-- Shallan and Yalb travel to the palace where Jasnah is staying.
-- Shallan reveals she seeks to become Jasnah's ward to save her family's fortunes.
-- She reflects on her family's financial struggles following her father's death.
-- The chapter concludes with Shallan spotting Jasnah in the palace.
+## Key Beats
+- Shallan arrives in Kharbranth, overwhelmed by the bustling city and its diverse inhabitants.
+- She discusses her plans with Captain Tozbek, who confirms Jasnah Kholin's presence in the city.
+- Shallan sets out with Yalb to ascend to the palace, reflecting on her family's dire financial situation.
+- She reveals her pursuit of Jasnah as a potential solution to her family's crisis.
+- At the palace, Shallan asks Yalb to wait outside while she seeks an audience with Jasnah.
+- The chapter ends as Shallan rounds a corner and sees Jasnah.
 
 ---
 
 ## Characters in This Chapter
-
 ### POV Character(s)
-- **Shallan Davar** (POV) — A young woman from a noble family facing financial ruin, pursuing Jasnah Kholin to become her ward.
+- **Shallan Davar** (POV) — A young woman who has just arrived in Kharbranth, seeking to become Jasnah Kholin's ward to help her struggling family.
 
 ### Characters Who Appear
-- **Tozbek** — Captain of the Wind's Pleasure, assists Shallan by confirming Jasnah's presence in Kharbranth.
+- **Tozbek** — The captain of the Wind's Pleasure, the ship that brought Shallan to Kharbranth, supportive of Shallan's mission.
 - **Yalb** — A sailor from the Wind's Pleasure who accompanies Shallan to the palace.
 
 ### Characters Mentioned Only
-- **Jasnah Kholin** (mentioned) — A renowned scholar whom Shallan wishes to apprentice under.
-- **Elhokar Kholin** (mentioned) — Mentioned in context of Kholin family.
-- **Lin Davar** (mentioned) — Shallan’s deceased father, whose death has left the family in a financial crisis.
-- **Valam** (mentioned) — Referenced in relation to Shallan's family affairs.
+- **Jasnah Kholin** (mentioned) — A renowned scholar whom Shallan is attempting to become a ward to.
+- **Elhokar Kholin** (mentioned) — The king of Alethkar, related to Jasnah.
+- **Lin Davar** (mentioned) — Shallan's deceased father, whose death left the family in financial ruin.
+- **Valam** (mentioned) — Mentioned in context to Shallan's reflections on political and familial pressures.
 
 ---
 
 ## Factions / Groups
-- **House Davar** — Shallan's noble family, experiencing a financial and political crisis.
+- **House Davar** — Shallan's noble family, currently in financial distress.
 
 ---
 
 ## Locations
-- **Kharbranth, the City of Bells** — A vibrant, diverse city known for its unique bell sounds and cultural richness.
-- **The Palace** — Where Shallan seeks an audience with Jasnah Kholin.
+- **Kharbranth** — Known as the City of Bells, a bustling port city with a rich mix of cultures.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter 3
-- **Do NOT reveal:** Specifics of Shallan's plan with Jasnah, outcomes of her pursuit, or future interactions.
+- **Do NOT reveal:** Shallan's deeper motivations, Jasnah's decision regarding Shallan, or developments in their relationship from later chapters.
 
 ---
 
@@ -75,45 +69,68 @@ Shallan Davar arrives in Kharbranth and is struck by the city's diversity and vi
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🟡 **Shallan's motivation for pursuing Jasnah:** Readers may wonder why becoming a ward is critical; it's tied to her family's financial crisis.
-- 🔴 **Jasnah's location changes:** The mention of chasing Jasnah across cities might confuse readers about why she isn't in one place.
+- 🟡 **Shallan's Motivation:** Readers might wonder why becoming Jasnah's ward is so critical. It's tied to her family's financial and political survival.
+- 🔴 **City Layout:** Kharbranth's geography and its tiered structure can be confusing; envision it as a city built into the natural cliffside.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **[Callback 1]** — Introduction of Shallan's financial struggles mirrors her previous concerns in her debut chapter.
+- **Cultural Shock** — Reflects Kaladin's earlier experience with new environments in Chapter 2.
+- **Family Crisis** — Mirrors themes of familial duty seen in earlier chapters.
 
 ---
 
 ## Foreshadowing / Setup
-- **[Setup 1]** — Shallan's desperation hints at potentially drastic measures she might take to resolve her family's issues.
+- **Shallan's Anxiety** — Suggests deeper personal stakes and pressure related to her family's situation.
+- **Jasnah's Elusiveness** — Sets up the importance of Shallan's quest to gain her mentorship.
 
 ---
 
 ## Themes / Subtext
-- **Cultural Shock:** Shallan's journey to Kharbranth highlights her exposure to new cultures and environments.
-- **Desperation and Hope:** Her pursuit of Jasnah signifies a mix of desperation for her family's situation and hope for a resolution.
+- **Identity and Duty:** Shallan's struggle with her family's expectations and her personal ambitions.
+- **Knowledge and Power:** The pursuit of knowledge through Jasnah as a means of gaining influence.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-*No new magic or mechanics introduced in this chapter.*
+- **None directly explored in this chapter.**
 
 ---
 
 ## Quotes / Memorable Lines
-> "Shallan stood amazed at the sounds and sights of Kharbranth, the City of Bells."
-> — Shallan, reflecting on her arrival.
+> "They were his own tears."
+> — Reflects the emotional weight Shallan carries.
 
 ---
 
 ## Rowan's "If Asked" Notes
 
 **Q: Why is Shallan chasing Jasnah Kholin?**
-A: Shallan seeks to become Jasnah's ward to gain knowledge and resources that could help save her family's financial situation.
+A: Shallan seeks to become Jasnah's ward to find a way to save her family's finances after her father's death.
 
-**Q: What is significant about Kharbranth?**
-A: Kharbranth is known as the City of Bells, unique for its cultural diversity and the sound of bells throughout.
+**Q: What is the significance of Kharbranth?**
+A: Kharbranth is a major port city known for its cultural diversity and strategic location.
 
-**Q: How does Shallan feel about her situation?**
-A: She is nervous and desperate, aware of the dire consequences if she fails to find help for her family.
+**Q: How does Shallan plan to meet Jasnah?**
+A: By visiting the palace in Kharbranth where Jasnah is staying, hoping for an audience.
+
+**Q: What is Shallan's emotional state upon arriving in Kharbranth?**
+A: She is a mix of awe and anxiety due to the city's size and her family's dire situation.
+
+**Q: Who is Tozbek?**
+A: The captain of the ship that brought Shallan to Kharbranth, supportive of her mission.
+
+**Q: Why is Shallan's family in crisis?**
+A: Her father's death left them financially and politically vulnerable.
+
+**Q: How does Shallan plan to resolve her family's crisis?**
+A: By becoming Jasnah's ward and gaining knowledge or influence to aid her family.
+
+**Q: What does Shallan hope to gain from Jasnah?**
+A: Mentorship, knowledge, and potential political leverage.
+
+**Q: Why does Shallan ask Yalb to wait outside the palace?**
+A: She intends to meet Jasnah alone, respecting the formality of the encounter.
+
+**Q: Is there any magic discussed in this chapter?**
+A: No direct mention of magic systems occurs in this chapter.

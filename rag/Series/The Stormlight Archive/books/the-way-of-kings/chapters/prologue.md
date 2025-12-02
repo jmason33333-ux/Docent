@@ -2,71 +2,72 @@
 
 ## Metadata
 - **Book:** The Way of Kings
-- **Part:** N/A
+- **Part:** *Not specified*
 - **POV Character(s):** Szeth
-- **Location(s):** Alethi palace
-- **Time Context:** 4500 years after a significant event (not specified what)
-- **Chapters Since Last [Character/Plot Thread]:** N/A (Prologue)
+- **Location(s):** Alethi palace during a celebration
+- **Time Context:** 4,500 years after the Prelude
+- **Chapters Since Last Szeth POV:** First Szeth POV in the book
 
 ---
 
 ## Chapter Epigraph
-> No epigraph is present in this prologue.
+
+> "The love of men is a frigid thing, a mountain stream only three steps from the ice. We are his. Oh Stormfather...we are his. It is but a thousand days, and the Everstorm comes."
 
 ---
 
 ## Quick Summary
-Szeth, a Truthless Shin assassin, infiltrates an Alethi palace during a celebration marking a peace treaty with the Parshendi. His mission is to assassinate King Gavilar Kholin. Using his Surgebinding abilities, Szeth fights his way to Gavilar and mortally wounds him. Before dying, Gavilar entrusts Szeth with a mysterious black sphere and a final message for his brother, Dalinar.
+Szeth, a Truthless Shin assassin, infiltrates a celebration at the Alethi palace to assassinate King Gavilar Kholin. Using his Surgebinding abilities, he battles guards and a Shardbearer, eventually confronting and mortally wounding Gavilar. Before dying, Gavilar gives Szeth a mysterious black sphere and a message for his brother Dalinar.
 
 ---
 
 ## Key Beats
-- Szeth waits in a large room, observing the Alethi celebration.
-- He notes the Parshendi's plan to withdraw after the assassination.
-- Szeth navigates through the palace using his Surgebinding powers to incapacitate guards.
-- He mistakes a Shardbearer for his target but realizes it is King Gavilar.
-- Szeth battles and mortally wounds Gavilar by collapsing the balcony.
-- Gavilar, confused by the mention of the Parshendi, gives Szeth a black sphere and a message for Dalinar.
-- Szeth respects Gavilar's dying wish and records a note in blood before fleeing.
+- Szeth blends into the celebration, observing the Alethi and Parshendi.
+- He leaves the room, preparing to assassinate King Gavilar as per his orders.
+- Szeth uses Surgebinding to fight through guards and reach Gavilar's quarters.
+- He encounters a Shardbearer, realizing it is King Gavilar himself.
+- Szeth defeats Gavilar by collapsing a balcony.
+- Gavilar, dying, gives Szeth a black sphere and a message for Dalinar.
+- Szeth honors Gavilar's dying wish, leaving a note in blood for Dalinar and fleeing.
 
 ---
 
 ## Characters in This Chapter
 
 ### POV Character(s)
-- **Szeth** (POV) — A Truthless Shin assassin tasked with killing King Gavilar. He uses Surgebinding abilities to fulfill his mission.
+- **Szeth** (POV) — A Truthless Shin assassin tasked with assassinating King Gavilar. He uses Surgebinding to carry out his mission, indicating his complex abilities.
 
 ### Characters Who Appear
-- **Dalinar Kholin** — Mentioned in Gavilar's last words as the recipient of a critical message.
-- **Elhokar Kholin** — Present at the celebration, though he plays a minimal role.
-- **Torol Sadeas** — Present during the event, noted briefly.
-- **Gavilar Kholin** — The king targeted for assassination; gives Szeth a mysterious sphere and a message for Dalinar before dying.
+- **Dalinar Kholin** — Gavilar's brother, mentioned in Gavilar's dying message.
+- **Elhokar Kholin** — Present at the celebration, though not directly interacted with by Szeth.
+- **Torol Sadeas** — A high-ranking Alethi noble at the celebration.
+- **Gavilar Kholin** — The King of Alethkar, whom Szeth is tasked to assassinate. He provides crucial information and a mysterious sphere before dying.
 
 ### Characters Mentioned Only
-- **Jasnah Kholin** (mentioned) — Referenced in the context of the Kholin family.
-- **Jezrien** (mentioned) — Referenced, potential connection to larger lore.
-- **Ishar** (mentioned) — Referenced, potential connection to larger lore.
-- **Kalak** (mentioned) — Referenced, potential connection to larger lore.
-- **Talenel** (mentioned) — Referenced, potential connection to larger lore.
-- **Shalash** (mentioned) — Referenced, potential connection to larger lore.
-- **Thaidakar** (mentioned) — Alluded to, possible significance.
-- **Restares** (mentioned) — Alluded to, possible significance.
+- **Jasnah Kholin** (mentioned) — Gavilar's daughter, not directly involved in this scene.
+- **Jezrien** (mentioned) — One of the Heralds, referenced in conversation.
+- **Ishar** (mentioned) — Another Herald, mentioned in context.
+- **Kalak** (mentioned) — Herald, mentioned only.
+- **Talenel** (mentioned) — Herald, referenced in context.
+- **Shalash** (mentioned) — Herald, mentioned only.
+- **Thaidakar** (mentioned) — A name mentioned by Gavilar, suggesting importance.
+- **Restares** (mentioned) — Another name mentioned by Gavilar, indicating significance.
 
 ---
 
 ## Factions / Groups
-- **Parshendi** — The group that hired Szeth to assassinate King Gavilar.
+- **Parshendi** — The group that hires Szeth to assassinate Gavilar, showing a complex relationship with the Alethi.
 
 ---
 
 ## Locations
-- **Alethi palace** — The setting of the assassination; a grand and fortified location hosting a celebration.
+- **Alethi Palace** — The setting for the celebration and assassination, characterized by grandeur and political significance.
 
 ---
 
 ## Spoiler Boundary
 - **Safe to discuss through:** Chapter Prologue
-- **Do NOT reveal:** Any plot developments or character arcs beyond this chapter.
+- **Do NOT reveal:** Details about Gavilar's message significance, Szeth's future actions, or the black sphere's purpose.
 
 ---
 
@@ -77,49 +78,67 @@ Szeth, a Truthless Shin assassin, infiltrates an Alethi palace during a celebrat
 ---
 
 ## Confusion Points / "Wait, What?" Moments
-- 🔴 **Szeth's identity as Truthless:** Readers may be confused about what "Truthless" means and its implications. This term indicates a significant cultural and personal status for Szeth.
-- 🟡 **The black sphere's purpose:** Gavilar's insistence on Szeth taking the sphere hints at its importance, leaving readers questioning its significance.
+- 🟡 **Szeth's "Truthless" status:** Readers often wonder what being Truthless means; it implies a loss of honor and exile in Shin culture.
+- 🔴 **The black sphere:** Its significance is not explained, leaving readers curious about its importance.
 
 ---
 
 ## Callbacks / Connections to Earlier Chapters
-- **N/A** — This is the prologue, so no earlier chapters to reference.
+- **N/A** — This is the opening scene, establishing the tone and setting.
 
 ---
 
 ## Foreshadowing / Setup
-- **Gavilar's message to Dalinar:** Suggests future importance in the narrative.
-- **The mysterious black sphere:** Likely significant to future events.
+- **The black sphere** — Gavilar's insistence on its protection hints at future importance.
+- **The phrase "the most important words a man can say"** — Suggests deeper themes to be explored.
 
 ---
 
 ## Themes / Subtext
-- **Duty and Honor:** Szeth's actions reflect the complex interplay between duty and personal beliefs.
-- **Betrayal:** The paradox of Szeth's mission from the Parshendi against the backdrop of a peace treaty.
+- **Honor and Duty:** Szeth struggles with his orders versus his personal beliefs.
+- **Betrayal and Trust:** The assassination reveals complex political dynamics.
 
 ---
 
 ## Magic / Mechanics (if applicable)
-- **Surgebinding:** Szeth demonstrates the ability to manipulate gravity, allowing him to fight guards and maneuver through the palace.
+- **Surgebinding:** Szeth uses this to manipulate gravity and surface tension, showcasing a unique magical ability.
 
 ---
 
 ## Quotes / Memorable Lines
-> "The Parshendi? That makes no sense."
-> — Gavilar, upon hearing Szeth's revelation about his employers.
-
 > "You must take this. They must not get it."
-> — Gavilar, entrusting Szeth with the black sphere.
+> — Gavilar, urging Szeth to protect the black sphere
 
 ---
 
 ## Rowan's "If Asked" Notes
 
-**Q: What does "Truthless" mean?**
-A: It refers to Szeth's status among the Shin, indicating a deep personal and cultural shame.
+**Q: What is Szeth's role in the prologue?**
+A: Szeth is an assassin tasked by the Parshendi to kill King Gavilar. He uses his Surgebinding abilities to carry out the mission.
+
+**Q: Why does Gavilar give Szeth the black sphere?**
+A: Gavilar believes it is crucial to keep the sphere from falling into the wrong hands, hinting at its importance.
+
+**Q: What does being "Truthless" mean for Szeth?**
+A: In Shin culture, being Truthless means Szeth has been exiled and stripped of honor, making him obligated to follow any orders given to him.
+
+**Q: Who are the Parshendi?**
+A: The Parshendi are the group that hired Szeth to assassinate Gavilar, indicating a complex relationship with the Alethi.
+
+**Q: Why is Dalinar mentioned in Gavilar's dying words?**
+A: Gavilar entrusts Szeth with a message for Dalinar, suggesting Dalinar's future significance.
+
+**Q: What are Surgebinding abilities?**
+A: Surgebinding allows Szeth to manipulate gravitational forces and adhere to surfaces, as demonstrated in his combat with the guards.
+
+**Q: Is the black sphere important?**
+A: Yes, Gavilar's insistence on its protection suggests it holds significant importance in the story.
+
+**Q: How does Szeth feel about his mission?**
+A: Szeth appears conflicted due to his cultural beliefs but is bound to follow orders as a Truthless.
 
 **Q: Why does Szeth wear white?**
-A: The Parshendi instructed him to wear white to honor their traditions and ensure Gavilar could see him coming.
+A: Szeth wears white as per the Parshendi tradition to ensure Gavilar sees him coming, highlighting cultural nuances.
 
-**Q: What is Surgebinding?**
-A: A magical ability that allows Szeth to manipulate gravitational forces, aiding him in combat and movement.
+**Q: What are the "most important words" Gavilar refers to?**
+A: Gavilar's statement suggests a deeper philosophical or thematic thread that will be explored later in the story.
