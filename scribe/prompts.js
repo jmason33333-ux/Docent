@@ -4,6 +4,7 @@
 const CHAPTER_NOTES_TEMPLATE = `# Chapter [X]: [Chapter Title, if applicable]
 
 ## Metadata
+- **Series:** [Series]
 - **Book:** [Title]
 - **Part:** [Part number and name, if applicable - e.g., "Part 1: Burdens"]
 - **POV Character(s):** [Name(s)]
