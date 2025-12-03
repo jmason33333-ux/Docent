@@ -14,8 +14,8 @@ function categorizeQuery(query) {
   // Primary categories
   const categories = {
     character: {
-      keywords: ['who is', 'who are', 'character', 'person', 'who', 'what is', 'tell me about'],
-      patterns: [/^who\s+(is|are|was|were)/i, /character/i, /person/i]
+      keywords: ['who is', 'who are', 'character', 'person', 'who', 'what is', 'tell me about', 'brother', 'sister', 'father', 'mother', 'family', 'what happened to', 'explain what happened to'],
+      patterns: [/^who\s+(is|are|was|were)/i, /character/i, /person/i, /what\s+happened\s+to\s+(the\s+)?\w+/i, /explain\s+what\s+happened\s+to/i]
     },
     plot: {
       keywords: ['what happened', 'what did', 'what was', 'happen', 'event', 'scene', 'plot'],

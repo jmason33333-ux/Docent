@@ -202,17 +202,26 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     } else if (contextSource === 'snapshot') {
       contextType = 'Knowledge Snapshot';
       contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
-      contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.';
+      const isFullPrompt = rowanPrompt.length > 500;
+      if (isFullPrompt) {
+        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes)\n**3. How to Think About It** (Provide a mental model or analogy)\n**4. Why It Matters** (Connect to story themes and character arcs)\n**5. What\'s Still Unknown** (Acknowledge mysteries without spoiling)\n**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.';
+      } else {
+        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.';
+      }
     } else {
       contextType = 'Chapter Notes';
       contextCoverage = `for chapters ${ragMetadata.chaptersFound.length > 0 ? ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ') : chapter}`;
       
       const isCharacterOrLocationQuestion = ['character', 'location', 'relationship'].includes(queryCategory.primaryCategory);
+      const isFullPrompt = rowanPrompt.length > 500;
       
-      if (isCharacterOrLocationQuestion && ragMetadata.chaptersFound.length > 3) {
+      // For FULL prompts, ALWAYS enforce 6-section structure
+      if (isFullPrompt) {
+        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes - "In Chapter X, when..."; Reference multiple chapters if available)\n**3. How to Think About It** (Provide a mental model, analogy, or way to understand this)\n**4. Why It Matters** (Connect to character motivations, plot stakes, or story themes)\n**5. What\'s Still Unknown** (Acknowledge mysteries or unanswered questions without spoiling)\n**6. Want to Know More?** (MUST end with this section - offer 2-3 specific, actionable options like "I can walk through the Chapter X scene where...")\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown. Do NOT deviate from this structure.\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+      } else if (isCharacterOrLocationQuestion && ragMetadata.chaptersFound.length > 3) {
         contextInstructions = 'These are detailed Chapter Notes covering multiple chapters.\n\n🎯 CRITICAL FOR CHARACTER/LOCATION QUESTIONS: You have context from multiple chapters - use ALL of them to provide comprehensive understanding.\n\n⚠️ PRIORITY: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST as your FOUNDATION.\n\n💡 DEPTH EXPECTATION: Reference multiple chapters to show the character/location\'s full journey, development, and key moments. Sound conversational and comprehensive.\n\n📋 RESPONSE STRUCTURE (MANDATORY): Use FULL 6-section format for comprehensive answers. MUST end with "Want to Know More?" section.\n\n🎨 TONE: Warm, conversational, like explaining a friend\'s backstory. Avoid clinical language.';
       } else {
-        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n📋 RESPONSE STRUCTURE (MANDATORY):\n- For SHORT prompts: MUST use 3-section format (Direct Answer + Brief Context + Want to Know More?)\n- For FULL prompts & worldbuilding/magic/lore questions: MUST use 6-section format (Short Version + What You\'ve Seen + How to Think About It + Why It Matters + What\'s Still Unknown + Want to Know More?)\n- "Want to Know More?" is REQUIRED - offer 2-3 specific, actionable options\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n📋 RESPONSE STRUCTURE (MANDATORY):\n- For SHORT prompts: MUST use 3-section format (Direct Answer + Brief Context + Want to Know More?)\n- For FULL prompts: MUST use 6-section format (Short Version + What You\'ve Seen + How to Think About It + Why It Matters + What\'s Still Unknown + Want to Know More?)\n- "Want to Know More?" is REQUIRED - offer 2-3 specific, actionable options\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
       }
     }
     
@@ -293,12 +302,17 @@ ${notesContext}
     console.log('\n[ALL MESSAGES COUNT]', messages.length);
     console.log('========================================\n');
 
+    // Determine max_tokens based on prompt type
+    // FULL prompts need more tokens for structured 6-section responses
+    const isFullPrompt = rowanPrompt.length > 500;
+    const maxTokens = isFullPrompt ? 1500 : 800; // More tokens for structured responses
+    
     // Call OpenAI with cost-optimized model
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // 15x cheaper than GPT-4 Turbo, still excellent for this use case
       messages: messages,
       temperature: 0.7,
-      max_tokens: 800 // Keep responses concise
+      max_tokens: maxTokens
     });
 
     const response = completion.choices[0].message.content;
