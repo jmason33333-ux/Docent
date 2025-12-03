@@ -14,7 +14,11 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+
+// Serve static files from public directory
+// On Vercel, __dirname points to the serverless function directory
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 // Initialize Google Sheets logging
 initializeSheets();
@@ -27,11 +31,18 @@ app.get('/api/health', (req, res) => {
 // Get available series (with books nested)
 app.get('/api/series', (req, res) => {
   try {
+    console.log('[API] /api/series - Fetching series...');
     const series = getAvailableSeries();
+    console.log('[API] /api/series - Found', series.length, 'series');
     res.json({ series });
   } catch (error) {
-    console.error('Error fetching series:', error);
-    res.status(500).json({ error: 'Failed to fetch series' });
+    console.error('[API] Error fetching series:', error);
+    console.error('[API] Error stack:', error.stack);
+    res.status(500).json({ 
+      error: 'Failed to fetch series',
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
@@ -474,8 +485,17 @@ app.post('/api/feedback', async (req, res) => {
   }
 });
 
-// Serve the frontend
-app.get('*', (req, res) => {
+// Serve the frontend (catch-all route - must be last)
+// Only serve index.html for non-API routes
+app.get('*', (req, res, next) => {
+  // Skip API routes
+  if (req.path.startsWith('/api/')) {
+    return next();
+  }
+  // Skip static file requests (they should be handled by express.static)
+  if (req.path.match(/\.(css|js|svg|png|jpg|jpeg|gif|ico|woff|woff2|ttf|eot)$/)) {
+    return next();
+  }
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
