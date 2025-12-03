@@ -103,9 +103,16 @@ function selectSeries(seriesName, books) {
   partSection.style.display = 'none';
   chapterSection.style.display = 'none';
   
-  // Update breadcrumb
+  // Update breadcrumb with back button
   const breadcrumb = document.getElementById('toc-breadcrumb');
-  breadcrumb.textContent = seriesName;
+  breadcrumb.innerHTML = `
+    <button class="toc-back-button" onclick="goBackToSeries()" aria-label="Back to series">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Back to Series</span>
+    </button>
+  `;
   
   // Populate books
   const bookList = document.getElementById('toc-book-list');
@@ -157,9 +164,16 @@ async function selectBook(seriesName, bookSlug, bookTitle) {
   partSection.style.display = 'block';
   chapterSection.style.display = 'none';
   
-  // Update breadcrumb
+  // Update breadcrumb with back button
   const breadcrumb = document.getElementById('toc-breadcrumb-part');
-  breadcrumb.textContent = `${seriesName} > ${bookTitle}`;
+  breadcrumb.innerHTML = `
+    <button class="toc-back-button" onclick="goBackToBooks()" aria-label="Back to books">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Back to Books</span>
+    </button>
+  `;
   
   // Load parts
   const partList = document.getElementById('toc-part-list');
@@ -225,9 +239,16 @@ async function selectPart(seriesName, bookSlug, bookTitle, partSlug, partName, p
   
   chapterSection.style.display = 'block';
   
-  // Update breadcrumb
+  // Update breadcrumb with back button
   const breadcrumb = document.getElementById('toc-breadcrumb-chapter');
-  breadcrumb.textContent = `${seriesName} > ${bookTitle} > ${partName}`;
+  breadcrumb.innerHTML = `
+    <button class="toc-back-button" onclick="goBackToParts()" aria-label="Back to parts">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Back to Parts</span>
+    </button>
+  `;
   
   // Load chapters
   const chapterList = document.getElementById('toc-chapter-list');
@@ -561,9 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load books
   loadSeries();
   
-  // Initialize voice recognition
-  initializeVoiceRecognition();
-  
   // Initialize history UI
   updateHistoryUI();
   
@@ -600,171 +618,69 @@ function generateUserId() {
   return newId;
 }
 
-// Voice functionality
-let recognition = null;
-let isListening = false;
-let synthesis = window.speechSynthesis;
-let isSpeaking = false;
-let currentUtterance = null;
-
 // Chat history storage
 const CHAT_HISTORY_KEY = 'rowan_chat_history';
 
-// Initialize voice recognition
-function initializeVoiceRecognition() {
-  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    console.warn('Speech recognition not supported in this browser');
-    const voiceButton = document.getElementById('voice-input-button');
-    if (voiceButton) {
-      voiceButton.style.display = 'none';
-    }
-    return;
-  }
-
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  recognition = new SpeechRecognition();
-  recognition.continuous = false;
-  recognition.interimResults = false;
-  recognition.lang = 'en-US';
-
-  recognition.onstart = () => {
-    isListening = true;
-    updateVoiceButton(true);
-    showVoiceStatus('Listening...');
-  };
-
-  recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    const messageInput = document.getElementById('message-input');
-    if (messageInput) {
-      messageInput.value = transcript;
-    }
-  };
-
-  recognition.onerror = (event) => {
-    console.error('Speech recognition error:', event.error);
-    if (event.error === 'no-speech') {
-      showVoiceStatus('No speech detected. Try again.');
-    } else if (event.error === 'not-allowed') {
-      showVoiceStatus('Microphone permission denied.');
-    } else {
-      showVoiceStatus('Error: ' + event.error);
-    }
-    setTimeout(() => hideVoiceStatus(), 3000);
-  };
-
-  recognition.onend = () => {
-    isListening = false;
-    updateVoiceButton(false);
-    hideVoiceStatus();
-  };
-}
-
-// Toggle voice input (must be global for onclick)
-window.toggleVoiceInput = function() {
-  if (!recognition) {
-    alert('Voice input is not supported in your browser.');
-    return;
-  }
-
-  if (isListening) {
-    recognition.stop();
-  } else {
-    recognition.start();
-  }
+// Back button functions for TOC navigation
+window.goBackToSeries = function() {
+  const seriesSection = document.getElementById('toc-series-section');
+  const bookSection = document.getElementById('toc-book-section');
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  seriesSection.style.display = 'block';
+  bookSection.style.display = 'none';
+  partSection.style.display = 'none';
+  chapterSection.style.display = 'none';
+  
+  selectedSeries = null;
+  selectedBook = null;
+  selectedPart = null;
+  selectedChapter = null;
 };
 
-// Update voice button appearance
-function updateVoiceButton(listening) {
-  const voiceButton = document.getElementById('voice-input-button');
-  if (voiceButton) {
-    if (listening) {
-      voiceButton.classList.add('listening');
-    } else {
-      voiceButton.classList.remove('listening');
-    }
-  }
-}
-
-// Show voice status
-function showVoiceStatus(text) {
-  const statusDiv = document.getElementById('voice-status');
-  const statusText = document.getElementById('voice-status-text');
-  if (statusDiv && statusText) {
-    statusText.textContent = text;
-    statusDiv.style.display = 'flex';
-  }
-}
-
-// Hide voice status
-function hideVoiceStatus() {
-  const statusDiv = document.getElementById('voice-status');
-  if (statusDiv) {
-    statusDiv.style.display = 'none';
-  }
-}
-
-// Speak text using Web Speech API
-function speakText(text) {
-  if (!synthesis) {
-    console.warn('Speech synthesis not supported');
+window.goBackToBooks = function() {
+  if (!selectedSeries) {
+    goBackToSeries();
     return;
   }
+  
+  // Show book section, hide part and chapter sections
+  const seriesSection = document.getElementById('toc-series-section');
+  const bookSection = document.getElementById('toc-book-section');
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  seriesSection.style.display = 'none';
+  bookSection.style.display = 'block';
+  partSection.style.display = 'none';
+  chapterSection.style.display = 'none';
+  
+  selectedPart = null;
+  selectedChapter = null;
+};
 
-  // Stop any current speech
-  if (isSpeaking && currentUtterance) {
-    synthesis.cancel();
+window.goBackToParts = function() {
+  if (!selectedSeries || !selectedBook) {
+    goBackToBooks();
+    return;
   }
-
-  // Remove markdown formatting for cleaner speech
-  const cleanText = text
-    .replace(/#{1,6}\s+/g, '') // Remove headers
-    .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
-    .replace(/\*(.*?)\*/g, '$1') // Remove italic
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links
-    .replace(/`(.*?)`/g, '$1') // Remove code
-    .replace(/\n+/g, '. ') // Replace newlines with periods
-    .trim();
-
-  const utterance = new SpeechSynthesisUtterance(cleanText);
-  utterance.rate = 0.9;
-  utterance.pitch = 1;
-  utterance.volume = 1;
-  utterance.lang = 'en-US';
-
-  utterance.onstart = () => {
-    isSpeaking = true;
-    updateSpeakButton(true);
-  };
-
-  utterance.onend = () => {
-    isSpeaking = false;
-    updateSpeakButton(false);
-  };
-
-  utterance.onerror = (event) => {
-    console.error('Speech synthesis error:', event);
-    isSpeaking = false;
-    updateSpeakButton(false);
-  };
-
-  currentUtterance = utterance;
-  synthesis.speak(utterance);
-}
-
-// Stop speaking
-function stopSpeaking() {
-  if (synthesis && isSpeaking) {
-    synthesis.cancel();
-    isSpeaking = false;
-    updateSpeakButton(false);
-  }
-}
-
-// Update speak button (add to message UI)
-function updateSpeakButton(speaking) {
-  // This will be called when we add speak buttons to messages
-}
+  
+  // Show part section, hide chapter section
+  const bookSection = document.getElementById('toc-book-section');
+  const partSection = document.getElementById('toc-part-section');
+  const chapterSection = document.getElementById('toc-chapter-section');
+  
+  bookSection.style.display = 'none';
+  partSection.style.display = 'block';
+  chapterSection.style.display = 'none';
+  
+  selectedChapter = null;
+  
+  // Reload parts for the selected book
+  const bookSlug = selectedBook.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  selectBook(selectedSeries, bookSlug, selectedBook);
+};
 
 // Chat History Functions
 function saveChatHistory() {
@@ -967,14 +883,6 @@ function startNewChat() {
     chatContainer.appendChild(welcomeMessage);
   }
   
-  // Stop any ongoing voice recognition or speech
-  if (window.recognition && window.recognition.state === 'listening') {
-    stopListening();
-  }
-  if (window.speechSynthesis && window.speechSynthesis.speaking) {
-    stopSpeaking();
-  }
-  
   // Clear message input
   const messageInput = document.getElementById('message-input');
   if (messageInput) {
@@ -1028,25 +936,11 @@ function addMessage(sender, content, metadata = null) {
   messageDiv.appendChild(header);
   messageDiv.appendChild(messageContent);
 
-  // Add feedback UI and speak button for Rowan messages
-  if (sender === 'rowan' && messageId) {
-    const feedbackDiv = createFeedbackUI(messageId);
-    messageDiv.appendChild(feedbackDiv);
-    
-    // Add speak button
-    const speakButton = document.createElement('button');
-    speakButton.className = 'speak-button';
-    speakButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
-    speakButton.title = 'Speak response';
-    speakButton.onclick = () => {
-      if (isSpeaking) {
-        stopSpeaking();
-      } else {
-        speakText(content);
-      }
-    };
-    messageDiv.appendChild(speakButton);
-  }
+    // Add feedback UI for Rowan messages
+    if (sender === 'rowan' && messageId) {
+      const feedbackDiv = createFeedbackUI(messageId);
+      messageDiv.appendChild(feedbackDiv);
+    }
 
   chatContainer.appendChild(messageDiv);
 
@@ -1198,11 +1092,6 @@ async function sendMessage() {
     // Remove loading and add Rowan's response with metadata
     removeLoading();
     addMessage('rowan', data.message, data.metadata);
-    
-    // Auto-speak Rowan's response if voice is enabled
-    if (window.autoSpeakEnabled) {
-      speakText(data.message);
-    }
 
     // Store last question for feedback context
     window.lastQuestion = message;
