@@ -1,7 +1,8 @@
 const OpenAI = require('openai');
 const { getRowanPrompt, getPromptMetadata } = require('../rowan-prompt');
-const { loadChapterContext, loadKnowledgeSnapshot, loadBookSummary, shouldUseSnapshot, shouldUseBookSummary, determineContextNeeded } = require('./rag-loader');
+const { loadChapterContext, loadChapterContextByNumbers, loadKnowledgeSnapshot, loadBookSummary, shouldUseSnapshot, shouldUseBookSummary, determineContextNeeded } = require('./rag-loader');
 const { categorizeQuery } = require('./query-categorizer');
+const { determineSmartContext } = require('./character-context-loader');
 
 // Validate API key is set
 if (!process.env.OPENAI_API_KEY) {
@@ -124,8 +125,30 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
       }
     } else {
       // Use individual chapters for specific chapter questions
-      const contextWindow = determineContextNeeded(message);
-      const chapterResult = loadChapterContext(bookTitle, chapter, contextWindow);
+      // Try smart context loading first for character/location questions
+      const isCharacterOrLocationQuestion = ['character', 'location', 'relationship'].includes(queryCategory.primaryCategory);
+      let chapterResult;
+      
+      if (isCharacterOrLocationQuestion) {
+        // Use smart context discovery to find relevant chapters
+        const smartContext = determineSmartContext(bookTitle, chapter, message, queryCategory.primaryCategory);
+        
+        if (smartContext.chaptersToLoad && smartContext.chaptersToLoad.length > 0) {
+          // Use smart context: load specific chapters found
+          chapterResult = loadChapterContextByNumbers(bookTitle, smartContext.chaptersToLoad);
+          console.log(`[RAG] Smart context for ${queryCategory.primaryCategory}: ${smartContext.reason}`);
+          console.log(`[RAG] Loading chapters: ${smartContext.chaptersToLoad.join(', ')}`);
+        } else {
+          // Fallback to standard sequential loading
+          const contextWindow = determineContextNeeded(message);
+          chapterResult = loadChapterContext(bookTitle, chapter, contextWindow);
+          console.log(`[RAG] Smart context returned no chapters, using sequential loading (${contextWindow} chapters)`);
+        }
+      } else {
+        // For non-character/location questions, use standard sequential loading
+        const contextWindow = determineContextNeeded(message);
+        chapterResult = loadChapterContext(bookTitle, chapter, contextWindow);
+      }
       
       if (contextSource === 'book_summary') {
         // Append chapter notes to book summary
@@ -149,7 +172,7 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
       contextSource = 'individual_chapters';
       }
       
-      console.log(`[RAG] Loading ${contextWindow} chapter(s) of context for ${queryCategory.primaryCategory} query`);
+      console.log(`[RAG] Context loaded for ${queryCategory.primaryCategory} query`);
     }
 
     // Smart prompt selection: Use short or full version based on query complexity

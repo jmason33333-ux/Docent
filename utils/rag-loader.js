@@ -347,6 +347,156 @@ function loadChapterContext(bookTitle, currentChapter, contextWindow = 1) {
 }
 
 /**
+ * Load specific chapters by chapter number list (for smart context loading)
+ * @param {string} bookTitle - The book title (normalized)
+ * @param {number[]} chapterNumbers - Array of specific chapter numbers to load
+ * @returns {Object} - { context: string, metadata: { chaptersFound, chaptersMissing, notesAvailable, notesLength } }
+ */
+function loadChapterContextByNumbers(bookTitle, chapterNumbers) {
+  if (!chapterNumbers || chapterNumbers.length === 0) {
+    return { context: '', metadata: { chaptersFound: [], chaptersMissing: [], notesAvailable: false, notesLength: 0, chaptersRequested: [] } };
+  }
+
+  const bookSlug = normalizeBookTitle(bookTitle);
+  
+  // Check for Series structure first
+  const seriesPath = path.join(__dirname, '..', 'rag', 'Series');
+  const seriesMap = {
+    'rhythm-of-war': 'The Stormlight Archive',
+    'words-of-radiance': 'The Stormlight Archive',
+    'the-way-of-kings': 'The Stormlight Archive',
+    'oathbringer': 'The Stormlight Archive',
+    'dawnshard': 'The Stormlight Archive'
+  };
+  
+  let bookPath = null;
+  let isSeriesStructure = false;
+  
+  if (seriesMap[bookSlug]) {
+    const seriesName = seriesMap[bookSlug];
+    const seriesBookPath = path.join(seriesPath, seriesName, 'books', bookSlug);
+    if (fs.existsSync(seriesBookPath)) {
+      bookPath = seriesBookPath;
+      isSeriesStructure = true;
+    }
+  }
+  
+  if (!bookPath) {
+    bookPath = path.join(__dirname, '..', 'rag', 'books', bookSlug);
+    if (!fs.existsSync(bookPath)) {
+      return { context: '', metadata: { chaptersFound: [], chaptersMissing: [], notesAvailable: false, notesLength: 0, chaptersRequested: chapterNumbers } };
+    }
+  }
+
+  const metadata = {
+    chaptersFound: [],
+    chaptersMissing: [],
+    notesAvailable: false,
+    notesLength: 0,
+    chaptersRequested: [...chapterNumbers].sort((a, b) => a - b)
+  };
+
+  let context = '';
+  const bookSlugLower = bookSlug.toLowerCase();
+  const isRhythmOfWar = bookSlugLower.includes('rhythm-of-war');
+  const isDawnshard = bookSlugLower.includes('dawnshard');
+  
+  // Sort chapters to load in order
+  const sortedChapters = [...new Set(chapterNumbers)].sort((a, b) => a - b);
+  
+  for (const chapterNum of sortedChapters) {
+    let chapterFile = null;
+    
+    if (isSeriesStructure) {
+      if (isRhythmOfWar) {
+        const PARTS = [
+          { number: 1, name: 'Burdens', startChapter: 1, endChapter: 19 },
+          { number: 2, name: 'Our Calling', startChapter: 20, endChapter: 43 },
+          { number: 3, name: 'Songs of Home', startChapter: 44, endChapter: 72 },
+          { number: 4, name: 'A Knowledge', startChapter: 73, endChapter: 97 },
+          { number: 5, name: 'Knowing a Home of Songs, Called Our Burden', startChapter: 98, endChapter: 117 }
+        ];
+        
+        const part = PARTS.find(p => chapterNum >= p.startChapter && chapterNum <= p.endChapter);
+        if (part) {
+          const partDir = path.join(bookPath, 'chapters', `Part ${part.number}-${part.name}`);
+          chapterFile = path.join(partDir, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+        }
+      } else if (isDawnshard) {
+        const partDir = path.join(bookPath, 'chapters', 'Part 1');
+        chapterFile = path.join(partDir, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+      } else {
+        // Try universal part detection using findChapterFile helper if available
+        // For now, try common patterns
+        const chaptersDir = path.join(bookPath, 'chapters');
+        const partDirs = fs.readdirSync(chaptersDir, { withFileTypes: true })
+          .filter(dirent => dirent.isDirectory() && dirent.name.startsWith('Part '));
+        
+        for (const partDirName of partDirs) {
+          const testFile = path.join(chaptersDir, partDirName.name, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+          if (fs.existsSync(testFile)) {
+            chapterFile = testFile;
+            break;
+          }
+        }
+        
+        // Fallback to root chapters dir
+        if (!chapterFile) {
+          const testFile = path.join(chaptersDir, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+          if (fs.existsSync(testFile)) {
+            chapterFile = testFile;
+          }
+        }
+      }
+    } else {
+      const chapterFileNew = path.join(bookPath, 'chapters', `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+      const chapterFileOld = path.join(bookPath, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+      
+      if (fs.existsSync(chapterFileNew)) {
+        chapterFile = chapterFileNew;
+      } else if (fs.existsSync(chapterFileOld)) {
+        chapterFile = chapterFileOld;
+      }
+    }
+
+    if (chapterFile && fs.existsSync(chapterFile)) {
+      const chapterContent = fs.readFileSync(chapterFile, 'utf-8');
+      context += `\n\n--- CHAPTER ${chapterNum} NOTES ---\n${chapterContent}`;
+      metadata.chaptersFound.push(chapterNum);
+    } else {
+      metadata.chaptersMissing.push(chapterNum);
+    }
+  }
+
+  // Load prologue if chapter 1 is requested
+  if (sortedChapters.includes(1)) {
+    const prologuePaths = [
+      path.join(bookPath, 'chapters', 'prologue.md'),
+      path.join(bookPath, 'prologue.md')
+    ];
+    
+    for (const prologuePath of prologuePaths) {
+      if (fs.existsSync(prologuePath)) {
+        const prologueContent = fs.readFileSync(prologuePath, 'utf-8');
+        context = `--- PROLOGUE NOTES ---\n${prologueContent}` + context;
+        if (!metadata.chaptersFound.includes('Prologue')) {
+          metadata.chaptersFound.unshift('Prologue');
+        }
+        break;
+      }
+    }
+  }
+
+  metadata.notesAvailable = context.length > 0;
+  metadata.notesLength = context.length;
+
+  // Reorder context to prioritize "If Asked" sections at the top
+  context = prioritizeIfAskedSections(context);
+
+  return { context, metadata };
+}
+
+/**
  * Normalize book title to directory name
  * "Words of Radiance" -> "words-of-radiance"
  */
@@ -691,6 +841,7 @@ module.exports = {
   shouldUseSnapshot,
   shouldUseBookSummary,
   determineContextNeeded,
+  loadChapterContextByNumbers,
   normalizeBookTitle,
   getAvailableBooks,
   getAvailableSeries,
