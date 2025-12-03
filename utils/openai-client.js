@@ -3,8 +3,15 @@ const { getRowanPrompt, getPromptMetadata } = require('../rowan-prompt');
 const { loadChapterContext, loadKnowledgeSnapshot, loadBookSummary, shouldUseSnapshot, shouldUseBookSummary, determineContextNeeded } = require('./rag-loader');
 const { categorizeQuery } = require('./query-categorizer');
 
+// Validate API key is set
+if (!process.env.OPENAI_API_KEY) {
+  console.error('⚠️  ERROR: OPENAI_API_KEY environment variable is not set!');
+  console.error('   Please add it to your Vercel project: Settings → Environment Variables');
+  console.error('   Get your key at: https://platform.openai.com/api-keys');
+}
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY || 'missing-key' // Will fail with clear error if not set
 });
 
 // Cost optimization: Limit conversation history to prevent token bloat
