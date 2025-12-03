@@ -1,0 +1,41 @@
+{
+  "name": "The Stormlight Archive",
+  "books": [
+    {
+      "slug": "the-way-of-kings",
+      "title": "The Way of Kings",
+      "order": 1
+    },
+    {
+      "slug": "words-of-radiance",
+      "title": "Words of Radiance",
+      "order": 2
+    },
+    {
+      "slug": "edgedancer",
+      "title": "Edgedancer",
+      "order": 3
+    },
+    {
+      "slug": "oathbringer",
+      "title": "Oathbringer",
+      "order": 4
+    },
+    {
+      "slug": "dawnshard",
+      "title": "Dawnshard",
+      "order": 5
+    },
+    {
+      "slug": "rhythm-of-war",
+      "title": "Rhythm of War",
+      "order": 6
+    },
+    {
+      "slug": "knights-of-wind-and-truth",
+      "title": "Wind and Truth",
+      "order": 7
+    }
+  ]
+}
+
