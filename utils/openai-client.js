@@ -153,7 +153,8 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     }
 
     // Smart prompt selection: Use short or full version based on query complexity
-    const rowanPrompt = getRowanPrompt(message, history);
+    // Pass queryCategory to ensure character/location questions use FULL prompt
+    const rowanPrompt = getRowanPrompt(message, history, queryCategory);
     const promptMetadata = getPromptMetadata();
 
     console.log(`[RAG] Context source: ${contextSource}`);
@@ -205,7 +206,14 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     } else {
       contextType = 'Chapter Notes';
       contextCoverage = `for chapters ${ragMetadata.chaptersFound.length > 0 ? ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ') : chapter}`;
-      contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+      
+      const isCharacterOrLocationQuestion = ['character', 'location', 'relationship'].includes(queryCategory.primaryCategory);
+      
+      if (isCharacterOrLocationQuestion && ragMetadata.chaptersFound.length > 3) {
+        contextInstructions = 'These are detailed Chapter Notes covering multiple chapters.\n\n🎯 CRITICAL FOR CHARACTER/LOCATION QUESTIONS: You have context from multiple chapters - use ALL of them to provide comprehensive understanding.\n\n⚠️ PRIORITY: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST as your FOUNDATION.\n\n💡 DEPTH EXPECTATION: Reference multiple chapters to show the character/location\'s full journey, development, and key moments. Sound conversational and comprehensive.\n\n📋 RESPONSE STRUCTURE (MANDATORY): Use FULL 6-section format for comprehensive answers. MUST end with "Want to Know More?" section.\n\n🎨 TONE: Warm, conversational, like explaining a friend\'s backstory. Avoid clinical language.';
+      } else {
+        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n📋 RESPONSE STRUCTURE (MANDATORY):\n- For SHORT prompts: MUST use 3-section format (Direct Answer + Brief Context + Want to Know More?)\n- For FULL prompts & worldbuilding/magic/lore questions: MUST use 6-section format (Short Version + What You\'ve Seen + How to Think About It + Why It Matters + What\'s Still Unknown + Want to Know More?)\n- "Want to Know More?" is REQUIRED - offer 2-3 specific, actionable options\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+      }
     }
     
     const contextMessage = {

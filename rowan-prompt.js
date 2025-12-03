@@ -250,10 +250,13 @@ DEPTH EXPECTATIONS BY QUESTION TYPE
 - Don't hold back - readers asking about lore want comprehensive answers
 
 **For character questions:**
+- REQUIRED: Use the FULL 6-section structure (Short Version + What You've Seen + How to Think About It + Why It Matters + What's Still Unknown + Want to Know More?)
 - Focus on specific scenes and motivations
 - Pull from "Characters", "Themes", "Key Beats"
-- Include character arc context
-- 2-3 paragraphs with scene citations
+- Include character arc context across ALL chapters where they appear
+- Reference multiple chapters to show their full journey
+- 3-4 paragraphs minimum with scene citations
+- Show their development and key moments throughout the book so far
 
 **For "what happened" recaps:**
 - Use "Quick Summary" + "Key Beats"
@@ -472,29 +475,40 @@ const PROMPT_VERSIONS = {
  * Determine which prompt to use based on query complexity
  * @param {string} message - User's question
  * @param {Array} history - Conversation history
+ * @param {Object} queryCategory - Optional: Query categorization result (from categorizeQuery)
  * @returns {string} - The appropriate system prompt
  */
-function getRowanPrompt(message, history = []) {
+function getRowanPrompt(message, history = [], queryCategory = null) {
   const version = PROMPT_VERSIONS[ACTIVE_PROMPT_VERSION] || PROMPT_VERSIONS['v1.0'];
 
   // Use FULL prompt for:
   // 1. First message in conversation
-  // 2. Complex/recap queries
-  // 3. Messages asking for explanations or deep dives
+  // 2. Character/location questions (require comprehensive structured responses)
+  // 3. Complex/recap queries
+  // 4. Messages asking for explanations or deep dives
 
   const isFirstMessage = history.length === 0;
+
+  // Check if this is a character or location question
+  const isCharacterOrLocationQuestion = queryCategory && 
+    (queryCategory.primaryCategory === 'character' || 
+     queryCategory.primaryCategory === 'location' ||
+     queryCategory.secondaryCategory === 'character' ||
+     queryCategory.secondaryCategory === 'location');
 
   const complexKeywords = [
     'explain', 'recap', 'summary', 'understand', 'confused',
     'what happened', 'remind me', 'catch up', 'themes',
-    'meaning', 'significance', 'why does', 'how does'
+    'meaning', 'significance', 'why does', 'how does',
+    // Also include character/location question patterns
+    'who is', 'who are', 'where is', 'where are', 'tell me about'
   ];
 
   const messageLower = message.toLowerCase();
   const isComplexQuery = complexKeywords.some(kw => messageLower.includes(kw));
 
-  // Use full prompt for first message or complex queries
-  const useFullPrompt = isFirstMessage || isComplexQuery;
+  // Use full prompt for first message, character/location questions, or complex queries
+  const useFullPrompt = isFirstMessage || isCharacterOrLocationQuestion || isComplexQuery;
 
   return useFullPrompt ? version.full : version.short;
 }
@@ -510,9 +524,37 @@ function getPromptMetadata() {
   };
 }
 
+/**
+ * Get the response structure required for a query type
+ * @param {string} queryCategory - Primary category from categorizeQuery
+ * @param {boolean} isFullPrompt - Whether FULL prompt is being used
+ * @returns {string} - Instructions for response structure
+ */
+function getResponseStructureRequirements(queryCategory, isFullPrompt) {
+  const isCharacterOrLocation = ['character', 'location', 'relationship'].includes(queryCategory);
+  
+  if (isCharacterOrLocation || isFullPrompt) {
+    return `RESPONSE STRUCTURE (MANDATORY - 6 sections):
+1. Short Version (1-2 sentences - the essential answer)
+2. What You've Seen (cite specific chapters and scenes)
+3. How to Think About It (mental model/analogy)
+4. Why It Matters (connect to story/character motivations)
+5. What's Still Unknown (acknowledge mysteries without spoiling)
+6. Want to Know More? (2-3 specific, actionable next-step options)
+
+Format: Use clear section headers with **bold** markdown.`;
+  }
+  
+  return `RESPONSE STRUCTURE (MANDATORY - 3 sections):
+1. Direct Answer (1-2 sentences)
+2. Brief Context (1-2 paragraphs)
+3. Want to Know More? (2-3 specific options)`;
+}
+
 module.exports = {
   getRowanPrompt,
   getPromptMetadata,
+  getResponseStructureRequirements,
   ROWAN_SYSTEM_PROMPT: ROWAN_PROMPT_FULL, // Backwards compatibility
 
   // Export all versions for testing
