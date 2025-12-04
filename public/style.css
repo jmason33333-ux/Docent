@@ -201,12 +201,6 @@ body {
   }
 }
 
-.header-center {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .header-actions {
   display: flex;
@@ -214,8 +208,7 @@ body {
   flex: 0 0 auto;
 }
 
-.new-chat-button,
-.history-toggle {
+.new-chat-button {
   padding: 6px;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -231,65 +224,62 @@ body {
 }
 
 @media (min-width: 768px) {
-  .new-chat-button,
-  .history-toggle {
+  .new-chat-button {
     padding: 8px;
     min-width: 36px;
     height: 36px;
   }
 }
 
-.new-chat-button:hover,
-.history-toggle:hover {
+.new-chat-button:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-.new-chat-button svg,
-.history-toggle svg {
+.new-chat-button svg {
   width: 18px;
   height: 18px;
 }
 
 /* ============================================================================
-   TOC Toggle Button
+   TOC Toggle Button (Mobile - Below Header)
    ============================================================================ */
 
-.toc-toggle {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 8px;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
+.toc-toggle-mobile {
+  display: none; /* Hidden on desktop */
 }
 
-@media (min-width: 768px) {
-  .toc-toggle {
-    width: 40px;
-    height: 40px;
+@media (max-width: 1023px) {
+  .toc-toggle-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--paper);
+    border: none;
+    border-bottom: 2px solid var(--border-subtle);
+    color: var(--forest-green);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
   }
-}
 
-.toc-toggle:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
-}
+  .toc-toggle-mobile:hover {
+    background: rgba(45, 82, 70, 0.05);
+  }
 
-.toc-toggle svg {
-  width: 20px;
-  height: 20px;
-}
+  .toc-toggle-mobile svg {
+    width: 20px;
+    height: 20px;
+  }
 
-@media (min-width: 1024px) {
-  .toc-toggle {
-    display: none; /* Hide on desktop, sidebar is always visible */
+  .toc-toggle-mobile span {
+    flex: 1;
+    text-align: left;
   }
 }
 
@@ -328,7 +318,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Mobile: Hidden by default, slides in from left */
+/* Mobile: Hidden by default, slides in from left, positioned below header */
 @media (max-width: 1023px) {
   .toc-sidebar {
     position: fixed;
@@ -344,6 +334,21 @@ body {
 
   .toc-sidebar.open {
     transform: translateX(0);
+  }
+  
+  /* Position TOC below header on mobile */
+  .main-layout {
+    position: relative;
+  }
+  
+  .toc-toggle-mobile {
+    position: relative;
+    z-index: 100;
+  }
+  
+  /* Adjust sidebar top position to account for header + toggle button */
+  .toc-sidebar {
+    top: calc(var(--header-height, 80px) + 48px); /* header + toggle button */
   }
 }
 
