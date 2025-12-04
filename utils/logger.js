@@ -88,7 +88,8 @@ async function logConversation({ userId, userEmail = null, book, chapter, questi
       metadata.notesLikelyUsed !== undefined ? (metadata.notesLikelyUsed ? 'YES' : 'NO') : 'UNKNOWN',
       metadata.notesRelevance || 'unknown',
       metadata.chaptersFound || '',
-      metadata.chaptersMissing || ''
+      metadata.chaptersMissing || '',
+      metadata.indicatesMissingInfo !== undefined ? (metadata.indicatesMissingInfo ? 'YES' : 'NO') : 'NO' // Track questions notes couldn't answer
     ];
 
     // Prepare snapshot tracking values
@@ -133,7 +134,7 @@ async function logConversation({ userId, userEmail = null, book, chapter, questi
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Conversations!A:Z', // Extended to include email (Z = column 26)
+      range: 'Conversations!A:AA', // Extended to include indicatesMissingInfo (AA = column 27)
       valueInputOption: 'RAW',
       resource: {
         values: [[
