@@ -93,8 +93,33 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
         }
         snapshotMetadata = snapshotMeta;
         contextSource = contextSource === 'book_summary' ? 'book_summary+snapshot' : 'snapshot';
-        
+
         console.log(`[RAG] Using knowledge snapshot (through Ch ${snapshotMeta.snapshotChapter}) for ${queryCategory.primaryCategory} query`);
+
+        // GAP-FILLING: If snapshot doesn't cover up to current chapter, load gap chapters
+        // This ensures users asking about chapters between snapshot and current chapter get relevant notes
+        const snapshotChapter = snapshotMeta.snapshotChapter;
+        if (snapshotChapter < chapter) {
+          // Load chapters from (snapshot + 1) to current chapter
+          const gapChapters = [];
+          for (let i = snapshotChapter + 1; i <= chapter; i++) {
+            gapChapters.push(i);
+          }
+
+          if (gapChapters.length > 0) {
+            const gapResult = loadChapterContextByNumbers(bookTitle, gapChapters);
+
+            if (gapResult.metadata.chaptersFound.length > 0) {
+              context += `\n\n--- CHAPTER NOTES (Chapters ${snapshotChapter + 1}-${chapter}) ---\n${gapResult.context}`;
+              ragMetadata.chaptersFound.push(...gapResult.metadata.chaptersFound);
+              ragMetadata.chaptersMissing.push(...gapResult.metadata.chaptersMissing);
+              ragMetadata.notesLength += gapResult.metadata.notesLength;
+              contextSource = contextSource.includes('snapshot') ? contextSource + '+gap_chapters' : 'snapshot+gap_chapters';
+
+              console.log(`[RAG] Gap-filling: Loaded chapters ${gapResult.metadata.chaptersFound.join(', ')} to supplement snapshot`);
+            }
+          }
+        }
       } else {
         // Fallback to individual chapters if snapshot not available
         const contextWindow = determineContextNeeded(message);

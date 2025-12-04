@@ -264,11 +264,33 @@ function loadChapterContext(bookTitle, currentChapter, contextWindow = 1) {
         const partDir = path.join(bookPath, 'chapters', 'Part 1');
         chapterFile = path.join(partDir, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
       } else {
-        // Try generic Part X folder structure
-        const partDir = path.join(bookPath, 'chapters', 'Part 1');
-        const partFile = path.join(partDir, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
-        if (fs.existsSync(partFile)) {
-          chapterFile = partFile;
+        // Try universal part detection - scan all Part folders
+        const chaptersDir = path.join(bookPath, 'chapters');
+        if (fs.existsSync(chaptersDir)) {
+          const partDirs = fs.readdirSync(chaptersDir, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory() && dirent.name.startsWith('Part '))
+            .sort((a, b) => {
+              // Sort by part number to check in order
+              const numA = parseInt(a.name.match(/Part (\d+)/)?.[1] || '0');
+              const numB = parseInt(b.name.match(/Part (\d+)/)?.[1] || '0');
+              return numA - numB;
+            });
+
+          for (const partDir of partDirs) {
+            const testFile = path.join(chaptersDir, partDir.name, `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+            if (fs.existsSync(testFile)) {
+              chapterFile = testFile;
+              break;
+            }
+          }
+        }
+
+        // Fallback to root chapters dir if no Part folders found
+        if (!chapterFile) {
+          const rootFile = path.join(bookPath, 'chapters', `chapter-${String(chapterNum).padStart(2, '0')}.md`);
+          if (fs.existsSync(rootFile)) {
+            chapterFile = rootFile;
+          }
         }
       }
     } else {
