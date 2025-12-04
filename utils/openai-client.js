@@ -227,7 +227,7 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
 
 ⚠️ CRITICAL INSTRUCTION: ALWAYS check the chapter notes for "Rowan's If Asked Notes" sections FIRST. If you find a pre-written Q&A that matches the reader's question, use it as your FOUNDATION and expand from there with context from Key Beats, Characters, Magic/Mechanics, and Themes sections. NEVER contradict the "If Asked" answers.
 
-⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Acknowledge the gap and offer alternatives.`;
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
     } else if (contextSource === 'snapshot') {
       contextType = 'Knowledge Snapshot';
       contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
@@ -248,13 +248,13 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
 
 ⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.
 
-⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Acknowledge the gap and offer alternatives.`;
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       } else {
         contextInstructions = `This is a Knowledge Snapshot containing cumulative information.
 
 ⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.
 
-⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Acknowledge the gap and offer alternatives.`;
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       }
     } else {
       contextType = 'Chapter Notes';
@@ -288,8 +288,14 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
 🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.
 
 ⚠️ HANDLING MISSING INFORMATION:
-If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Instead, say:
-"It looks like you're asking about a very specific detail. Right now my notes don't include that exact event, so I can't give a precise explanation. I can talk about [related topic/character]'s general approach/behavior up to this point – would you like that, or should I keep it brief?"
+If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Take ownership - this is YOUR limitation, not theirs. Use this format:
+"I'm not certain about that specific detail from my notes for Chapter [X]. It's possible it happened and I'm missing that information, or I might need more context. Based on what I do have, I can tell you about [related topic/character]'s general approach/behavior up to this point. Would you like me to explore that, or keep it brief?"
+
+Key principles:
+- Acknowledge uncertainty gracefully ("I'm not certain" not "you're asking wrong")
+- Take responsibility ("my notes" not "the notes")
+- Don't imply the reader's question is wrong or beyond their reading
+- Offer helpful alternatives based on what you DO know
 
 NEVER contradict the "If Asked" answers - they are authoritative.`;
       } else if (isCharacterOrLocationQuestion && ragMetadata.chaptersFound.length > 3) {
@@ -305,7 +311,7 @@ NEVER contradict the "If Asked" answers - they are authoritative.`;
 
 🎨 TONE: Warm, conversational, like explaining a friend's backstory. Avoid clinical language.
 
-⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Acknowledge the gap and offer alternatives.`;
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       } else {
         contextInstructions = `These are detailed Chapter Notes with multiple sections.
 
@@ -324,8 +330,14 @@ NEVER contradict the "If Asked" answers - they are authoritative.`;
 🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.
 
 ⚠️ HANDLING MISSING INFORMATION:
-If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Instead, say:
-"It looks like you're asking about a very specific detail. Right now my notes don't include that exact event, so I can't give a precise explanation. I can talk about [related topic/character]'s general approach/behavior up to this point – would you like that, or should I keep it brief?"
+If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Take ownership - this is YOUR limitation, not theirs. Use this format:
+"I'm not certain about that specific detail from my notes for Chapter [X]. It's possible it happened and I'm missing that information, or I might need more context. Based on what I do have, I can tell you about [related topic/character]'s general approach/behavior up to this point. Would you like me to explore that, or keep it brief?"
+
+Key principles:
+- Acknowledge uncertainty gracefully ("I'm not certain" not "you're asking wrong")
+- Take responsibility ("my notes" not "the notes")
+- Don't imply the reader's question is wrong or beyond their reading
+- Offer helpful alternatives based on what you DO know
 
 NEVER contradict the "If Asked" answers - they are authoritative.`;
       }
@@ -336,9 +348,10 @@ NEVER contradict the "If Asked" answers - they are authoritative.`;
       content: `The reader is currently reading "${bookTitle}" and has read up to and including Chapter ${chapter}.
 
 ⚠️ CRITICAL SPOILER BOUNDARY:
-- You CAN discuss anything up to and including Chapter ${chapter}.
+- The reader has read through Chapter ${chapter} - this means they have read Chapters 1, 2, 3... up to and including Chapter ${chapter}.
+- You CAN discuss anything from Chapters 1 through ${chapter} (inclusive).
 - You CANNOT discuss anything that happens in Chapter ${chapter + 1} or later.
-- If the user asks about Chapter ${chapter} specifically, you should be able to answer based on the notes provided.
+- IMPORTANT: If the user asks about Chapter ${chapter} or any earlier chapter, you SHOULD be able to answer if the notes contain that information. The reader has already read it.
 
 📚 REFERENCE MATERIAL PROVIDED:
 You are being provided with ${contextType} ${contextCoverage}. This is your PRIMARY source of information - use it extensively and cite it explicitly in your responses.
