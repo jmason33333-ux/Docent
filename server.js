@@ -393,7 +393,7 @@ app.get('/api/prompt-info', (req, res) => {
 // Main chat endpoint
 app.post('/api/rowan', async (req, res) => {
   try {
-    const { bookTitle, chapter, message, history = [], userId = 'anonymous' } = req.body;
+    const { bookTitle, chapter, message, history = [], userId = 'anonymous', userEmail = null } = req.body;
 
     // Validate input
     if (!bookTitle || !chapter || !message) {
@@ -408,7 +408,8 @@ app.post('/api/rowan', async (req, res) => {
       });
     }
 
-    console.log(`[${new Date().toISOString()}] ${userId} asked about ${bookTitle} Ch${chapter}`);
+    const userLabel = userEmail || userId;
+    console.log(`[${new Date().toISOString()}] ${userLabel} asked about ${bookTitle} Ch${chapter}`);
 
     // Get Rowan's response (now returns object with response + metadata)
     const result = await chatWithRowan({
@@ -421,6 +422,7 @@ app.post('/api/rowan', async (req, res) => {
     // Log the conversation with metadata (async, non-blocking)
     logConversation({
       userId,
+      userEmail: userEmail || null,
       book: bookTitle,
       chapter,
       question: message,
@@ -450,6 +452,7 @@ app.post('/api/feedback', async (req, res) => {
   try {
     const {
       userId = 'anonymous',
+      userEmail = null,
       bookTitle,
       chapter,
       question,
@@ -465,6 +468,7 @@ app.post('/api/feedback', async (req, res) => {
     // Log feedback (async, non-blocking)
     logFeedback({
       userId,
+      userEmail: userEmail || null,
       bookTitle,
       chapter,
       question,

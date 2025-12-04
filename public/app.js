@@ -1,6 +1,7 @@
 // Chat history
 let conversationHistory = [];
 let userId = generateUserId();
+let userEmail = getUserEmail(); // Get stored email or null
 let messageCounter = 0;
 
 // Configure markdown renderer (marked.js)
@@ -585,6 +586,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize history UI
   updateHistoryUI();
   
+  // Check for email and show modal if needed
+  checkEmailAndShowModal();
+  
   // History sidebar controls
   const historyToggle = document.getElementById('history-toggle');
   const historyClose = document.getElementById('history-close');
@@ -617,6 +621,48 @@ function generateUserId() {
   localStorage.setItem('docent_user_id', newId);
   return newId;
 }
+
+// Get stored email address
+function getUserEmail() {
+  return localStorage.getItem('rowan_user_email') || null;
+}
+
+// Save email address
+function saveEmail(event) {
+  event.preventDefault();
+  const emailInput = document.getElementById('email-input');
+  const email = emailInput.value.trim();
+  
+  if (email && email.includes('@')) {
+    localStorage.setItem('rowan_user_email', email);
+    userEmail = email;
+    
+    // Hide modal
+    const modal = document.getElementById('email-modal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+    
+    console.log('Email saved:', email);
+  }
+}
+
+// Show email modal if email not set
+function checkEmailAndShowModal() {
+  if (!userEmail) {
+    const modal = document.getElementById('email-modal');
+    if (modal) {
+      modal.style.display = 'flex';
+      const emailInput = document.getElementById('email-input');
+      if (emailInput) {
+        emailInput.focus();
+      }
+    }
+  }
+}
+
+// Make saveEmail global for form submission
+window.saveEmail = saveEmail;
 
 // Chat history storage
 const CHAT_HISTORY_KEY = 'rowan_chat_history';
@@ -1069,7 +1115,8 @@ async function sendMessage() {
         chapter: selectedChapter,
         message,
         history: conversationHistory,
-        userId
+        userId,
+        userEmail: userEmail || null
       })
     });
 
@@ -1208,6 +1255,7 @@ async function sendFeedback({ messageId, rating, feedback = '', answer, promptVe
       },
       body: JSON.stringify({
         userId,
+        userEmail: userEmail || null,
         bookTitle: window.lastBook || 'unknown',
         chapter: window.lastChapter || 0,
         question: window.lastQuestion || '',
