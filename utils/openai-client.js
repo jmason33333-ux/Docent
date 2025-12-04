@@ -239,22 +239,41 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
       contextType = 'Book Summary (spoiler-free)';
       contextCoverage = 'general overview, themes, setting, and character introductions';
       contextInstructions = 'This is a spoiler-free book summary - use it for questions about the book\'s premise, themes, setting, and what readers should know before starting. This contains NO plot spoilers and is perfect for first-time readers or questions about the book\'s overall setup.';
-    } else if (contextSource === 'book_summary+snapshot') {
-      contextType = 'Book Summary + Knowledge Snapshot';
-      contextCoverage = `Book overview + snapshot covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
-      contextInstructions = 'You have both the spoiler-free book summary AND a Knowledge Snapshot.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from character arcs, plot threads, world-building, relationships, and themes.';
+    } else if (contextSource === 'book_summary+snapshot' || contextSource.startsWith('book_summary+snapshot')) {
+      // Handle book_summary+snapshot and book_summary+snapshot+gap_chapters
+      const hasGapChapters = contextSource.includes('gap_chapters');
+      const gapChapterNumbers = ragMetadata.chaptersFound.filter(c => typeof c === 'number');
+
+      if (hasGapChapters && gapChapterNumbers.length > 0) {
+        contextType = 'Book Summary + Knowledge Snapshot + Chapter Notes';
+        contextCoverage = `Book overview + snapshot (Chapters 1-${snapshotMetadata.snapshotChapter}) + detailed notes for Chapters ${gapChapterNumbers.join(', ')}`;
+      } else {
+        contextType = 'Book Summary + Knowledge Snapshot';
+        contextCoverage = `Book overview + snapshot covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
+      }
+      contextInstructions = `You have the spoiler-free book summary AND ${hasGapChapters ? 'a Knowledge Snapshot PLUS detailed Chapter Notes' : 'a Knowledge Snapshot'}.\n\n⚠️ CRITICAL INSTRUCTION: You have notes covering UP TO AND INCLUDING Chapter ${chapter}. First check if the notes contain "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from character arcs, plot threads, world-building, relationships, and themes.`;
     } else if (contextSource === 'book_summary+chapters') {
       contextType = 'Book Summary + Chapter Notes';
       contextCoverage = `Book overview + notes for chapters ${ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ')}`;
       contextInstructions = 'You have both the spoiler-free book summary AND detailed chapter notes.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check the chapter notes for "Rowan\'s If Asked Notes" sections FIRST. If you find a pre-written Q&A that matches the reader\'s question, use it as your FOUNDATION and expand from there with context from Key Beats, Characters, Magic/Mechanics, and Themes sections. NEVER contradict the "If Asked" answers.';
-    } else if (contextSource === 'snapshot') {
-      contextType = 'Knowledge Snapshot';
-      contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
+    } else if (contextSource === 'snapshot' || contextSource.includes('snapshot')) {
+      // Handle both pure snapshot and snapshot+gap_chapters scenarios
+      const hasGapChapters = contextSource.includes('gap_chapters');
+      const gapChapterNumbers = ragMetadata.chaptersFound.filter(c => typeof c === 'number');
+
+      if (hasGapChapters && gapChapterNumbers.length > 0) {
+        contextType = 'Knowledge Snapshot + Chapter Notes';
+        contextCoverage = `covering Chapters 1-${snapshotMetadata.snapshotChapter} (snapshot) PLUS detailed notes for Chapters ${gapChapterNumbers.join(', ')}`;
+      } else {
+        contextType = 'Knowledge Snapshot';
+        contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
+      }
+
       const isFullPrompt = rowanPrompt.length > 500;
       if (isFullPrompt) {
-        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes)\n**3. How to Think About It** (Provide a mental model or analogy)\n**4. Why It Matters** (Connect to story themes and character arcs)\n**5. What\'s Still Unknown** (Acknowledge mysteries without spoiling)\n**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.';
+        contextInstructions = `This context includes ${hasGapChapters ? 'BOTH a Knowledge Snapshot AND detailed Chapter Notes' : 'a Knowledge Snapshot containing cumulative information'}.\n\n⚠️ CRITICAL INSTRUCTION: You have notes covering UP TO AND INCLUDING Chapter ${chapter}. First check if the notes contain "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes)\n**3. How to Think About It** (Provide a mental model or analogy)\n**4. Why It Matters** (Connect to story themes and character arcs)\n**5. What\'s Still Unknown** (Acknowledge mysteries without spoiling)\n**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.`;
       } else {
-        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.';
+        contextInstructions = `This context includes ${hasGapChapters ? 'BOTH a Knowledge Snapshot AND detailed Chapter Notes' : 'a Knowledge Snapshot containing cumulative information'}.\n\n⚠️ CRITICAL INSTRUCTION: You have notes covering UP TO AND INCLUDING Chapter ${chapter}. First check if the notes contain "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.`;
       }
     } else {
       contextType = 'Chapter Notes';
