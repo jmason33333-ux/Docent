@@ -1,119 +1,165 @@
-# Docent LLM Scribe
+# Scribe - Chapter Notes Generation System
 
-Automated RAG content generation system for Docent's knowledge base.
+**Purpose:** Generate high-quality chapter notes, knowledge snapshots, and book summaries for Rowan's RAG system.
 
-## Overview
+---
 
-The LLM Scribe generates three types of content for each book:
+## 🎯 Core Workflow Files
 
-1. **Chapter Notes** - Detailed notes for each chapter
-2. **Knowledge Snapshots** - Cumulative summaries every 10 chapters
-3. **Book Summaries** - Spoiler-free overviews
+### **1. prompts.js** ⭐ SOURCE OF TRUTH
+**Purpose:** Contains all prompt templates and generation logic
+- `CHAPTER_NOTES_TEMPLATE` - Structure for chapter notes
+- `KNOWLEDGE_SNAPSHOT_TEMPLATE` - Structure for cumulative snapshots
+- `BOOK_SUMMARY_TEMPLATE` - Structure for spoiler-free summaries
+- `getChapterNotesPrompt()` - Generates prompts for chapter notes
+- `getKnowledgeSnapshotPrompt()` - Generates prompts for snapshots
+- **Recently optimized** (Dec 2, 2025) with best of RoW + WoK outputs
+- **Status:** Active, maintained
 
-## Setup
+### **2. llm-client.js**
+**Purpose:** OpenAI API wrapper
+- Handles API calls to GPT-4/GPT-4o
+- Manages retries and error handling
+- Used by all generation scripts
+- **Status:** Active, maintained
 
-Make sure your `.env` file has your OpenAI API key:
+---
 
-```env
-OPENAI_API_KEY=sk-your-key-here
-```
+## 📖 E-Book Processing (Primary Workflow)
 
-## Usage
+### **3. extract-chapter.js**
+**Purpose:** Extract chapter text from e-book files (EPUB, MOBI, etc.)
+- Uses Calibre's ebook-convert CLI tool
+- Converts e-book → plain text
+- Attempts to isolate specific chapters
+- **Requirements:** Calibre installed
+- **Usage:** node extract-chapter.js "book.epub" 1 output.txt
+- **Status:** Active, core for non-wiki books
 
-### Generate a Single Chapter
+### **4. generate-from-file.js**
+**Purpose:** Generate chapter notes from extracted text file
+- Takes plain text file → generates formatted notes
+- Cleans up Apple Books metadata
+- Uses prompts.js templates
+- **Usage:** node generate-from-file.js "Book Title" 1 chapter-01.txt
+- **Status:** Active, core for non-wiki books
 
+**E-Book Workflow:**
 ```bash
-node scribe/generate-chapter.js "Words of Radiance" 1
+# 1. Extract chapter from EPUB
+node extract-chapter.js "hierarchy-book1.epub" 1 extracted/ch1.txt
+
+# 2. Generate notes from extracted text
+node generate-from-file.js "The Strength of the Few" 1 extracted/ch1.txt
 ```
 
-### Generate a Knowledge Snapshot
+---
 
+## 📚 Coppermind Processing (Sanderson Books)
+
+### **5. coppermind-scraper.js**
+**Purpose:** Scrape chapter summaries from Coppermind wiki
+- Fetches summaries for Sanderson books
+- Formats for chapter note generation
+- **Usage:** For Sanderson books with wiki summaries
+- **Status:** Active, for Sanderson-only
+
+### **6. batch-coppermind.js**
+**Purpose:** Batch process multiple Coppermind summaries
+- Processes entire books at once
+- Efficient for books with complete wiki coverage
+- **Usage:** node batch-coppermind.js "Book Title" summaries-dir/
+- **Status:** Active, for batch Sanderson processing
+
+---
+
+## 🎯 Single Chapter Generation
+
+### **7. generate-chapter.js**
+**Purpose:** Main single chapter generator (most flexible)
+- Can accept chapter text OR Coppermind summary
+- Flexible input methods (--text flag, stdin, file)
+- **Status:** Active, most flexible option
+
+---
+
+## 📊 Snapshot & Summary Generation
+
+### **8. generate-snapshot.js**
+**Purpose:** Generate knowledge snapshots (cumulative summaries)
+- Creates "through Chapter X" summaries
+- Includes characters, plot threads, world-building
+- Used for recap queries
+- **Status:** Active, needed for comprehensive recaps
+
+### **9. generate-book-summary.js**
+**Purpose:** Generate spoiler-free book summaries
+- High-level overview for first-time readers
+- No plot spoilers
+- Themes, setting, content warnings
+- **Status:** Active, needed for onboarding
+
+### **10. generate-book.js**
+**Purpose:** ⚠️ Unclear - may be redundant with generate-book-summary.js
+- **Status:** Review needed - possibly delete or document
+
+---
+
+## 🗄️ Legacy Scripts
+
+Archived book-specific scripts in legacy/:
+- batch-coppermind-twok.js - Way of Kings batch processor
+- generate-twok-chapters.js - WoK chapter generator
+- generate-twok-snapshots.js - WoK snapshot generator
+- generate-prelude-twok.js - WoK prelude generator
+- regenerate-twok-notes.js - WoK regeneration script
+- scrape-twok.js - WoK scraper
+- generate-row-snapshots.js - Rhythm of War snapshots
+- generate-full-book-snapshot.js - Full book snapshot generator
+
+**Why archived:** Book-specific, not needed for general workflow. Kept for reference.
+
+---
+
+## 🚀 Recommended Workflows
+
+### **For Books Without Wiki (Hierarchy, etc.):**
 ```bash
-node scribe/generate-snapshot.js "Words of Radiance" 10
+node extract-chapter.js "hierarchy-book1.epub" 1 extracted/ch1.txt
+node generate-from-file.js "The Strength of the Few" 1 extracted/ch1.txt
 ```
 
-### Generate a Book Summary
-
+### **For Sanderson Books (With Coppermind):**
 ```bash
-node scribe/generate-book-summary.js "Words of Radiance" "Stormlight Archive" 2
+node generate-chapter.js "The Way of Kings" 1 --text "$(cat coppermind-ch1.txt)"
+node batch-coppermind.js "Rhythm of War" coppermind-summaries/
 ```
 
-### Generate All Content for a Book
+---
 
-This is the recommended way to generate all content at once:
+## 📝 Recent Updates
 
-```bash
-node scribe/generate-book.js "Words of Radiance" 89 "Stormlight Archive" 2
-```
+**Dec 2, 2025:**
+- ✅ Optimized prompts.js with best of RoW + WoK outputs
+- ✅ Cleaned up scribe directory (moved to legacy/, deleted duplicates)
+- ✅ Created enhancement strategy for raw e-book processing
 
-This will:
-- Generate book summary
-- Generate all chapter notes (1-89)
-- Generate knowledge snapshots (every 10 chapters)
+---
 
-**Note:** This is expensive! For a book with 89 chapters, expect:
-- Cost: ~$3-5 (using GPT-4o)
-- Time: ~3-4 hours (with rate limiting)
+## 📊 File Status Summary
 
-## File Structure
+| File | Purpose | Status |
+|------|---------|--------|
+| prompts.js | Prompt templates | ✅ Active |
+| llm-client.js | OpenAI API | ✅ Active |
+| extract-chapter.js | EPUB extraction | ✅ Active |
+| generate-from-file.js | Text → notes | ✅ Active |
+| generate-chapter.js | Flexible generator | ✅ Active |
+| batch-coppermind.js | Batch Coppermind | ✅ Active |
+| coppermind-scraper.js | Wiki scraping | ✅ Active |
+| generate-snapshot.js | Knowledge snapshots | ✅ Active |
+| generate-book-summary.js | Book summaries | ✅ Active |
 
-Generated files are saved to:
+---
 
-```
-rag/books/
-├── words-of-radiance/
-│   ├── book-summary.md
-│   ├── chapters/
-│   │   ├── chapter-01.md
-│   │   ├── chapter-02.md
-│   │   └── ...
-│   └── knowledge-snapshots/
-│       ├── through-chapter-10.md
-│       ├── through-chapter-20.md
-│       └── ...
-```
-
-## Cost Estimates
-
-Using GPT-4o:
-- Chapter notes: ~$0.03 per chapter
-- Knowledge snapshots: ~$0.06 per snapshot
-- Book summary: ~$0.02
-
-For a 89-chapter book:
-- Chapters: 89 × $0.03 = $2.67
-- Snapshots: 9 × $0.06 = $0.54
-- Summary: $0.02
-- **Total: ~$3.23**
-
-## Quality Control
-
-After generation, review:
-1. **Spoiler safety** - Ensure no future events are mentioned
-2. **Accuracy** - Verify against source material
-3. **Completeness** - Check all sections are filled
-4. **Clarity** - Ensure confusion points are well-explained
-
-## Tips
-
-- Start with a single chapter to test quality
-- Review the first few chapters before generating all
-- Adjust prompts in `scribe/prompts.js` if needed
-- Use GPT-4o for best quality (default)
-- Can use GPT-4o-mini for cost savings (edit `llm-client.js`)
-
-## Troubleshooting
-
-**Error: API key not found**
-- Check your `.env` file has `OPENAI_API_KEY` set
-
-**Error: Rate limit exceeded**
-- The scripts include rate limiting (2s between requests)
-- If you hit limits, wait and retry
-
-**Poor quality output**
-- Try adjusting temperature in `llm-client.js`
-- Review and refine prompts in `scribe/prompts.js`
-- Consider using GPT-4o instead of GPT-4o-mini
-
-
+**Last Updated:** December 2, 2025
