@@ -33,27 +33,22 @@
           <h1 class="brand-name">Rowan</h1>
         </div>
       </div>
-      <div class="header-center">
-        <!-- TOC toggle button for mobile -->
-        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12h18M3 6h18M3 18h18"/>
-          </svg>
-        </button>
-      </div>
       <div class="header-actions">
         <button class="new-chat-button" id="new-chat-button" aria-label="Start new chat" title="New Chat" onclick="startNewChat()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 5v14M5 12h14"/>
           </svg>
         </button>
-        <button class="history-toggle" id="history-toggle" aria-label="Toggle chat history" title="Chat History">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12h18M3 6h18M3 18h18"/>
-          </svg>
-        </button>
       </div>
     </header>
+
+    <!-- TOC toggle button for mobile (below header) -->
+    <button class="toc-toggle-mobile" id="toc-toggle" aria-label="Toggle table of contents">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+      <span>Table of Contents</span>
+    </button>
 
     <div class="main-layout">
       <!-- Table of Contents Sidebar -->
@@ -124,24 +119,6 @@
 
       <!-- Overlay for mobile -->
       <div class="toc-overlay" id="toc-overlay"></div>
-      
-      <!-- Chat History Sidebar -->
-      <aside class="history-sidebar" id="history-sidebar">
-        <div class="history-header-section">
-          <h2 class="history-title">Chat History</h2>
-          <button class="history-close" id="history-close" aria-label="Close chat history">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 6L6 18M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-        <div class="history-content" id="history-content">
-          <div class="history-empty">No chat history yet. Start a conversation!</div>
-        </div>
-      </aside>
-      
-      <!-- History overlay for mobile -->
-      <div class="history-overlay" id="history-overlay"></div>
 
       <!-- Main Content Area -->
       <div class="main-content">
@@ -186,6 +163,26 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Email Collection Modal -->
+  <div id="email-modal" class="email-modal" style="display: none;">
+    <div class="email-modal-content">
+      <h2>Welcome to Rowan! 🌳</h2>
+      <p>To help us improve, please enter your email address. We'll only use it to track questions and improve the experience.</p>
+      <form id="email-form" onsubmit="saveEmail(event)">
+        <input 
+          type="email" 
+          id="email-input" 
+          placeholder="your@email.com" 
+          required
+          autocomplete="email"
+        />
+        <div class="email-modal-actions">
+          <button type="submit" class="btn-primary">Continue</button>
+        </div>
+      </form>
     </div>
   </div>
 

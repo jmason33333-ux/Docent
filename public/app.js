@@ -1,6 +1,7 @@
 // Chat history
 let conversationHistory = [];
 let userId = generateUserId();
+let userEmail = getUserEmail(); // Get stored email or null
 let messageCounter = 0;
 
 // Configure markdown renderer (marked.js)
@@ -135,10 +136,7 @@ function selectSeries(seriesName, books) {
     bookList.appendChild(li);
   });
   
-  // Close TOC on mobile after selection
-  if (window.innerWidth < 1024) {
-    closeTOC();
-  }
+          // TOC stays open on mobile - user will close it manually
 }
 
 // Select a book and load its parts
@@ -213,10 +211,7 @@ async function selectBook(seriesName, bookSlug, bookTitle) {
     partList.innerHTML = '<li class="toc-loading">Failed to load parts</li>';
   }
   
-  // Close TOC on mobile after selection
-  if (window.innerWidth < 1024) {
-    closeTOC();
-  }
+          // TOC stays open on mobile - user will close it manually
 }
 
 // Select a part and load its chapters
@@ -301,10 +296,7 @@ async function selectPart(seriesName, bookSlug, bookTitle, partSlug, partName, p
     chapterList.innerHTML = '<li class="toc-loading">Failed to load chapters</li>';
   }
   
-  // Close TOC on mobile after selection
-  if (window.innerWidth < 1024) {
-    closeTOC();
-  }
+          // TOC stays open on mobile - user will close it manually
 }
 
 // Legacy function - kept for backwards compatibility but redirects to new structure
@@ -436,10 +428,7 @@ async function selectBookLegacy(bookTitle) {
     chapterList.innerHTML = '<li class="toc-loading">Failed to load chapters</li>';
   }
   
-  // Close TOC on mobile after selection
-  if (window.innerWidth < 1024) {
-    closeTOC();
-  }
+          // TOC stays open on mobile - user will close it manually
 }
 
 // Helper function to create a chapter group
@@ -538,10 +527,7 @@ function selectChapter(chapterNumber) {
     }
   });
   
-  // Close TOC on mobile after selection
-  if (window.innerWidth < 1024) {
-    closeTOC();
-  }
+          // TOC stays open on mobile - user will close it manually
 }
 
 // TOC Toggle Functions
@@ -582,30 +568,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load books
   loadSeries();
   
-  // Initialize history UI
-  updateHistoryUI();
+  // Check for email and show modal if needed
+  checkEmailAndShowModal();
   
-  // History sidebar controls
-  const historyToggle = document.getElementById('history-toggle');
-  const historyClose = document.getElementById('history-close');
-  const historyOverlay = document.getElementById('history-overlay');
-  
-  if (historyToggle) {
-    historyToggle.addEventListener('click', toggleHistory);
-  }
-  
-  if (historyClose) {
-    historyClose.addEventListener('click', closeHistory);
-  }
-  
-  if (historyOverlay) {
-    historyOverlay.addEventListener('click', closeHistory);
-  }
-  
-  // Desktop: Auto-open sidebar on load
-  if (window.innerWidth >= 1024) {
-    // Sidebar is visible by default on desktop
-  }
+  // Desktop: Sidebar is visible by default on desktop
 });
 
 // Generate a simple user ID for session tracking
@@ -617,6 +583,48 @@ function generateUserId() {
   localStorage.setItem('docent_user_id', newId);
   return newId;
 }
+
+// Get stored email address
+function getUserEmail() {
+  return localStorage.getItem('rowan_user_email') || null;
+}
+
+// Save email address
+function saveEmail(event) {
+  event.preventDefault();
+  const emailInput = document.getElementById('email-input');
+  const email = emailInput.value.trim();
+  
+  if (email && email.includes('@')) {
+    localStorage.setItem('rowan_user_email', email);
+    userEmail = email;
+    
+    // Hide modal
+    const modal = document.getElementById('email-modal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+    
+    console.log('Email saved:', email);
+  }
+}
+
+// Show email modal if email not set
+function checkEmailAndShowModal() {
+  if (!userEmail) {
+    const modal = document.getElementById('email-modal');
+    if (modal) {
+      modal.style.display = 'flex';
+      const emailInput = document.getElementById('email-input');
+      if (emailInput) {
+        emailInput.focus();
+      }
+    }
+  }
+}
+
+// Make saveEmail global for form submission
+window.saveEmail = saveEmail;
 
 // Chat history storage
 const CHAT_HISTORY_KEY = 'rowan_chat_history';
@@ -682,7 +690,7 @@ window.goBackToParts = function() {
   selectBook(selectedSeries, bookSlug, selectedBook);
 };
 
-// Chat History Functions
+// Chat History Functions (internal only - no UI)
 function saveChatHistory() {
   if (!selectedBook || selectedChapter === null) return;
   
@@ -697,30 +705,6 @@ function saveChatHistory() {
   };
   
   localStorage.setItem(historyKey, JSON.stringify(historyData));
-  
-  // Also save to a master list for easy retrieval
-  const masterKey = `${CHAT_HISTORY_KEY}_master`;
-  let masterList = JSON.parse(localStorage.getItem(masterKey) || '[]');
-  
-  // Remove existing entry for this book/chapter
-  masterList = masterList.filter(item => 
-    !(item.book === selectedBook && item.chapter === selectedChapter)
-  );
-  
-  // Add new entry
-  masterList.push({
-    book: selectedBook,
-    chapter: selectedChapter,
-    series: selectedSeries,
-    part: selectedPart,
-    lastUpdated: new Date().toISOString()
-  });
-  
-  // Sort by last updated (newest first)
-  masterList.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
-  
-  localStorage.setItem(masterKey, JSON.stringify(masterList));
-  updateHistoryUI();
 }
 
 function loadChatHistory(book, chapter) {
@@ -752,93 +736,6 @@ function loadChatHistory(book, chapter) {
     }
   } else {
     conversationHistory = [];
-  }
-}
-
-function updateHistoryUI() {
-  const historyContent = document.getElementById('history-content');
-  if (!historyContent) return;
-  
-  const masterKey = `${CHAT_HISTORY_KEY}_master`;
-  const masterList = JSON.parse(localStorage.getItem(masterKey) || '[]');
-  
-  if (masterList.length === 0) {
-    historyContent.innerHTML = '<div class="history-empty">No chat history yet. Start a conversation!</div>';
-    return;
-  }
-  
-  // Group by book
-  const byBook = {};
-  masterList.forEach(item => {
-    if (!byBook[item.book]) {
-      byBook[item.book] = [];
-    }
-    byBook[item.book].push(item);
-  });
-  
-  let html = '';
-  Object.keys(byBook).sort().forEach(book => {
-    const items = byBook[book];
-    html += `<div class="history-book-group">
-      <h3 class="history-book-title">${book}</h3>
-      <ul class="history-chapter-list">`;
-    
-    items.forEach(item => {
-      const date = new Date(item.lastUpdated);
-      const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      html += `<li class="history-chapter-item">
-        <button class="history-chapter-link" onclick="loadHistoryConversation('${item.book.replace(/'/g, "\\'")}', ${item.chapter})">
-          <span class="history-chapter-label">Chapter ${item.chapter}</span>
-          <span class="history-chapter-date">${dateStr}</span>
-        </button>
-      </li>`;
-    });
-    
-    html += `</ul></div>`;
-  });
-  
-  historyContent.innerHTML = html;
-}
-
-// Make loadHistoryConversation global for onclick handlers
-window.loadHistoryConversation = function(book, chapter) {
-  // Update selections
-  selectedBook = book;
-  selectedChapter = chapter;
-  
-  // Load the history
-  loadChatHistory(book, chapter);
-  
-  // Close history sidebar
-  closeHistory();
-  
-  // Update active chapter in TOC if visible
-  document.querySelectorAll('.toc-chapter-link').forEach(link => {
-    link.classList.remove('active');
-    if (parseInt(link.dataset.chapterNumber) === chapter) {
-      link.classList.add('active');
-    }
-  });
-};
-
-// History sidebar toggle functions
-function toggleHistory() {
-  const sidebar = document.getElementById('history-sidebar');
-  const overlay = document.getElementById('history-overlay');
-  
-  if (sidebar && overlay) {
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('active');
-  }
-}
-
-function closeHistory() {
-  const sidebar = document.getElementById('history-sidebar');
-  const overlay = document.getElementById('history-overlay');
-  
-  if (sidebar && overlay) {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('active');
   }
 }
 
@@ -1034,13 +931,17 @@ async function sendMessage() {
   // Validation
   if (!selectedSeries || !selectedBook || !selectedPart) {
     alert('Please select a series, book, and part from the table of contents first!');
-    toggleTOC(); // Open TOC on mobile
+    if (window.innerWidth < 1024) {
+      toggleTOC(); // Open TOC on mobile
+    }
     return;
   }
 
   if (selectedChapter === null || selectedChapter === undefined) {
     alert('Please select a chapter from the table of contents first!');
-    toggleTOC(); // Open TOC on mobile
+    if (window.innerWidth < 1024) {
+      toggleTOC(); // Open TOC on mobile
+    }
     return;
   }
 
@@ -1069,7 +970,8 @@ async function sendMessage() {
         chapter: selectedChapter,
         message,
         history: conversationHistory,
-        userId
+        userId,
+        userEmail: userEmail || null
       })
     });
 
@@ -1208,6 +1110,7 @@ async function sendFeedback({ messageId, rating, feedback = '', answer, promptVe
       },
       body: JSON.stringify({
         userId,
+        userEmail: userEmail || null,
         bookTitle: window.lastBook || 'unknown',
         chapter: window.lastChapter || 0,
         question: window.lastQuestion || '',

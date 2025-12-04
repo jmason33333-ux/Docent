@@ -41,7 +41,7 @@ function initializeSheets() {
  * @param {string} data.answer - Rowan's response
  * @param {Object} data.metadata - Response metadata (prompt version, tokens, etc.)
  */
-async function logConversation({ userId, book, chapter, question, answer, metadata = {} }) {
+async function logConversation({ userId, userEmail = null, book, chapter, question, answer, metadata = {} }) {
   const timestamp = new Date().toISOString();
 
   // Fallback: console logging if Sheets not configured
@@ -49,6 +49,7 @@ async function logConversation({ userId, book, chapter, question, answer, metada
     console.log('CONVERSATION LOG:', JSON.stringify({
       timestamp,
       userId,
+      userEmail: userEmail || 'not provided',
       book,
       chapter,
       question: question.substring(0, 100) + '...',
@@ -87,7 +88,8 @@ async function logConversation({ userId, book, chapter, question, answer, metada
       metadata.notesLikelyUsed !== undefined ? (metadata.notesLikelyUsed ? 'YES' : 'NO') : 'UNKNOWN',
       metadata.notesRelevance || 'unknown',
       metadata.chaptersFound || '',
-      metadata.chaptersMissing || ''
+      metadata.chaptersMissing || '',
+      metadata.indicatesMissingInfo !== undefined ? (metadata.indicatesMissingInfo ? 'YES' : 'NO') : 'NO' // Track questions notes couldn't answer
     ];
 
     // Prepare snapshot tracking values
@@ -132,12 +134,13 @@ async function logConversation({ userId, book, chapter, question, answer, metada
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Conversations!A:Y', // Extended to include context summary (Y = column 25)
+      range: 'Conversations!A:AA', // Extended to include indicatesMissingInfo (AA = column 27)
       valueInputOption: 'RAW',
       resource: {
         values: [[
           timestamp,
           userId,
+          userEmail || 'not provided',
           book,
           chapter,
           question,
@@ -182,6 +185,7 @@ async function logConversation({ userId, book, chapter, question, answer, metada
  */
 async function logFeedback({
   userId,
+  userEmail = null,
   bookTitle,
   chapter,
   question,
@@ -198,6 +202,7 @@ async function logFeedback({
     console.log('FEEDBACK LOG:', JSON.stringify({
       timestamp,
       userId,
+      userEmail: userEmail || 'not provided',
       bookTitle,
       chapter,
       rating,
@@ -223,6 +228,7 @@ async function logFeedback({
         values: [[
           timestamp,
           userId,
+          userEmail || 'not provided',
           bookTitle,
           chapter,
           rating,

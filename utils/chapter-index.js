@@ -354,10 +354,31 @@ function loadChapterIndex() {
 }
 
 /**
+ * Check if filesystem is writable (not on Vercel/serverless)
+ * @returns {boolean}
+ */
+function isWritableFilesystem() {
+  // On Vercel/serverless, filesystem is read-only
+  // Check environment or try to detect read-only filesystem
+  if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+    // On Vercel, check if we're in a writable directory
+    // /tmp is writable on Vercel, but we shouldn't write the index there
+    return false;
+  }
+  return true;
+}
+
+/**
  * Save chapter index to disk
  * @param {Object} fullIndex - Full index object
  */
 function saveChapterIndex(fullIndex) {
+  // Don't try to save on read-only filesystems (Vercel)
+  if (!isWritableFilesystem()) {
+    console.log(`[INDEX] Skipping save - read-only filesystem (Vercel/serverless)`);
+    return;
+  }
+  
   try {
     const indexDir = path.dirname(INDEX_FILE);
     if (!fs.existsSync(indexDir)) {
@@ -366,7 +387,12 @@ function saveChapterIndex(fullIndex) {
     fs.writeFileSync(INDEX_FILE, JSON.stringify(fullIndex, null, 2));
     console.log(`[INDEX] Saved index to ${INDEX_FILE}`);
   } catch (error) {
-    console.error(`[INDEX] Error saving index: ${error.message}`);
+    // On read-only filesystems, just log and continue
+    if (error.code === 'EROFS') {
+      console.log(`[INDEX] Cannot save index - read-only filesystem (this is expected on Vercel)`);
+    } else {
+      console.error(`[INDEX] Error saving index: ${error.message}`);
+    }
   }
 }
 
@@ -397,10 +423,15 @@ function findCharacterChaptersFromIndex(bookTitle, characterName, currentChapter
   const bookSlug = normalizeBookTitle(bookTitle);
   
   if (!fullIndex[bookSlug]) {
-    // Index doesn't exist - build it
-    console.log(`[INDEX] Index not found for ${bookTitle}, building...`);
-    buildAndSaveIndex(bookTitle);
-    return findCharacterChaptersFromIndex(bookTitle, characterName, currentChapter);
+    // Index doesn't exist - only try to build if filesystem is writable
+    if (isWritableFilesystem()) {
+      console.log(`[INDEX] Index not found for ${bookTitle}, building...`);
+      buildAndSaveIndex(bookTitle);
+      return findCharacterChaptersFromIndex(bookTitle, characterName, currentChapter);
+    } else {
+      console.log(`[INDEX] Index not found for ${bookTitle} - read-only filesystem, returning empty`);
+      return []; // On Vercel, just return empty - index should be pre-built
+    }
   }
 
   const bookIndex = fullIndex[bookSlug];
@@ -447,8 +478,13 @@ function findLocationChaptersFromIndex(bookTitle, locationName, currentChapter) 
   const bookSlug = normalizeBookTitle(bookTitle);
   
   if (!fullIndex[bookSlug]) {
-    buildAndSaveIndex(bookTitle);
-    return findLocationChaptersFromIndex(bookTitle, locationName, currentChapter);
+    if (isWritableFilesystem()) {
+      buildAndSaveIndex(bookTitle);
+      return findLocationChaptersFromIndex(bookTitle, locationName, currentChapter);
+    } else {
+      console.log(`[INDEX] Index not found for ${bookTitle} - read-only filesystem, returning empty`);
+      return []; // On Vercel, just return empty
+    }
   }
 
   const bookIndex = fullIndex[bookSlug];
@@ -481,8 +517,13 @@ function findFirstAppearance(bookTitle, entityName) {
   const bookSlug = normalizeBookTitle(bookTitle);
   
   if (!fullIndex[bookSlug]) {
-    buildAndSaveIndex(bookTitle);
-    return findFirstAppearance(bookTitle, entityName);
+    if (isWritableFilesystem()) {
+      buildAndSaveIndex(bookTitle);
+      return findFirstAppearance(bookTitle, entityName);
+    } else {
+      console.log(`[INDEX] Index not found for ${bookTitle} - read-only filesystem, returning null`);
+      return null; // On Vercel, just return null
+    }
   }
 
   const bookIndex = fullIndex[bookSlug];
@@ -517,8 +558,13 @@ function findChaptersTogether(bookTitle, char1, char2, currentChapter) {
   const bookSlug = normalizeBookTitle(bookTitle);
   
   if (!fullIndex[bookSlug]) {
-    buildAndSaveIndex(bookTitle);
-    return findChaptersTogether(bookTitle, char1, char2, currentChapter);
+    if (isWritableFilesystem()) {
+      buildAndSaveIndex(bookTitle);
+      return findChaptersTogether(bookTitle, char1, char2, currentChapter);
+    } else {
+      console.log(`[INDEX] Index not found for ${bookTitle} - read-only filesystem, returning empty`);
+      return []; // On Vercel, just return empty
+    }
   }
 
   const bookIndex = fullIndex[bookSlug];

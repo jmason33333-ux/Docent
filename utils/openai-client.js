@@ -146,7 +146,7 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
         }
       } else {
         // For non-character/location questions, use standard sequential loading
-        const contextWindow = determineContextNeeded(message);
+      const contextWindow = determineContextNeeded(message);
         chapterResult = loadChapterContext(bookTitle, chapter, contextWindow);
       }
       
@@ -213,23 +213,48 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     if (contextSource === 'book_summary') {
       contextType = 'Book Summary (spoiler-free)';
       contextCoverage = 'general overview, themes, setting, and character introductions';
-      contextInstructions = 'This is a spoiler-free book summary - use it for questions about the book\'s premise, themes, setting, and what readers should know before starting. This contains NO plot spoilers and is perfect for first-time readers or questions about the book\'s overall setup.';
+      contextInstructions = `This is a spoiler-free book summary - use it for questions about the book's premise, themes, setting, and what readers should know before starting. This contains NO plot spoilers and is perfect for first-time readers or questions about the book's overall setup.`;
     } else if (contextSource === 'book_summary+snapshot') {
       contextType = 'Book Summary + Knowledge Snapshot';
       contextCoverage = `Book overview + snapshot covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
-      contextInstructions = 'You have both the spoiler-free book summary AND a Knowledge Snapshot.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from character arcs, plot threads, world-building, relationships, and themes.';
+      contextInstructions = `You have both the spoiler-free book summary AND a Knowledge Snapshot.
+
+⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from character arcs, plot threads, world-building, relationships, and themes.`;
     } else if (contextSource === 'book_summary+chapters') {
       contextType = 'Book Summary + Chapter Notes';
       contextCoverage = `Book overview + notes for chapters ${ragMetadata.chaptersFound.filter(c => typeof c === 'number').join(', ')}`;
-      contextInstructions = 'You have both the spoiler-free book summary AND detailed chapter notes.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check the chapter notes for "Rowan\'s If Asked Notes" sections FIRST. If you find a pre-written Q&A that matches the reader\'s question, use it as your FOUNDATION and expand from there with context from Key Beats, Characters, Magic/Mechanics, and Themes sections. NEVER contradict the "If Asked" answers.';
+      contextInstructions = `You have both the spoiler-free book summary AND detailed chapter notes.
+
+⚠️ CRITICAL INSTRUCTION: ALWAYS check the chapter notes for "Rowan's If Asked Notes" sections FIRST. If you find a pre-written Q&A that matches the reader's question, use it as your FOUNDATION and expand from there with context from Key Beats, Characters, Magic/Mechanics, and Themes sections. NEVER contradict the "If Asked" answers.
+
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
     } else if (contextSource === 'snapshot') {
       contextType = 'Knowledge Snapshot';
       contextCoverage = `covering Chapters ${snapshotMetadata.snapshotChapter ? `up to Chapter ${snapshotMetadata.snapshotChapter}` : 'up to your current chapter'}`;
       const isFullPrompt = rowanPrompt.length > 500;
       if (isFullPrompt) {
-        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes)\n**3. How to Think About It** (Provide a mental model or analogy)\n**4. Why It Matters** (Connect to story themes and character arcs)\n**5. What\'s Still Unknown** (Acknowledge mysteries without spoiling)\n**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.';
+        contextInstructions = `This is a Knowledge Snapshot containing cumulative information.
+
+⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.
+
+🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:
+
+**1. Short Version** (1-2 sentences - the essential answer immediately)
+**2. What You've Seen** (Cite specific chapters and scenes)
+**3. How to Think About It** (Provide a mental model or analogy)
+**4. Why It Matters** (Connect to story themes and character arcs)
+**5. What's Still Unknown** (Acknowledge mysteries without spoiling)
+**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)
+
+⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.
+
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       } else {
-        contextInstructions = 'This is a Knowledge Snapshot containing cumulative information.\n\n⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan\'s If Asked Notes" sections that address the reader\'s question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.';
+        contextInstructions = `This is a Knowledge Snapshot containing cumulative information.
+
+⚠️ CRITICAL INSTRUCTION: First check if the snapshot contains "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.
+
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the snapshot, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       }
     } else {
       contextType = 'Chapter Notes';
@@ -240,19 +265,93 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
       
       // For FULL prompts, ALWAYS enforce 6-section structure
       if (isFullPrompt) {
-        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes - "In Chapter X, when..."; Reference multiple chapters if available)\n**3. How to Think About It** (Provide a mental model, analogy, or way to understand this)\n**4. Why It Matters** (Connect to character motivations, plot stakes, or story themes)\n**5. What\'s Still Unknown** (Acknowledge mysteries or unanswered questions without spoiling)\n**6. Want to Know More?** (MUST end with this section - offer 2-3 specific, actionable options like "I can walk through the Chapter X scene where...")\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown. Do NOT deviate from this structure.\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+        contextInstructions = `These are detailed Chapter Notes with multiple sections.
+
+⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan's If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:
+- Key Beats (chronological events)
+- Characters in This Chapter (who appears and what they do)
+- Magic/Mechanics (world-building explanations)
+- Themes (deeper meanings)
+- Confusion Points (flagged difficulties)
+
+🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:
+
+**1. Short Version** (1-2 sentences - the essential answer immediately)
+**2. What You've Seen** (Cite specific chapters and scenes - "In Chapter X, when..."; Reference multiple chapters if available)
+**3. How to Think About It** (Provide a mental model, analogy, or way to understand this)
+**4. Why It Matters** (Connect to character motivations, plot stakes, or story themes)
+**5. What's Still Unknown** (Acknowledge mysteries or unanswered questions without spoiling)
+**6. Want to Know More?** (MUST end with this section - offer 2-3 specific, actionable options like "I can walk through the Chapter X scene where...")
+
+⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown. Do NOT deviate from this structure.
+
+🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.
+
+⚠️ HANDLING MISSING INFORMATION:
+If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Take ownership - this is YOUR limitation, not theirs. Use this format:
+"I'm not certain about that specific detail from my notes for Chapter [X]. It's possible it happened and I'm missing that information, or I might need more context. Based on what I do have, I can tell you about [related topic/character]'s general approach/behavior up to this point. Would you like me to explore that, or keep it brief?"
+
+Key principles:
+- Acknowledge uncertainty gracefully ("I'm not certain" not "you're asking wrong")
+- Take responsibility ("my notes" not "the notes")
+- Don't imply the reader's question is wrong or beyond their reading
+- Offer helpful alternatives based on what you DO know
+
+NEVER contradict the "If Asked" answers - they are authoritative.`;
       } else if (isCharacterOrLocationQuestion && ragMetadata.chaptersFound.length > 3) {
-        contextInstructions = 'These are detailed Chapter Notes covering multiple chapters.\n\n🎯 CRITICAL FOR CHARACTER/LOCATION QUESTIONS: You have context from multiple chapters - use ALL of them to provide comprehensive understanding.\n\n⚠️ PRIORITY: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST as your FOUNDATION.\n\n💡 DEPTH EXPECTATION: Reference multiple chapters to show the character/location\'s full journey, development, and key moments. Sound conversational and comprehensive.\n\n📋 RESPONSE STRUCTURE (MANDATORY): Use FULL 6-section format for comprehensive answers. MUST end with "Want to Know More?" section.\n\n🎨 TONE: Warm, conversational, like explaining a friend\'s backstory. Avoid clinical language.';
+        contextInstructions = `These are detailed Chapter Notes covering multiple chapters.
+
+🎯 CRITICAL FOR CHARACTER/LOCATION QUESTIONS: You have context from multiple chapters - use ALL of them to provide comprehensive understanding.
+
+⚠️ PRIORITY: ALWAYS check for "Rowan's If Asked Notes" sections FIRST as your FOUNDATION.
+
+💡 DEPTH EXPECTATION: Reference multiple chapters to show the character/location's full journey, development, and key moments. Sound conversational and comprehensive.
+
+📋 RESPONSE STRUCTURE (MANDATORY): Use FULL 6-section format for comprehensive answers. MUST end with "Want to Know More?" section.
+
+🎨 TONE: Warm, conversational, like explaining a friend's backstory. Avoid clinical language.
+
+⚠️ HANDLING MISSING INFORMATION: If the reader asks about a specific detail that is NOT in the notes, DO NOT make up details. Take ownership gracefully: "I'm not certain about that specific detail from my notes. It's possible it happened and I'm missing that information. Based on what I do have, I can tell you about [related topic]'s general approach up to this point."`;
       } else {
-        contextInstructions = 'These are detailed Chapter Notes with multiple sections.\n\n⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan\'s If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:\n- Key Beats (chronological events)\n- Characters in This Chapter (who appears and what they do)\n- Magic/Mechanics (world-building explanations)\n- Themes (deeper meanings)\n- Confusion Points (flagged difficulties)\n\n📋 RESPONSE STRUCTURE (MANDATORY):\n- For SHORT prompts: MUST use 3-section format (Direct Answer + Brief Context + Want to Know More?)\n- For FULL prompts: MUST use 6-section format (Short Version + What You\'ve Seen + How to Think About It + Why It Matters + What\'s Still Unknown + Want to Know More?)\n- "Want to Know More?" is REQUIRED - offer 2-3 specific, actionable options\n\n🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.\n\nNEVER contradict the "If Asked" answers - they are authoritative.';
+        contextInstructions = `These are detailed Chapter Notes with multiple sections.
+
+⚠️ CRITICAL INSTRUCTION: ALWAYS check for "Rowan's If Asked Notes" sections FIRST. These contain pre-written Q&As that should form the FOUNDATION of your answer. Use them verbatim as your starting point, then expand with additional context from:
+- Key Beats (chronological events)
+- Characters in This Chapter (who appears and what they do)
+- Magic/Mechanics (world-building explanations)
+- Themes (deeper meanings)
+- Confusion Points (flagged difficulties)
+
+📋 RESPONSE STRUCTURE (MANDATORY):
+- For SHORT prompts: MUST use 3-section format (Direct Answer + Brief Context + Want to Know More?)
+- For FULL prompts: MUST use 6-section format (Short Version + What You've Seen + How to Think About It + Why It Matters + What's Still Unknown + Want to Know More?)
+- "Want to Know More?" is REQUIRED - offer 2-3 specific, actionable options
+
+🎨 TONE: Warm, conversational language. Avoid clinical/academic phrasing. Show empathy.
+
+⚠️ HANDLING MISSING INFORMATION:
+If the reader asks about a specific detail (event, quote, character action, etc.) that is NOT mentioned in the chapter notes provided, DO NOT make up details. Take ownership - this is YOUR limitation, not theirs. Use this format:
+"I'm not certain about that specific detail from my notes for Chapter [X]. It's possible it happened and I'm missing that information, or I might need more context. Based on what I do have, I can tell you about [related topic/character]'s general approach/behavior up to this point. Would you like me to explore that, or keep it brief?"
+
+Key principles:
+- Acknowledge uncertainty gracefully ("I'm not certain" not "you're asking wrong")
+- Take responsibility ("my notes" not "the notes")
+- Don't imply the reader's question is wrong or beyond their reading
+- Offer helpful alternatives based on what you DO know
+
+NEVER contradict the "If Asked" answers - they are authoritative.`;
       }
     }
     
     const contextMessage = {
       role: 'system',
-      content: `The reader is currently reading "${bookTitle}" and has read up to Chapter ${chapter}.
+      content: `The reader is currently reading "${bookTitle}" and has read up to and including Chapter ${chapter}.
 
-⚠️ CRITICAL: DO NOT SPOIL ANYTHING BEYOND CHAPTER ${chapter}.
+⚠️ CRITICAL SPOILER BOUNDARY:
+- The reader has read through Chapter ${chapter} - this means they have read Chapters 1, 2, 3... up to and including Chapter ${chapter}.
+- You CAN discuss anything from Chapters 1 through ${chapter} (inclusive).
+- You CANNOT discuss anything that happens in Chapter ${chapter + 1} or later.
+- IMPORTANT: If the user asks about Chapter ${chapter} or any earlier chapter, you SHOULD be able to answer if the notes contain that information. The reader has already read it.
 
 📚 REFERENCE MATERIAL PROVIDED:
 You are being provided with ${contextType} ${contextCoverage}. This is your PRIMARY source of information - use it extensively and cite it explicitly in your responses.
@@ -329,7 +428,7 @@ ${notesContext}
     // FULL prompts need more tokens for structured 6-section responses
     const isFullPrompt = rowanPrompt.length > 500;
     const maxTokens = isFullPrompt ? 1500 : 800; // More tokens for structured responses
-    
+
     // Call OpenAI with cost-optimized model
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // 15x cheaper than GPT-4 Turbo, still excellent for this use case
@@ -343,6 +442,9 @@ ${notesContext}
     // Analyze if notes were likely used in the response
     // This is a heuristic: check if response seems to reference specific details that would come from notes
     const notesLikelyUsed = analyzeNotesUsage(response, context, ragMetadata);
+    
+    // Detect if response indicates missing information (for tracking)
+    const indicatesMissingInfo = detectMissingInformation(response, message);
 
     // Return response with metadata for logging
     return {
@@ -367,7 +469,8 @@ ${notesContext}
           ? ragMetadata.chaptersMissing.map(c => typeof c === 'number' ? c : String(c)).join(',') 
           : '',
         notesLikelyUsed: Boolean(notesLikelyUsed),
-        notesRelevance: determineNotesRelevance(notesProvided, notesLikelyUsed, ragMetadata),
+        notesRelevance: determineNotesRelevance(notesProvided, notesLikelyUsed, ragMetadata, indicatesMissingInfo),
+        indicatesMissingInfo: Boolean(indicatesMissingInfo), // Track when notes exist but question can't be answered
         // Snapshot tracking
         contextSource: contextSource || 'none',
         snapshotUsed: Boolean(contextSource && (contextSource.includes('snapshot'))),
@@ -419,13 +522,18 @@ function analyzeNotesUsage(response, chapterContext, ragMetadata) {
 /**
  * Determine notes relevance status
  */
-function determineNotesRelevance(notesProvided, notesLikelyUsed, ragMetadata) {
+function determineNotesRelevance(notesProvided, notesLikelyUsed, ragMetadata, indicatesMissingInfo = false) {
   if (!notesProvided) {
     return 'no_notes_available';
   }
   
   if (ragMetadata.chaptersMissing.length > 0 && ragMetadata.chaptersFound.length === 0) {
     return 'notes_missing';
+  }
+  
+  // If response indicates missing info, mark as such (for tracking improvement opportunities)
+  if (indicatesMissingInfo && notesProvided) {
+    return 'notes_insufficient_detail';
   }
   
   if (notesLikelyUsed) {
@@ -435,6 +543,34 @@ function determineNotesRelevance(notesProvided, notesLikelyUsed, ragMetadata) {
   // Notes were provided but don't seem to have been used
   // This could mean: notes weren't relevant, or response was generic
   return 'notes_not_relevant';
+}
+
+/**
+ * Detect if response indicates missing information
+ * Looks for phrases that suggest the notes don't contain the requested detail
+ */
+function detectMissingInformation(response, originalQuestion) {
+  const responseLower = response.toLowerCase();
+  const questionLower = originalQuestion.toLowerCase();
+  
+  // Look for indicators that information was missing
+  const missingInfoPatterns = [
+    /don'?t\s+have\s+(that|this)\s+(specific|exact|detail)/i,
+    /my\s+notes\s+(don'?t|do\s+not)\s+(include|contain|have)/i,
+    /can'?t\s+give\s+(you|a)\s+(precise|specific|exact)/i,
+    /(don'?t|do\s+not)\s+have\s+(the|that|this)\s+(exact|specific)/i,
+    /notes\s+(don'?t|do\s+not)\s+include/i,
+    /right\s+now\s+my\s+notes/i
+  ];
+  
+  // Check if response contains any of these patterns
+  const hasMissingIndicator = missingInfoPatterns.some(pattern => pattern.test(responseLower));
+  
+  // Also check if question was asking about a specific detail
+  const asksForSpecific = /(specific|exact|precise|exactly|specifically)/i.test(questionLower) ||
+                          /(what|explain|describe|tell)\s+(me\s+)?(about|the|what)\s+(happened|happens)/i.test(questionLower);
+  
+  return hasMissingIndicator && asksForSpecific;
 }
 
 module.exports = { chatWithRowan };

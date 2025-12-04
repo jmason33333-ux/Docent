@@ -4,3 +4,8 @@ node_modules/
 *.log
 # Allow series.json files (they're needed for book ordering)
 !rag/Series/**/series.json
+*.json
+*.json
+!rag/Series/**/series.json
+!package*.json
+!tsconfig*.json
