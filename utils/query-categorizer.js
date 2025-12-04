@@ -107,6 +107,59 @@ function categorizeQuery(query) {
 }
 
 /**
+ * Extract specific chapter number(s) mentioned in a query
+ * @param {string} query - The user's question
+ * @returns {Object} - { mentionsChapter: boolean, chapters: number[], isSpecificChapterQuery: boolean }
+ */
+function extractChapterMention(query) {
+  const queryLower = query.toLowerCase();
+
+  // Patterns to match chapter references
+  const patterns = [
+    /chapter\s+(\d+)/gi,           // "chapter 24", "Chapter 24"
+    /ch\.?\s*(\d+)/gi,             // "ch 24", "ch. 24", "Ch24"
+    /chapters?\s+(\d+)\s*[-–to]+\s*(\d+)/gi,  // "chapters 20-24", "chapter 20 to 24"
+  ];
+
+  const chapters = new Set();
+
+  for (const pattern of patterns) {
+    let match;
+    while ((match = pattern.exec(query)) !== null) {
+      if (match[2]) {
+        // Range match (e.g., "chapters 20-24")
+        const start = parseInt(match[1], 10);
+        const end = parseInt(match[2], 10);
+        for (let i = start; i <= end && i <= start + 10; i++) { // Cap at 10 chapters
+          chapters.add(i);
+        }
+      } else {
+        // Single chapter match
+        chapters.add(parseInt(match[1], 10));
+      }
+    }
+  }
+
+  const chapterArray = Array.from(chapters).sort((a, b) => a - b);
+
+  // Determine if this is a query specifically ABOUT those chapters
+  // vs just mentioning them in passing
+  const chapterQueryIndicators = [
+    'recap', 'summary', 'summarize', 'what happened', 'what happens',
+    'remind me', 'tell me about', 'explain', 'go over', 'review'
+  ];
+
+  const isSpecificChapterQuery = chapterArray.length > 0 &&
+    chapterQueryIndicators.some(indicator => queryLower.includes(indicator));
+
+  return {
+    mentionsChapter: chapterArray.length > 0,
+    chapters: chapterArray,
+    isSpecificChapterQuery
+  };
+}
+
+/**
  * Extract key terms from query (character names, concepts, etc.)
  */
 function extractKeyTerms(query) {
@@ -156,6 +209,7 @@ function getCategoryDescription(category) {
 
 module.exports = {
   categorizeQuery,
+  extractChapterMention,
   getCategoryDescription
 };
 

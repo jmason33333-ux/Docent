@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 const { getRowanPrompt, getPromptMetadata } = require('../rowan-prompt');
 const { loadChapterContext, loadChapterContextByNumbers, loadKnowledgeSnapshot, loadBookSummary, shouldUseSnapshot, shouldUseBookSummary, determineContextNeeded } = require('./rag-loader');
-const { categorizeQuery } = require('./query-categorizer');
+const { categorizeQuery, extractChapterMention } = require('./query-categorizer');
 const { determineSmartContext } = require('./character-context-loader');
 
 // Validate API key is set
@@ -31,7 +31,10 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
   try {
     // Categorize the query
     const queryCategory = categorizeQuery(message);
-    
+
+    // Check if query asks about specific chapter(s)
+    const chapterMention = extractChapterMention(message);
+
     // Smart context selection: Prioritize book summary for first interactions and early chapters
     let context = '';
     let ragMetadata = {
@@ -46,31 +49,71 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     let snapshotMetadata = {};
     let bookSummaryMetadata = {};
 
-    // Check if book summary should be included (first interaction or early chapter questions)
-    const useBookSummary = shouldUseBookSummary(queryCategory.primaryCategory, chapter, history.length);
-    
-    if (useBookSummary) {
-      const { context: summaryContext, metadata: summaryMeta } = loadBookSummary(bookTitle);
-      
-      if (summaryMeta.summaryAvailable) {
-        context = summaryContext;
-        ragMetadata = {
-          notesAvailable: true,
-          notesProvided: true,
-          notesLength: summaryMeta.summaryLength,
-          chaptersFound: ['book-summary'],
-          chaptersMissing: [],
-          chaptersRequested: []
-        };
-        bookSummaryMetadata = summaryMeta;
-        contextSource = 'book_summary';
-        
-        console.log(`[RAG] Using book summary for ${queryCategory.primaryCategory} query (first interaction or early chapter)`);
+    // PRIORITY 1: If query asks about specific chapter(s), load those directly
+    // This takes precedence over snapshot logic for queries like "recap chapter 24"
+    if (chapterMention.isSpecificChapterQuery && chapterMention.chapters.length > 0) {
+      // Filter to only chapters the user has read (spoiler protection)
+      const safeChapters = chapterMention.chapters.filter(ch => ch <= chapter);
+      const spoilerChapters = chapterMention.chapters.filter(ch => ch > chapter);
+
+      // Note if user asked about future chapters (for LLM instruction)
+      if (spoilerChapters.length > 0) {
+        ragMetadata.spoilerChaptersRequested = spoilerChapters;
+        console.log(`[RAG] User asked about future chapters (${spoilerChapters.join(', ')}) - will not load these`);
+      }
+
+      if (safeChapters.length > 0) {
+        const chapterResult = loadChapterContextByNumbers(bookTitle, safeChapters);
+
+        if (chapterResult.metadata.chaptersFound.length > 0) {
+          context = chapterResult.context;
+          ragMetadata = {
+            ...ragMetadata, // Preserve spoilerChaptersRequested
+            notesAvailable: true,
+            notesProvided: true,
+            notesLength: chapterResult.metadata.notesLength,
+            chaptersFound: chapterResult.metadata.chaptersFound,
+            chaptersMissing: chapterResult.metadata.chaptersMissing,
+            chaptersRequested: safeChapters
+          };
+          contextSource = 'specific_chapters';
+
+          console.log(`[RAG] Specific chapter query detected. Loading chapters: ${safeChapters.join(', ')}`);
+          console.log(`[RAG] Chapters found: ${chapterResult.metadata.chaptersFound.join(', ')}`);
+        }
       }
     }
 
-    // Then add snapshot or chapter notes based on query type
-    if (shouldUseSnapshot(queryCategory.primaryCategory)) {
+    // PRIORITY 2: Book summary for first interactions or early chapters
+    // (Only if we haven't already loaded specific chapters)
+    if (contextSource === 'none') {
+      const useBookSummary = shouldUseBookSummary(queryCategory.primaryCategory, chapter, history.length);
+
+      if (useBookSummary) {
+        const { context: summaryContext, metadata: summaryMeta } = loadBookSummary(bookTitle);
+
+        if (summaryMeta.summaryAvailable) {
+          context = summaryContext;
+          ragMetadata = {
+            notesAvailable: true,
+            notesProvided: true,
+            notesLength: summaryMeta.summaryLength,
+            chaptersFound: ['book-summary'],
+            chaptersMissing: [],
+            chaptersRequested: []
+          };
+          bookSummaryMetadata = summaryMeta;
+          contextSource = 'book_summary';
+
+          console.log(`[RAG] Using book summary for ${queryCategory.primaryCategory} query (first interaction or early chapter)`);
+        }
+      }
+    }
+
+    // PRIORITY 3: Snapshot + gap chapters for general queries (character, plot, theme, etc.)
+    // (Only if we haven't already loaded specific chapters)
+    if (contextSource === 'none' || contextSource === 'book_summary') {
+      if (shouldUseSnapshot(queryCategory.primaryCategory)) {
       // Try to load knowledge snapshot first
       const { context: snapshotContext, metadata: snapshotMeta } = loadKnowledgeSnapshot(bookTitle, chapter);
       
@@ -235,7 +278,26 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     let contextCoverage = '';
     let contextInstructions = '';
     
-    if (contextSource === 'book_summary') {
+    if (contextSource === 'specific_chapters') {
+      // User asked about specific chapter(s) - provide direct, focused context
+      const requestedChapters = ragMetadata.chaptersFound.filter(c => typeof c === 'number');
+      const chapterList = requestedChapters.join(', ');
+
+      if (requestedChapters.length === 1) {
+        contextType = 'Chapter Notes';
+        contextCoverage = `detailed notes for Chapter ${requestedChapters[0]}`;
+        contextInstructions = `You have the COMPLETE notes for Chapter ${requestedChapters[0]}. This includes Quick Summary, Key Beats, Characters, Locations, Themes, and more.\n\n✅ USE THESE NOTES to answer the reader's question directly and thoroughly.\n\nCheck for "Rowan's If Asked Notes" section first - if it addresses their question, use it as your foundation.\n\nBe specific - cite scenes, characters, and events from this chapter.`;
+      } else {
+        contextType = 'Chapter Notes';
+        contextCoverage = `detailed notes for Chapters ${chapterList}`;
+        contextInstructions = `You have COMPLETE notes for Chapters ${chapterList}. Each chapter includes Quick Summary, Key Beats, Characters, Locations, Themes, and more.\n\n✅ USE THESE NOTES to answer the reader's question directly and thoroughly.\n\nCheck for "Rowan's If Asked Notes" sections first - if they address the question, use them as your foundation.\n\nBe specific - cite scenes, characters, and events from these chapters.`;
+      }
+
+      // Handle case where user asked about future chapters
+      if (ragMetadata.spoilerChaptersRequested && ragMetadata.spoilerChaptersRequested.length > 0) {
+        contextInstructions += `\n\n⚠️ NOTE: The reader asked about Chapter(s) ${ragMetadata.spoilerChaptersRequested.join(', ')} but they are only on Chapter ${chapter}. Do NOT provide information from those future chapters. You can mention that you'll be happy to discuss them once they reach that point.`;
+      }
+    } else if (contextSource === 'book_summary') {
       contextType = 'Book Summary (spoiler-free)';
       contextCoverage = 'general overview, themes, setting, and character introductions';
       contextInstructions = 'This is a spoiler-free book summary - use it for questions about the book\'s premise, themes, setting, and what readers should know before starting. This contains NO plot spoilers and is perfect for first-time readers or questions about the book\'s overall setup.';
@@ -274,6 +336,11 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
         contextInstructions = `This context includes ${hasGapChapters ? 'BOTH a Knowledge Snapshot AND detailed Chapter Notes' : 'a Knowledge Snapshot containing cumulative information'}.\n\n⚠️ CRITICAL INSTRUCTION: You have notes covering UP TO AND INCLUDING Chapter ${chapter}. First check if the notes contain "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes.\n\n🎯 RESPONSE STRUCTURE IS MANDATORY - YOU MUST USE THIS EXACT FORMAT:\n\n**1. Short Version** (1-2 sentences - the essential answer immediately)\n**2. What You\'ve Seen** (Cite specific chapters and scenes)\n**3. How to Think About It** (Provide a mental model or analogy)\n**4. Why It Matters** (Connect to story themes and character arcs)\n**5. What\'s Still Unknown** (Acknowledge mysteries without spoiling)\n**6. Want to Know More?** (MUST end with this - offer 2-3 specific, actionable options)\n\n⚠️ YOU MUST USE THESE EXACT SECTION HEADERS with **bold** markdown.`;
       } else {
         contextInstructions = `This context includes ${hasGapChapters ? 'BOTH a Knowledge Snapshot AND detailed Chapter Notes' : 'a Knowledge Snapshot containing cumulative information'}.\n\n⚠️ CRITICAL INSTRUCTION: You have notes covering UP TO AND INCLUDING Chapter ${chapter}. First check if the notes contain "Rowan's If Asked Notes" sections that address the reader's question. If found, use those pre-written Q&As as your FOUNDATION, then expand with additional context from characters, plot threads, world-building, relationships, and themes. This is perfect for recap questions and character/plot analysis.`;
+      }
+
+      // Handle case where user asked about future chapters but we fell back to snapshot
+      if (ragMetadata.spoilerChaptersRequested && ragMetadata.spoilerChaptersRequested.length > 0) {
+        contextInstructions += `\n\n⚠️ IMPORTANT: The reader asked about Chapter(s) ${ragMetadata.spoilerChaptersRequested.join(', ')} but they are only on Chapter ${chapter}. Politely explain that you can't discuss those chapters yet to avoid spoilers, but offer to help with what they've read so far.`;
       }
     } else {
       contextType = 'Chapter Notes';
