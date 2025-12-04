@@ -294,9 +294,9 @@ async function chatWithRowan({ bookTitle, chapter, message, history = [] }) {
     
     const contextMessage = {
       role: 'system',
-      content: `The reader is currently reading "${bookTitle}" and has read up to Chapter ${chapter}.
+      content: `The reader is currently on Chapter ${chapter} of "${bookTitle}" and has completed reading through Chapter ${chapter} (Chapter ${chapter} is INCLUDED in what they've read).
 
-⚠️ CRITICAL: DO NOT SPOIL ANYTHING BEYOND CHAPTER ${chapter}.
+⚠️ CRITICAL SPOILER RULE: The reader has read Chapters 1 through ${chapter} (inclusive). You CAN freely discuss ANY content from Chapter 1 to Chapter ${chapter}. Do NOT reveal anything from Chapter ${chapter + 1} or later.
 
 📚 REFERENCE MATERIAL PROVIDED:
 You are being provided with ${contextType} ${contextCoverage}. This is your PRIMARY source of information - use it extensively and cite it explicitly in your responses.
